@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>烦恼收容所 WORRY SHELTER · 治愈系潮玩 IP 全案</title>
+<style>
+  :root{
+    --cream:#F7F3EC;
+    --cream2:#EFE8DC;
+    --ink:#4A4640;
+    --ink2:#7A736A;
+    --gray:#A89C8C;
+    --peach:#E8967A;
+    --line:#E4DCCE;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif;
+    background:var(--cream);color:var(--ink);
+    line-height:1.9;-webkit-font-smoothing:antialiased;
+  }
+
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 44px;
+    background:rgba(247,243,236,.86);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .back{font-size:13px;color:var(--gray);text-decoration:none;}
+  nav .back:hover{color:var(--peach);}
+  .brand{font-size:17px;letter-spacing:2px;color:var(--ink);}
+  .brand span{font-size:10px;letter-spacing:2px;color:var(--gray);margin-left:8px;}
+  .nav-links{display:flex;gap:26px;font-size:13px;}
+  .nav-links a{text-decoration:none;color:var(--gray);}
+  .nav-links a:hover{color:var(--peach);}
+
+  header.hero{
+    padding:170px 44px 90px;text-align:center;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(232,150,122,.10), transparent 55%),
+      var(--cream);
+  }
+  .hero-label{font-size:11px;letter-spacing:6px;color:var(--peach);margin-bottom:22px;}
+  .hero-title{font-size:clamp(40px,7vw,78px);letter-spacing:8px;font-weight:700;color:var(--ink);}
+  .hero-en{margin-top:10px;font-size:14px;letter-spacing:8px;color:var(--gray);}
+  .hero-sub{margin-top:26px;font-size:17px;color:var(--ink2);letter-spacing:1px;}
+  .hero-badge{display:inline-block;margin-top:30px;font-size:12px;letter-spacing:2px;color:var(--peach);background:#FDF0EA;border:1px solid #F5D9CD;border-radius:999px;padding:8px 20px;}
+
+  section{padding:84px 44px;max-width:1080px;margin:0 auto;}
+  .sec-label{font-size:11px;letter-spacing:6px;color:var(--peach);margin-bottom:14px;}
+  .sec-title{font-size:clamp(24px,3.4vw,36px);font-weight:700;letter-spacing:2px;margin-bottom:30px;color:var(--ink);}
+  .prose{max-width:700px;font-size:15.5px;color:var(--ink2);}
+  .prose p{margin-bottom:16px;}
+  .prose strong{color:var(--ink);font-weight:700;}
+
+  .quote{
+    margin:36px 0;padding:30px 34px;border-left:3px solid var(--peach);
+    background:#FCF8F2;border-radius:0 14px 14px 0;
+    font-size:17px;color:var(--ink);letter-spacing:1px;
+  }
+
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;}
+  .fact{background:#FCF8F2;border:1px solid var(--line);border-radius:16px;padding:26px 22px;}
+  .fact .k{font-size:11px;letter-spacing:3px;color:var(--peach);margin-bottom:10px;}
+  .fact .v{font-size:15px;color:var(--ink);line-height:1.75;}
+
+  .stack{display:grid;grid-template-columns:1fr;gap:44px;max-width:620px;margin:0 auto;}
+  figure{margin:0;}
+  figure img{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 16px 44px rgba(120,100,80,.13);}
+  figcaption{margin-top:14px;text-align:center;font-size:13px;color:var(--gray);letter-spacing:1px;}
+
+  /* 角色表 */
+  .chars{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:10px;}
+  .char{display:flex;gap:14px;align-items:flex-start;background:#FCF8F2;border:1px solid var(--line);border-radius:14px;padding:18px 20px;}
+  .char .nm{font-size:17px;font-weight:700;letter-spacing:2px;color:var(--ink);white-space:nowrap;}
+  .char .ds{font-size:13.5px;color:var(--ink2);line-height:1.7;}
+  .char .em{display:inline-block;font-size:11px;color:var(--peach);background:#FDF0EA;border-radius:999px;padding:2px 10px;margin-top:6px;}
+
+  .upcoming{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;}
+  .card{border:1px dashed var(--line);border-radius:16px;padding:30px 24px;min-height:130px;display:flex;flex-direction:column;justify-content:center;}
+  .card .no{font-size:11px;letter-spacing:3px;color:var(--peach);margin-bottom:8px;}
+  .card h3{font-size:16px;font-weight:700;letter-spacing:1px;margin-bottom:4px;}
+  .card p{font-size:12.5px;color:var(--gray);}
+
+  footer{border-top:1px solid var(--line);padding:44px;text-align:center;font-size:12px;color:var(--gray);letter-spacing:2px;}
+  footer .b{display:block;margin-bottom:8px;font-size:16px;letter-spacing:5px;color:var(--ink);}
+  footer a{color:var(--peach);text-decoration:none;}
+
+  @media(max-width:760px){
+    nav{padding:14px 20px;}
+    .nav-links{display:none;}
+    section{padding:60px 22px;}
+    header.hero{padding:130px 22px 70px;}
+    .facts,.chars,.upcoming{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="back" href="index.html">← 返回作品集</a>
+  <div class="brand">烦恼收容所<span>WORRY SHELTER</span></div>
+  <div class="nav-links">
+    <a href="#about">定位</a>
+    <a href="#world">世界观</a>
+    <a href="#chars">角色</a>
+    <a href="#gallery">图鉴</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-label">PROJECT 02 · 潮玩 IP 全案</div>
+  <h1 class="hero-title">烦恼收容所</h1>
+  <div class="hero-en">W O R R Y &nbsp; S H E L T E R</div>
+  <p class="hero-sub">每个烦恼，都是一只等你收养的小怪兽</p>
+  <div class="hero-badge">6 常规款 + 1 隐藏款 · 毛绒潮玩</div>
+</header>
+
+<section id="about">
+  <div class="sec-label">POSITIONING</div>
+  <h2 class="sec-title">为什么做「烦恼」</h2>
+  <div class="prose">
+    <p>市面上的治愈系 IP，绝大多数都在做「可爱动物」——可爱，但和"我"没关系。</p>
+    <p>「烦恼收容所」反过来：把<strong>负面情绪本身</strong>做成角色。焦虑、拖延、社恐、emo、熬夜、选择困难——这些不是缺点，是每个人每天都在经历的东西。</p>
+    <p>它不需要你"振作起来"，它只需要你<strong>收养它，然后好好照顾它</strong>。</p>
+  </div>
+
+  <div class="facts">
+    <div class="fact"><div class="k">IP 类型</div><div class="v">治愈系毛绒潮玩<br>盲盒 + 周边</div></div>
+    <div class="fact"><div class="k">目标人群</div><div class="v">18–30 岁都市青年与学生<br>有情绪压力、需要被理解</div></div>
+    <div class="fact"><div class="k">差异化</div><div class="v">不做"可爱动物"<br>把负面情绪拟人化 + 收养机制</div></div>
+  </div>
+</section>
+
+<section id="world">
+  <div class="sec-label">WORLDVIEW</div>
+  <h2 class="sec-title">世界观</h2>
+  <div class="prose">
+    <p>「烦恼收容所」是一个不为人知的地方。</p>
+    <p>当人们把烦恼丢掉时，那些烦恼不会消失——它们会变成小怪兽，跑到收容所里。</p>
+    <p>这里没有评判，没有"你应该振作起来"，只有照顾。</p>
+    <p>每一只烦恼兽，都在等一个愿意收养它的人。</p>
+  </div>
+  <div class="quote">领养一只烦恼，然后好好照顾它。</div>
+</section>
+
+<section id="chars">
+  <div class="sec-label">CHARACTERS</div>
+  <h2 class="sec-title">七只烦恼兽</h2>
+  <div class="chars">
+    <div class="char"><div class="nm">焦焦</div><div><div class="ds">绒毛炸开如刺猬，紧紧抱着一团纠结的毛线</div><span class="em">焦虑</span></div></div>
+    <div class="char"><div class="nm">拖拖</div><div><div class="ds">软塌塌趴着像融化，身旁一个停摆的闹钟</div><span class="em">拖延</span></div></div>
+    <div class="char"><div class="nm">缩缩</div><div><div class="ds">缩在圆壳里，只露出一只大眼睛和两只爪</div><span class="em">社恐</span></div></div>
+    <div class="char"><div class="nm">乌乌</div><div><div class="ds">头顶一朵正在下雨的乌云，眼角挂泪</div><span class="em">emo</span></div></div>
+    <div class="char"><div class="nm">熬熬</div><div><div class="ds">夸张黑眼圈，紧抱发光手机，头顶一颗星</div><span class="em">熬夜</span></div></div>
+    <div class="char"><div class="nm">难难</div><div><div class="ds">一个身体两张背对背的脸，两手各指一边</div><span class="em">选择困难</span></div></div>
+    <div class="char"><div class="nm">灯灯</div><div><div class="ds">抱着发光的小灯，闭眼微笑，头顶光晕</div><span class="em">治愈 · 隐藏款</span></div></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="sec-label">BESTIARY · 角色图鉴</div>
+  <h2 class="sec-title">七只角色</h2>
+  <div class="stack">
+    <figure><img src="images/worry/card-1-jiaojiao.jpg" alt="焦焦"><figcaption>焦焦 · 焦虑</figcaption></figure>
+    <figure><img src="images/worry/card-2-tuotuo.jpg" alt="拖拖"><figcaption>拖拖 · 拖延</figcaption></figure>
+    <figure><img src="images/worry/card-3-suosuo.jpg" alt="缩缩"><figcaption>缩缩 · 社恐</figcaption></figure>
+    <figure><img src="images/worry/card-4-wuwu.jpg" alt="乌乌"><figcaption>乌乌 · emo</figcaption></figure>
+    <figure><img src="images/worry/card-5-aoao.jpg" alt="熬熬"><figcaption>熬熬 · 熬夜</figcaption></figure>
+    <figure><img src="images/worry/card-6-nannan.jpg" alt="难难"><figcaption>难难 · 选择困难</figcaption></figure>
+    <figure><img src="images/worry/card-7-dengdeng.jpg" alt="灯灯"><figcaption>灯灯 · 治愈（隐藏款）</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <div class="sec-label">IN PROGRESS</div>
+  <h2 class="sec-title">待补充</h2>
+  <div class="upcoming">
+    <div class="card"><div class="no">系列</div><h3>全系列合照</h3><p>七只同框</p></div>
+    <div class="card"><div class="no">包装</div><h3>盲盒与领养证</h3><p>6 常规 + 1 隐藏</p></div>
+    <div class="card"><div class="no">应用</div><h3>周边与场景</h3><p>贴纸 / 徽章 / 抱枕</p></div>
+  </div>
+</section>
+
+<footer>
+  <span class="b">烦恼收容所 WORRY SHELTER</span>
+  治愈系潮玩 IP 全案　·　设计：吕森垚<br>
+  <a href="index.html">← 返回作品集首页</a>
+</footer>
+
+</body>
+</html>
