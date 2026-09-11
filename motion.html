@@ -81,12 +81,12 @@
   .stage:not(.play) .lockup .seal,
   .stage:not(.play) .stage-en{opacity:0;}
 
-  .stage.play .ring{animation:drawRing 1s cubic-bezier(.2,.8,.2,1) .1s forwards;}
-  .stage.play .moon{animation:softIn .8s cubic-bezier(.2,.8,.2,1) .55s forwards;}
-  .stage.play .mtn{animation:mtnRise .8s cubic-bezier(.2,.8,.2,1) 1.30s forwards;}
-  .stage.play .lockup .name{animation:textIn .9s cubic-bezier(.2,.8,.2,1) 2.10s forwards;}
-  .stage.play .stage-en{animation:softIn .8s cubic-bezier(.2,.8,.2,1) 2.55s forwards;}
-  .stage.play .lockup .seal{animation:sealIn .55s cubic-bezier(.34,1.56,.64,1) 2.95s forwards;}
+  .stage.play .ring{animation:drawRing 1s cubic-bezier(.2,.8,.2,1) .30s both;}
+  .stage.play .moon{animation:softIn .8s cubic-bezier(.2,.8,.2,1) .70s both;}
+  .stage.play .mtn{animation:mtnRise .8s cubic-bezier(.2,.8,.2,1) 1.40s both;}
+  .stage.play .lockup .name{animation:textIn .9s cubic-bezier(.2,.8,.2,1) 2.20s both;}
+  .stage.play .stage-en{animation:softIn .8s cubic-bezier(.2,.8,.2,1) 2.60s both;}
+  .stage.play .lockup .seal{animation:sealIn .55s cubic-bezier(.34,1.56,.64,1) 3.00s both;}
 
   .ring{fill:none;stroke:var(--gold);stroke-width:5;stroke-dasharray:1060;stroke-dashoffset:1060;}
   .moon{fill:var(--gold);transform-box:fill-box;transform-origin:50% 50%;}
@@ -198,12 +198,13 @@
   </div>
 
   <div class="timeline">
-    <div class="tl"><div class="t">0.0–1.0s</div><div class="d">赤金外环顺时针画出（stroke 描边）</div></div>
-    <div class="tl"><div class="t">0.6–1.4s</div><div class="d">赤金满月自中心放大浮现</div></div>
-    <div class="tl"><div class="t">1.3–2.1s</div><div class="d">玄墨群山自底部升起</div></div>
-    <div class="tl"><div class="t">2.1–3.0s</div><div class="d">「山海志」字标浮现，字距由紧到松</div></div>
-    <div class="tl"><div class="t">2.9–3.5s</div><div class="d">朱砂「志」印落下（带回弹）</div></div>
-    <div class="tl"><div class="t">3.5–4.0s</div><div class="d">定格收尾</div></div>
+    <div class="tl"><div class="t">0.0–0.3s</div><div class="d"><strong style="color:var(--moon);font-weight:400;">纯黑场</strong> —— 画面上什么都没有</div></div>
+    <div class="tl"><div class="t">0.3–1.3s</div><div class="d">赤金外环顺时针画出（stroke 描边）</div></div>
+    <div class="tl"><div class="t">0.7–1.5s</div><div class="d">赤金满月自中心放大浮现</div></div>
+    <div class="tl"><div class="t">1.4–2.2s</div><div class="d">玄墨群山自底部升起</div></div>
+    <div class="tl"><div class="t">2.2–3.1s</div><div class="d">「山海志」字标浮现，字距由紧到松</div></div>
+    <div class="tl"><div class="t">3.0–3.6s</div><div class="d">朱砂「志」印落下（带回弹）</div></div>
+    <div class="tl"><div class="t">3.6s 后</div><div class="d">Logo 完整呈现，定格</div></div>
   </div>
 </section>
 
