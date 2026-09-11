@@ -4,6 +4,8 @@
 
 以《山海经》志怪异兽为核心的新中式茶饮品牌全案视觉设计。
 
+🔗 **在线预览**：https://senyaolu-lab.github.io/shanhai-zhi/
+
 ---
 
 ## 项目背景
