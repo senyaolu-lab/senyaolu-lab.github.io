@@ -3,7 +3,7 @@
 > 山西传媒学院 · 2027 届应届生
 > 方向：AI 视觉设计 / 品牌视觉 / IP 设计
 
-🔗 **在线作品集**：https://senyaolu-lab.github.io/shanhai-zhi/
+🔗 **在线作品集**：https://senyaolu-lab.github.io/
 
 ---
 
