@@ -123,6 +123,27 @@
   .shot .ds{font-size:13.5px;color:var(--dgray);line-height:1.65;}
   .shot .sd{margin-top:9px;font-size:11.5px;color:var(--gray);letter-spacing:.06em;}
 
+  /* 成片位 */
+  .film-slot{
+    border:2px dashed var(--line);background:var(--ink);
+    aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;gap:8px;padding:24px;
+  }
+  .film-slot b{font-size:13.5px;letter-spacing:.14em;color:var(--yellow);}
+  .film-slot span{font-size:13px;color:var(--gray);}
+  .film-slot .sm{font-size:11.5px;color:#5E5E5A;letter-spacing:.06em;}
+
+  /* 分镜节拍表 */
+  .beats{list-style:none;counter-reset:b;border-top:2px solid var(--ink);margin-top:6px;}
+  .beats li{
+    counter-increment:b;position:relative;padding:18px 0 18px 0;
+    border-bottom:1px solid var(--line);font-size:14.5px;color:var(--dgray);
+  }
+  .beats li b{display:inline-block;min-width:104px;color:var(--ink);font-weight:900;
+    font-family:"Arial",sans-serif;letter-spacing:.02em;}
+  .beats li span{display:block;margin-top:7px;padding-left:104px;font-size:12.5px;color:var(--gray);}
+  .beats li strong{color:var(--ink);}
+
   /* 影片入口 */
   .film-link{display:block;text-decoration:none;color:inherit;}
   .film-thumb{
@@ -142,6 +163,13 @@
   }
   .film-note b{display:block;font-size:13px;letter-spacing:.16em;margin-bottom:8px;}
   .film-note span{font-size:13.5px;color:var(--dgray);line-height:1.8;}
+  .film-cta{
+    display:inline-flex;align-items:center;gap:9px;margin-top:16px;
+    background:var(--ink);color:var(--yellow);text-decoration:none;
+    font-size:13px;letter-spacing:.14em;font-weight:700;
+    padding:11px 24px;border-radius:999px;transition:all .25s;
+  }
+  .film-cta:hover{background:var(--yellow);color:var(--ink);}
 
   /* 排期 */
   .sched{width:100%;border-collapse:collapse;font-size:14px;}
@@ -180,7 +208,7 @@
     header.hero{padding:22px 0 0 !important;}
     section,section.dark{padding:20px 0 !important;}
     .hero-rule{display:none;}
-    figure,table,.posters figure,.social figure,.shot,.chain .st,.flipwrap,.film-thumb,.film-note{break-inside:avoid;}
+    figure,table,.posters figure,.social figure,.shot,.chain .st,.flipwrap,.film-thumb,.film-note,.film-slot,.beats li{break-inside:avoid;}
     .sec-title{break-after:avoid;}
     .flip{cursor:default;}
   }
@@ -384,34 +412,42 @@
   </div>
 </section>
 
-<!-- ============ 07 影视脚本 ============ -->
+<!-- ============ 07 影片 ============ -->
 <section id="film">
   <div class="sec-label">07 / FILM</div>
   <h2 class="sec-title">15 秒影片</h2>
 
   <div class="prose" style="margin-bottom:28px;">
-    <p>这支片子<strong>没有实拍、也没有 AIGC 生成画面</strong>——主体就是价签、数字、撕裂线和大字文案，也就是这个战役的视觉系统本身。一张价签落下、被撕裂、露出心力那一栏；接着第二张、第三张……堆到第七张时停住。</p>
-    <p>用纯排版动画来做，是因为这个创意的主体本来就是平面系统。<strong>它证明的是版式与节奏的控制力</strong>——而那正是广告动态执行真正要考的东西。</p>
+    <p>一支 <strong>15 秒一镜到底</strong>。没有音乐，只有一个声音：<strong>撕纸</strong>。</p>
+    <p>画面里唯一的颜色是签黄——货架是灰的，商品是灰的，桌面是灰的，只有一张张空白的价签是黄的。它们一张张落下，堆到第七张时镜头停住，一只手<em>没有伸进画面，只把影子移了进来</em>，压在价签一角。然后字幕浮现。</p>
   </div>
 
-  <a class="film-link" href="film15.html">
-    <div class="film-thumb">
-      <span class="film-k">▶</span>
-      <div class="film-tx">
-        <b>播放 15 秒动态演绎</b>
-        <span>纯 SVG + CSS + JS · 网页内实时渲染 · 可录屏导出</span>
-      </div>
-    </div>
-  </a>
+  <div class="film-slot">
+    <b>成片位 · 15 秒 · 16:9 · 1920×1080</b>
+    <span>由 AIGC 生成：一镜到底，五段连续（起 / 撕 / 静 / 落 / 停）</span>
+    <span class="sm">提示词见《心力价签-15秒AIGC连续提示词》　|　文字层由后期叠加</span>
+  </div>
+
+  <div class="prose" style="margin-top:30px;margin-bottom:18px;">
+    <p><strong>分工</strong>　价签在画面里是<strong>完全空白的</strong>——不印任何字、数字、条码。AIGC 只负责卡纸的质感、纸纤维和光在纸上的落法；所有文字（「19」「今天第 4 个决定」、结尾口号）由后期叠加。这样避免 AI 生成文字糊成乱码，也让画面保持在静物广告摄影的水准上。</p>
+  </div>
+
+  <ol class="beats">
+    <li><b>0–2s　起</b>　浅灰超市货架，略微失焦。一只手从画面右下边缘缓慢伸入，只露小部分、轻微失焦。<span>手占画面不到五分之一——这不是关于人的片子</span></li>
+    <li><b>2–5s　撕</b>　极近距离：一张空白签黄价签悬在浅灰背景前，纸面占画面三分之二以上，纸纤维清晰可见。指尖捏住边缘，<strong>极缓慢地向下撕开</strong>。<span>全片最重要的一个画面，也是最难生成的一段</span></li>
+    <li><b>5–8s　静</b>　被撕下的价签缓缓翻面正对镜头，背面同样空白。画面几乎完全静止。<span>第一次留白</span></li>
+    <li><b>8–11s　落</b>　镜头极缓拉远转为略俯视。空白价签一张张从上方飘落，间隔逐渐缩短、速度加快，共七张。<span>计数器同步从 1 跳到 7</span></li>
+    <li><b>11–15s　停</b>　镜头停住。七张价签散落在浅灰桌面。<strong>手的影子</strong>从右侧移入、停住，压住最上面那张的一角。彻底静止，直到字幕浮现。<span>第二次留白，也是全片情绪最高点</span></li>
+  </ol>
 
   <div class="prose" style="margin-top:28px;">
-    <p><strong>节奏</strong>　0–1s 网格线画出 ｜ 1–4s 价签落入 ｜ 4–5.6s 撕裂＋心力栏推入 ｜ 5.6–9s 六张价签依次堆叠、计数器从 0 跳到 6 ｜ <strong>9–11s 完全静止</strong> ｜ 11–15s 口号浮现，朱红划线划掉「价格」，黄块压上「心力」。</p>
-    <p>全片唯一的停顿在 9 秒处——撕了七张之后停住不动。<em>那个停顿就是这支片子要说的话。</em></p>
+    <p><strong>声音</strong>　0–2s 极低的超市底噪 ｜ 2–5s 撕纸声（全片唯一被放大的声音）｜ 5–8s 静音 ｜ 8–11s 七次落桌轻响，逐渐密集 ｜ 11–15s 静音。<em>不要加背景音乐——这支片子的力量来自"没有声音"。</em></p>
   </div>
 
   <div class="film-note">
-    <b>配套拍摄脚本</b>
-    <span>如果你要真实撕纸的质感，动画版就是 animatic（动态分镜）——节奏、剪辑点、结尾字幕排版都已经定死，照它拍即可。完整拍摄方案（机位、灯光、收音、道具清单、导出规格）见提案文档《心力价签-15秒影片拍摄脚本》。</span>
+    <b>动态分镜（节奏参照）</b>
+    <span>下面这支动画是我先做的 animatic——它把节奏、剪辑点和结尾字幕的排版全部定死了。<strong>拍法变了，但节奏不用变</strong>：AIGC 生成画面时，照着它的时间点走即可。结尾那 4 秒的字幕动画可以直接录屏贴进成片，不用重做。</span>
+    <a class="film-cta" href="film15.html">▶ 播放动态分镜 · 15 秒</a>
   </div>
 </section>
 <!-- ============ 08 媒介排期 ============ -->
