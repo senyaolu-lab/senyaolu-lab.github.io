@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>心力价签 · 15 秒动态演绎 THE COST OF HEART</title>
+<style>
+  :root{
+    --yellow:#F2E600; --ink:#0A0A0A; --paper:#F5F3EE;
+    --red:#FF3B22; --gray:#8C8C86; --dgray:#3A3A38; --line:#E0DDD4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Noto Sans SC","Microsoft YaHei","PingFang SC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;
+    justify-content:space-between;padding:16px 48px;background:rgba(245,243,238,.90);
+    backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+  nav .back{font-size:13px;color:var(--gray);text-decoration:none;}
+  nav .back:hover{color:var(--ink);}
+  .brand{font-size:16px;letter-spacing:.18em;font-weight:900;font-family:"Noto Sans SC",sans-serif;}
+  .brand span{font-size:10px;letter-spacing:.16em;color:var(--gray);margin-left:10px;font-weight:400;}
+  .nav-links{display:flex;gap:22px;font-size:12.5px;}
+  .nav-links a{text-decoration:none;color:var(--gray);}
+  .nav-links a:hover{color:var(--ink);}
+
+  header.hero{background:var(--ink);color:var(--paper);padding:148px 48px 70px;}
+  .hero-inner{max-width:1120px;margin:0 auto;}
+  .hero-label{font-size:11px;letter-spacing:.5em;color:var(--yellow);margin-bottom:22px;}
+  .hero-title{font-size:clamp(36px,6.4vw,76px);line-height:1.06;font-weight:900;letter-spacing:.03em;}
+  .hero-en{margin-top:16px;font-size:clamp(11px,1.3vw,13px);letter-spacing:.4em;color:#8E8A80;
+    font-family:"Arial Black",Arial,sans-serif;}
+  .hero-sub{margin-top:26px;font-size:15.5px;color:#C9C4B8;max-width:640px;}
+  .hero-meta{margin-top:30px;display:flex;gap:10px;flex-wrap:wrap;}
+  .hero-meta span{font-size:11.5px;letter-spacing:.14em;border:1px solid #3A3A38;border-radius:999px;
+    padding:7px 16px;color:#B8B3A8;}
+
+  section{padding:80px 48px;max-width:1120px;margin:0 auto;}
+  .sec-label{font-size:10.5px;letter-spacing:.46em;color:var(--gray);margin-bottom:14px;}
+  .sec-title{font-size:clamp(23px,3.2vw,36px);font-weight:900;letter-spacing:.03em;margin-bottom:28px;}
+  .prose{max-width:760px;font-size:15.5px;color:var(--dgray);}
+  .prose p{margin-bottom:15px;}
+  .prose strong{color:var(--ink);font-weight:900;}
+  .rule{height:1px;background:var(--line);margin:32px 0;}
+
+  /* ===== 播放器 ===== */
+  .player{background:#000;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    box-shadow:0 34px 90px rgba(0,0,0,.34);}
+  .player svg{width:100%;height:auto;display:block;}
+
+  /* 默认隐藏所有元素，play 状态才动 */
+  .stage .grid line{opacity:0;}
+  .stage .tag-main{opacity:0;}
+  .stage .tear{opacity:0;}
+  .stage .heart-strip{opacity:0;}
+  .stage .counter{opacity:0;}
+  .stage .card{opacity:0;}
+  .stage .slogan{opacity:1;}
+  .stage #hlBox{opacity:0;}
+  .stage #sloganChars text.hl{opacity:0;}
+  .stage #sloganChars text{opacity:0;}
+  .stage #strikeLine{opacity:0;}
+  .stage .overlay{opacity:0;}
+  .stage .endcard{opacity:0;}
+
+  /* 01 · 0.0–1.1s 网格线画出 */
+  .stage.play .grid line{animation:gridIn .5s ease-out both;}
+  .stage.play .grid line:nth-child(1){animation-delay:.10s;}
+  .stage.play .grid line:nth-child(2){animation-delay:.16s;}
+  .stage.play .grid line:nth-child(3){animation-delay:.22s;}
+  .stage.play .grid line:nth-child(4){animation-delay:.28s;}
+  .stage.play .grid line:nth-child(5){animation-delay:.34s;}
+  .stage.play .grid line:nth-child(6){animation-delay:.40s;}
+  .stage.play .grid line:nth-child(7){animation-delay:.46s;}
+  .stage.play .grid line:nth-child(8){animation-delay:.52s;}
+
+  /* 02 · 1.1–4.0s 主价签落入 */
+  .stage.play .tag-main{animation:tagDrop .82s cubic-bezier(.2,.8,.2,1) 1.15s both;}
+  .stage.play .counter{animation:fadeUp .5s ease-out 2.55s both;}
+
+  /* 03 · 4.0–5.6s 撕裂线 + 心力栏 */
+  .stage.play .tear{animation:tearIn .46s cubic-bezier(.6,0,1,.4) 4.05s both;}
+  .stage.play .tear-line{stroke-dasharray:1180;stroke-dashoffset:1180;
+    animation:drawTear .40s cubic-bezier(.55,0,1,.45) 4.05s both;}
+  .stage.play .heart-strip{animation:stripUp .60s cubic-bezier(.2,.8,.2,1) 4.60s both;}
+
+  /* 04 · 5.6–9.0s 价签累计堆叠 */
+  .stage.play .card:nth-child(1){animation:cardStack .50s cubic-bezier(.2,.8,.2,1) 5.70s both;}
+  .stage.play .card:nth-child(2){animation:cardStack .50s cubic-bezier(.2,.8,.2,1) 6.20s both;}
+  .stage.play .card:nth-child(3){animation:cardStack .50s cubic-bezier(.2,.8,.2,1) 6.70s both;}
+  .stage.play .card:nth-child(4){animation:cardStack .50s cubic-bezier(.2,.8,.2,1) 7.20s both;}
+  .stage.play .card:nth-child(5){animation:cardStack .50s cubic-bezier(.2,.8,.2,1) 7.70s both;}
+  .stage.play .card:nth-child(6){animation:cardStack .50s cubic-bezier(.2,.8,.2,1) 8.20s both;}
+
+  /* 05 · 9.0–11.0s 定格 · 遮罩 · 主签推近 */
+  .stage.play .overlay{animation:fadeIn .70s ease-out 9.10s both;}
+  .stage.play .stage-scale{animation:pushIn 1.30s cubic-bezier(.4,0,.2,1) 9.30s both;}
+
+  /* 06 · 11.0–15.0s 口号浮现 */
+  .stage.play #sloganChars text{animation:sloganChar .40s cubic-bezier(.2,.8,.2,1) both;}
+  .stage.play #sloganChars text:nth-child(1){animation-delay:11.05s;}
+  .stage.play #sloganChars text:nth-child(2){animation-delay:11.13s;}
+  .stage.play #sloganChars text:nth-child(3){animation-delay:11.21s;}
+  .stage.play #sloganChars text:nth-child(4){animation-delay:11.29s;}
+  .stage.play #sloganChars text:nth-child(5){animation-delay:11.37s;}
+  .stage.play #sloganChars text:nth-child(6){animation-delay:11.45s;}
+  .stage.play #sloganChars text:nth-child(7){animation-delay:11.53s;}
+  .stage.play #sloganChars text:nth-child(8){animation-delay:11.61s;}
+  .stage.play #sloganChars text:nth-child(9){animation-delay:11.69s;}
+  .stage.play #strikeLine{animation:fadeIn .30s ease-out 12.45s both;}
+  .stage #hlBox{transform-box:fill-box;transform-origin:0% 50%;}
+  .stage.play #hlBox{animation:hlIn .32s cubic-bezier(.2,.8,.2,1) 12.70s both;}
+  .stage.play #sloganChars text.hl{animation:hlCharIn .34s cubic-bezier(.2,.8,.2,1) 12.88s both;}
+  .stage.play .endcard{animation:fadeIn .50s ease-out 13.20s both;}
+
+  @keyframes gridIn{from{opacity:0;}to{opacity:.20;}}
+  @keyframes tagDrop{
+    0%{opacity:0;transform:translateY(-210px) rotate(-6deg) scale(1.10);}
+    58%{opacity:1;transform:translateY(16px) rotate(-0.6deg) scale(.988);}
+    100%{opacity:1;transform:translateY(0) rotate(-2deg) scale(1);}
+  }
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+  @keyframes drawTear{to{stroke-dashoffset:0;}}
+  @keyframes stripUp{
+    0%{opacity:0;transform:translateY(58px);}
+    100%{opacity:1;transform:translateY(0);}
+  }
+  @keyframes cardStack{
+    0%{opacity:0;transform:translate(-52px,30px) rotate(-10deg) scale(.86);}
+    100%{opacity:1;transform:translate(0,0) rotate(0deg) scale(1);}
+  }
+  @keyframes pushIn{
+    0%{transform:scale(1) translate(0,0);}
+    100%{transform:scale(1.42) translate(-2px,26px);}
+  }
+  @keyframes sloganUp{
+    0%{opacity:0;letter-spacing:.30em;transform:translateY(22px);}
+    100%{opacity:1;letter-spacing:.02em;transform:translateY(0);}
+  }
+  @keyframes hlCharIn{
+    0%{opacity:0;transform:translateY(10px);}
+    100%{opacity:1;transform:translateY(0);}
+  }
+  @keyframes sloganChar{
+    0%{opacity:0;transform:translateY(20px);}
+    100%{opacity:1;transform:translateY(0);}
+  }
+  @keyframes hlIn{
+    0%{opacity:0;transform:scaleX(0);}
+    100%{opacity:1;transform:scaleX(1);}
+  }
+
+  .ctl{display:flex;align-items:center;gap:18px;margin-top:20px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--yellow);
+    border:none;font-family:inherit;font-size:13.5px;letter-spacing:.14em;font-weight:700;
+    padding:13px 30px;border-radius:999px;cursor:pointer;transition:all .25s;}
+  .btn:hover{background:var(--yellow);color:var(--ink);}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink);}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper);}
+  .tc{font-family:"Arial",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--gray);}
+  .tc b{color:var(--ink);font-weight:900;}
+
+  /* ===== 时间轴 ===== */
+  .timeline{margin-top:34px;border-top:2px solid var(--ink);}
+  .tl{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);}
+  .tl .t{font-family:"Arial",sans-serif;font-size:13px;font-weight:900;color:var(--ink);letter-spacing:.04em;}
+  .tl .t i{display:block;font-style:normal;font-size:10.5px;color:var(--gray);letter-spacing:.16em;margin-top:3px;font-weight:400;}
+  .tl .d{font-size:14.5px;color:var(--dgray);}
+  .tl .d b{color:var(--ink);font-weight:900;}
+  .tl .d .sf{display:block;margin-top:5px;font-size:12.5px;color:var(--gray);}
+
+  table.spec{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px;}
+  table.spec th,table.spec td{border:1px solid var(--line);padding:12px 15px;text-align:left;}
+  table.spec th{background:var(--ink);color:var(--paper);font-size:11.5px;letter-spacing:.18em;font-weight:700;}
+  table.spec td:first-child{font-weight:900;white-space:nowrap;}
+  table.spec td{color:var(--dgray);}
+  code{font-family:"Consolas",monospace;font-size:12.5px;background:#EDEAE2;padding:2px 6px;}
+
+  footer{border-top:1px solid var(--line);padding:48px;text-align:center;font-size:12px;
+    color:var(--gray);letter-spacing:.14em;}
+  footer .b{display:block;margin-bottom:12px;font-size:17px;letter-spacing:.3em;color:var(--ink);font-weight:900;}
+  footer a{color:var(--gray);text-decoration:none;border-bottom:1px solid var(--line);}
+
+  @media(max-width:900px){
+    nav{padding:13px 20px;} .nav-links{display:none;}
+    header.hero{padding:116px 20px 56px;}
+    section{padding:58px 20px;}
+    .tl{grid-template-columns:78px 1fr;gap:14px;}
+  }
+  @media print{
+    @page{size:A4;margin:11mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    nav{display:none !important;}
+    header.hero{padding:20px 0 20px !important;}
+    section{padding:18px 0 !important;}
+    .ctl{display:none !important;}
+    .player,.tl,table.spec{break-inside:avoid;}
+    .sec-title{break-after:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="back" href="ad.html">← 返回项目 04</a>
+  <div class="brand">心力价签<span>THE COST OF HEART</span></div>
+  <div class="nav-links">
+    <a href="#film">动画</a>
+    <a href="#timeline">时间轴</a>
+    <a href="#spec">技术规范</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">PROJECT 04 · 动态执行 / MOTION</div>
+    <h1 class="hero-title">15 秒动态演绎</h1>
+    <div class="hero-en">DOUBLE PRICE TAG / ANIMATIC</div>
+    <p class="hero-sub">把「心力价签」的核心创意做成一支可播放的片子：一张价签落下，被撕裂，露出心力那一栏；接着第二张、第三张……堆到第七张时停住——那一刻的安静，就是整支片子要说的话。</p>
+    <div class="hero-meta">
+      <span>纯排版动画</span>
+      <span>SVG + CSS + JS</span>
+      <span>15.0 秒</span>
+      <span>1920 × 1080</span>
+      <span>可录屏导出</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 动画 ============ -->
+<section id="film">
+  <div class="sec-label">01 / THE FILM</div>
+  <h2 class="sec-title">动画本体</h2>
+
+  <div class="prose" style="margin-bottom:26px;">
+    <p>这支片子<strong>不含任何实拍与 AIGC 生成画面</strong>——主体就是价签、数字、撕裂线和大字文案，也就是这个战役的视觉系统本身。对一支平面设计驱动的概念片来说，这是最诚实的做法：<strong>它证明的是版式与节奏的控制力，而不是画面生成能力。</strong></p>
+  </div>
+
+  <div class="player">
+    <svg id="stage" class="stage" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="心力价签十五秒动态演绎">
+      <defs>
+        <text id="ruler" font-size="112" font-weight="900" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif">息</text>
+        <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#000" flood-opacity="0.5"/>
+        </filter>
+      </defs>
+
+      <rect width="1920" height="1080" fill="#0A0A0A"/>
+
+      <g class="stage-scale" style="transform-origin:960px 540px;">
+
+        <!-- 细网格 -->
+        <g class="grid" stroke="#F5F3EE" stroke-width="1.5">
+          <line x1="240" y1="0" x2="240" y2="1080"/>
+          <line x1="480" y1="0" x2="480" y2="1080"/>
+          <line x1="720" y1="0" x2="720" y2="1080"/>
+          <line x1="1200" y1="0" x2="1200" y2="1080"/>
+          <line x1="1440" y1="0" x2="1440" y2="1080"/>
+          <line x1="1680" y1="0" x2="1680" y2="1080"/>
+          <line x1="0" y1="270" x2="1920" y2="270"/>
+          <line x1="0" y1="810" x2="1920" y2="810"/>
+        </g>
+
+        <!-- 累计堆叠的价签（6 张，主签之外）
+             注意：外层 g 负责定位，内层 g 负责动画——
+             因为 CSS transform 会覆盖 SVG transform 属性，不能写在同一个元素上 -->
+        <g class="cards" filter="url(#soft)">
+          <g transform="translate(286,688)"><g class="card" style="transform-origin:63px 82px;transform:rotate(-11deg)"><rect width="126" height="164" fill="#1A1A1A" stroke="#4A4A48" stroke-width="1.5"/></g></g>
+          <g transform="translate(424,646)"><g class="card" style="transform-origin:63px 82px;transform:rotate(7deg)"><rect width="126" height="164" fill="#1A1A1A" stroke="#4A4A48" stroke-width="1.5"/></g></g>
+          <g transform="translate(556,706)"><g class="card" style="transform-origin:63px 82px;transform:rotate(-6deg)"><rect width="126" height="164" fill="#1A1A1A" stroke="#4A4A48" stroke-width="1.5"/></g></g>
+          <g transform="translate(1218,664)"><g class="card" style="transform-origin:63px 82px;transform:rotate(12deg)"><rect width="126" height="164" fill="#1A1A1A" stroke="#4A4A48" stroke-width="1.5"/></g></g>
+          <g transform="translate(1356,714)"><g class="card" style="transform-origin:63px 82px;transform:rotate(-8deg)"><rect width="126" height="164" fill="#1A1A1A" stroke="#4A4A48" stroke-width="1.5"/></g></g>
+          <g transform="translate(1486,656)"><g class="card" style="transform-origin:63px 82px;transform:rotate(5deg)"><rect width="126" height="164" fill="#1A1A1A" stroke="#4A4A48" stroke-width="1.5"/></g></g>
+        </g>
+
+        <!-- 主价签 -->
+        <g filter="url(#soft)" transform="translate(660,190)"><g class="tag-main" style="transform-origin:300px 390px;">
+          <rect x="0" y="0" width="600" height="780" fill="#F2E600"/>
+
+          <!-- 吊牌孔 -->
+          <circle cx="300" cy="52" r="17" fill="#0A0A0A"/>
+          <circle cx="300" cy="52" r="11" fill="#F2E600"/>
+
+          <!-- 商品名 -->
+          <text x="46" y="132" fill="#0A0A0A" font-size="64" font-weight="900"
+                font-family="'Noto Sans SC','Microsoft YaHei',sans-serif">咖啡</text>
+          <text x="46" y="176" fill="#0A0A0A" font-size="23" font-weight="700" letter-spacing="4"
+                font-family="Arial,sans-serif">COFFEE</text>
+
+          <!-- 条码 -->
+          <g fill="#0A0A0A" transform="translate(410,118)">
+            <rect x="0" y="0" width="6" height="46"/><rect x="10" y="0" width="3" height="46"/>
+            <rect x="18" y="0" width="8" height="46"/><rect x="30" y="0" width="4" height="46"/>
+            <rect x="38" y="0" width="7" height="46"/><rect x="49" y="0" width="3" height="46"/>
+            <rect x="57" y="0" width="9" height="46"/><rect x="70" y="0" width="4" height="46"/>
+            <rect x="79" y="0" width="6" height="46"/><rect x="89" y="0" width="8" height="46"/>
+            <rect x="101" y="0" width="3" height="46"/><rect x="109" y="0" width="7" height="46"/>
+            <rect x="120" y="0" width="5" height="46"/><rect x="129" y="0" width="8" height="46"/>
+            <rect x="141" y="0" width="3" height="46"/>
+          </g>
+
+          <!-- 分隔线 -->
+          <line x1="46" y1="228" x2="554" y2="228" stroke="#0A0A0A" stroke-width="5"/>
+
+          <!-- 巨大价格 -->
+          <text x="38" y="440" fill="#0A0A0A" font-size="250" font-weight="900"
+                font-family="'Arial Black',Arial,sans-serif">19</text>
+          <text x="330" y="368" fill="#0A0A0A" font-size="46" font-weight="400"
+                font-family="'Noto Sans SC',sans-serif">/ 杯</text>
+          <text x="336" y="448" fill="#8C8C86" font-size="50"
+                font-family="Arial,sans-serif">¥ 32</text>
+          <line x1="330" y1="458" x2="440" y2="458" stroke="#FF3B22" stroke-width="7"/>
+
+          <!-- 心力栏 -->
+          <g class="heart-strip">
+            <rect x="46" y="600" width="508" height="134" fill="#0A0A0A"/>
+            <text x="76" y="648" fill="#8C8C86" font-size="26" font-family="'Noto Sans SC',sans-serif">心 力</text>
+            <text x="176" y="647" fill="#6E6E68" font-size="21" letter-spacing="2" font-family="Arial,sans-serif">HEART COST</text>
+            <text x="76" y="704" fill="#F2E600" font-size="50" font-weight="900"
+                  font-family="'Noto Sans SC',sans-serif">今天第 4 个决定</text>
+          </g>
+        </g></g>
+
+        <!-- 撕裂线 -->
+        <g class="tear">
+          <polyline class="tear-line" points="300,470 520,432 700,486 900,438 1120,494 1340,446 1580,498 1760,458"
+                    fill="none" stroke="#FF3B22" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+        </g>
+
+        <!-- 计数器 -->
+        <g class="counter">
+          <text x="96" y="1010" fill="#4A4A48" font-size="26" letter-spacing="6"
+                font-family="Arial,sans-serif">TAGS RIPPED</text>
+          <text x="384" y="1022" fill="#F5F3EE" font-size="58" font-weight="900"
+                font-family="'Arial Black',Arial,sans-serif" id="cnt">0</text>
+          <rect class="cnt-bar" x="96" y="1042" width="0" height="7" fill="#F2E600"/>
+        </g>
+
+      </g><!-- /stage-scale -->
+
+      <!-- 定格遮罩 -->
+      <g class="overlay">
+        <rect width="1920" height="1080" fill="#0A0A0A" opacity="0.76"/>
+      </g>
+
+      <!-- 口号：逐字定位，避免依赖字体度量导致划线与高亮错位 -->
+      <g class="slogan">
+        <!-- 黄块必须画在字下面，否则会盖住「价格」 -->
+        <rect id="hlBox" fill="#F2E600" opacity="0"/>
+        <g id="sloganChars" fill="#F5F3EE" font-size="112" font-weight="900"
+           font-family="'Noto Sans SC','Microsoft YaHei',sans-serif"></g>
+
+        <line id="strikeLine" stroke="#FF3B22" stroke-width="12" stroke-linecap="round" opacity="0"/>
+      </g>
+      <!-- 结尾条 -->
+      <g class="endcard">
+        <rect x="0" y="980" width="1920" height="4" fill="#F2E600"/>
+        <text x="96" y="1036" fill="#8C8C86" font-size="24" letter-spacing="5"
+              font-family="Arial,sans-serif">THE COST OF HEART</text>
+        <text x="1824" y="1036" text-anchor="end" fill="#8C8C86" font-size="24" letter-spacing="4"
+              font-family="'Noto Sans SC',sans-serif">吕森垚 · 2027</text>
+      </g>
+
+    </svg>
+  </div>
+
+  <div class="ctl">
+    <button class="btn" id="playBtn">▶ 播放 15 秒</button>
+    <button class="btn ghost" id="replayBtn">↺ 重播</button>
+    <span class="tc">时间码 <b id="tc">00.0</b> / 15.0 s</span>
+  </div>
+
+  <div class="prose" style="margin-top:26px;">
+    <p><strong>怎么看</strong>　点「播放」即可。整支片子在网页里实时渲染，没有视频文件——所以你随时可以录屏导出成 MP4 交给任何人，也可以直接把这个链接发出去。</p>
+  </div>
+</section>
+
+<!-- ============ 时间轴 ============ -->
+<section id="timeline" style="background:#EDEAE2;max-width:none;padding:80px 48px;">
+  <div style="max-width:1120px;margin:0 auto;">
+    <div class="sec-label">02 / TIMELINE</div>
+    <h2 class="sec-title">15 秒逐帧时间轴</h2>
+
+    <div class="timeline">
+      <div class="tl">
+        <div class="t">0.0 – 1.1s<i>SETUP</i></div>
+        <div class="d"><b>八条细网格线依次画出</b>，黑场建立秩序。
+          <span class="sf">节奏：0.06s 间隔，线性淡入至 20% 透明度，克制、不动声色。</span></div>
+      </div>
+      <div class="tl">
+        <div class="t">1.1 – 4.0s<i>THE TAG</i></div>
+        <div class="d"><b>主价签从画面上方落入</b>，带轻微过冲与 −2° 倾斜，最后停住。商品名、条码、巨大价格依次可见。
+          <span class="sf">缓动 cubic-bezier(.2,.8,.2,1)：先快后慢，像被"放"下来而不是"掉"下来。</span></div>
+      </div>
+      <div class="tl">
+        <div class="t">4.0 – 5.6s<i>THE TEAR</i></div>
+        <div class="d"><b>一道朱红撕裂线横穿画面</b>，自左向右 0.40s 划开；紧接着黑色心力栏从下方推入，露出「今天第 4 个决定」。
+          <span class="sf">这是全片的转折点——价格的下面，藏着第二栏。</span></div>
+      </div>
+      <div class="tl">
+        <div class="t">5.6 – 9.0s<i>ACCUMULATION</i></div>
+        <div class="d"><b>六张空价签依次堆叠</b>，从左右两侧打着不同角度飞入，左右各三张，凑满第七张。底部计数器同步从 0 跳到 6。
+          <span class="sf">节奏：每张间隔 0.5s，逐渐累积压迫感。计数器是"决定"的具象化。</span></div>
+      </div>
+      <div class="tl">
+        <div class="t">9.0 – 11.0s<i>FREEZE</i></div>
+        <div class="d"><b>戛然而止。</b>画面压暗 76%，同时主价签缓慢推近（1.0 → 1.42 倍）。
+          <span class="sf">全片唯一的静止——撕了七张之后，停住不动。停顿就是内容。</span></div>
+      </div>
+      <div class="tl">
+        <div class="t">11.0 – 15.0s<i>RESOLVE</i></div>
+        <div class="d"><b>口号浮现</b>，字距从 0.30em 收到 0.02em；随后一道朱红划线划掉「价格」，黄块压上「心力」。13.2s 起底部信息条淡入收尾。
+          <span class="sf">视觉语法与平面海报完全一致：红线划掉的，正是那句 slogan 自己。</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 技术规范 ============ -->
+<section id="spec">
+  <div class="sec-label">03 / SPEC</div>
+  <h2 class="sec-title">技术规范</h2>
+
+  <table class="spec">
+    <tr><th>项目</th><th>规格</th></tr>
+    <tr><td>时长</td><td>15.0 秒（实测播放至 15.0s 结束）</td></tr>
+    <tr><td>画幅</td><td>1920 × 1080（16:9），SVG 矢量，任意分辨率无损放大</td></tr>
+    <tr><td>实现</td><td>纯 SVG + CSS 动画 + 原生 JS，<strong>无第三方库、无视频文件</strong></td></tr>
+    <tr><td>主缓动</td><td><code>cubic-bezier(.2,.8,.2,1)</code>　先快后慢，用于所有入场</td></tr>
+    <tr><td>撕裂缓动</td><td><code>cubic-bezier(.55,0,1,.45)</code>　加速划开，模拟撕裂的不可逆</td></tr>
+    <tr><td>推近缓动</td><td><code>cubic-bezier(.4,0,.2,1)</code>　长缓动，用于定格后的镜头推近</td></tr>
+    <tr><td>色彩</td><td>签黄 <code>#F2E600</code> / 纯黑 <code>#0A0A0A</code> / 纸白 <code>#F5F3EE</code> / 警示红 <code>#FF3B22</code></td></tr>
+    <tr><td>字体</td><td>中文 Noto Sans SC Black；数字 Arial Black；标签 Arial Bold</td></tr>
+    <tr><td>导出</td><td>浏览器全屏播放后录屏，或用 <code>--screenshot</code> 逐帧导出后合成</td></tr>
+  </table>
+
+  <div class="rule"></div>
+
+  <div class="prose">
+    <p><strong>为什么不做实拍。</strong>这个创意的主体是价签、数字和大字文案——也就是平面系统本身。实拍会把注意力引向道具和手部细节，反而削弱「第二种价签」这个核心机关。用纯排版动画，观众看到的每一帧都是这套视觉系统在工作。</p>
+    <p>这也是真实广告流程里的 <strong>animatic（动态分镜）</strong>：先用动画把节奏和剪辑定下来，再决定要不要实拍。<strong>这支片子的时间轴可以直接当作实拍剪辑的参照。</strong></p>
+  </div>
+</section>
+
+<footer>
+  <span class="b">心力价签 · 15 秒动态演绎</span>
+  THE COST OF HEART &nbsp;·&nbsp; PROJECT 04 动态执行<br><br>
+  吕森垚 · 2027 届 · 山西传媒学院 &nbsp;|&nbsp; <a href="ad.html">返回项目 04</a>
+</footer>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var playBtn = document.getElementById('playBtn');
+  var replayBtn = document.getElementById('replayBtn');
+  var tcEl = document.getElementById('tc');
+  var cntEl = document.getElementById('cnt');
+  var bar = stage.querySelector('.cnt-bar');
+
+  var DUR = 15000;
+  var cntRaf = null, tcRaf = null, endTimer = null;
+  var running = false;
+
+  // 计数器：每次抽卡是 0.50s
+  var CARD_T0 = 5700, CARD_STEP = 500;
+  // 进度条：随堆叠同步，压满 520px
+  var BAR_W = 520;
+
+  function ease(p) { return 1 - Math.pow(1 - p, 2); }
+
+  function startCounters() {
+    var t0 = performance.now();
+    cancelAnimationFrame(cntRaf);
+    function tick(now) {
+      var t = now - t0;
+
+      // 计数器
+      var v = Math.floor((t - CARD_T0) / CARD_STEP) + 1;
+      if (t < CARD_T0) v = 0;
+      if (v > 6) v = 6;
+      if (t > 8600) v = 6;
+      if (cntEl.textContent !== String(v)) cntEl.textContent = String(v);
+
+      // 进度条
+      var bp = (t - CARD_T0) / (CARD_STEP * 6);
+      if (bp < 0) bp = 0;
+      if (bp > 1) bp = 1;
+      bar.setAttribute('width', String(Math.round(ease(bp) * BAR_W)));
+
+      // 时间码
+      var sec = t / 1000;
+      if (sec > 15) sec = 15;
+      tcEl.textContent = (sec < 10 ? '0' : '') + sec.toFixed(1);
+
+      if (t < DUR + 300) { cntRaf = requestAnimationFrame(tick); }
+    }
+    cntRaf = requestAnimationFrame(tick);
+  }
+
+
+  // ===== 口号逐字定位：所有坐标由字体度量算出，不写死 =====
+  var SLOGAN = '最贵的不是价格，是心力。';
+  var HL_FROM = 9;           // 从第 10 个字（心）开始高亮
+  var FS = 112, TRACK = 4;
+
+  function layoutSlogan() {
+    var g = document.getElementById('sloganChars');
+    if (!g) return;
+
+    var fs = FS;
+    var baseline = 520 + fs * 0.36;
+    var widths = [], total = 0, i;
+
+    // 首选 canvas measureText：无布局依赖，最稳
+    var cv = document.createElement('canvas');
+    var cx2 = cv.getContext ? cv.getContext('2d') : null;
+    var CJK = /[\u3000-\u303F\u4E00-\u9FFF\uFF00-\uFFEF]/;
+
+    if (cx2) {
+      cx2.font = '900 ' + fs + 'px "Noto Sans SC","Microsoft YaHei",sans-serif';
+      for (i = 0; i < SLOGAN.length; i++) {
+        var ch = SLOGAN.charAt(i);
+        var w = cx2.measureText(ch).width;
+        if (CJK.test(ch)) { w = fs + TRACK; }   // 中日韩标点/汉字统一全角，避免标点被算窄
+        widths.push(w);
+        total += w + TRACK;
+      }
+    } else {
+      var ruler = document.getElementById('ruler');
+      for (i = 0; i < SLOGAN.length; i++) {
+        ruler.textContent = SLOGAN.charAt(i);
+        var w2 = ruler.getComputedTextLength ? ruler.getComputedTextLength() : fs;
+        if (CJK.test(SLOGAN.charAt(i))) { w2 = fs + TRACK; }
+        widths.push(w2);
+        total += w2 + TRACK;
+      }
+    }
+    total -= TRACK;
+
+    var x0 = 960 - total / 2;
+
+    // 逐字生成
+    while (g.firstChild) { g.removeChild(g.firstChild); }
+    var cx = x0;
+    for (i = 0; i < SLOGAN.length; i++) {
+      var t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      t.setAttribute('x', cx.toFixed(1));
+      t.setAttribute('y', baseline.toFixed(1));
+      t.textContent = SLOGAN.charAt(i);
+      g.appendChild(t);
+      cx += widths[i] + TRACK;
+    }
+
+    // 高亮块：黄色矩形画在「心力」两字下方，字本身改深色
+    // 不复制文字——复制的字永远对不齐，这是唯一稳的做法
+    var hlStartX = x0;
+    for (i = 0; i < HL_FROM; i++) { hlStartX += widths[i] + TRACK; }
+    var hlW = widths[HL_FROM] + TRACK + widths[HL_FROM + 1] - TRACK;
+    var padX = 22, padY = 14;
+
+    var box = document.getElementById('hlBox');
+    var boxY = baseline - fs * 0.86 - padY + 22;
+    box.setAttribute('x', (hlStartX - padX).toFixed(1));
+    box.setAttribute('y', boxY.toFixed(1));
+    box.setAttribute('width', (hlW + padX * 2).toFixed(1));
+    box.setAttribute('height', (fs * 1.10 + padY * 2).toFixed(1));
+
+    // 给「心」「力」标 class 并改为深色
+    var chars = g.querySelectorAll('text');
+    for (i = HL_FROM; i <= HL_FROM + 1 && i < chars.length; i++) {
+      chars[i].setAttribute('class', 'hl');
+      chars[i].setAttribute('fill', '#0A0A0A');
+    }
+
+
+    // 划线：划掉「价格」两字并向右延伸
+    var prX = x0;
+    for (i = 0; i < 6; i++) { prX += widths[i] + TRACK; }
+    var strikeEnd = prX + widths[6] + TRACK + widths[7] - TRACK + 30;
+    var sl = document.getElementById('strikeLine');
+    sl.setAttribute('x1', (prX - 8).toFixed(1));
+    sl.setAttribute('y1', (baseline - fs * 0.14).toFixed(1));
+    sl.setAttribute('x2', strikeEnd.toFixed(1));
+    sl.setAttribute('y2', (baseline - fs * 0.14).toFixed(1));
+  }
+  function run() {
+    clearTimeout(endTimer);
+    cancelAnimationFrame(cntRaf);
+    running = true;
+
+    // 重置
+    layoutSlogan();
+    stage.classList.remove('play');
+    void stage.offsetWidth;
+
+    cntEl.textContent = '0';
+    bar.setAttribute('width', '0');
+    tcEl.textContent = '00.0';
+
+    // 清掉逐字定位时写下的内联 opacity，交还给 CSS 动画
+    var il = stage.querySelectorAll('#sloganChars text, #strikeLine, #hlBox');
+    for (var q = 0; q < il.length; q++) { il[q].style.opacity = ''; }
+
+    // 强制重排后再加 play，确保动画从头开始
+    requestAnimationFrame(function () {
+      stage.classList.add('play');
+      startCounters();
+    });
+
+    endTimer = setTimeout(function () {
+      running = false;
+      playBtn.textContent = '▶ 再播一次';
+      cancelAnimationFrame(cntRaf);
+      tcEl.textContent = '15.0';
+    }, DUR);
+  }
+
+  // 首屏即完成口号逐字定位（此后 seek / 录屏都能正确取到元素）
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', layoutSlogan);
+  } else {
+    layoutSlogan();
+  }
+  window.addEventListener('resize', layoutSlogan);
+
+  playBtn.addEventListener('click', run);
+  replayBtn.addEventListener('click', run);
+
+  // 滚入视口自动播放一次
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && !running) { io.disconnect(); run(); }
+      });
+    }, { threshold: 0.35 });
+    io.observe(stage);
+  }
+})();
+</script>
+
+</body>
+</html>

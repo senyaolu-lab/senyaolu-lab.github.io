@@ -123,6 +123,26 @@
   .shot .ds{font-size:13.5px;color:var(--dgray);line-height:1.65;}
   .shot .sd{margin-top:9px;font-size:11.5px;color:var(--gray);letter-spacing:.06em;}
 
+  /* 影片入口 */
+  .film-link{display:block;text-decoration:none;color:inherit;}
+  .film-thumb{
+    position:relative;border:1px solid var(--line);background:var(--ink);
+    padding:56px 34px;display:flex;align-items:center;gap:26px;
+    transition:border-color .3s,transform .4s cubic-bezier(.2,.8,.2,1);
+  }
+  .film-link:hover .film-thumb{border-color:var(--yellow);transform:translateY(-3px);}
+  .film-k{
+    flex:0 0 auto;width:64px;height:64px;border-radius:50%;background:var(--yellow);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;font-size:22px;padding-left:5px;
+  }
+  .film-tx b{display:block;font-size:clamp(18px,2.4vw,26px);font-weight:900;color:var(--paper);letter-spacing:.02em;}
+  .film-tx span{display:block;margin-top:8px;font-size:12.5px;color:var(--gray);letter-spacing:.08em;}
+  .film-note{
+    margin-top:26px;border-left:4px solid var(--yellow);background:#EDEAE2;padding:20px 24px;
+  }
+  .film-note b{display:block;font-size:13px;letter-spacing:.16em;margin-bottom:8px;}
+  .film-note span{font-size:13.5px;color:var(--dgray);line-height:1.8;}
+
   /* 排期 */
   .sched{width:100%;border-collapse:collapse;font-size:14px;}
   .sched th,.sched td{border:1px solid var(--line);padding:13px 16px;text-align:left;}
@@ -160,7 +180,7 @@
     header.hero{padding:22px 0 0 !important;}
     section,section.dark{padding:20px 0 !important;}
     .hero-rule{display:none;}
-    figure,table,.posters figure,.social figure,.shot,.chain .st,.flipwrap{break-inside:avoid;}
+    figure,table,.posters figure,.social figure,.shot,.chain .st,.flipwrap,.film-thumb,.film-note{break-inside:avoid;}
     .sec-title{break-after:avoid;}
     .flip{cursor:default;}
   }
@@ -177,6 +197,7 @@
     <a href="#visual">视觉系统</a>
     <a href="#posters">系列海报</a>
     <a href="#ooh">互动装置</a>
+    <a href="#film">影片</a>
   </div>
 </nav>
 
@@ -365,23 +386,34 @@
 
 <!-- ============ 07 影视脚本 ============ -->
 <section id="film">
-  <div class="sec-label">07 / FILM SCRIPT</div>
-  <h2 class="sec-title">15 秒影片脚本</h2>
+  <div class="sec-label">07 / FILM</div>
+  <h2 class="sec-title">15 秒影片</h2>
 
-  <div class="prose" style="margin-bottom:30px;">
-    <p>全片只有一个人、一个动作：<strong>撕价签</strong>。撕下的每一张，背面都是一句心力账。当撕到第七张时手停住——那一刻的停顿，就是整个战役想说的话。</p>
+  <div class="prose" style="margin-bottom:28px;">
+    <p>这支片子<strong>没有实拍、也没有 AIGC 生成画面</strong>——主体就是价签、数字、撕裂线和大字文案，也就是这个战役的视觉系统本身。一张价签落下、被撕裂、露出心力那一栏；接着第二张、第三张……堆到第七张时停住。</p>
+    <p>用纯排版动画来做，是因为这个创意的主体本来就是平面系统。<strong>它证明的是版式与节奏的控制力</strong>——而那正是广告动态执行真正要考的东西。</p>
   </div>
 
-  <div class="board">
-    <div class="shot"><div class="box"><b>01</b></div><div class="tx"><div class="no">SHOT 01 · 2s</div><div class="ds">手伸向货架，拿起一件商品。镜头持平，景别中景。</div><div class="sd">音效：超市环境底噪</div></div></div>
-    <div class="shot"><div class="box"><b>02</b></div><div class="tx"><div class="no">SHOT 02 · 2s</div><div class="ds">特写：手指捏住价签边缘，缓缓撕下。</div><div class="sd">音效：撕纸声（清晰、放大）</div></div></div>
-    <div class="shot"><div class="box"><b>03</b></div><div class="tx"><div class="no">SHOT 03 · 2s</div><div class="ds">价签背面入画，手写体一行字：「今天第 4 个决定」。</div><div class="sd">音效：静音</div></div></div>
-    <div class="shot"><div class="box"><b>04</b></div><div class="tx"><div class="no">SHOT 04 · 3s</div><div class="ds">快速剪辑：撕下、撕下、撕下……共七次，节奏逐渐加快。</div><div class="sd">音效：撕纸声密集叠加</div></div></div>
-    <div class="shot"><div class="box"><b>05</b></div><div class="tx"><div class="no">SHOT 05 · 3s</div><div class="ds">手停住，悬在半空。桌上堆着七张价签。</div><div class="sd">音效：全部静止，只留一点空气声</div></div></div>
-    <div class="shot"><div class="box"><b>06</b></div><div class="tx"><div class="no">SHOT 06 · 3s</div><div class="ds">黑场。白字浮现。保持 2 秒后缓出。</div><div class="sd">字幕：最贵的不是价格，是心力。</div></div></div>
+  <a class="film-link" href="film15.html">
+    <div class="film-thumb">
+      <span class="film-k">▶</span>
+      <div class="film-tx">
+        <b>播放 15 秒动态演绎</b>
+        <span>纯 SVG + CSS + JS · 网页内实时渲染 · 可录屏导出</span>
+      </div>
+    </div>
+  </a>
+
+  <div class="prose" style="margin-top:28px;">
+    <p><strong>节奏</strong>　0–1s 网格线画出 ｜ 1–4s 价签落入 ｜ 4–5.6s 撕裂＋心力栏推入 ｜ 5.6–9s 六张价签依次堆叠、计数器从 0 跳到 6 ｜ <strong>9–11s 完全静止</strong> ｜ 11–15s 口号浮现，朱红划线划掉「价格」，黄块压上「心力」。</p>
+    <p>全片唯一的停顿在 9 秒处——撕了七张之后停住不动。<em>那个停顿就是这支片子要说的话。</em></p>
+  </div>
+
+  <div class="film-note">
+    <b>配套拍摄脚本</b>
+    <span>如果你要真实撕纸的质感，动画版就是 animatic（动态分镜）——节奏、剪辑点、结尾字幕排版都已经定死，照它拍即可。完整拍摄方案（机位、灯光、收音、道具清单、导出规格）见提案文档《心力价签-15秒影片拍摄脚本》。</span>
   </div>
 </section>
-
 <!-- ============ 08 媒介排期 ============ -->
 <section id="plan" style="background:#EDEAE2;max-width:none;padding:88px 48px;">
   <div style="max-width:1120px;margin:0 auto;">
