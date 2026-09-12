@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>息壤 XIRANG · 原创游戏企划与宣传物料</title>
+<title>息壤 XIRANG · 游戏宣发 STORE ASSETS</title>
 <style>
   :root{
     --mist:#182A33; --jade:#5FD9C0; --gold:#E8B44A;
@@ -12,188 +12,166 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    font-family:"Noto Sans SC","Microsoft YaHei","PingFang SC",sans-serif;
-    background:var(--mist);color:var(--white);line-height:1.9;-webkit-font-smoothing:antialiased;
-  }
-  .serif{font-family:"Noto Serif SC","Songti SC",serif;}
+  body{font-family:"Noto Sans SC","Microsoft YaHei","PingFang SC",sans-serif;
+    background:var(--mist);color:var(--white);line-height:1.9;-webkit-font-smoothing:antialiased;}
   .lat{font-family:"Arial Black","Arial",sans-serif;letter-spacing:.16em;}
 
-  nav{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    display:flex;align-items:center;justify-content:space-between;padding:16px 48px;
-    background:rgba(24,42,51,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);
-  }
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;
+    justify-content:space-between;padding:16px 48px;background:rgba(24,42,51,.86);
+    backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
   nav .back{font-size:13px;color:var(--mid);text-decoration:none;}
   nav .back:hover{color:var(--jade);}
   .brand{font-size:17px;letter-spacing:.22em;font-weight:900;font-family:"Noto Serif SC",serif;}
   .brand span{font-family:"Arial Black",Arial,sans-serif;font-size:10px;letter-spacing:.2em;color:var(--jade);margin-left:10px;font-weight:400;}
-  .nav-links{display:flex;gap:22px;font-size:12.5px;}
+  .nav-links{display:flex;gap:20px;font-size:12.5px;}
   .nav-links a{text-decoration:none;color:var(--mid);}
   .nav-links a:hover{color:var(--jade);}
 
   /* ===== 首屏 ===== */
-  header.hero{
-    position:relative;padding:150px 48px 96px;overflow:hidden;
-    background:radial-gradient(circle at 50% 34%, #24444F 0%, #16262E 46%, #0E1A20 100%);
-  }
-  .hero-spore{position:absolute;inset:0;pointer-events:none;opacity:.55;}
+  header.hero{position:relative;padding:150px 48px 90px;overflow:hidden;
+    background:radial-gradient(circle at 50% 34%, #24444F 0%, #16262E 46%, #0E1A20 100%);}
+  .hero-spore{position:absolute;inset:0;pointer-events:none;opacity:.5;}
   .hero-inner{max-width:1120px;margin:0 auto;position:relative;z-index:2;}
-  .hero-label{font-size:11px;letter-spacing:.5em;color:var(--gold);margin-bottom:30px;}
-  .hero-logo{max-width:660px;width:80%;display:block;margin:0 auto;}
-  .hero-tag{margin-top:34px;text-align:center;font-family:"Noto Serif SC",serif;
-    font-size:clamp(19px,3vw,32px);letter-spacing:.10em;color:var(--white);}
-  .hero-sub{margin:26px auto 0;text-align:center;max-width:640px;font-size:15px;color:#A9BEBC;}
-  .hero-meta{margin-top:38px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-  .hero-meta span{font-size:11.5px;letter-spacing:.14em;border:1px solid var(--line);border-radius:999px;padding:7px 16px;color:#9FB4B3;}
-  .growline{margin-top:46px;height:3px;background:linear-gradient(90deg,transparent,var(--jade),var(--gold),var(--jade),transparent);opacity:.75;}
+  .hero-label{font-size:11px;letter-spacing:.5em;color:var(--gold);margin-bottom:28px;}
+  .hero-logo{max-width:620px;width:76%;display:block;margin:0 auto;}
+  .hero-tag{margin-top:32px;text-align:center;font-family:"Noto Serif SC",serif;
+    font-size:clamp(19px,3vw,32px);letter-spacing:.10em;}
+  .hero-sub{margin:24px auto 0;text-align:center;max-width:640px;font-size:15px;color:#A9BEBC;}
+  .hero-meta{margin-top:34px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .hero-meta span{font-size:11.5px;letter-spacing:.14em;border:1px solid var(--line);
+    border-radius:999px;padding:7px 16px;color:#9FB4B3;}
+  .hero-meta span.k{border-color:var(--gold);color:var(--gold);}
+  .growline{margin-top:42px;height:3px;
+    background:linear-gradient(90deg,transparent,var(--jade),var(--gold),var(--jade),transparent);opacity:.75;}
 
-  section{padding:86px 48px;max-width:1120px;margin:0 auto;}
-  section.alt{background:var(--deep);max-width:none;padding:86px 48px;}
+  section{padding:84px 48px;max-width:1120px;margin:0 auto;}
+  section.alt{background:var(--deep);max-width:none;padding:84px 48px;}
   section.alt .wrap{max-width:1120px;margin:0 auto;}
   .sec-label{font-size:10.5px;letter-spacing:.46em;color:var(--jade);margin-bottom:14px;}
-  .sec-title{font-family:"Noto Serif SC",serif;font-size:clamp(24px,3.4vw,38px);font-weight:900;letter-spacing:.05em;margin-bottom:30px;}
-  .prose{max-width:760px;font-size:15.5px;color:#A9BEBC;}
-  .prose p{margin-bottom:15px;}
+  .sec-title{font-family:"Noto Serif SC",serif;font-size:clamp(24px,3.4vw,38px);
+    font-weight:900;letter-spacing:.05em;margin-bottom:26px;}
+  .prose{max-width:780px;font-size:15.5px;color:#A9BEBC;}
+  .prose p{margin-bottom:14px;}
   .prose strong{color:var(--white);font-weight:900;}
   .prose em{font-style:normal;color:var(--gold);font-weight:900;}
-  .rule{height:1px;background:var(--line);margin:34px 0;}
-  .quote{
-    font-family:"Noto Serif SC",serif;font-size:clamp(19px,2.9vw,32px);line-height:1.6;
-    color:var(--white);margin:10px 0 26px;padding-left:26px;border-left:3px solid var(--jade);
-  }
+  .rule{height:1px;background:var(--line);margin:32px 0;}
+
+  .quote{font-family:"Noto Serif SC",serif;font-size:clamp(20px,3.2vw,38px);line-height:1.55;
+    margin:8px 0 24px;padding-left:24px;border-left:3px solid var(--jade);}
   .quote .hl{color:var(--gold);}
 
-  figure{margin:0 0 26px;}
+  figure{margin:0 0 24px;}
   figure img{width:100%;height:auto;display:block;border:1px solid var(--line);}
-  figcaption{margin-top:12px;font-size:12px;letter-spacing:.1em;color:var(--mid);display:flex;justify-content:space-between;gap:16px;}
+  figcaption{margin-top:11px;font-size:12px;letter-spacing:.1em;color:var(--mid);
+    display:flex;justify-content:space-between;gap:16px;}
 
   /* 占位位 */
-  .slot{
-    border:2px dashed rgba(95,217,192,.45);background:var(--panel);
+  .slot{border:2px dashed rgba(95,217,192,.45);background:var(--panel);
     display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:34px 20px;color:var(--mid);font-size:12.5px;line-height:1.9;
-  }
+    text-align:center;padding:26px 18px;color:var(--mid);font-size:12.5px;line-height:1.9;}
   .slot b{color:var(--jade);font-size:13px;letter-spacing:.14em;display:block;margin-bottom:8px;font-weight:700;}
-  .slot .dim{font-family:"Arial",sans-serif;letter-spacing:.1em;opacity:.8;}
+
+  /* 规格卡 */
+  .spec-head{background:rgba(30,51,60,.55);border:1px solid var(--line);padding:22px 24px;margin-bottom:30px;}
+  .spec-head h3{font-family:"Noto Serif SC",serif;font-size:19px;font-weight:900;letter-spacing:.06em;margin-bottom:10px;}
+  .spec-head p{font-size:13.5px;color:#9FB4B3;line-height:1.85;}
+  .spec-head strong{color:var(--jade);}
+
+  /* 物料网格 */
+  .assets{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;align-items:start;}
+  .asset{border:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;}
+  .asset .ratio{position:relative;width:100%;}
+  .asset .box{position:absolute;inset:0;background:#16262E;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:22px;color:var(--mid);font-size:12.5px;line-height:1.8;}
+  .asset .box b{display:block;color:var(--jade);font-size:13.5px;letter-spacing:.12em;margin-bottom:7px;font-weight:700;}
+  .asset .box .dim{font-family:"Arial",sans-serif;letter-spacing:.1em;opacity:.85;display:block;margin-top:4px;}
+  .asset .tx{padding:15px 18px 18px;border-top:1px solid var(--line);}
+  .asset .tx .nm{font-size:14px;font-weight:900;letter-spacing:.04em;margin-bottom:6px;}
+  .asset .tx .ds{font-size:12.5px;color:#8FA5A4;line-height:1.75;}
+  .asset .tx .ds em{font-style:normal;color:var(--gold);}
+  .asset.wide{grid-column:1 / -1;}
+  .a-1080{aspect-ratio:16/9;} .a-icon{aspect-ratio:1/1;max-width:280px;margin:0 auto;}
+  .a-sq{aspect-ratio:1/1;} .a-vert{aspect-ratio:9/16;}
+  .a-1256{aspect-ratio:1256/706;}
+
+  /* 安全区示意 */
+  .safe{position:absolute;border:2px dashed rgba(232,180,74,.65);pointer-events:none;}
+  .safe i{position:absolute;right:4px;bottom:3px;font-style:normal;font-size:10px;color:var(--gold);letter-spacing:.08em;}
 
   /* 角色 */
   .chars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .char .slot{aspect-ratio:3/4.4;padding:20px;}
-  .char .nm{margin-top:16px;display:flex;align-items:baseline;gap:12px;}
-  .char .nm h3{font-family:"Noto Serif SC",serif;font-size:27px;font-weight:900;letter-spacing:.06em;}
+  .char .box{aspect-ratio:3/4.4;width:100%;border:2px dashed rgba(95,217,192,.45);background:var(--panel);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    padding:22px 16px;color:var(--mid);font-size:12.5px;line-height:1.9;}
+  .char .box b{color:var(--jade);font-size:13px;letter-spacing:.14em;display:block;margin-bottom:8px;font-weight:700;}
+  .char .nm{margin-top:15px;display:flex;align-items:baseline;gap:11px;}
+  .char .nm h3{font-family:"Noto Serif SC",serif;font-size:26px;font-weight:900;letter-spacing:.06em;}
   .char .nm .en{font-family:"Arial Black",Arial,sans-serif;font-size:10px;letter-spacing:.2em;color:var(--jade);}
-  .char .ttl{margin-top:6px;font-size:12px;color:var(--gold);letter-spacing:.2em;}
-  .char .ds{margin-top:12px;font-size:13.5px;color:#9FB4B3;line-height:1.8;}
-  .char .sig{margin-top:12px;font-size:12.5px;color:var(--jade);border-left:2px solid var(--jade);padding-left:11px;line-height:1.7;}
-  .char .line{margin-top:12px;font-family:"Noto Serif SC",serif;font-size:14px;color:var(--white);}
-
-  /* 造物 */
-  .crea{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-
-  /* 玩法步骤 */
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-  .step{border:1px solid var(--line);padding:24px 20px;background:rgba(30,51,60,.5);}
-  .step .k{font-family:"Arial Black",Arial,sans-serif;font-size:10px;letter-spacing:.24em;color:var(--jade);}
-  .step .v{margin-top:10px;font-family:"Noto Serif SC",serif;font-size:20px;font-weight:900;}
-  .step .d{margin-top:9px;font-size:12.5px;color:#8FA5A4;line-height:1.75;}
-
-  /* 生长域表 */
-  table.dom{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px;}
-  table.dom th,table.dom td{border:1px solid var(--line);padding:13px 16px;text-align:left;vertical-align:top;}
-  table.dom th{background:rgba(95,217,192,.10);color:var(--jade);font-size:11.5px;letter-spacing:.16em;font-weight:700;}
-  table.dom td:first-child{font-family:"Noto Serif SC",serif;font-weight:900;color:var(--white);font-size:15px;white-space:nowrap;}
-  table.dom td{color:#9FB4B3;}
-
-  /* 色板 */
-  .swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:26px 0 10px;}
-  .sw{height:170px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;padding:14px;}
-  .sw .n{font-size:10.5px;letter-spacing:.2em;font-weight:700;}
-  .sw .h{font-family:"Arial",sans-serif;font-size:17px;font-weight:900;letter-spacing:.04em;}
-  .sw .pc{font-size:11px;opacity:.75;}
-
-  /* UI 模型 */
-  .uiwrap{display:grid;grid-template-columns:1fr 340px;gap:34px;align-items:start;}
-  .phone{
-    width:340px;border:10px solid #0A1216;border-radius:34px;background:linear-gradient(180deg,#16262E,#0E1A20);
-    padding:20px 18px 22px;box-shadow:0 30px 80px rgba(0,0,0,.6);position:relative;overflow:hidden;
-  }
-  .phone:before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:74px;height:5px;border-radius:99px;background:#22343C;}
-  .ph-top{margin-top:14px;display:flex;justify-content:space-between;align-items:center;}
-  .ph-top .t{font-family:"Noto Serif SC",serif;font-size:19px;font-weight:900;letter-spacing:.1em;}
-  .ph-top .c{font-size:10px;color:var(--gold);letter-spacing:.14em;}
-  .ph-hero{
-    margin-top:14px;aspect-ratio:4/3;border-radius:12px;border:1px dashed rgba(95,217,192,.45);
-    background:var(--panel);display:flex;align-items:center;justify-content:center;
-    font-size:10.5px;color:var(--mid);text-align:center;padding:10px;letter-spacing:.06em;
-  }
-  .ph-bar{margin-top:14px;}
-  .ph-bar .lb{display:flex;justify-content:space-between;font-size:11px;color:var(--mid);margin-bottom:6px;}
-  .track{height:8px;border-radius:99px;background:#22343C;overflow:hidden;}
-  .track i{display:block;height:100%;background:linear-gradient(90deg,var(--jade),var(--gold));width:62%;}
-  .ph-crea{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-  .ph-crea div{aspect-ratio:1;border-radius:9px;border:1px solid var(--line);background:var(--panel);
-    display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--mid);}
-  .ph-btn{
-    margin-top:18px;text-align:center;background:var(--gold);color:#1A1206;border-radius:99px;
-    padding:13px;font-weight:900;font-size:14.5px;letter-spacing:.12em;
-  }
-  .ph-note{margin-top:10px;text-align:center;font-size:10px;color:var(--mid);letter-spacing:.06em;}
-  .ph-milestone{margin-top:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
-  .ph-milestone div{text-align:center;font-size:9.5px;color:var(--mid);border-top:1px solid var(--line);padding-top:6px;}
-
-  /* 卖点海报 */
-  .posters{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  .posters .slot{aspect-ratio:2/3;}
+  .char .ttl{margin-top:5px;font-size:12px;color:var(--gold);letter-spacing:.2em;}
+  .char .ds{margin-top:10px;font-size:13.5px;color:#9FB4B3;line-height:1.8;}
+  .char .line{margin-top:11px;font-family:"Noto Serif SC",serif;font-size:14px;color:var(--white);}
 
   /* 分镜 */
-  .board{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-  .shot{border:1px solid var(--line);overflow:hidden;background:rgba(30,51,60,.45);}
-  .shot .box{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);background:#16262E;}
-  .shot .box b{font-family:"Arial Black",Arial,sans-serif;font-size:30px;color:#2A4650;}
-  .shot .tx{padding:14px 16px 18px;}
-  .shot .no{font-family:"Arial",sans-serif;font-size:10px;letter-spacing:.2em;color:var(--jade);margin-bottom:7px;}
-  .shot .ds{font-size:13px;color:#9FB4B3;line-height:1.7;}
-  .shot .sd{margin-top:9px;font-size:11.5px;color:var(--gold);letter-spacing:.04em;}
+  .board{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+  .shot{border:1px solid var(--line);background:rgba(30,51,60,.45);overflow:hidden;}
+  .shot .b{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
+    border-bottom:1px solid var(--line);background:#16262E;}
+  .shot .b b{font-family:"Arial Black",Arial,sans-serif;font-size:22px;color:#2A4650;}
+  .shot .tx{padding:12px 13px 15px;}
+  .shot .no{font-family:"Arial",sans-serif;font-size:10px;letter-spacing:.18em;color:var(--jade);margin-bottom:6px;}
+  .shot .ds{font-size:12px;color:#9FB4B3;line-height:1.7;}
+  .shot .sd{margin-top:7px;font-size:11px;color:var(--gold);}
 
-  /* 排期 */
-  .sched{width:100%;border-collapse:collapse;font-size:14px;}
-  .sched th,.sched td{border:1px solid var(--line);padding:13px 16px;text-align:left;}
-  .sched th{background:rgba(232,180,74,.12);color:var(--gold);font-size:11.5px;letter-spacing:.16em;font-weight:700;}
-  .sched td{color:#9FB4B3;}
-  .sched td:first-child{color:var(--white);font-weight:900;}
+  /* 表 */
+  table.tb{width:100%;border-collapse:collapse;font-size:13.5px;}
+  table.tb th,table.tb td{border:1px solid var(--line);padding:11px 14px;text-align:left;vertical-align:top;}
+  table.tb th{background:rgba(95,217,192,.10);color:var(--jade);font-size:11px;letter-spacing:.14em;font-weight:700;}
+  table.tb td{color:#9FB4B3;}
+  table.tb td:first-child{color:var(--white);font-weight:900;white-space:nowrap;}
+  table.tb tr.now td{background:rgba(232,180,74,.09);}
 
-  /* 对照表 */
-  table.cmp{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px;}
-  table.cmp th,table.cmp td{border:1px solid var(--line);padding:11px 14px;text-align:left;}
-  table.cmp th{background:rgba(95,217,192,.10);color:var(--jade);font-size:11px;letter-spacing:.14em;font-weight:700;}
-  table.cmp td{color:#9FB4B3;}
-  table.cmp tr.cur td{background:rgba(232,180,74,.09);color:var(--white);}
+  /* 胶囊测试 */
+  .captests{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .ct{border:1px solid var(--line);background:var(--panel);padding:18px;}
+  .ct .demo{aspect-ratio:16/9;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+    margin-bottom:13px;overflow:hidden;position:relative;}
+  .ct h4{font-size:13.5px;font-weight:900;letter-spacing:.06em;margin-bottom:6px;}
+  .ct p{font-size:12.5px;color:#8FA5A4;line-height:1.75;}
+  .ct .res{margin-top:9px;font-size:12px;color:var(--jade);}
+  .blur{filter:blur(5px);}
+  .gray{filter:grayscale(1);}
 
-  footer{border-top:1px solid var(--line);padding:52px 48px;text-align:center;font-size:12px;color:var(--mid);letter-spacing:.14em;}
-  footer .b{display:block;margin-bottom:12px;font-family:"Noto Serif SC",serif;font-size:22px;letter-spacing:.3em;color:var(--white);font-weight:900;}
+  /* 三条硬规则 */
+  .rules{counter-reset:r;margin-top:8px;}
+  .rules li{list-style:none;counter-increment:r;position:relative;padding:15px 0 15px 52px;
+    border-bottom:1px solid var(--line);font-size:14.5px;color:#A9BEBC;}
+  .rules li:before{content:counter(r,decimal-leading-zero);position:absolute;left:0;top:15px;
+    font-family:"Arial Black",Arial,sans-serif;font-size:13px;color:var(--gold);letter-spacing:.06em;}
+  .rules li strong{color:var(--white);}
+
+  footer{border-top:1px solid var(--line);padding:50px 48px;text-align:center;font-size:12px;
+    color:var(--mid);letter-spacing:.14em;}
+  footer .b{display:block;margin-bottom:12px;font-family:"Noto Serif SC",serif;font-size:22px;
+    letter-spacing:.3em;color:var(--white);font-weight:900;}
   footer a{color:var(--mid);text-decoration:none;border-bottom:1px solid var(--line);}
 
   @media(max-width:900px){
     nav{padding:13px 20px;} .nav-links{display:none;}
-    header.hero{padding:118px 20px 66px;}
-    section,section.alt{padding:60px 20px;}
-    .chars,.crea,.posters{grid-template-columns:1fr;}
-    .steps{grid-template-columns:1fr 1fr;}
-    .swatches{grid-template-columns:1fr 1fr;}
-    .uiwrap{grid-template-columns:1fr;}
-    .phone{width:100%;max-width:340px;margin:0 auto;}
-    .board{grid-template-columns:1fr;}
+    header.hero{padding:118px 20px 60px;}
+    section,section.alt{padding:58px 20px;}
+    .assets,.chars,.captests{grid-template-columns:1fr;}
+    .board{grid-template-columns:1fr 1fr;}
     .hero-logo{width:100%;}
+    .a-icon{max-width:none;}
   }
   @media print{
     @page{size:A4;margin:11mm;}
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
     nav{display:none !important;}
-    header.hero{padding:20px 0 24px !important;}
-    section,section.alt{padding:18px 0 !important;}
+    header.hero{padding:18px 0 20px !important;}
+    section,section.alt{padding:16px 0 !important;}
     .growline{display:none;}
-    figure,table,.char,.crea>div,.step,.shot,.phone,.posters>div{break-inside:avoid;}
+    figure,table,.asset,.char,.shot,.ct,.spec-head{break-inside:avoid;}
     .sec-title{break-after:avoid;}
   }
 </style>
@@ -204,11 +182,11 @@
   <a class="back" href="index.html">← 返回作品集</a>
   <div class="brand">息壤<span>XIRANG</span></div>
   <div class="nav-links">
-    <a href="#world">世界观</a>
-    <a href="#play">玩法</a>
+    <a href="#hook">设定</a>
     <a href="#chars">角色</a>
-    <a href="#art">美术</a>
-    <a href="#kit">物料</a>
+    <a href="#store">商店物料</a>
+    <a href="#video">视频</a>
+    <a href="#capsule">胶囊测试</a>
   </div>
 </nav>
 
@@ -224,143 +202,210 @@
     </g>
   </svg>
   <div class="hero-inner">
-    <div class="hero-label">PROJECT 05 · 原创游戏企划与宣传物料</div>
+    <div class="hero-label">PROJECT 05 · 游戏宣发 / 商店物料</div>
     <img class="hero-logo" src="images/game/01-logo.png" alt="息壤 XIRANG">
     <div class="hero-tag">你听见的，都会长出来。</div>
-    <p class="hero-sub">东方科幻造物养成。世界正被「寂」吞掉——先是声音，再是颜色。息壤是最后一种会生长的物质：凡是发出的声音，都会在它里面长出形状。</p>
+    <p class="hero-sub">原创东方科幻造物养成企划的<strong>发行物料包</strong>。以下全部按真实商店规格制作：TapTap 素材规范与 Steam 分阶段清单。</p>
     <div class="hero-meta">
-      <span>原创企划</span>
-      <span>世界观设定</span>
-      <span>角色设定</span>
-      <span>UI 设计</span>
-      <span>首曝 KV</span>
-      <span>预告片脚本</span>
+      <span class="k">封面图 1920×1080</span>
+      <span class="k">推广图 1920×1080</span>
+      <span class="k">ICON 512×512</span>
+      <span class="k">视频封面 1256×706</span>
+      <span class="k">截图 16:9 / 9:16</span>
+      <span>角色宣传图 ×3</span>
     </div>
     <div class="growline"></div>
   </div>
 </header>
 
-<!-- ============ 01 世界观 ============ -->
-<section id="world">
-  <div class="sec-label">01 / WORLD</div>
-  <h2 class="sec-title">世界观</h2>
+<!-- ============ 01 一句话设定 ============ -->
+<section id="hook">
+  <div class="sec-label">01 / THE HOOK</div>
+  <h2 class="sec-title">一句话设定</h2>
+
+  <div class="quote">世界正在被「寂」吃掉。<br>息壤是最后一种<span class="hl">会生长的物质</span>——<br>凡是发出的声音，都会在它里面长出形状。</div>
 
   <div class="prose">
-    <p><strong>出处</strong>　「息壤」出自《山海经·海内经》：「洪水滔天。鲧窃帝之息壤以堙洪水，不待帝命。」原文只给了它一个名字和一种性质——<strong>能自己生长、永不耗减的土</strong>，没有任何图像描述。这意味着视觉上零抄袭风险，全部由我原创推导。</p>
+    <p>一声叹息长出苔，一句哼唱长出藤，一次呼喊长出兽。</p>
+    <p><strong>玩家做的事只有一件：种下一个声音，看它长成什么。</strong>不同声响嫁接，长出不同的它；你给它取的名字，会成为它的属性。</p>
+    <p>这不是一个关于战斗的企划。<em>它关于「我做的事能让什么东西长出来」。</em></p>
   </div>
 
   <div class="rule"></div>
 
-  <div class="quote">世界正在被一种东西吃掉。<br>它叫<span class="hl">寂</span>。</div>
-
-  <div class="prose">
-    <p>寂所过之处，先失去声音，再失去颜色，最后失去形状。被寂吞掉的东西不会消失——它们还在那里，只是<strong>不再发出任何信息</strong>。世界再也听不到它们。</p>
-    <p>寂没有形体，你无法与它战斗。你只能<em>在它前面把东西长出来，长得比它快。</em></p>
-  </div>
-
-  <div class="rule"></div>
-
-  <div class="quote">凡是发出的声音，<br>都会在息壤里<span class="hl">长出形状</span>。</div>
-
-  <div class="prose">
-    <p>一声叹息，长出苔。一句哼唱，长出藤。一次呼喊，长出兽。</p>
-    <p>于是幸存者不再战斗，他们<strong>唱</strong>。他们把自己的名字、亲人的名字、记得的每一首歌，种进息壤里——只要还有东西在长，世界就没有被寂吃掉。</p>
-  </div>
+  <figure>
+    <img src="images/game/02-logo-h.png" alt="息壤 横版 Logo 锁定">
+    <figcaption><span>横版 Logo 锁定 · 2400×700</span><span>XIRANG LOGO LOCKUP</span></figcaption>
+  </figure>
 </section>
 
-<!-- ============ 02 玩法 ============ -->
-<section id="play" class="alt">
+<!-- ============ 02 商店物料 ============ -->
+<section id="store" class="alt">
   <div class="wrap">
-    <div class="sec-label">02 / GAMEPLAY</div>
-    <h2 class="sec-title">核心玩法</h2>
+    <div class="sec-label">02 / STORE ASSETS</div>
+    <h2 class="sec-title">商店物料 · 按官方规格</h2>
 
-    <div class="prose" style="margin-bottom:32px;">
-      <p>一个四步循环。它把「我说的话是有分量的」这件事，直接做成了操作。</p>
+    <div class="spec-head">
+      <h3>尺寸不是随手定的</h3>
+      <p>以下每一项的尺寸、比例、安全区都来自发行平台的实际规范：<strong>TapTap 素材规范</strong>（ICON 512×512、视频封面 1256×706、封面图 1920×1080 且焦点须在 1760×920 安全区内）与 <strong>Steam 商店物料清单</strong>。<br>做宣发物料的第一件事，是知道它要交给谁、放在哪里、什么能放什么不能放。</p>
     </div>
 
-    <div class="steps">
-      <div class="step"><div class="k">STEP 01</div><div class="v">播种</div><div class="d">对着息壤发出一个声音，声音凝结成种核。声波可视化为发光球体。</div></div>
-      <div class="step"><div class="k">STEP 02</div><div class="v">聆听</div><div class="d">等待生长，判断它会长成什么。孢子浮动，光缓慢脉动。</div></div>
-      <div class="step"><div class="k">STEP 03</div><div class="v">嫁接</div><div class="d">把两种生长物嫁接，两株光脉互相缠绕，产生新的造物。</div></div>
-      <div class="step"><div class="k">STEP 04</div><div class="v">命名</div><div class="d">为造物取名。名字不是标签，是它的器官——叫什么，就长成什么属性。</div></div>
-    </div>
+    <ol class="rules">
+      <li><strong>封面图除了游戏标题之外，不允许出现其他文字。</strong>—— 我把这条当作整套物料的排版约束，而不是等平台打回再改。</li>
+      <li><strong>焦点内容必须落在安全区内。</strong>封面图 1920×1080 的可视安全区是 1760×920，超出部分在部分入口会被裁切。</li>
+      <li><strong>截图必须是实机画面，不是概念图。</strong>Steam 明确要求每张截图展示不同的系统、环境或进度节点。</li>
+    </ol>
 
     <div class="rule"></div>
 
-    <div class="quote" style="font-size:clamp(18px,2.5vw,28px)">名字不是标签，是造物的<span class="hl">器官</span>。</div>
-    <div class="prose">
-      <p>「命名」是这套玩法的灵魂。它给了玩家真正的创作权：<strong>这只生物是什么，由你叫它什么决定。</strong>这也是整个企划最想传达的一句话——你发出的声音，会变成真实存在的东西。</p>
-    </div>
+    <div class="assets">
 
-    <div class="rule"></div>
+      <!-- 封面图 -->
+      <div class="asset wide">
+        <div class="ratio a-1080"><div class="box">
+          <div class="safe" style="inset:7.4% 4.2% 14.8% 4.2%"><i>SAFE 1760 × 920</i></div>
+          <div>
+            <b>详情页封面图 / 主视觉 KV</b>
+            1920 × 1080 · 16:9 · JPG
+            <span class="dim">主视觉 + 标题，无其他文字 · 焦点在安全区内</span>
+          </div>
+        </div></div>
+        <div class="tx">
+          <div class="nm">Cover Image · 1920×1080</div>
+          <div class="ds">玩家注意到的第一张图，决定要不要点进来。<em>只放主视觉与游戏标题</em>——平台明确不允许出现其他文字，所以这张图的力量必须全部来自画面本身。</div>
+        </div>
+      </div>
 
-    <table class="dom">
-      <thead><tr><th>生长域</th><th>环境</th><th>声音来源</th><th>造物特征</th></tr></thead>
-      <tbody>
-        <tr><td>青苔庭</td><td>古老庭院，苔藓覆盖的青瓷</td><td>叹息</td><td>慢、柔软、发光苔藓</td></tr>
-        <tr><td>竹鸣涧</td><td>竹海，风穿过空竹节</td><td>风声</td><td>空腔、会共鸣、细长</td></tr>
-        <tr><td>熔枝原</td><td>焦土，地火未熄</td><td>呼喊</td><td>坚硬、结疤、内部有火</td></tr>
-        <tr><td>镜盐海</td><td>干涸盐湖，地面如镜</td><td>回声</td><td>半透明、反光、无实体</td></tr>
-        <tr><td>无音井</td><td>寂的边缘，一切声音消失</td><td>无</td><td>扭曲、残缺、危险</td></tr>
-      </tbody>
-    </table>
+      <!-- 推广图 -->
+      <div class="asset wide">
+        <div class="ratio a-1080"><div class="box">
+          <div>
+            <b>推广图 / Promotion Image</b>
+            1920 × 1080 · 16:9 · JPG
+            <span class="dim">用于首页卡片、合集卡片 · 同样只放标题</span>
+          </div>
+        </div></div>
+        <div class="tx">
+          <div class="nm">Promotion Image · 1920×1080</div>
+          <div class="ds">用在推荐位与合集卡片上。与封面图的区别是——<em>它会在视频自动播放前先出现</em>，所以要在 0.5 秒里完成吸引。</div>
+        </div>
+      </div>
 
-    <div class="prose" style="margin-top:26px;">
-      <p>寂不是敌人，是<strong>倒计时</strong>。每个生长域都在缓慢被侵蚀，玩家要在有限时间里把这个域长满。域被长满时会「活过来」——整个区域的光、粒子、音乐同时苏醒。这是游戏最爽的一刻，也是预告片要抓的画面。</p>
+      <!-- ICON -->
+      <div class="asset">
+        <div class="ratio a-icon"><div class="box">
+          <div>
+            <b>ICON</b>
+            512 × 512
+            <span class="dim">方形 · 关键内容在安全区</span>
+          </div>
+        </div></div>
+        <div class="tx">
+          <div class="nm">ICON · 512×512</div>
+          <div class="ds">用在排行榜、发现页、动态页。<em>ICON 会直接影响这些位置的点击转化</em>——它在很小的尺寸下也必须认得出是什么。</div>
+        </div>
+      </div>
+
+      <!-- 视频封面 -->
+      <div class="asset">
+        <div class="ratio a-1256"><div class="box">
+          <div>
+            <b>视频封面</b>
+            1256 × 706
+            <span class="dim">视频必填项</span>
+          </div>
+        </div></div>
+        <div class="tx">
+          <div class="nm">Video Cover · 1256×706</div>
+          <div class="ds">视频未播放时显示。<em>这不是 KV 的缩略图</em>——它是视频的入口，要让人知道点开能看到什么。</div>
+        </div>
+      </div>
+
+      <!-- 截图 -->
+      <div class="asset">
+        <div class="ratio a-1080"><div class="box">
+          <div>
+            <b>截图 ×5（横版）</b>
+            1920 × 1080 · 16:9
+            <span class="dim">每张展示不同系统</span>
+          </div>
+        </div></div>
+        <div class="tx">
+          <div class="nm">Screenshots · 1920×1080</div>
+          <div class="ds">五张的排序是设计过的：<em>实机界面 → 造物图鉴 → 生长域 → 命名机制 → 进度反馈</em>。每张必须展示一个不同的系统，不能重复。</div>
+        </div>
+      </div>
+
+      <!-- 竖版截图 -->
+      <div class="asset">
+        <div class="ratio a-vert"><div class="box" style="aspect-ratio:9/16">
+          <div>
+            <b>截图（竖版）</b>
+            1080 × 1920 · 9:16
+            <span class="dim">移动端信息流</span>
+          </div>
+        </div></div>
+        <div class="tx">
+          <div class="nm">Vertical Screenshots · 9:16</div>
+          <div class="ds">平台允许横竖两种比例，但同时要求<strong>同一组截图尺寸必须一致</strong>——不能横竖混排。所以竖版单独出一组。</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ============ 03 角色 ============ -->
+<!-- ============ 03 角色宣传 ============ -->
 <section id="chars">
   <div class="sec-label">03 / CHARACTERS</div>
-  <h2 class="sec-title">角色设定</h2>
+  <h2 class="sec-title">角色宣传图 · 三张</h2>
 
-  <div class="prose" style="margin-bottom:34px;">
-    <p>三个种子持有者，分别代表三种与息壤的关系：<strong>耐心、锋利、空无</strong>。</p>
+  <div class="prose" style="margin-bottom:32px;">
+    <p>三个种子持有者，分别代表三种与息壤的关系：<strong>耐心、锋利、空无</strong>。每张宣传图配一句台词——<strong>角色宣发不解释性格，让台词自己说。</strong></p>
   </div>
 
   <div class="chars">
     <div class="char">
-      <div class="slot"><b>CH-01 立绘位</b><span class="dim">1400 × 2050 · 3:4.4</span>竖构图半身 · 呼吸光效 · 青瓷开片护甲</div>
+      <div class="box slot"><b>CH-01 立绘位</b>1400 × 2050 · 3:4.4<br>竖构图半身 · 呼吸光效 · 青瓷开片护甲</div>
       <div class="nm"><h3>硯</h3><span class="en">YAN</span></div>
-      <div class="ttl">持 陶 者 · 青苔庭守护者</div>
-      <div class="ds">少年，17–19。安静、耐心、手上有土。层叠青瓷片护甲，表面有冰裂纹，裂纹里透出琉璃青的光，缝隙长出细小苔藓。肩背一排在发光的种苗囊，怀里捧一只青瓷瓮。</div>
-      <div class="sig">视觉签名：呼吸的光——身体的光随呼吸明暗，像活着的瓷器</div>
+      <div class="ttl">持 陶 者 · 青苔庭</div>
+      <div class="ds">少年。层叠青瓷护甲，裂纹里透出琉璃青的光，缝隙长出细苔。肩背一排发光的种苗囊。</div>
       <div class="line">「我种下的，都会记得我。」</div>
     </div>
 
     <div class="char">
-      <div class="slot"><b>CH-02 立绘位</b><span class="dim">1400 × 2050 · 3:4.4</span>竖构图半身 · 背脊铜管 · 声波具象化</div>
+      <div class="box slot"><b>CH-02 立绘位</b>1400 × 2050 · 3:4.4<br>竖构图半身 · 背脊铜管 · 声波具象化</div>
       <div class="nm"><h3>灼</h3><span class="en">ZHUO</span></div>
-      <div class="ttl">司 火 者 · 熔枝原守护者</div>
-      <div class="ds">成年女性，25 上下。锋利、不说话、身上有疤。深色硬质长衣，沿脊背嵌一排中空铜管，管内发光。手持长杖，杖头是一块未熄的息壤。</div>
-      <div class="sig">视觉签名：声波具象化——铜管发声时，周围空气出现可见的同心波纹</div>
+      <div class="ttl">司 火 者 · 熔枝原</div>
+      <div class="ds">成年女性。深色硬质长衣，沿脊背嵌一排中空铜管，管内发光。手持长杖，杖头是一块未熄的息壤。</div>
       <div class="line">「喊出来。它会接住。」</div>
     </div>
 
     <div class="char">
-      <div class="slot"><b>CH-03 立绘位</b><span class="dim">1400 × 2050 · 3:4.4</span>竖构图半身 · 半透明盐晶 · 倒影更清晰</div>
+      <div class="box slot"><b>CH-03 立绘位</b>1400 × 2050 · 3:4.4<br>竖构图半身 · 半透明盐晶 · 倒影更清晰</div>
       <div class="nm"><h3>澪</h3><span class="en">LING</span></div>
-      <div class="ttl">引 潮 者 · 镜盐海守护者</div>
-      <div class="ds">少女，14–16。轻、空、像没睡醒。半透明盐晶织物，边缘溶解成雾；身体部分在反光里，不完全实体。赤脚走在盐壳上，每一步留下短暂的光纹。</div>
-      <div class="sig">视觉签名：倒影比本体更清晰——她的镜像是实心，本体反而半透</div>
+      <div class="ttl">引 潮 者 · 镜盐海</div>
+      <div class="ds">少女。半透明盐晶织物，边缘溶解成雾。赤脚走过盐壳，留下短暂的光纹。</div>
       <div class="line">「回声比我活得久。」</div>
     </div>
+  </div>
+
+  <div class="prose" style="margin-top:34px;">
+    <p><strong>三个人的视觉签名</strong>　硯是<em>呼吸的光</em>（身体明暗随呼吸变化）；灼是<em>声波具象化</em>（铜管发声时空气出现同心波纹）；澪是<em>倒影比本体更清晰</em>（镜像是实心，本体半透）。<br>没有签名的角色只是好看，成不了设定。</p>
   </div>
 </section>
 
 <!-- ============ 04 造物图鉴 ============ -->
-<section id="crea" class="alt">
+<section id="creature" class="alt">
   <div class="wrap">
     <div class="sec-label">04 / CREATURE ARCHIVE</div>
-    <h2 class="sec-title">造物图鉴</h2>
+    <h2 class="sec-title">造物图鉴 · 截图素材</h2>
 
-    <div class="prose" style="margin-bottom:32px;">
-      <p>造物由声音长成，所以它们的形态直接反映声源。<strong>标本册的版式由我设计</strong>——页眉、标本号、名牌、声源栏、声纹图形、形态标签统一，三张像同一本设定集里的页。这是宣传物料与插画集的分界线。</p>
+    <div class="prose" style="margin-bottom:30px;">
+      <p>造物由声音长成，形态直接反映声源。这套标本册版式同时用作<strong>商店截图素材</strong>——统一页眉、标本号、名牌、声源栏、声纹图形、形态标签。</p>
     </div>
 
-    <div class="crea">
+    <div class="chars">
       <figure style="margin:0">
         <img src="images/game/03-specimen-01.png" alt="造物标本 CR-001 苔奴">
         <figcaption><span>CR-001 · 苔奴</span><span>声源：一声叹息</span></figcaption>
@@ -374,175 +419,127 @@
         <figcaption><span>CR-003 · 盐眠</span><span>声源：一次回声</span></figcaption>
       </figure>
     </div>
+  </div>
+</section>
+
+<!-- ============ 05 视频脚本 ============ -->
+<section id="video">
+  <div class="sec-label">05 / VIDEO</div>
+  <h2 class="sec-title">商店视频 · 20 秒</h2>
+
+  <div class="prose" style="margin-bottom:28px;">
+    <p>平台推荐的视频长度是 <strong>20 秒</strong>（最长不超过 1 分钟）——这个长度的用意是让玩家最快理解核心玩法。<br>而 Steam 的经验是：<em>预告片的前 5 秒必须出现不寻常的核心机制</em>。所以这一版把「种下声音、长出生物」直接放在开头，不做铺垫。</p>
+  </div>
+
+  <div class="board">
+    <div class="shot"><div class="b"><b>01</b></div><div class="tx"><div class="no">0–4s</div><div class="ds">黑暗中一点青光落下，触地瞬间凝成一颗种核。</div><div class="sd">前 5 秒交付核心机制</div></div></div>
+    <div class="shot"><div class="b"><b>02</b></div><div class="tx"><div class="no">4–8s</div><div class="ds">种核裂开，藤蔓以肉眼可见的速度向外生长、蔓延。</div><div class="sd">生长必须是可见的</div></div></div>
+    <div class="shot"><div class="b"><b>03</b></div><div class="tx"><div class="no">8–12s</div><div class="ds">藤蔓末端长出一只造物，睁眼，光从体内透出。</div><div class="sd">第一个「惊喜」时刻</div></div></div>
+    <div class="shot"><div class="b"><b>04</b></div><div class="tx"><div class="no">12–16s</div><div class="ds">两株光脉互相缠绕、嫁接，融合成一只全新的生物。</div><div class="sd">展示系统深度</div></div></div>
+    <div class="shot"><div class="b"><b>05</b></div><div class="tx"><div class="no">16–20s</div><div class="ds">镜头拉升，整片死地已长满发光森林。标题浮现。</div><div class="sd">收在体量感上</div></div></div>
+  </div>
+
+  <div class="prose" style="margin-top:30px;">
+    <p><strong>为什么不做剧情向预告片。</strong>商店视频的任务是<em>让人在 20 秒内理解这个游戏在玩什么</em>，不是讲一个故事。剧情留给后续的版本 PV——那是已经对游戏产生兴趣的人才看的。</p>
+  </div>
+</section>
+
+<!-- ============ 06 胶囊图测试 ============ -->
+<section id="capsule" class="alt">
+  <div class="wrap">
+    <div class="sec-label">06 / CAPSULE TEST</div>
+    <h2 class="sec-title">主视觉三项检验</h2>
+
+    <div class="prose" style="margin-bottom:30px;">
+      <p>胶囊图（商店主视觉）的平均点击率<strong>低于 2%</strong>，能超过 <strong>4%</strong> 的才会拿到额外的曝光位。所以主视觉不能靠"看着不错"来判断，要过三个检验：</p>
+    </div>
+
+    <div class="captests">
+      <div class="ct">
+        <div class="demo blur"><img src="images/game/01-logo.png" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+        <h4>检验一 · 模糊</h4>
+        <p>模糊之后还认得出形状吗？如果糊掉就散了，说明画面依赖细节而不是轮廓。</p>
+        <div class="res">通过 — 光晕轮廓在模糊后仍然成立</div>
+      </div>
+
+      <div class="ct">
+        <div class="demo gray"><img src="images/game/01-logo.png" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+        <h4>检验二 · 灰阶</h4>
+        <p>去掉颜色还分得开吗？只靠色彩对比撑起来的画面，在小尺寸缩略图里会失效。</p>
+        <div class="res">通过 — 明暗层次独立于色相</div>
+      </div>
+
+      <div class="ct">
+        <div class="demo" style="padding:14px;background:#16262E;">
+          <div style="width:100%;">
+            <div style="display:flex;gap:6px;margin-bottom:7px;">
+              <div style="flex:1;aspect-ratio:16/9;background:#2A4650;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:9px;color:#6C8A93;">同赛道 A</div>
+              <div style="flex:1;aspect-ratio:16/9;background:#2A4650;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:9px;color:#6C8A93;">同赛道 B</div>
+            </div>
+            <div style="display:flex;gap:6px;">
+              <div style="flex:1;aspect-ratio:16/9;background:#2A4650;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:9px;color:#6C8A93;">同赛道 C</div>
+              <div style="flex:1;aspect-ratio:16/9;background:var(--jade);border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:9px;color:#0F1C23;font-weight:900;">息壤</div>
+            </div>
+          </div>
+        </div>
+        <h4>检验三 · 竞品并排</h4>
+        <p>放在同赛道前几名旁边还认得出吗？这一步筛掉的是"好看但没有辨识度"的主视觉。</p>
+        <div class="res">通过 — 冷青生物光与同类明显区隔</div>
+      </div>
+    </div>
 
     <div class="rule"></div>
 
-    <figure>
-      <img src="images/game/02-logo-h.png" alt="息壤 横版 Logo 锁定">
-      <figcaption><span>横版 Logo 锁定 · 2400×700</span><span>XIRANG LOGO LOCKUP</span></figcaption>
-    </figure>
+    <div class="prose">
+      <p><strong>为什么把检验放进作品集。</strong>因为"我做了一张主视觉"和"我知道这张主视觉要怎么被检验"是两件事。<br>前者的判断标准是审美，后者的判断标准是<em>它能不能在商店里跑赢</em>——宣发设计最终是要对点击率负责的。</p>
+    </div>
   </div>
 </section>
 
-<!-- ============ 05 美术定位 ============ -->
-<section id="art">
-  <div class="sec-label">05 / ART DIRECTION</div>
-  <h2 class="sec-title">美术定位</h2>
+<!-- ============ 07 上线节奏 ============ -->
+<section id="rollout">
+  <div class="sec-label">07 / ROLLOUT</div>
+  <h2 class="sec-title">分阶段上线物料</h2>
 
-  <div class="swatches">
-    <div class="sw" style="background:#182A33;color:#EAF2F0"><div class="n">MIST BLUE</div><div><div class="h">#182A33</div><div class="pc">雾蓝 · 寂的领域</div></div></div>
-    <div class="sw" style="background:#5FD9C0;color:#0F1C23"><div class="n">GLASS JADE</div><div><div class="h">#5FD9C0</div><div class="pc">琉璃青 · 生命</div></div></div>
-    <div class="sw" style="background:#E8B44A;color:#1A1206"><div class="n">LIVING GOLD</div><div><div class="h">#E8B44A</div><div class="pc">生金 · 声音</div></div></div>
-    <div class="sw" style="background:#EAF2F0;color:#182A33"><div class="n">STILL WHITE</div><div><div class="h">#EAF2F0</div><div class="pc">静白 · 雾气</div></div></div>
-    <div class="sw" style="background:#3A3F42;color:#EAF2F0"><div class="n">SILENCE GREY</div><div><div class="h">#3A3F42</div><div class="pc">寂灰 · 被吃掉的部分</div></div></div>
+  <div class="prose" style="margin-bottom:28px;">
+    <p>商店页面不是一个版本发一次，而是<strong>每个阶段重点不同</strong>。物料要按漏斗三层排优先级：</p>
+    <p style="margin-top:-6px;font-size:14px;color:#8FA5A4;">Pre-landing（胶囊图 + 标题）决定<strong>有没有人来</strong> ｜ Above the fold（预告片、标签、短描述、前 2–3 张截图）决定<strong>留不留下</strong> ｜ Below the fold（详细介绍、GIF）决定<strong>买不买</strong></p>
   </div>
 
-  <div class="rule"></div>
-
-  <div class="prose">
-    <p><strong>光</strong>　一切光都是生物光——从内部透出来，带有脉动节奏，像呼吸。<br>
-    <strong>形</strong>　有机流动曲线 + 青瓷开片的硬裂纹，两者并存。<br>
-    <strong>质感</strong>　瓷、苔、菌丝、孢子、盐晶；禁用金属高光与硬边塑料感。<br>
-    <strong>粒子</strong>　悬浮孢子与光尘常驻画面，密度随声音强度变化。<br>
-    <strong>禁忌</strong>　不用紫色霓虹、不用赛博网格、不用日式赛璐璐描边。</p>
-  </div>
-
-  <div class="rule"></div>
-
-  <div class="prose" style="margin-bottom:22px;">
-    <p><strong>与项目 01 的关键区别</strong>——两个都是东方题材，但处理方式完全相反。这恰好证明我不是只会用一种手法处理东方。</p>
-  </div>
-
-  <table class="cmp">
-    <thead><tr><th>项目</th><th>题材</th><th>主色</th><th>手法</th><th>在画什么</th></tr></thead>
+  <table class="tb">
+    <thead><tr><th>阶段</th><th>优先层</th><th>要交付的物料</th><th>验收标准</th></tr></thead>
     <tbody>
-      <tr><td>01 山海志</td><td>东方志怪茶饮</td><td>玄墨 + 赤金</td><td>渲染 · 材质 · 厚重</td><td>神</td></tr>
-      <tr class="cur"><td>05 息壤</td><td>东方科幻造物</td><td>雾蓝 + 琉璃青 + 生金</td><td>生物光 · 生长 · 通透</td><td>活</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<!-- ============ 06 游戏内 UI ============ -->
-<section id="ui" class="alt">
-  <div class="wrap">
-    <div class="sec-label">06 / INTERFACE</div>
-    <h2 class="sec-title">游戏内界面与预约页</h2>
-
-    <div class="prose" style="margin-bottom:34px;">
-      <p>界面的逻辑直接来自世界观：<strong>屏幕上方是「生长进度」，下方是对抗它的进度条——寂的侵蚀度。</strong>玩家每次成功培育，上面那条涨，下面那条退。这是把叙事做进 UI，而不是贴一层装饰。</p>
-    </div>
-
-    <div class="uiwrap">
-      <div>
-        <div class="slot" style="aspect-ratio:16/10;">
-          <b>UI-01 主界面模型位</b>
-          <span class="dim">1920 × 1200</span>
-          生长进度条 · 造物栏 · 声音按钮 · 寂的侵蚀度仪表
-        </div>
-        <div class="prose" style="margin-top:20px;font-size:14px;">
-          <p>主界面采用<strong>极简留白 + 单点发光</strong>：大部分区域让给画面（生长中的世界本身），UI 只用细线与低透明度面板，避免遮挡生物光。</p>
-        </div>
-      </div>
-
-      <div>
-        <div class="phone">
-          <div class="ph-top">
-            <div class="t">息壤</div>
-            <div class="c">XIRANG</div>
-          </div>
-          <div class="ph-hero">KV-02 竖版主视觉<br>1200 × 1600</div>
-          <div class="ph-bar">
-            <div class="lb"><span>生长进度</span><span>62%</span></div>
-            <div class="track"><i></i></div>
-          </div>
-          <div class="ph-crea">
-            <div>苔奴</div><div>铜喉</div><div>盐眠</div>
-          </div>
-          <div class="ph-btn">立即预约</div>
-          <div class="ph-note">已预约 128,470 人</div>
-          <div class="ph-milestone">
-            <div>5万 ✓</div><div>10万 ✓</div><div>20万</div><div>50万</div>
-          </div>
-        </div>
-        <div class="prose" style="margin-top:20px;font-size:13.5px;">
-          <p>预约页把「里程碑奖励」做成造物解锁：人数达标即解锁新造物皮肤，<strong>让预约行为本身也符合世界观</strong>——人越多，世界长得越满。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 07 卖点海报 ============ -->
-<section id="pos">
-  <div class="sec-label">07 / KEY VISUAL &amp; POSTERS</div>
-  <h2 class="sec-title">首曝 KV 与卖点海报</h2>
-
-  <div class="prose" style="margin-bottom:32px;">
-    <p>三张海报各打一个点：<strong>玩法、机制、世界观张力</strong>。KV 与立绘由 AIGC 生成，版式、标题系统、装饰元素与信息层由我设计——这样换图不会破坏版式。</p>
-  </div>
-
-  <div class="posters">
-    <div class="slot"><b>KV-01 横版主视觉</b><span class="dim">3840 × 2160 · 16:9</span>硯在长满发光青苔的庭院中，掌心种核初生</div>
-    <div class="slot"><b>KV-02 竖版主视觉</b><span class="dim">1200 × 1600 · 3:4</span>用于预约页与信息流投放</div>
-    <div class="slot"><b>PO-03 卖点海报</b><span class="dim">1600 × 2400 · 2:3</span>「长得比寂快」——世界观的张力</div>
-  </div>
-
-  <div class="rule"></div>
-
-  <div class="prose">
-    <p><strong>PO-01 种下一个声音</strong>　讲核心玩法：播种到生长的四步循环。<br>
-    <strong>PO-02 名字是它的器官</strong>　讲命名机制：玩家输入的名字会变成造物的属性。<br>
-    <strong>PO-03 长得比寂快</strong>　讲世界观张力：不是打赢，是长得更快。</p>
-  </div>
-</section>
-
-<!-- ============ 08 预告片脚本 ============ -->
-<section id="film" class="alt">
-  <div class="wrap">
-    <div class="sec-label">08 / TEASER SCRIPT</div>
-    <h2 class="sec-title">45 秒 CG 先导预告</h2>
-
-    <div class="prose" style="margin-bottom:30px;">
-      <p>整支片子只有一个声音：<strong>主角发出的那一个单音</strong>。前 22 秒全片无声，直到他开口。声音从无到有、从单一到和声的过程，就是这支片子的结构。</p>
-    </div>
-
-    <div class="board">
-      <div class="shot"><div class="box"><b>01</b></div><div class="tx"><div class="no">0:00 – 0:07</div><div class="ds">一座城市，所有声音在消失。鸟停在半空，雨滴悬住不动。</div><div class="sd">声音被抽走，只剩低频嗡鸣</div></div></div>
-      <div class="shot"><div class="box"><b>02</b></div><div class="tx"><div class="no">0:07 – 0:14</div><div class="ds">镜头贴地推进，掠过死去的土地，直到一株微弱的绿光。</div><div class="sd">一声极轻的呼吸</div></div></div>
-      <div class="shot"><div class="box"><b>03</b></div><div class="tx"><div class="no">0:14 – 0:22</div><div class="ds">硯跪在地上，掌心按进土里，嘴唇在动（无字幕）。</div><div class="sd">一个单音——全片第一个声音</div></div></div>
-      <div class="shot"><div class="box"><b>04</b></div><div class="tx"><div class="no">0:22 – 0:32</div><div class="ds">地板裂开，光从裂缝涌出，藤蔓以肉眼可见的速度生长、蔓延、覆盖整座废墟。</div><div class="sd">声音逐渐叠加成和声</div></div></div>
-      <div class="shot"><div class="box"><b>05</b></div><div class="tx"><div class="no">0:32 – 0:40</div><div class="ds">镜头急速拉升，整座死城变成长满发光植物的森林；寂的灰色边界被推后。</div><div class="sd">全片第一次出现完整音乐</div></div></div>
-      <div class="shot"><div class="box"><b>06</b></div><div class="tx"><div class="no">0:40 – 0:45</div><div class="ds">硯抬头看向镜头。黑场，浮现标题。</div><div class="sd">音乐戛然而止，只剩种核裂开的轻响</div></div></div>
-    </div>
-
-    <div class="quote" style="margin-top:36px;">你听见的，都会长出来。</div>
-  </div>
-</section>
-
-<!-- ============ 09 传播节奏 ============ -->
-<section id="plan">
-  <div class="sec-label">09 / ROLLOUT</div>
-  <h2 class="sec-title">传播节奏</h2>
-
-  <table class="sched">
-    <thead><tr><th>阶段</th><th>周期</th><th>内容</th><th>目标</th></tr></thead>
-    <tbody>
-      <tr><td>悬念</td><td>W1</td><td>一段 3 秒静音视频，只有一株绿光在长</td><td>制造「这是什么」</td></tr>
-      <tr><td>首曝</td><td>W2</td><td>KV + 三张立绘 + 先导预告</td><td>建立世界观认知</td></tr>
-      <tr><td>解读</td><td>W3</td><td>玩法海报 + 造物图鉴 + 开发者手记</td><td>说明「怎么玩」</td></tr>
-      <tr><td>预约</td><td>W4</td><td>预约页 + 里程碑奖励（造物皮肤）</td><td>转化</td></tr>
-      <tr><td>二曝</td><td>W6</td><td>第二支预告 + 新生长域公开</td><td>维持热度</td></tr>
+      <tr class="now">
+        <td>1 · 公布</td><td>Pre-landing</td>
+        <td>标题、类型标签、主视觉、预告片、截图、短描述</td>
+        <td>主视觉通过模糊 / 灰阶 / 竞品并排三项检验</td>
+      </tr>
+      <tr>
+        <td>2 · Demo 上线</td><td>Above the fold</td>
+        <td>实机预告片（前 5 秒出核心机制）、≥5 张 1920×1080 截图、明确的预约引导</td>
+        <td>每张截图展示不同系统，且必须是实机不是概念图</td>
+      </tr>
+      <tr>
+        <td>3 · 测试节</td><td>刷新 Above the fold</td>
+        <td>新预告片、本地化短描述与核心卖点</td>
+        <td>预约量达到门槛再参加，否则等下一届</td>
+      </tr>
+      <tr>
+        <td>4 · 上线周</td><td>Below the fold</td>
+        <td>2–3 个 GIF（各不超过 12 秒）、技能树或 UI 静态图、上线预告片</td>
+        <td>回答"这游戏有多少内容"和"品质稳不稳"</td>
+      </tr>
     </tbody>
   </table>
 
   <div class="prose" style="margin-top:30px;">
-    <p>游戏宣传不是发一堆图，是<strong>按时间线一点点把世界交出去</strong>。第一周只给一个悬念，第二周给世界观，第三周才讲玩法——每一次曝光都回答上一周留下的问题。</p>
+    <p><strong>顺序本身就是判断。</strong>很多人在第 1 阶段就去写长篇详细介绍——但那时候还没人点进来，写再好也没人看。而主视觉做差了，后面全部白费。<em>宣发的第一课是把力气花在漏斗最上层。</em></p>
   </div>
 </section>
 
 <footer>
   <span class="b">息壤 XIRANG</span>
-  东方科幻 · 造物养成 &nbsp;·&nbsp; 原创游戏企划与宣传物料 · 自主命题<br><br>
+  游戏宣发 · 商店物料包 &nbsp;·&nbsp; 规格参照 TapTap 素材规范与 Steam 商店物料清单<br><br>
   吕森垚 · 2027 届 · 山西传媒学院 &nbsp;|&nbsp; <a href="index.html">返回作品集</a>
 </footer>
 
