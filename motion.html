@@ -168,14 +168,23 @@
   .promo-meta{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:20px;}
   .promo-meta .t{font-size:12.5px;color:var(--moon-dim);letter-spacing:1px;}
 
-  /* ===== 分镜 ===== */
-  .board{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;}
-  .fr{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--ink2);}
-  .fr .im{aspect-ratio:4/3;background:#0B0F13;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-  .fr .im img{width:100%;height:100%;object-fit:cover;opacity:.86;}
-  .fr .im .dot{width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:0 0 34px 12px rgba(200,149,47,.5);}
-  .fr .cap{padding:14px 16px;font-size:12.5px;color:var(--moon-dim);line-height:1.7;}
-  .fr .cap b{display:block;color:var(--gold);font-size:11px;letter-spacing:2px;margin-bottom:5px;font-weight:400;}
+  /* ===== 创作理念 ===== */
+  .quote{
+    margin:8px 0 44px;padding:38px 42px;border-left:2px solid var(--gold);
+    background:linear-gradient(90deg,rgba(200,149,47,.075),transparent 72%);
+    border-radius:0 16px 16px 0;
+    font-size:clamp(19px,2.6vw,30px);line-height:1.9;letter-spacing:3px;color:var(--moon);
+  }
+  .notes{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .nc{border:1px solid var(--line);border-radius:16px;padding:30px 28px;background:#171E24;transition:border-color .3s,transform .4s cubic-bezier(.2,.8,.2,1);}
+  .nc:hover{border-color:rgba(200,149,47,.45);transform:translateY(-3px);}
+  .nc .k{font-size:11px;letter-spacing:4px;color:var(--gold);margin-bottom:13px;}
+  .nc h3{font-size:16.5px;font-weight:600;letter-spacing:2px;margin-bottom:11px;color:var(--moon);}
+  .nc p{font-size:13.5px;color:#B8B0A0;line-height:1.95;}
+  .craft{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px;}
+  .cf{border-top:1px solid rgba(200,149,47,.35);padding-top:14px;}
+  .cf .n{font-size:13px;letter-spacing:2px;color:var(--moon);margin-bottom:5px;}
+  .cf .d{font-size:12px;color:var(--moon-dim);line-height:1.8;}
 
   /* ===== 产品动态展示 ===== */
   .showcase{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px;}
@@ -227,6 +236,7 @@
   <div class="nav-links">
     <a href="#logo">Logo 演绎</a>
     <a href="#film">品牌理念片</a>
+    <a href="#concept">创作理念</a>
     <a href="#showcase">产品动态</a>
     <a href="#spec">规范</a>
   </div>
@@ -302,22 +312,52 @@
     <div class="t">20 秒 · 16:9 · 一镜到底 · 单一侧光 · 含音效设计</div>
     <button class="replay" id="filmReplay">↻ 重播</button>
   </div>
+</section>
 
-  <div style="margin-top:60px;">
-    <div class="sec-label" style="font-size:10px;">STORYBOARD · 分镜</div>
-    <div class="board">
-      <div class="fr"><div class="im"><img src="images/shanhai/film-poster.jpg" alt=""></div><div class="cap"><b>0–2s · 静</b>典藏书被侧光点亮，镂空月洞透出赤金山水</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/film-poster.jpg" alt=""></div><div class="cap"><b>2–6s · 启</b>镜头极缓推进，压凹云纹浮现，书页翻开一条缝</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/film-inner.jpg" alt=""></div><div class="cap"><b>6–11s · 现</b>完全翻开，金碧山水巨龙，金粉溢出上升</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/prod-1.jpg" alt=""></div><div class="cap"><b>11–16s · 落</b>金粉凝成云雾，落入玄墨杯，茶汤泛起金纹</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/film-endcard.jpg" alt=""></div><div class="cap"><b>16–20s · 合</b>拉远收拢为月山图腾，「山海志 · 喝下远古」落版</div></div>
+<!-- ========== 03 创作理念 ========== -->
+<section id="concept">
+  <div class="sec-label">03 · CONCEPT</div>
+  <h2 class="sec-title">创作理念</h2>
+
+  <div class="quote">
+    三千年前，有人把想象写进了《山海》。<br>
+    今天，我们把它煮进了一杯茶。
+  </div>
+
+  <div class="notes">
+    <div class="nc">
+      <div class="k">01</div>
+      <h3>为什么从一本书开始</h3>
+      <p>《山海经》不是怪书，是中国人最早的想象力。用一本典藏巨著作为全片起点，是为了把「品牌从哪里来」讲清楚——山海志不是凭空造出来的，它有三千年可以追溯的来处。</p>
     </div>
+    <div class="nc">
+      <div class="k">02</div>
+      <h3>为什么是镂空月洞</h3>
+      <p>封面中央镂空一轮满月，月光处透出内页的赤金山水。意境从「透」里出来，而不是从「雕」里出来——这是东方美学「虚实相生」的当代转译，也是整支片子最核心的设计动作。</p>
+    </div>
+    <div class="nc">
+      <div class="k">03</div>
+      <h3>为什么是金粉落入茶杯</h3>
+      <p>画中的金粉溢出纸面、凝成云雾、落入杯中——这一步是全片的题眼。它把「读」变成了「喝」，把远古和当下接在了一起。品牌的 slogan「喝下远古」，在这里被翻译成了一个可以被看见的动作。</p>
+    </div>
+    <div class="nc">
+      <div class="k">04</div>
+      <h3>为什么只用一束光</h3>
+      <p>全片只有来自右上 45° 的单一硬质侧光。单一光源让封面每一处浮雕、烫金、压凹都产生真实的明暗关系，也让画面保持克制——<strong style="color:var(--gold-b);font-weight:400;">华丽不等于喧闹</strong>。</p>
+    </div>
+  </div>
+
+  <div class="craft">
+    <div class="cf"><div class="n">镂空</div><div class="d">月洞透光，意境从「透」中生出</div></div>
+    <div class="cf"><div class="n">烫金</div><div class="d">只在侧光下才显出金色的克制</div></div>
+    <div class="cf"><div class="n">压凹</div><div class="d">流云纹浅到几乎看不见，需侧光才浮现</div></div>
+    <div class="cf"><div class="n">金碧山水</div><div class="d">石青石绿打底、泥金勾线，中国最华丽的绘画语言</div></div>
   </div>
 </section>
 
 <!-- ========== 03 产品动态展示 ========== -->
 <section id="showcase">
-  <div class="sec-label">03 · PRODUCT MOTION</div>
+  <div class="sec-label">04 · PRODUCT MOTION</div>
   <h2 class="sec-title">产品动态展示</h2>
   <div class="prose" style="margin-bottom:36px;">
     <p>五款产品动态成片，由品牌视觉资产经 <strong>AIGC 图生视频</strong>生成——把画面里本就含着的运动释放出来：<strong>巨龙盘绕、鲲破水而出、金雾升腾</strong>。</p>
@@ -358,7 +398,7 @@
 
 <!-- ========== 04 规范 ========== -->
 <section id="spec">
-  <div class="sec-label">04 · MOTION SPEC</div>
+  <div class="sec-label">05 · MOTION SPEC</div>
   <h2 class="sec-title">动效规范</h2>
   <table class="spec">
     <tr><th>主缓动</th><td><code>cubic-bezier(.2,.8,.2,1)</code>　先快后慢，沉稳有力</td></tr>
