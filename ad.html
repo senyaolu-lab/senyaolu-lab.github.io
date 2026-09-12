@@ -78,6 +78,18 @@
   section.dark table.cmp th{background:var(--yellow);color:var(--ink);}
   section.dark table.cmp td.cost{color:var(--yellow);}
 
+  /* 价签本体参考 */
+  .tag-ref{margin-top:40px;border:1px solid var(--line);background:#EDEAE2;padding:30px 28px;}
+  .tag-ref-hd h3{font-size:17px;font-weight:900;letter-spacing:.06em;margin-bottom:10px;}
+  .tag-ref-hd p{font-size:13.5px;color:var(--dgray);line-height:1.85;max-width:760px;}
+  .tag-ref-hd strong{color:var(--ink);}
+  .tag-ref-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:20px;margin:24px 0 0;}
+  .tag-ref-grid img{border:1px solid #DCD7CC;}
+  .tag-ref-grid figcaption{border-color:#DCD7CC;}
+  .tag-ref-note{margin-top:24px;font-size:13.5px;color:var(--dgray);line-height:1.85;
+    border-left:4px solid var(--yellow);padding-left:16px;}
+  .tag-ref-note strong{color:var(--ink);}
+
   /* 图片 */
   figure{margin:0 0 26px;}
   figure img{width:100%;height:auto;display:block;border:1px solid var(--line);}
@@ -238,7 +250,7 @@
     header.hero{padding:22px 0 0 !important;}
     section,section.dark{padding:20px 0 !important;}
     .hero-rule{display:none;}
-    figure,table,.posters figure,.social figure,.shot,.chain .st,.flipwrap,.film-thumb,.film-note,.film-stage,.film-box{break-inside:avoid;}
+    figure,table,.posters figure,.social figure,.shot,.chain .st,.flipwrap,.film-thumb,.film-note,.film-stage,.film-box,.tag-ref{break-inside:avoid;}
     .film-play{display:none !important;}
     .sec-title{break-after:avoid;}
     .flip{cursor:default;}
@@ -372,6 +384,24 @@
     <img src="images/ad/01-tag-system.png" alt="价签系统 · 双价目结构 · 四色配置">
     <figcaption><span>价签系统 · 双价目结构 · 四色配置</span><span>TAG SYSTEM V1.0</span></figcaption>
   </figure>
+
+  <div class="tag-ref">
+    <div class="tag-ref-hd">
+      <h3>价签本体 · 设计稿</h3>
+      <p>这是「心力价签」的实物形态定义：<strong>200×260mm、圆角 0、顶部吊牌孔</strong>，四层结构——商品名与条码 / 巨大价格 / 心力栏 / 底部标语。<br>所有物料（海报、社交图、影片）都以这一张为准。</p>
+    </div>
+    <div class="tag-ref-grid">
+      <figure style="margin:0">
+        <img src="images/ad/ref-01-flat.png" alt="价签平面设计稿">
+        <figcaption><span>平面设计稿 · 版式标准</span><span>200 × 260 mm</span></figcaption>
+      </figure>
+      <figure style="margin:0">
+        <img src="images/ad/ref-02-real.png" alt="价签材质版">
+        <figcaption><span>材质版 · 纸张与光照</span><span>#F2E600 哑光无涂布纸</span></figcaption>
+      </figure>
+    </div>
+    <p class="tag-ref-note"><strong>为什么先出这两张。</strong>影片的 AIGC 生成最初失败，根因不是提示词，是<strong>顺序错了</strong>——只用文字描述「一张黄色卡纸」，模型不知道「价签」长什么样，画出来既没有吊牌孔也没有比例。正确流程是<strong>设计稿定死形象 → 图生视频只负责让它动 → 文字后期叠回去</strong>。这两张设计稿既是作品集内容，也是影片生成的首帧参考。</p>
+  </div>
 
   <div class="prose">
     <p><strong>结构固定，颜色轮换。</strong>每张价签由四层构成：商品名与条码、巨大价格、心力栏、底部标语。四色配置让系列物料在统一中产生节奏，不靠插图变化，只靠颜色与字号。</p>
