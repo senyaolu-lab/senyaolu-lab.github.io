@@ -37,15 +37,24 @@
   .nav-links a:hover{color:var(--gold-bright);}
 
   header.hero{
-    min-height:94vh;display:flex;flex-direction:column;justify-content:center;
+    min-height:min(92vh,56.25vw);display:flex;flex-direction:column;justify-content:center;
     padding:140px 48px 80px;position:relative;overflow:hidden;
     background-image:
       linear-gradient(90deg, rgba(20,25,30,.90) 0%, rgba(20,25,30,.55) 48%, rgba(20,25,30,.14) 100%),
       linear-gradient(180deg, rgba(20,25,30,.42) 0%, rgba(20,25,30,.10) 40%, rgba(20,25,30,.92) 100%),
       url('images/shanhai/hero.jpg');
     background-size:cover;
-    background-position:center 32%;
+    background-position:center 42%;
     background-repeat:no-repeat;
+  }
+  /* 窄屏：首屏图改为 16:9 完整展示在文字上方，避免竖屏把 16:9 的图裁掉大半 */
+  @media(max-width:900px){
+    header.hero{min-height:auto;background-image:none;padding:104px 24px 56px;}
+    header.hero::before{
+      content:"";display:block;width:100%;aspect-ratio:16/9;margin-bottom:28px;
+      background:url('images/shanhai/hero.jpg') center/cover no-repeat;
+      border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.5);
+    }
   }
   .hero-label{font-size:12px;letter-spacing:9px;color:var(--gold);margin-bottom:30px;}
   .hero-title{font-size:clamp(52px,9vw,120px);line-height:1.06;letter-spacing:8px;color:var(--moon);font-weight:600;}

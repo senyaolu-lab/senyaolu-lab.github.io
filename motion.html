@@ -87,6 +87,39 @@
   .tl .t{color:var(--gold);letter-spacing:1px;font-size:13px;}
   .tl .d{color:#C4BCAA;}
 
+  /* ===== 品牌片头播放器 ===== */
+  .film-wrap{display:flex;flex-direction:column;align-items:center;gap:20px;margin-top:8px;}
+  .film{
+    position:relative;width:100%;max-width:500px;aspect-ratio:3/4;
+    background:#05080A;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.62);
+  }
+  .fs{position:absolute;inset:0;opacity:0;transition:opacity .75s ease;}
+  .fs.on{opacity:1;}
+  .fs video{width:100%;height:100%;object-fit:cover;display:block;}
+  .fs .glow{
+    position:absolute;left:50%;top:50%;width:24%;aspect-ratio:1;border-radius:50%;
+    transform:translate(-50%,-50%) scale(.5);
+    background:radial-gradient(circle,rgba(217,169,63,.95) 0%,rgba(200,149,47,.32) 44%,transparent 72%);
+    opacity:0;transition:opacity 1s ease,transform 1.6s cubic-bezier(.2,.8,.2,1);
+  }
+  .fs.on .glow{opacity:1;transform:translate(-50%,-50%) scale(1);}
+  .fs .logo-end{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+    background:radial-gradient(circle at 50% 46%, #1F272E 0%, #0B0F13 72%);
+  }
+  .fs .logo-end svg{width:34%;height:auto;}
+  .fs .logo-end .t{font-size:clamp(19px,3.2vw,28px);letter-spacing:.34em;padding-left:.34em;color:var(--moon);}
+  .ftx{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;
+    font-size:clamp(26px,4.4vw,40px);letter-spacing:.4em;padding-left:.4em;color:var(--moon);
+    text-shadow:0 4px 30px rgba(0,0,0,.9);opacity:0;transition:opacity .6s ease;
+  }
+  .ftx.on{opacity:1;}
+  .ftx.low{align-items:flex-end;padding-bottom:11%;font-size:clamp(15px,2.4vw,22px);letter-spacing:.3em;}
+  .fbar{position:absolute;left:0;bottom:0;height:2px;background:var(--gold);width:0;opacity:.9;}
+  .film-cap{font-size:12.5px;color:var(--moon-dim);letter-spacing:1px;text-align:center;line-height:1.9;}
+
   /* ===== 分镜 ===== */
   .board{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;}
   .fr{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--ink2);}
@@ -193,21 +226,54 @@
   </div>
 </section>
 
-<!-- ========== 02 品牌片头分镜 ========== -->
-<section id="board">
-  <div class="sec-label">02 · STORYBOARD</div>
-  <h2 class="sec-title">品牌片头 · 分镜</h2>
-  <div class="prose" style="margin-bottom:32px;">
-    <p>六个镜头，一条完整叙事线：<strong>黑暗中一点金光 → 云海巨月 → 巨龙显形 → 玄墨杯升腾 → 五兽剪影 → 月山落版</strong>。总时长 15 秒。</p>
-    <p style="font-size:13.5px;color:var(--moon-dim);">运镜只用「缓慢推进」与「缓慢拉远」，转场统一为叠化。</p>
+<!-- ========== 02 品牌片头 ========== -->
+<section id="film">
+  <div class="sec-label">02 · BRAND FILM</div>
+  <h2 class="sec-title">品牌片头 · 15 秒</h2>
+  <div class="prose" style="margin-bottom:36px;">
+    <p>七个镜头串成一条完整叙事线：<strong>黑暗中一点金光 → 云海巨月「山海」→ 巨龙显形「志」→ 玄墨杯 → 九尾 → 鲲「喝下远古」→ 月山落版</strong>。</p>
+    <p style="font-size:13.5px;color:var(--moon-dim);">画面片段由 <strong>AIGC 图生视频</strong>生成；串接、叠化转场、字幕与落版为动态设计。</p>
   </div>
-  <div class="board">
-    <div class="fr"><div class="im"><div class="dot"></div></div><div class="cap"><b>SHOT 01 · 0–2s</b>黑场，一点赤金光晕在黑暗中浮现</div></div>
-    <div class="fr"><div class="im"><img src="images/shanhai/world-1.jpg" alt=""></div><div class="cap"><b>SHOT 02 · 2–5s</b>云海翻涌，赤金巨月缓缓露出 · 字幕「山海」</div></div>
-    <div class="fr"><div class="im"><img src="images/shanhai/beast-2.jpg" alt=""></div><div class="cap"><b>SHOT 03 · 5–8s</b>巨龙自云中盘绕而出 · 字幕「志」</div></div>
-    <div class="fr"><div class="im"><img src="images/shanhai/prod-1.jpg" alt=""></div><div class="cap"><b>SHOT 04 · 8–11s</b>玄墨杯立于崖上，杯中金雾升腾</div></div>
-    <div class="fr"><div class="im"><img src="images/shanhai/hero.jpg" alt=""></div><div class="cap"><b>SHOT 05 · 11–14s</b>镜头拉远，五兽剪影若隐若现 · 字幕「喝下远古」</div></div>
-    <div class="fr"><div class="im"><img src="images/shanhai/world-2.jpg" alt=""></div><div class="cap"><b>SHOT 06 · 14–15s</b>月山图腾 + 山海志字标落版</div></div>
+
+  <div class="film-wrap">
+    <div class="film" id="film">
+      <div class="fs s0"><div class="glow"></div></div>
+      <div class="fs s1"><video src="images/shanhai/clip-4-hero.mp4" muted playsinline preload="none"></video></div>
+      <div class="fs s2"><video src="images/shanhai/clip-2-zhulong.mp4" muted playsinline preload="none"></video></div>
+      <div class="fs s3"><video src="images/shanhai/clip-5-product.mp4" muted playsinline preload="none"></video></div>
+      <div class="fs s4"><video src="images/shanhai/clip-1-jiuwei.mp4" muted playsinline preload="none"></video></div>
+      <div class="fs s5"><video src="images/shanhai/clip-3-kun.mp4" muted playsinline preload="none"></video></div>
+      <div class="fs s6">
+        <div class="logo-end">
+          <svg viewBox="0 0 400 400">
+            <circle cx="200" cy="200" r="168" fill="none" stroke="#C8952F" stroke-width="6"></circle>
+            <circle cx="200" cy="200" r="126" fill="#C8952F"></circle>
+            <path d="M118,285 L152,206 L174,246 L200,180 L226,246 L248,206 L282,285 Z" fill="#14191E"></path>
+            <rect x="118" y="285" width="164" height="10" fill="#14191E"></rect>
+          </svg>
+          <div class="t">山海志</div>
+        </div>
+      </div>
+      <div class="ftx t1">山海</div>
+      <div class="ftx t2">志</div>
+      <div class="ftx low t5">喝下远古</div>
+      <div class="fbar"></div>
+    </div>
+    <div class="film-cap">15 秒 · 7 镜头 · 叠化转场 · 静音循环播放</div>
+    <button class="replay" id="filmReplay">↻ 重播片头</button>
+  </div>
+
+  <div style="margin-top:64px;">
+    <div class="sec-label" style="font-size:10px;">STORYBOARD · 分镜</div>
+    <div class="board">
+      <div class="fr"><div class="im"><div class="dot"></div></div><div class="cap"><b>SHOT 01 · 0–1.4s</b>黑场，一点赤金光晕在黑暗中浮现</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/world-1.jpg" alt=""></div><div class="cap"><b>SHOT 02 · 1.4–4s</b>云海翻涌，赤金巨月露出 · 字幕「山海」</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/beast-2.jpg" alt=""></div><div class="cap"><b>SHOT 03 · 4–6.6s</b>巨龙自云中盘绕而出 · 字幕「志」</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/prod-1.jpg" alt=""></div><div class="cap"><b>SHOT 04 · 6.6–9s</b>玄墨杯立于崖上，杯中金雾升腾</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/beast-1.jpg" alt=""></div><div class="cap"><b>SHOT 05 · 9–11.4s</b>九尾白狐，九条尾巴如云雾飘动</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/beast-3.jpg" alt=""></div><div class="cap"><b>SHOT 06 · 11.4–14s</b>鲲破水而出 · 字幕「喝下远古」</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/world-2.jpg" alt=""></div><div class="cap"><b>SHOT 07 · 14–16s</b>月山图腾 + 山海志字标落版</div></div>
+    </div>
   </div>
 </section>
 
@@ -289,6 +355,82 @@
       es.forEach(function (e) { if (e.isIntersecting) { playLogo(); io.disconnect(); } });
     }, { threshold: 0.35 });
     io.observe(stage);
+
+    // ---- 品牌片头播放器：按分镜顺序串播 5 条 AIGC 片段 + 叠化 + 字幕 + 落版 ----
+    var film = document.getElementById('film');
+    if (film) {
+      var layers = film.querySelectorAll('.fs');
+      var txs = film.querySelectorAll('.ftx');
+      var bar = film.querySelector('.fbar');
+      var SEQ = [
+        { i: 0, d: 1400 },
+        { i: 1, d: 2600, t: 't1' },
+        { i: 2, d: 2600, t: 't2' },
+        { i: 3, d: 2400 },
+        { i: 4, d: 2400 },
+        { i: 5, d: 2600, t: 't5' },
+        { i: 6, d: 2400 }
+      ];
+      var TOTAL = 0;
+      for (var q = 0; q < SEQ.length; q++) { TOTAL += SEQ[q].d; }
+      var timers = [], raf = null;
+
+      function stopFilm() {
+        for (var i = 0; i < timers.length; i++) { clearTimeout(timers[i]); }
+        timers = [];
+        if (raf) { cancelAnimationFrame(raf); raf = null; }
+        for (var a = 0; a < layers.length; a++) {
+          layers[a].classList.remove('on');
+          var v = layers[a].querySelector('video');
+          if (v) { try { v.pause(); v.currentTime = 0; } catch (e) {} }
+        }
+        for (var b = 0; b < txs.length; b++) { txs[b].classList.remove('on'); }
+        bar.style.width = '0%';
+      }
+
+      function playFilm() {
+        stopFilm();
+        var t = 0;
+        for (var s = 0; s < SEQ.length; s++) {
+          (function (shot, at) {
+            timers.push(setTimeout(function () {
+              for (var i = 0; i < layers.length; i++) {
+                layers[i].classList.toggle('on', i === shot.i);
+              }
+              var v = layers[shot.i].querySelector('video');
+              if (v) {
+                try {
+                  v.currentTime = 0;
+                  var p = v.play();
+                  if (p && p.catch) { p.catch(function () {}); }
+                } catch (e) {}
+              }
+              for (var j = 0; j < txs.length; j++) {
+                txs[j].classList.toggle('on', !!shot.t && txs[j].classList.contains(shot.t));
+              }
+            }, at));
+          })(SEQ[s], t);
+          t += SEQ[s].d;
+        }
+        var start = Date.now();
+        (function tick() {
+          var el = Date.now() - start;
+          bar.style.width = Math.min(100, (el / TOTAL) * 100) + '%';
+          if (el < TOTAL) { raf = requestAnimationFrame(tick); }
+          else { timers.push(setTimeout(playFilm, 1600)); }
+        })();
+      }
+
+      var fr = document.getElementById('filmReplay');
+      if (fr) { fr.addEventListener('click', playFilm); }
+
+      var fio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting) { playFilm(); } else { stopFilm(); }
+        });
+      }, { threshold: 0.3 });
+      fio.observe(film);
+    }
 
     // 视频懒加载播放：滚到视口才加载并播放，离开即暂停（节省带宽）
     var vids = document.querySelectorAll('.clip video');
