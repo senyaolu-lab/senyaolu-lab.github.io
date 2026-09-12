@@ -102,22 +102,51 @@
   .tl .t{color:var(--gold);letter-spacing:1px;font-size:13px;}
   .tl .d{color:#C4BCAA;}
 
-  /* ===== 品牌片头（影院画框）===== */
-  .cinema{
-    position:relative;width:100%;aspect-ratio:16/9;border-radius:18px;overflow:hidden;
-    background:radial-gradient(circle at 50% 44%, #1C242B 0%, #0A0E12 74%);
-    border:1px solid #303A43;box-shadow:0 34px 90px rgba(0,0,0,.7);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
+  /* ===== 产品宣传片（顶级商务风格舞台）===== */
+  .promo{
+    position:relative;width:100%;aspect-ratio:16/9;background:#07090B;
+    border:1px solid #2A333A;border-radius:16px;overflow:hidden;
+    box-shadow:0 40px 100px rgba(0,0,0,.78);
   }
-  .cinema video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-  .cinema .mark{width:clamp(90px,13vw,150px);height:auto;opacity:.30;}
-  .cinema .t{font-size:clamp(16px,2.2vw,22px);letter-spacing:.3em;padding-left:.3em;color:var(--moon);}
-  .cinema .sub{font-size:12.5px;letter-spacing:2px;color:var(--moon-dim);}
-  .cinema .frame-line{
-    position:absolute;inset:14px;border:1px solid rgba(200,149,47,.22);border-radius:10px;pointer-events:none;
+  .ps{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;}
+  .ps.on{opacity:1;}
+  .ps video{width:100%;height:100%;object-fit:cover;display:block;}
+  .ps.hasvid::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(8,11,14,.42) 0%,rgba(8,11,14,.06) 42%,rgba(8,11,14,.82) 100%);
   }
-  .cinema-meta{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:18px;}
-  .cinema-meta .t{font-size:12.5px;color:var(--moon-dim);letter-spacing:1px;}
+  /* 开场 */
+  .p0{display:flex;align-items:center;justify-content:center;background:#07090B;flex-direction:column;gap:26px;}
+  .p0 .line{width:0;height:1px;background:var(--gold);transition:width 1.7s cubic-bezier(.2,.8,.2,1);}
+  .p0.on .line{width:34%;}
+  .p0 .mk{font-size:clamp(13px,1.5vw,17px);letter-spacing:.62em;padding-left:.62em;color:var(--moon);opacity:0;transition:opacity 1.1s ease .7s;}
+  .p0.on .mk{opacity:1;}
+  /* 落版 */
+  .p5{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
+      background:radial-gradient(circle at 50% 46%, #1C242B 0%, #07090B 72%);}
+  .p5 svg{width:clamp(58px,8vw,96px);height:auto;}
+  .p5 .n{font-size:clamp(20px,3vw,36px);letter-spacing:.36em;padding-left:.36em;color:var(--moon);}
+  .p5 .r{width:0;height:1px;background:var(--gold);transition:width 1.3s cubic-bezier(.2,.8,.2,1) .25s;}
+  .p5.on .r{width:118px;}
+  .p5 .s{font-size:clamp(11px,1.3vw,15px);letter-spacing:.32em;padding-left:.32em;color:var(--moon-dim);}
+  /* 下三分之一：产品信息锁定 */
+  .plock{
+    position:absolute;left:5.2%;bottom:10%;z-index:3;
+    opacity:0;transform:translateY(12px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1);
+  }
+  .plock.on{opacity:1;transform:none;}
+  .plock .pn{font-size:clamp(19px,2.5vw,32px);letter-spacing:.22em;color:var(--moon);line-height:1.3;}
+  .plock .prule{width:56px;height:1px;background:var(--gold);margin:11px 0;}
+  .plock .pt{font-size:clamp(10px,1.05vw,13.5px);letter-spacing:.24em;color:var(--moon-dim);}
+  .pidx{
+    position:absolute;right:5.2%;bottom:10%;z-index:3;
+    font-size:clamp(10px,1vw,12.5px);letter-spacing:.24em;color:var(--moon-dim);
+    opacity:0;transition:opacity .65s ease;
+  }
+  .pidx.on{opacity:1;}
+  .pbar{position:absolute;left:0;bottom:0;height:1px;background:var(--gold);width:0;z-index:4;opacity:.95;}
+  .promo-meta{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:20px;}
+  .promo-meta .t{font-size:12.5px;color:var(--moon-dim);letter-spacing:1px;}
 
   /* ===== 分镜 ===== */
   .board{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;}
@@ -129,7 +158,7 @@
   .fr .cap b{display:block;color:var(--gold);font-size:11px;letter-spacing:2px;margin-bottom:5px;font-weight:400;}
 
   /* ===== 产品动态展示 ===== */
-  .showcase{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:8px;}
+  .showcase{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px;}
   .sc{margin:0;}
   .sc .fr2{
     position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;
@@ -177,7 +206,7 @@
   </div>
   <div class="nav-links">
     <a href="#logo">Logo 演绎</a>
-    <a href="#film">品牌片头</a>
+    <a href="#promo">产品宣传片</a>
     <a href="#showcase">产品动态</a>
     <a href="#spec">规范</a>
   </div>
@@ -235,41 +264,59 @@
   </div>
 </section>
 
-<!-- ========== 02 品牌片头 ========== -->
-<section id="film">
-  <div class="sec-label">02 · BRAND FILM</div>
-  <h2 class="sec-title">品牌片头 · 15 秒</h2>
+<!-- ========== 02 产品宣传片 ========== -->
+<section id="promo">
+  <div class="sec-label">02 · PRODUCT FILM</div>
+  <h2 class="sec-title">产品宣传片 · 18 秒</h2>
   <div class="prose" style="margin-bottom:36px;">
-    <p>一条完整的 15 秒品牌片：<strong>黑暗中一点金光 → 云海巨月「山海」→ 巨龙显形「志」→ 玄墨杯 → 九尾 → 鲲「喝下远古」→ 月山落版</strong>。</p>
-    <p style="font-size:13.5px;color:var(--moon-dim);">画面由 <strong>AIGC 生成</strong>，按下方分镜逐镜生成后串接成片。</p>
+    <p>以「顶级商务」为基调的产品宣传片：<strong>赤金细线开场 → 四款产品依次呈现 → 月山落版</strong>。全片只用叠化转场，产品信息以极简「下三分之一」锁定，克制、沉稳、不炫技。</p>
+    <p style="font-size:13.5px;color:var(--moon-dim);">画面由 AIGC 图生视频生成；分镜、字幕排版、节奏与落版为动态设计。</p>
   </div>
 
-  <div class="cinema" id="cinema">
-    <svg class="mark" viewBox="0 0 400 400" aria-hidden="true">
-      <circle cx="200" cy="200" r="168" fill="none" stroke="#C8952F" stroke-width="6"></circle>
-      <circle cx="200" cy="200" r="126" fill="#C8952F"></circle>
-      <path d="M118,285 L152,206 L174,246 L200,180 L226,246 L248,206 L282,285 Z" fill="#0A0E12"></path>
-      <rect x="118" y="285" width="164" height="10" fill="#0A0E12"></rect>
-    </svg>
-    <div class="t">15 秒品牌片头</div>
-    <div class="sub">AIGC 生成中 · 敬请期待</div>
-    <div class="frame-line"></div>
+  <div class="promo" id="promo">
+    <div class="ps p0">
+      <div class="line"></div>
+      <div class="mk">山 海 志</div>
+    </div>
+    <div class="ps hasvid p1"><video src="images/shanhai/clip-1-jiuwei.mp4" muted playsinline preload="none"></video></div>
+    <div class="ps hasvid p2"><video src="images/shanhai/clip-2-zhulong.mp4" muted playsinline preload="none"></video></div>
+    <div class="ps hasvid p3"><video src="images/shanhai/clip-3-kun.mp4" muted playsinline preload="none"></video></div>
+    <div class="ps hasvid p4"><video src="images/shanhai/clip-5-product.mp4" muted playsinline preload="none"></video></div>
+    <div class="ps p5">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <circle cx="200" cy="200" r="168" fill="none" stroke="#C8952F" stroke-width="7"></circle>
+        <circle cx="200" cy="200" r="126" fill="#C8952F"></circle>
+        <path d="M118,285 L152,206 L174,246 L200,180 L226,246 L248,206 L282,285 Z" fill="#07090B"></path>
+        <rect x="118" y="285" width="164" height="10" fill="#07090B"></rect>
+      </svg>
+      <div class="n">山海志</div>
+      <div class="r"></div>
+      <div class="s">喝 下 远 古</div>
+    </div>
+
+    <div class="plock" id="plock">
+      <div class="pn" id="pName">九尾</div>
+      <div class="prule"></div>
+      <div class="pt" id="pTea">蜜桃白茶 · PEACH WHITE TEA</div>
+    </div>
+    <div class="pidx" id="pIdx">01 / 04</div>
+    <div class="pbar"></div>
   </div>
 
-  <div class="cinema-meta">
-    <div class="t">时长 15 秒 · 16:9 横版 · 叠化转场 · 字幕「山海 / 志 / 喝下远古」</div>
+  <div class="promo-meta">
+    <div class="t">18 秒 · 16:9 · 四款产品 · 叠化转场 · 静音循环</div>
+    <button class="replay" id="promoReplay">↻ 重播宣传片</button>
   </div>
 
   <div style="margin-top:60px;">
     <div class="sec-label" style="font-size:10px;">STORYBOARD · 分镜</div>
     <div class="board">
-      <div class="fr"><div class="im"><div class="dot"></div></div><div class="cap"><b>SHOT 01 · 0–1.4s</b>黑场，一点赤金光晕在黑暗中浮现</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/world-1.jpg" alt=""></div><div class="cap"><b>SHOT 02 · 1.4–4s</b>云海翻涌，赤金巨月露出 · 字幕「山海」</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/beast-2.jpg" alt=""></div><div class="cap"><b>SHOT 03 · 4–6.6s</b>巨龙自云中盘绕而出 · 字幕「志」</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/prod-1.jpg" alt=""></div><div class="cap"><b>SHOT 04 · 6.6–9s</b>玄墨杯立于崖上，杯中金雾升腾</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/beast-1.jpg" alt=""></div><div class="cap"><b>SHOT 05 · 9–11.4s</b>九尾白狐，九条尾巴如云雾飘动</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/beast-3.jpg" alt=""></div><div class="cap"><b>SHOT 06 · 11.4–14s</b>鲲破水而出 · 字幕「喝下远古」</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/world-2.jpg" alt=""></div><div class="cap"><b>SHOT 07 · 14–15s</b>月山图腾 + 山海志字标落版</div></div>
+      <div class="fr"><div class="im" style="background:#07090B"><div style="width:56%;height:1px;background:var(--gold)"></div></div><div class="cap"><b>SHOT 01 · 0–2.2s</b>纯黑场，一条赤金细线自中心向两侧延展，品牌名浮现</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/beast-1.jpg" alt=""></div><div class="cap"><b>SHOT 02 · 2.2–5.5s</b>九尾 · 蜜桃白茶 —— 下三分之一信息锁定</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/beast-2.jpg" alt=""></div><div class="cap"><b>SHOT 03 · 5.5–8.8s</b>烛龙 · 桂花红茶</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/beast-3.jpg" alt=""></div><div class="cap"><b>SHOT 04 · 8.8–12.1s</b>鲲 · 蝶豆蓝柑</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/prod-1.jpg" alt=""></div><div class="cap"><b>SHOT 05 · 12.1–15.4s</b>玄墨杯 · 产品特写</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/world-2.jpg" alt=""></div><div class="cap"><b>SHOT 06 · 15.4–18s</b>月山图腾 + 山海志 + 「喝下远古」落版</div></div>
     </div>
   </div>
 </section>
@@ -308,13 +355,6 @@
     <figure class="sc">
       <div class="fr2">
         <span class="tag">V4</span>
-        <video src="images/shanhai/clip-4-hero.mp4" poster="images/shanhai/hero.jpg" muted loop playsinline preload="none"></video>
-      </div>
-      <figcaption>山海异境<em>品牌主视觉</em></figcaption>
-    </figure>
-    <figure class="sc">
-      <div class="fr2">
-        <span class="tag">V5</span>
         <video src="images/shanhai/clip-5-product.mp4" poster="images/shanhai/prod-1.jpg" muted loop playsinline preload="none"></video>
       </div>
       <figcaption>玄墨杯<em>产品特写</em></figcaption>
@@ -373,6 +413,86 @@
       };
       if (hv.readyState >= 2) { kick(); }
       else { hv.addEventListener('loadeddata', kick, { once: true }); }
+    }
+
+    // ---- 产品宣传片：18 秒序列，叠化转场 + 下三分之一产品信息锁定 ----
+    var promo = document.getElementById('promo');
+    if (promo) {
+      var PLAYERS = promo.querySelectorAll('.ps');
+      var lock = document.getElementById('plock');
+      var lName = document.getElementById('pName');
+      var lTea = document.getElementById('pTea');
+      var lIdx = document.getElementById('pIdx');
+      var pbar = promo.querySelector('.pbar');
+      var SEQ2 = [
+        { i: 0, d: 2200 },
+        { i: 1, d: 3300, n: '九尾', t: '蜜桃白茶 · PEACH WHITE TEA', x: '01 / 04' },
+        { i: 2, d: 3300, n: '烛龙', t: '桂花红茶 · OSMANTHUS BLACK TEA', x: '02 / 04' },
+        { i: 3, d: 3300, n: '鲲', t: '蝶豆蓝柑 · BUTTERFLY PEA CITRUS', x: '03 / 04' },
+        { i: 4, d: 3300, n: '玄墨杯', t: '产品特写 · SIGNATURE CUP', x: '04 / 04' },
+        { i: 5, d: 2800 }
+      ];
+      var T2 = 0;
+      for (var w = 0; w < SEQ2.length; w++) { T2 += SEQ2[w].d; }
+      var timers2 = [], raf2 = null;
+
+      function stopPromo() {
+        for (var i = 0; i < timers2.length; i++) { clearTimeout(timers2[i]); }
+        timers2 = [];
+        if (raf2) { cancelAnimationFrame(raf2); raf2 = null; }
+        for (var a = 0; a < PLAYERS.length; a++) {
+          PLAYERS[a].classList.remove('on');
+          var v = PLAYERS[a].querySelector('video');
+          if (v) { try { v.pause(); v.currentTime = 0; } catch (e) {} }
+        }
+        lock.classList.remove('on');
+        lIdx.classList.remove('on');
+        pbar.style.width = '0%';
+      }
+
+      function playPromo() {
+        stopPromo();
+        var t = 0;
+        for (var s = 0; s < SEQ2.length; s++) {
+          (function (shot, at) {
+            timers2.push(setTimeout(function () {
+              for (var i = 0; i < PLAYERS.length; i++) { PLAYERS[i].classList.toggle('on', i === shot.i); }
+              var v = PLAYERS[shot.i].querySelector('video');
+              if (v) {
+                try { v.currentTime = 0; var p = v.play(); if (p && p.catch) { p.catch(function () {}); } } catch (e) {}
+              }
+              if (shot.n) {
+                lName.textContent = shot.n;
+                lTea.textContent = shot.t;
+                lIdx.textContent = shot.x;
+                lock.classList.add('on');
+                lIdx.classList.add('on');
+              } else {
+                lock.classList.remove('on');
+                lIdx.classList.remove('on');
+              }
+            }, at));
+          })(SEQ2[s], t);
+          t += SEQ2[s].d;
+        }
+        var start2 = Date.now();
+        (function tick2() {
+          var el = Date.now() - start2;
+          pbar.style.width = Math.min(100, (el / T2) * 100) + '%';
+          if (el < T2) { raf2 = requestAnimationFrame(tick2); }
+          else { timers2.push(setTimeout(playPromo, 1800)); }
+        })();
+      }
+
+      var pr = document.getElementById('promoReplay');
+      if (pr) { pr.addEventListener('click', playPromo); }
+
+      var pio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting) { playPromo(); } else { stopPromo(); }
+        });
+      }, { threshold: 0.3 });
+      pio.observe(promo);
     }
 
     // ---- 产品动态展示：滚到视口才加载并播放，离开即暂停 ----
