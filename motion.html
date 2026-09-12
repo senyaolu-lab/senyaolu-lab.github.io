@@ -6,35 +6,25 @@
 <title>山海志 · 品牌动态演绎 MOTION</title>
 <style>
   :root{
-    --ink:#14191E;
-    --ink2:#1B2228;
-    --gold:#C8952F;
-    --gold-b:#D9A93F;
-    --vermilion:#B03A2E;
-    --moon:#EDE6D6;
-    --moon-dim:#A79E8B;
-    --line:#2A333A;
+    --ink:#14191E; --ink2:#1B2228; --gold:#C8952F; --gold-b:#D9A93F;
+    --vermilion:#B03A2E; --moon:#EDE6D6; --moon-dim:#A79E8B; --line:#2A333A;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     font-family:"Noto Serif SC","Songti SC","STSong",serif;
-    background:var(--ink);color:var(--moon);
-    line-height:1.9;-webkit-font-smoothing:antialiased;
+    background:var(--ink);color:var(--moon);line-height:1.9;-webkit-font-smoothing:antialiased;
   }
-
   nav{
     position:fixed;top:0;left:0;right:0;z-index:100;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:18px 48px;
-    background:rgba(20,25,30,.84);backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;padding:18px 48px;
+    background:rgba(20,25,30,.84);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);
   }
   nav .back{font-size:13px;color:var(--moon-dim);text-decoration:none;}
   nav .back:hover{color:var(--gold-b);}
   .brand{font-size:16px;letter-spacing:4px;}
   .brand span{font-size:10px;letter-spacing:3px;color:var(--gold);margin-left:8px;}
-  .nav-links{display:flex;gap:26px;font-size:13px;}
+  .nav-links{display:flex;gap:24px;font-size:13px;}
   .nav-links a{text-decoration:none;color:var(--moon-dim);}
   .nav-links a:hover{color:var(--gold-b);}
 
@@ -54,32 +44,20 @@
   /* ===== Logo 动态演绎 ===== */
   .stage{
     background:radial-gradient(circle at 50% 42%, #1E262D 0%, #10151A 62%, #0B0F13 100%);
-    border:1px solid var(--line);border-radius:20px;
-    padding:70px 30px 56px;margin:10px 0 22px;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    min-height:520px;position:relative;overflow:hidden;
+    border:1px solid var(--line);border-radius:20px;padding:70px 30px 56px;margin:10px 0 22px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:520px;
   }
   .logo-svg{width:min(300px,60vw);height:auto;display:block;}
   .lockup{display:flex;align-items:center;gap:16px;margin-top:34px;}
-  .lockup .name{
-    font-size:clamp(26px,4vw,40px);letter-spacing:.18em;font-weight:600;color:var(--moon);
-    padding-left:.18em;
-  }
+  .lockup .name{font-size:clamp(26px,4vw,40px);letter-spacing:.18em;font-weight:600;padding-left:.18em;}
   .lockup .seal{
-    width:clamp(34px,5vw,48px);height:clamp(34px,5vw,48px);border-radius:8px;
-    background:var(--vermilion);color:#fff;
-    display:flex;align-items:center;justify-content:center;
-    font-family:"STKaiti","KaiTi",serif;font-size:clamp(19px,2.8vw,27px);
+    width:clamp(34px,5vw,48px);height:clamp(34px,5vw,48px);border-radius:8px;background:var(--vermilion);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:"STKaiti","KaiTi",serif;font-size:clamp(19px,2.8vw,27px);
   }
   .stage-en{margin-top:12px;font-size:12px;letter-spacing:8px;color:var(--moon-dim);}
 
-  /* 动画初始态：未播放时全部隐藏 */
-  .stage:not(.play) .ring,
-  .stage:not(.play) .moon,
-  .stage:not(.play) .mtn,
-  .stage:not(.play) .lockup .name,
-  .stage:not(.play) .lockup .seal,
-  .stage:not(.play) .stage-en{opacity:0;}
+  .stage:not(.play) .ring,.stage:not(.play) .moon,.stage:not(.play) .mtn,
+  .stage:not(.play) .lockup .name,.stage:not(.play) .lockup .seal,.stage:not(.play) .stage-en{opacity:0;}
 
   .stage.play .ring{animation:drawRing 1s cubic-bezier(.2,.8,.2,1) .30s both;}
   .stage.play .moon{animation:softIn .8s cubic-bezier(.2,.8,.2,1) .70s both;}
@@ -92,47 +70,61 @@
   .moon{fill:var(--gold);transform-box:fill-box;transform-origin:50% 50%;}
   .mtn{fill:var(--ink);transform-box:fill-box;transform-origin:50% 100%;}
 
-  @keyframes drawRing{ to{ stroke-dashoffset:0; } }
-  @keyframes softIn{ from{opacity:0;transform:scale(.82);} to{opacity:1;transform:scale(1);} }
-  @keyframes mtnRise{ from{transform:scaleY(0);} to{transform:scaleY(1);} }
-  @keyframes textIn{ from{opacity:0;letter-spacing:.62em;} to{opacity:1;letter-spacing:.18em;} }
-  @keyframes sealIn{ 0%{opacity:0;transform:scale(1.9) rotate(-8deg);} 62%{opacity:1;transform:scale(.93) rotate(0deg);} 100%{opacity:1;transform:scale(1);} }
+  @keyframes drawRing{to{stroke-dashoffset:0;}}
+  @keyframes softIn{from{opacity:0;transform:scale(.82);}to{opacity:1;transform:scale(1);}}
+  @keyframes mtnRise{from{transform:scaleY(0);}to{transform:scaleY(1);}}
+  @keyframes textIn{from{opacity:0;letter-spacing:.62em;}to{opacity:1;letter-spacing:.18em;}}
+  @keyframes sealIn{0%{opacity:0;transform:scale(1.9) rotate(-8deg);}62%{opacity:1;transform:scale(.93) rotate(0);}100%{opacity:1;transform:scale(1);}}
 
   .replay{
-    display:inline-flex;align-items:center;gap:9px;
-    background:transparent;border:1px solid var(--gold);color:var(--gold);
-    font-family:inherit;font-size:13px;letter-spacing:3px;
-    padding:11px 26px;border-radius:999px;cursor:pointer;transition:all .25s;
+    display:inline-flex;align-items:center;gap:9px;background:transparent;border:1px solid var(--gold);color:var(--gold);
+    font-family:inherit;font-size:13px;letter-spacing:3px;padding:11px 26px;border-radius:999px;cursor:pointer;transition:all .25s;
   }
   .replay:hover{background:var(--gold);color:var(--ink);}
 
-  /* 时间轴 */
   .timeline{margin-top:26px;border-top:1px solid var(--line);}
-  .tl{display:grid;grid-template-columns:76px 1fr;gap:18px;padding:15px 0;border-bottom:1px solid var(--line);font-size:14px;}
+  .tl{display:grid;grid-template-columns:86px 1fr;gap:18px;padding:15px 0;border-bottom:1px solid var(--line);font-size:14px;}
   .tl .t{color:var(--gold);letter-spacing:1px;font-size:13px;}
   .tl .d{color:#C4BCAA;}
 
-  /* 分镜 */
+  /* ===== 分镜 ===== */
   .board{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;}
   .fr{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--ink2);}
-  .fr .im{aspect-ratio:4/3;background:#0B0F13;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-  .fr .im img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;}
+  .fr .im{aspect-ratio:4/3;background:#0B0F13;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .fr .im img{width:100%;height:100%;object-fit:cover;opacity:.86;}
   .fr .im .dot{width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:0 0 34px 12px rgba(200,149,47,.5);}
   .fr .cap{padding:14px 16px;font-size:12.5px;color:var(--moon-dim);line-height:1.7;}
   .fr .cap b{display:block;color:var(--gold);font-size:11px;letter-spacing:2px;margin-bottom:5px;font-weight:400;}
 
-  /* 规范表 */
+  /* ===== 视频位 ===== */
+  .clips{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;}
+  .clip{
+    position:relative;border:1px dashed #36424C;border-radius:14px;overflow:hidden;
+    background:#10161B;aspect-ratio:3/4;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:12px;transition:border-color .3s,background .3s;
+  }
+  .clip:hover{border-color:var(--gold);background:#141C22;}
+  .clip .play{
+    width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:15px;padding-left:3px;
+  }
+  .clip .no{font-size:11px;letter-spacing:4px;color:var(--gold);}
+  .clip .nm{font-size:16px;letter-spacing:2px;color:var(--moon);}
+  .clip .sub{font-size:12px;color:var(--moon-dim);letter-spacing:1px;text-align:center;padding:0 16px;line-height:1.7;}
+
+  /* prompt 表 */
+  .pt{width:100%;border-collapse:collapse;margin-top:34px;font-size:13.5px;}
+  .pt th,.pt td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .pt th{color:var(--gold);font-size:11px;letter-spacing:3px;font-weight:400;white-space:nowrap;}
+  .pt td{color:#C4BCAA;line-height:1.75;}
+  .pt td.v{color:var(--moon);white-space:nowrap;letter-spacing:1px;}
+
+  /* ===== 规范 ===== */
   .spec{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px;}
   .spec th,.spec td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top;}
   .spec th{color:var(--gold);font-size:11px;letter-spacing:3px;font-weight:400;width:130px;}
   .spec td{color:#C4BCAA;}
   .spec code{color:var(--gold-b);font-family:Consolas,Monaco,monospace;font-size:13px;}
-
-  .upcoming{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;}
-  .card{border:1px dashed #35414A;border-radius:14px;padding:30px 24px;min-height:130px;display:flex;flex-direction:column;justify-content:center;}
-  .card .no{font-size:11px;letter-spacing:4px;color:var(--gold);margin-bottom:9px;}
-  .card h3{font-size:16px;font-weight:500;letter-spacing:2px;margin-bottom:5px;}
-  .card p{font-size:12.5px;color:var(--moon-dim);}
 
   footer{border-top:1px solid var(--line);padding:44px 48px;text-align:center;font-size:12px;color:var(--moon-dim);letter-spacing:2px;}
   footer .b{display:block;margin-bottom:10px;font-size:17px;letter-spacing:6px;color:var(--moon);}
@@ -143,25 +135,8 @@
     .nav-links{display:none;}
     section{padding:60px 22px;}
     header.hero{padding:130px 22px 60px;}
-    .board,.upcoming{grid-template-columns:1fr;}
-    .tl{grid-template-columns:62px 1fr;gap:10px;}
-  }
-  @media print{
-    @page{size:A4;margin:10mm;}
-    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
-    nav{display:none !important;}
-    body{background:#14191E !important;}
-    header.hero{padding:34px 0 26px !important;}
-    section{padding:26px 0 !important;max-width:100% !important;}
-    .stage{min-height:auto !important;padding:36px 20px !important;}
-    /* 打印时直接呈现动画终态 */
-    .stage:not(.play) .ring,.stage:not(.play) .moon,.stage:not(.play) .mtn,
-    .stage:not(.play) .lockup .name,.stage:not(.play) .lockup .seal,.stage:not(.play) .stage-en{opacity:1 !important;}
-    .ring{stroke-dashoffset:0 !important;}
-    .replay{display:none !important;}
-    .board,.upcoming{grid-template-columns:1fr 1fr !important;}
-    .fr,.tl,.card,tr{break-inside:avoid;}
-    footer{padding:22px 0 !important;}
+    .board,.clips{grid-template-columns:1fr;}
+    .tl{grid-template-columns:70px 1fr;gap:10px;}
   }
 </style>
 </head>
@@ -174,8 +149,8 @@
   </div>
   <div class="nav-links">
     <a href="#logo">Logo 演绎</a>
-    <a href="#board">分镜</a>
-    <a href="#clips">动态海报</a>
+    <a href="#board">品牌片头</a>
+    <a href="#clips">视频片段</a>
     <a href="#spec">规范</a>
   </div>
 </nav>
@@ -187,11 +162,13 @@
   <p class="hero-sub">把静态的品牌视觉系统，延展到时间维度</p>
 </header>
 
+<!-- ========== 01 Logo 动态演绎 ========== -->
 <section id="logo">
   <div class="sec-label">01 · LOGO MOTION</div>
   <h2 class="sec-title">Logo 动态演绎</h2>
   <div class="prose" style="margin-bottom:32px;">
-    <p>月山图腾的「生长」：<strong>金环画出 → 满月浮现 → 群山升起 → 字标浮现 → 朱砂落印</strong>。全程 4 秒，缓动统一为「先快后慢」，沉稳有力。</p>
+    <p>月山图腾的「生长」：<strong>金环画出 → 满月浮现 → 群山升起 → 字标浮现 → 朱砂落印</strong>。全程从一片纯黑开始，到 Logo 完整呈现。</p>
+    <p style="font-size:13.5px;color:var(--moon-dim);">以 SVG + CSS 实现，网页内实时渲染，无需视频文件。</p>
   </div>
 
   <div class="stage play" id="stage">
@@ -225,34 +202,52 @@
   </div>
 </section>
 
+<!-- ========== 02 品牌片头分镜 ========== -->
 <section id="board">
   <div class="sec-label">02 · STORYBOARD</div>
-  <h2 class="sec-title">品牌片头分镜 · 15 秒</h2>
+  <h2 class="sec-title">品牌片头 · 分镜</h2>
+  <div class="prose" style="margin-bottom:32px;">
+    <p>六个镜头，一条完整叙事线：<strong>黑暗中一点金光 → 云海巨月 → 巨龙显形 → 玄墨杯升腾 → 五兽剪影 → 月山落版</strong>。总时长 15 秒。</p>
+    <p style="font-size:13.5px;color:var(--moon-dim);">运镜只用「缓慢推进」与「缓慢拉远」，转场统一为叠化。</p>
+  </div>
   <div class="board">
     <div class="fr"><div class="im"><div class="dot"></div></div><div class="cap"><b>SHOT 01 · 0–2s</b>黑场，一点赤金光晕在黑暗中浮现</div></div>
-    <div class="fr"><div class="im"><img src="images/shanhai/world-1.jpg" alt=""></div><div class="cap"><b>SHOT 02 · 2–5s</b>云海翻涌，赤金巨月缓缓从云中露出</div></div>
-    <div class="fr"><div class="im"><img src="images/shanhai/beast-2.jpg" alt=""></div><div class="cap"><b>SHOT 03 · 5–8s</b>巨龙自云中盘绕而出，龙鳞反光</div></div>
+    <div class="fr"><div class="im"><img src="images/shanhai/world-1.jpg" alt=""></div><div class="cap"><b>SHOT 02 · 2–5s</b>云海翻涌，赤金巨月缓缓露出 · 字幕「山海」</div></div>
+    <div class="fr"><div class="im"><img src="images/shanhai/beast-2.jpg" alt=""></div><div class="cap"><b>SHOT 03 · 5–8s</b>巨龙自云中盘绕而出 · 字幕「志」</div></div>
     <div class="fr"><div class="im"><img src="images/shanhai/prod-1.jpg" alt=""></div><div class="cap"><b>SHOT 04 · 8–11s</b>玄墨杯立于崖上，杯中金雾升腾</div></div>
-    <div class="fr"><div class="im"><img src="images/shanhai/beast-3.jpg" alt=""></div><div class="cap"><b>SHOT 05 · 11–14s</b>镜头拉远，五兽剪影在云海间若隐若现</div></div>
+    <div class="fr"><div class="im"><img src="images/shanhai/hero.jpg" alt=""></div><div class="cap"><b>SHOT 05 · 11–14s</b>镜头拉远，五兽剪影若隐若现 · 字幕「喝下远古」</div></div>
     <div class="fr"><div class="im"><img src="images/shanhai/world-2.jpg" alt=""></div><div class="cap"><b>SHOT 06 · 14–15s</b>月山图腾 + 山海志字标落版</div></div>
   </div>
 </section>
 
+<!-- ========== 03 AIGC 视频片段 ========== -->
 <section id="clips">
-  <div class="sec-label">03 · MOTION POSTERS</div>
-  <h2 class="sec-title">动态海报</h2>
+  <div class="sec-label">03 · AIGC CLIPS</div>
+  <h2 class="sec-title">视频片段 · 图生视频</h2>
   <div class="prose" style="margin-bottom:32px;">
-    <p>用已有静态视觉做「图生视频」，让画面里本就含着的运动释放出来——<strong>巨龙盘绕、鲲破水而出、金雾升腾</strong>。</p>
+    <p>用已有的品牌视觉资产做 <strong>AIGC 图生视频</strong>——这些静态画面里本来就含着运动：<strong>巨龙盘绕、鲲破水而出、金雾升腾</strong>。把运动释放出来，品牌视觉就从「画面」进入了「时间」。</p>
+    <p style="font-size:13.5px;color:var(--moon-dim);">工具：可灵 / 即梦 · 图生视频 · 单条 5 秒 · 统一比例 3:4</p>
   </div>
-  <div class="upcoming">
-    <div class="card"><div class="no">V1</div><h3>九尾 · 动态海报</h3><p>尾巴飘动 · 花瓣飘落</p></div>
-    <div class="card"><div class="no">V2</div><h3>烛龙 · 动态海报</h3><p>金龙盘旋 · 烛火跳动</p></div>
-    <div class="card"><div class="no">V3</div><h3>鲲 · 动态海报</h3><p>水花翻涌 · 鲲鱼摆尾</p></div>
-    <div class="card"><div class="no">V4</div><h3>首屏 · 动态主视觉</h3><p>云海流动 · 金雾升腾</p></div>
-    <div class="card"><div class="no">V5</div><h3>产品 · 动态特写</h3><p>水珠滑落 · 热气袅袅</p></div>
+
+  <div class="clips">
+    <div class="clip"><div class="play">▶</div><div class="no">V1</div><div class="nm">九尾</div><div class="sub">九尾如云雾飘动<br>花瓣缓缓飘落</div></div>
+    <div class="clip"><div class="play">▶</div><div class="no">V2</div><div class="nm">烛龙</div><div class="sub">金龙缓缓盘旋<br>烛火跳动 · 金桂飘落</div></div>
+    <div class="clip"><div class="play">▶</div><div class="no">V3</div><div class="nm">鲲</div><div class="sub">杯中水花翻涌<br>鲲鱼轻轻摆尾</div></div>
+    <div class="clip"><div class="play">▶</div><div class="no">V4</div><div class="nm">首屏主视觉</div><div class="sub">云海缓慢流动<br>杯中金雾升腾</div></div>
+    <div class="clip"><div class="play">▶</div><div class="no">V5</div><div class="nm">产品特写</div><div class="sub">镜头极缓慢环绕<br>水珠滑落 · 热气袅袅</div></div>
   </div>
+
+  <table class="pt">
+    <tr><th>编号</th><th>源图</th><th>图生视频运动描述</th></tr>
+    <tr><td class="v">V1</td><td class="v">九尾</td><td>镜头缓慢推进，白狐的九条尾巴如云雾般轻轻飘动，花瓣缓缓飘落，月光轻微呼吸般明暗变化，画面安静而神秘</td></tr>
+    <tr><td class="v">V2</td><td class="v">烛龙</td><td>金龙缓缓盘旋，龙鳞反射赤金光泽，口中烛火轻轻跳动，金色桂花缓缓飘落，热气升腾，画面恢弘</td></tr>
+    <tr><td class="v">V3</td><td class="v">鲲</td><td>杯中蓝紫色水花缓缓翻涌，鲲鱼轻轻摆尾游动，水珠缓慢飞溅后落下，微光闪烁，画面梦幻</td></tr>
+    <tr><td class="v">V4</td><td class="v">首屏</td><td>云海缓慢流动，赤金满月轻微呼吸，杯中金色雾气缓缓升腾，巨龙在云中缓慢游动，镜头极缓慢推进</td></tr>
+    <tr><td class="v">V5</td><td class="v">产品</td><td>镜头极缓慢环绕，杯壁水珠缓缓滑落，杯中热气袅袅升腾，旁边铜章反射微光，背景光影缓慢流动</td></tr>
+  </table>
 </section>
 
+<!-- ========== 04 动效规范 ========== -->
 <section id="spec">
   <div class="sec-label">04 · MOTION SPEC</div>
   <h2 class="sec-title">动效规范</h2>
@@ -261,10 +256,10 @@
     <tr><th>次缓动</th><td><code>cubic-bezier(.4,0,.2,1)</code>　用于转场</td></tr>
     <tr><th>回弹</th><td><code>cubic-bezier(.34,1.56,.64,1)</code>　仅用于印章落下</td></tr>
     <tr><th>最短时长</th><td>单元素动效 ≥ 0.6s —— 低于 0.6s 会显得廉价</td></tr>
-    <tr><th>转场</th><td>统一用「金雾溶解」：上一镜头以赤金粒子消散</td></tr>
-    <tr><th>节奏</th><td>2 秒内至少一次视觉变化，避免长时间静止</td></tr>
-    <tr><th>镜头</th><td>只用「缓慢推进」与「极缓慢环绕」，禁用快速推拉、甩镜</td></tr>
-    <tr><th>禁止</th><td>花哨转场、强抖动、快速缩放 —— 会立刻拉低品牌感</td></tr>
+    <tr><th>转场</th><td>统一用叠化（cross-dissolve），禁用花哨转场</td></tr>
+    <tr><th>运镜</th><td>只用「缓慢推进」与「缓慢拉远」；单镜头位移 ≤ 15% 画幅</td></tr>
+    <tr><th>节奏</th><td>每 2 秒至少一次视觉变化，避免长时间静止</td></tr>
+    <tr><th>生成约束</th><td>图生视频的镜头运动必须「慢而稳」；禁用快速推拉、甩镜、强抖动</td></tr>
   </table>
 </section>
 
@@ -278,15 +273,14 @@
   (function () {
     var stage = document.getElementById('stage');
     var btn = document.getElementById('replay');
-    function play() {
+    function playLogo() {
       stage.classList.remove('play');
       void stage.offsetWidth;
       stage.classList.add('play');
     }
-    btn.addEventListener('click', play);
-    // 首次进入视口时自动播放
+    btn.addEventListener('click', playLogo);
     var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { play(); io.disconnect(); } });
+      es.forEach(function (e) { if (e.isIntersecting) { playLogo(); io.disconnect(); } });
     }, { threshold: 0.35 });
     io.observe(stage);
   })();
