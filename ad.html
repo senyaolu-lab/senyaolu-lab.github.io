@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>心力价签 · 广告战役 THE COST OF HEART</title>
+<style>
+  :root{
+    --yellow:#F2E600; --ink:#0A0A0A; --paper:#F5F3EE;
+    --red:#FF3B22; --gray:#8C8C86; --dgray:#3A3A38; --line:#E0DDD4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Noto Sans SC","Microsoft YaHei","PingFang SC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:"Arial Black","Arial",sans-serif;letter-spacing:.12em;}
+
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;padding:16px 48px;
+    background:rgba(245,243,238,.90);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);
+  }
+  nav .back{font-size:13px;color:var(--gray);text-decoration:none;}
+  nav .back:hover{color:var(--ink);}
+  .brand{font-size:16px;letter-spacing:.18em;font-weight:900;}
+  .brand span{font-size:10px;letter-spacing:.16em;color:var(--gray);margin-left:10px;font-weight:400;}
+  .nav-links{display:flex;gap:22px;font-size:12.5px;}
+  .nav-links a{text-decoration:none;color:var(--gray);}
+  .nav-links a:hover{color:var(--ink);}
+
+  /* ===== 首屏 ===== */
+  header.hero{
+    position:relative;background:var(--ink);color:var(--paper);
+    padding:150px 48px 0;overflow:hidden;
+  }
+  .hero-inner{max-width:1120px;margin:0 auto;position:relative;z-index:2;}
+  .hero-label{font-size:11px;letter-spacing:.5em;color:var(--yellow);margin-bottom:22px;}
+  .hero-title{font-size:clamp(46px,9vw,110px);line-height:1;font-weight:900;letter-spacing:.04em;}
+  .hero-en{margin-top:18px;font-size:clamp(11px,1.4vw,14px);letter-spacing:.42em;color:#8E8A80;}
+  .hero-sub{margin-top:30px;font-size:16px;color:#C9C4B8;max-width:620px;}
+  .hero-meta{margin-top:34px;display:flex;gap:10px;flex-wrap:wrap;}
+  .hero-meta span{font-size:11.5px;letter-spacing:.14em;border:1px solid #3A3A38;border-radius:999px;padding:7px 16px;color:#B8B3A8;}
+  .hero-slog{
+    max-width:1120px;margin:56px auto 0;position:relative;z-index:2;
+    background:var(--yellow);color:var(--ink);
+    padding:22px 34px;font-size:clamp(20px,3.4vw,40px);font-weight:900;letter-spacing:.03em;
+  }
+  .hero-rule{height:26px;background:
+    repeating-linear-gradient(90deg,var(--yellow) 0 34px,transparent 34px 60px);
+    margin-top:34px;}
+
+  section{padding:88px 48px;max-width:1120px;margin:0 auto;}
+  section.dark{background:var(--ink);color:var(--paper);max-width:none;padding:88px 48px;}
+  section.dark .wrap{max-width:1120px;margin:0 auto;}
+  .sec-label{font-size:10.5px;letter-spacing:.46em;color:var(--gray);margin-bottom:14px;}
+  .sec-title{font-size:clamp(24px,3.4vw,38px);font-weight:900;letter-spacing:.03em;margin-bottom:30px;}
+  .prose{max-width:740px;font-size:15.5px;color:var(--dgray);}
+  section.dark .prose{color:#BEB9AE;}
+  .prose p{margin-bottom:15px;}
+  .prose strong{color:var(--ink);font-weight:900;}
+  section.dark .prose strong{color:var(--yellow);}
+  .rule{height:1px;background:var(--line);margin:34px 0;max-width:1120px;}
+  section.dark .rule{background:#2C2C2A;}
+
+  /* 洞察大字 */
+  .insight{font-size:clamp(22px,3.6vw,44px);font-weight:900;line-height:1.45;letter-spacing:.02em;margin:8px 0 26px;}
+  .insight em{font-style:normal;background:var(--yellow);padding:0 8px;}
+
+  /* 双价签对照表 */
+  table.cmp{width:100%;border-collapse:collapse;margin:26px 0 10px;font-size:14.5px;}
+  table.cmp th,table.cmp td{border:1px solid var(--line);padding:13px 16px;text-align:left;}
+  table.cmp th{background:var(--ink);color:var(--paper);font-size:11.5px;letter-spacing:.2em;font-weight:700;}
+  table.cmp td:first-child{font-weight:900;}
+  table.cmp td.cost{color:var(--red);font-weight:900;}
+  section.dark table.cmp th,section.dark table.cmp td{border-color:#33332F;}
+  section.dark table.cmp th{background:var(--yellow);color:var(--ink);}
+  section.dark table.cmp td.cost{color:var(--yellow);}
+
+  /* 图片 */
+  figure{margin:0 0 26px;}
+  figure img{width:100%;height:auto;display:block;border:1px solid var(--line);}
+  section.dark figure img{border-color:#33332F;}
+  figcaption{margin-top:12px;font-size:12px;letter-spacing:.1em;color:var(--gray);display:flex;justify-content:space-between;gap:16px;}
+
+  /* 海报双列 */
+  .posters{display:grid;grid-template-columns:1fr 1fr;gap:34px 26px;}
+  .posters figure{margin:0;}
+
+  /* 社交三列 */
+  .social{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start;}
+  .social figure{margin:0;}
+
+  /* 色板 */
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:26px 0 8px;}
+  .sw{height:150px;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;padding:16px;}
+  .sw .n{font-size:11px;letter-spacing:.22em;font-weight:700;}
+  .sw .h{font-size:22px;font-weight:900;letter-spacing:.04em;}
+
+  /* 翻牌装置 */
+  .flipwrap{background:var(--ink);padding:40px;border:1px solid #33332F;}
+  .flipgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+  .flip{aspect-ratio:1/1.32;perspective:600px;cursor:pointer;}
+  .flip .in{position:relative;width:100%;height:100%;transition:transform .55s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d;}
+  .flip.on .in{transform:rotateY(180deg);}
+  .flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px;border:1px solid #33332F;}
+  .flip .f{background:var(--paper);color:var(--ink);}
+  .flip .b{background:var(--yellow);color:var(--ink);transform:rotateY(180deg);font-weight:900;}
+  .flip .f .nm{font-size:13px;font-weight:900;letter-spacing:.06em;}
+  .flip .f .pr{font-size:20px;font-weight:900;margin-top:4px;}
+  .flip .b .hb{font-size:10px;letter-spacing:.18em;color:var(--dgray);font-weight:700;}
+  .flip .b .hv{font-size:12.5px;font-weight:900;line-height:1.4;margin-top:4px;}
+  .flipnote{margin-top:20px;font-size:12.5px;color:#8E8A80;letter-spacing:.06em;}
+
+  /* 分镜脚本 */
+  .board{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .shot{border:1px solid var(--line);padding:0;overflow:hidden;}
+  .shot .box{aspect-ratio:16/9;background:#EDEAE2;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);}
+  .shot .box b{font-size:34px;font-weight:900;color:#C6C1B4;letter-spacing:.06em;}
+  .shot .tx{padding:14px 16px 18px;}
+  .shot .no{font-size:10px;letter-spacing:.26em;color:var(--gray);margin-bottom:7px;}
+  .shot .ds{font-size:13.5px;color:var(--dgray);line-height:1.65;}
+  .shot .sd{margin-top:9px;font-size:11.5px;color:var(--gray);letter-spacing:.06em;}
+
+  /* 排期 */
+  .sched{width:100%;border-collapse:collapse;font-size:14px;}
+  .sched th,.sched td{border:1px solid var(--line);padding:13px 16px;text-align:left;}
+  .sched th{background:var(--ink);color:var(--paper);font-size:11.5px;letter-spacing:.2em;font-weight:700;}
+  .sched td:first-child{font-weight:900;color:var(--red);}
+
+  /* 流程链 */
+  .chain{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .chain .st{border:1px solid #33332F;padding:20px;}
+  .chain .st .k{font-size:10px;letter-spacing:.26em;color:var(--yellow);}
+  .chain .st .v{margin-top:8px;font-size:15px;font-weight:900;}
+  .chain .st .d{margin-top:7px;font-size:12.5px;color:#8E8A80;line-height:1.6;}
+
+  footer{border-top:1px solid var(--line);padding:52px 48px;text-align:center;font-size:12px;color:var(--gray);letter-spacing:.14em;}
+  footer .b{display:block;margin-bottom:12px;font-size:18px;letter-spacing:.3em;color:var(--ink);font-weight:900;}
+  footer a{color:var(--gray);text-decoration:none;border-bottom:1px solid var(--line);}
+
+  @media(max-width:900px){
+    nav{padding:13px 20px;} .nav-links{display:none;}
+    header.hero{padding:118px 20px 0;}
+    .hero-slog{padding:18px 22px;}
+    section,section.dark{padding:62px 20px;}
+    .posters{grid-template-columns:1fr;}
+    .social{grid-template-columns:1fr;}
+    .swatches{grid-template-columns:1fr 1fr;}
+    .flipgrid{grid-template-columns:repeat(3,1fr);}
+    .board{grid-template-columns:1fr;}
+    .chain{grid-template-columns:1fr;}
+    .flipwrap{padding:20px;}
+  }
+  @media print{
+    @page{size:A4;margin:11mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    nav{display:none !important;}
+    header.hero{padding:22px 0 0 !important;}
+    section,section.dark{padding:20px 0 !important;}
+    .hero-rule{display:none;}
+    figure,table,.posters figure,.social figure,.shot,.chain .st,.flipwrap{break-inside:avoid;}
+    .sec-title{break-after:avoid;}
+    .flip{cursor:default;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="back" href="index.html">← 返回作品集</a>
+  <div class="brand">心力价签<span>THE COST OF HEART</span></div>
+  <div class="nav-links">
+    <a href="#insight">洞察</a>
+    <a href="#idea">核心创意</a>
+    <a href="#visual">视觉系统</a>
+    <a href="#posters">系列海报</a>
+    <a href="#ooh">互动装置</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">PROJECT 04 · 广告战役</div>
+    <h1 class="hero-title">心力价签</h1>
+    <div class="hero-en mono">THE&nbsp;COST&nbsp;OF&nbsp;HEART</div>
+    <p class="hero-sub">如果心力是一种货币，每件商品都应该有第二种价格。本战役给商品贴上「心力价签」，把那些从不被标价的消耗，明明白白写在货架上。</p>
+    <div class="hero-meta">
+      <span>自主命题 CAMPAIGN</span>
+      <span>洞察驱动</span>
+      <span>KV + 系列海报</span>
+      <span>社交物料</span>
+      <span>互动户外</span>
+      <span>影视脚本</span>
+    </div>
+  </div>
+  <div class="hero-slog">最贵的不是价格，是心力。</div>
+  <div class="hero-rule"></div>
+</header>
+
+<!-- ============ 01 命题与洞察 ============ -->
+<section id="insight">
+  <div class="sec-label">01 / BRIEF &amp; INSIGHT</div>
+  <h2 class="sec-title">命题与洞察</h2>
+
+  <div class="prose">
+    <p><strong>命题设定</strong>　为平价日用品零售品牌「日常有限公司」策划 2026 年秋季品牌战役，目标人群 18–28 岁，目标是提升品牌好感度与社交讨论度。预算级别为中型战役：线上为主，加一座城市的地铁快闪。</p>
+    <p>这个项目用来回答三个问题：能不能从真实的人性观察里提炼出一句话；能不能把这句话变成一个可执行的创意机制；能不能把它铺到多个媒介上而不散架。</p>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="insight">年轻人不是没钱了，<br>是<em>没劲了</em>。</div>
+
+  <div class="prose">
+    <p>「消费降级」「平替」被反复讨论，但账单并不是核心焦虑。真正的耗竭发生在<strong>决策之前</strong>——比价、算券、凑单、担心买错。一件 19 元的商品，可能消耗掉一整个晚上的心理预算。</p>
+    <p>于是出现一种矛盾行为：<strong>宁可多花钱，也要少做决定。</strong>「随便」「都行」「你定」这三个词，是这一代人的能量守恒宣言。</p>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="insight" style="font-size:clamp(19px,2.7vw,32px)">省钱的本质不是钱包不足，是<em>心力不足</em>。<br>每一次选择都在扣血。</div>
+
+  <div class="prose">
+    <p>如果心力是一种货币，那么每件商品都应该有第二种价格。这成为了整个战役的创意机关。</p>
+  </div>
+
+  <table class="cmp">
+    <thead>
+      <tr><th>商 品</th><th>价 格</th><th>心 力</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>咖啡</td><td>¥19</td><td class="cost">今天第 4 个决定</td></tr>
+      <tr><td>外卖</td><td>¥28</td><td class="cost">30 分钟滑动</td></tr>
+      <tr><td>同款不同色</td><td>差价 ¥15</td><td class="cost">一个失眠的夜晚</td></tr>
+      <tr><td>「都可以」</td><td>¥0</td><td class="cost">全部</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 02 核心创意 ============ -->
+<section id="idea" class="dark">
+  <div class="wrap">
+    <div class="sec-label">02 / BIG IDEA</div>
+    <h2 class="sec-title">核心创意</h2>
+
+    <div class="insight">给商品贴上<em>第二种价签</em>——<br>它消耗你多少心力。</div>
+
+    <div class="prose">
+      <p>价格签是我们最熟悉的视觉符号，它从不撒谎，也从不关心买的人累不累。把「心力」这一栏加进去，整个货架就变成一个关于疲惫的公开档案。</p>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="chain">
+      <div class="st"><div class="k">SIMPLE</div><div class="v">简单</div><div class="d">一句话能说清，一个动作能演示：加一栏。</div></div>
+      <div class="st"><div class="k">SCALABLE</div><div class="v">可延展</div><div class="d">任何商品、任何行业都能贴，天然连载。</div></div>
+      <div class="st"><div class="k">PARTICIPATORY</div><div class="v">可参与</div><div class="d">用户能自己给生活贴价签，UGC 门槛极低。</div></div>
+      <div class="st"><div class="k">TENSION</div><div class="v">有冲突</div><div class="d">「明码标价」的正当性被质疑，自带讨论张力。</div></div>
+    </div>
+
+    <div class="rule"></div>
+
+    <figure>
+      <img src="images/ad/02-kv-main.png" alt="心力价签 主视觉 KV">
+      <figcaption><span>KV-01 · 主视觉 · 16:9</span><span>THE COST OF HEART</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 03 视觉系统 ============ -->
+<section id="visual">
+  <div class="sec-label">03 / VISUAL SYSTEM</div>
+  <h2 class="sec-title">视觉系统</h2>
+
+  <div class="prose">
+    <p><strong>价格签本身就是主视觉。</strong>不做插画、不做渐变、不做氛围渲染——用货架标签的工业精确，加瑞士国际主义排印的秩序感，再加纯黑反白的压迫感。一句话：像一张被放大了 200 倍的真实价签。</p>
+    <p>为什么用荧光黄而不是暖黄：<strong>价格签黄是廉价、醒目的，它故意不高级。</strong>这一代人买东西时看的就是这个颜色——把它放大到整面墙，是一种反向的诚实。</p>
+  </div>
+
+  <div class="swatches">
+    <div class="sw" style="background:#F2E600;color:#0A0A0A"><div class="n">SIGNAL YELLOW</div><div class="h">#F2E600</div></div>
+    <div class="sw" style="background:#0A0A0A;color:#F5F3EE"><div class="n">INK BLACK</div><div class="h">#0A0A0A</div></div>
+    <div class="sw" style="background:#F5F3EE;color:#0A0A0A"><div class="n">PAPER WHITE</div><div class="h">#F5F3EE</div></div>
+    <div class="sw" style="background:#FF3B22;color:#F5F3EE"><div class="n">ALERT RED</div><div class="h">#FF3B22</div></div>
+  </div>
+
+  <div class="rule"></div>
+
+  <figure>
+    <img src="images/ad/01-tag-system.png" alt="价签系统 · 双价目结构 · 四色配置">
+    <figcaption><span>价签系统 · 双价目结构 · 四色配置</span><span>TAG SYSTEM V1.0</span></figcaption>
+  </figure>
+
+  <div class="prose">
+    <p><strong>结构固定，颜色轮换。</strong>每张价签由四层构成：商品名与条码、巨大价格、心力栏、底部标语。四色配置让系列物料在统一中产生节奏，不靠插图变化，只靠颜色与字号。</p>
+    <p><strong>规则</strong>　全系统禁用圆角，保持工业感；主字故意压边、跨栏、出血，让静态画面产生动作；条码作为装饰性图形可无限重排。</p>
+  </div>
+</section>
+
+<!-- ============ 04 系列海报 ============ -->
+<section id="posters" style="background:#EDEAE2;max-width:none;padding:88px 48px;">
+  <div style="max-width:1120px;margin:0 auto;">
+    <div class="sec-label">04 / POSTER SERIES</div>
+    <h2 class="sec-title">系列海报 · 六张</h2>
+
+    <div class="prose" style="margin-bottom:34px;">
+      <p>统一结构：<strong>上 = 商品实拍 / 中 = 双层价签 / 下 = 一句文案</strong>。六张海报共用一个版式骨架与一套视觉系统，只更换商品、数字与文案——这是广告物料该有的样子：可批量生产，且每一张都还认得出来自同一个战役。</p>
+    </div>
+
+    <div class="posters">
+      <figure><img src="images/ad/10-poster-01.png" alt="系列海报 01 咖啡"><figcaption><span>P-01 · 咖啡</span><span>你已经选了三次，这是第四次。</span></figcaption></figure>
+      <figure><img src="images/ad/10-poster-02.png" alt="系列海报 02 外卖"><figcaption><span>P-02 · 外卖</span><span>你不是在选餐，是在耗电。</span></figcaption></figure>
+      <figure><img src="images/ad/10-poster-03.png" alt="系列海报 03 同款不同色"><figcaption><span>P-03 · 同款不同色</span><span>差价 15 元，代价一整晚。</span></figcaption></figure>
+      <figure><img src="images/ad/10-poster-04.png" alt="系列海报 04 凑单满减"><figcaption><span>P-04 · 凑单满减</span><span>省了 12 块，多了三件垃圾。</span></figcaption></figure>
+      <figure><img src="images/ad/10-poster-05.png" alt="系列海报 05 随便"><figcaption><span>P-05 · 随便</span><span>最贵的一顿饭，是你说随便的那顿。</span></figcaption></figure>
+      <figure><img src="images/ad/10-poster-06.png" alt="系列海报 06 会员续费"><figcaption><span>P-06 · 会员续费</span><span>你续的不是会员，是惯性。</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 社交与数字 ============ -->
+<section id="social">
+  <div class="sec-label">05 / DIGITAL &amp; SOCIAL</div>
+  <h2 class="sec-title">社交与数字物料</h2>
+
+  <div class="prose" style="margin-bottom:30px;">
+    <p>同一套价签系统按平台裁切重排。封面用「1:1 / 3:4 / 9:16」三种比例，保持签名色与主字的绝对优先——在小红书信息流里，<strong>荧光黄就是最好的停止滑动信号。</strong></p>
+  </div>
+
+  <div class="social">
+    <figure><img src="images/ad/20-social-1x1.png" alt="社交物料 1:1"><figcaption><span>S-01 · 1:1 朋友圈</span><span>1080×1080</span></figcaption></figure>
+    <figure><img src="images/ad/21-social-3x4.png" alt="社交物料 3:4"><figcaption><span>S-02 · 3:4 小红书</span><span>1080×1440</span></figcaption></figure>
+    <figure><img src="images/ad/22-social-9x16.png" alt="社交物料 9:16"><figcaption><span>S-03 · 9:16 信息流</span><span>1080×1920</span></figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ 06 互动装置 ============ -->
+<section id="ooh" class="dark">
+  <div class="wrap">
+    <div class="sec-label">06 / INTERACTIVE OOH</div>
+    <h2 class="sec-title">线下互动装置 · 心力价格牌</h2>
+
+    <div class="prose" style="margin-bottom:32px;">
+      <p>一面由 200 块可翻转价签组成的地铁墙。正面是普通商品与价格，翻转后是该商品的「心力价」。路人翻转自己最有共鸣的那一块，整面墙实时累积成一句完整的话：<strong>「最贵的不是价格，是心力。」</strong></p>
+      <p>下面是可以直接点的交互原型——点任意一块价签看它翻过来。</p>
+    </div>
+
+    <div class="flipwrap">
+      <div class="flipgrid" id="flipgrid"></div>
+      <div class="flipnote">交互原型 · 点击价签翻转 &nbsp;|&nbsp; 现场为 200 块实体价签，翻转数据接入大屏实时统计</div>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="chain">
+      <div class="st"><div class="k">STEP 01</div><div class="v">被吸引</div><div class="d">整面荧光黄价签墙，与地铁通道的灰形成强反差。</div></div>
+      <div class="st"><div class="k">STEP 02</div><div class="v">读共鸣</div><div class="d">每一块写着一种日常消耗，总有一块是「我」。</div></div>
+      <div class="st"><div class="k">STEP 03</div><div class="v">翻一下</div><div class="d">亲手翻转，动作极简，参与成本几乎为零。</div></div>
+      <div class="st"><div class="k">STEP 04</div><div class="v">拍走它</div><div class="d">大屏统计 + slogan 浮出，天然成为社交传播素材。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 影视脚本 ============ -->
+<section id="film">
+  <div class="sec-label">07 / FILM SCRIPT</div>
+  <h2 class="sec-title">15 秒影片脚本</h2>
+
+  <div class="prose" style="margin-bottom:30px;">
+    <p>全片只有一个人、一个动作：<strong>撕价签</strong>。撕下的每一张，背面都是一句心力账。当撕到第七张时手停住——那一刻的停顿，就是整个战役想说的话。</p>
+  </div>
+
+  <div class="board">
+    <div class="shot"><div class="box"><b>01</b></div><div class="tx"><div class="no">SHOT 01 · 2s</div><div class="ds">手伸向货架，拿起一件商品。镜头持平，景别中景。</div><div class="sd">音效：超市环境底噪</div></div></div>
+    <div class="shot"><div class="box"><b>02</b></div><div class="tx"><div class="no">SHOT 02 · 2s</div><div class="ds">特写：手指捏住价签边缘，缓缓撕下。</div><div class="sd">音效：撕纸声（清晰、放大）</div></div></div>
+    <div class="shot"><div class="box"><b>03</b></div><div class="tx"><div class="no">SHOT 03 · 2s</div><div class="ds">价签背面入画，手写体一行字：「今天第 4 个决定」。</div><div class="sd">音效：静音</div></div></div>
+    <div class="shot"><div class="box"><b>04</b></div><div class="tx"><div class="no">SHOT 04 · 3s</div><div class="ds">快速剪辑：撕下、撕下、撕下……共七次，节奏逐渐加快。</div><div class="sd">音效：撕纸声密集叠加</div></div></div>
+    <div class="shot"><div class="box"><b>05</b></div><div class="tx"><div class="no">SHOT 05 · 3s</div><div class="ds">手停住，悬在半空。桌上堆着七张价签。</div><div class="sd">音效：全部静止，只留一点空气声</div></div></div>
+    <div class="shot"><div class="box"><b>06</b></div><div class="tx"><div class="no">SHOT 06 · 3s</div><div class="ds">黑场。白字浮现。保持 2 秒后缓出。</div><div class="sd">字幕：最贵的不是价格，是心力。</div></div></div>
+  </div>
+</section>
+
+<!-- ============ 08 媒介排期 ============ -->
+<section id="plan" style="background:#EDEAE2;max-width:none;padding:88px 48px;">
+  <div style="max-width:1120px;margin:0 auto;">
+    <div class="sec-label">08 / MEDIA PLAN</div>
+    <h2 class="sec-title">媒介排期</h2>
+
+    <table class="sched">
+      <thead><tr><th>阶段</th><th>周期</th><th>渠道</th><th>目标</th></tr></thead>
+      <tbody>
+        <tr><td>预热</td><td>W1</td><td>微博悬念海报（空白价签）</td><td>制造疑问：这张签少了什么？</td></tr>
+        <tr><td>引爆</td><td>W2</td><td>主视觉 + 六张系列海报 + 小红书</td><td>概念落地，建立认知</td></tr>
+        <tr><td>互动</td><td>W3</td><td>地铁装置 + UGC 话题</td><td>参与扩散，内容自生产</td></tr>
+        <tr><td>收束</td><td>W4</td><td>TVC + 长图复盘</td><td>沉淀记忆点，二次传播</td></tr>
+      </tbody>
+    </table>
+
+    <div class="prose" style="margin-top:30px;">
+      <p>四个阶段的任务各不相同：预热只制造疑问、不解释；引爆把概念说透；互动把话语权交给用户；收束用影片把情绪收回到 slogan 上。<strong>广告战役不是一次投放，是一条被设计过的时间线。</strong></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="b">心力价签</span>
+  THE COST OF HEART &nbsp;·&nbsp; 广告战役 · 自主命题 · 2026<br><br>
+  吕森垚 · 2027 届 · 山西传媒学院 &nbsp;|&nbsp; <a href="index.html">返回作品集</a>
+</footer>
+
+<script>
+(function(){
+  var items = [
+    ["咖啡","19","今天第 4 个决定"],
+    ["外卖","28","30 分钟滑动"],
+    ["同款","+15","一个失眠的夜晚"],
+    ["凑单","-12","拼进 3 件不需要的"],
+    ["随便","0","全部"],
+    ["会员","15","每月一次心理建设"],
+    ["纸巾","9","比价 6 家店"],
+    ["牙膏","16","看 40 条测评"],
+    ["袜子","12","纠结 3 个颜色"],
+    ["耳机","299","研究 2 周最后没买"],
+    ["洗衣液","39","算了三遍单价"],
+    ["水果","25","挑到被后面的人催"]
+  ];
+  var grid = document.getElementById('flipgrid');
+  if(!grid) return;
+  items.forEach(function(it){
+    var d = document.createElement('div');
+    d.className = 'flip';
+    d.innerHTML = '<div class="in">' +
+      '<div class="f"><div class="nm">' + it[0] + '</div><div class="pr">' + it[1] + '</div></div>' +
+      '<div class="b"><div class="hb">心 力</div><div class="hv">' + it[2] + '</div></div>' +
+      '</div>';
+    d.addEventListener('click', function(){
+      d.classList.toggle('on');
+      var all = grid.querySelectorAll('.flip');
+      var on = grid.querySelectorAll('.flip.on').length;
+      if(on === all.length){
+        setTimeout(function(){
+          all.forEach(function(el){ el.classList.remove('on'); });
+        }, 1400);
+      }
+    });
+    grid.appendChild(d);
+  });
+})();
+</script>
+
+</body>
+</html>
