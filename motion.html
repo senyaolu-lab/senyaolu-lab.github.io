@@ -102,7 +102,27 @@
   .tl .t{color:var(--gold);letter-spacing:1px;font-size:13px;}
   .tl .d{color:#C4BCAA;}
 
-  /* ===== 产品宣传片（顶级商务风格舞台）===== */
+  /* ===== 品牌理念片播放器 ===== */
+  .film-box{
+    position:relative;border:1px solid #2A333A;border-radius:16px;overflow:hidden;
+    background:#000;box-shadow:0 40px 100px rgba(0,0,0,.78);
+  }
+  .film-box video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000;}
+  .film-play{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    display:inline-flex;align-items:center;gap:12px;
+    background:rgba(10,14,18,.74);backdrop-filter:blur(10px);
+    border:1px solid var(--gold);color:var(--gold);
+    font-family:inherit;font-size:14px;letter-spacing:3px;
+    padding:16px 34px;border-radius:999px;cursor:pointer;transition:all .3s;
+  }
+  .film-play:hover{background:var(--gold);color:#0A0E12;}
+  .film-play i{font-style:normal;font-size:12px;}
+  .film-box.playing .film-play{opacity:0;pointer-events:none;}
+  .film-caption{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:18px;
+  }
+  .film-caption .t{font-size:12.5px;color:var(--moon-dim);letter-spacing:1px;}
   .promo{
     position:relative;width:100%;aspect-ratio:16/9;background:#07090B;
     border:1px solid #2A333A;border-radius:16px;overflow:hidden;
@@ -206,7 +226,7 @@
   </div>
   <div class="nav-links">
     <a href="#logo">Logo 演绎</a>
-    <a href="#promo">产品宣传片</a>
+    <a href="#film">品牌理念片</a>
     <a href="#showcase">产品动态</a>
     <a href="#spec">规范</a>
   </div>
@@ -264,59 +284,33 @@
   </div>
 </section>
 
-<!-- ========== 02 产品宣传片 ========== -->
-<section id="promo">
-  <div class="sec-label">02 · PRODUCT FILM</div>
-  <h2 class="sec-title">产品宣传片 · 18 秒</h2>
+<!-- ========== 02 品牌理念片 ========== -->
+<section id="film">
+  <div class="sec-label">02 · BRAND FILM</div>
+  <h2 class="sec-title">品牌理念片 · 20 秒</h2>
   <div class="prose" style="margin-bottom:36px;">
-    <p>以「顶级商务」为基调的产品宣传片：<strong>赤金细线开场 → 四款产品依次呈现 → 月山落版</strong>。全片只用叠化转场，产品信息以极简「下三分之一」锁定，克制、沉稳、不炫技。</p>
-    <p style="font-size:13.5px;color:var(--moon-dim);">画面由 AIGC 图生视频生成；分镜、字幕排版、节奏与落版为动态设计。</p>
+    <p>一支表达品牌理念的短片：<strong>一本《山海经》典藏巨著被侧光点亮 → 书页翻开露出金碧山水巨龙 → 画中金粉溢出、凝成云雾落入玄墨杯 → 一切收拢为月山图腾</strong>。</p>
+    <p style="font-size:13.5px;color:var(--moon-dim);">一镜到底 · 20 秒 · 单一侧光 · 画面由 AIGC 生成。含音效设计，点击播放。</p>
   </div>
 
-  <div class="promo" id="promo">
-    <div class="ps p0">
-      <div class="line"></div>
-      <div class="mk">山 海 志</div>
-    </div>
-    <div class="ps hasvid p1"><video src="images/shanhai/clip-1-jiuwei.mp4" muted playsinline preload="none"></video></div>
-    <div class="ps hasvid p2"><video src="images/shanhai/clip-2-zhulong.mp4" muted playsinline preload="none"></video></div>
-    <div class="ps hasvid p3"><video src="images/shanhai/clip-3-kun.mp4" muted playsinline preload="none"></video></div>
-    <div class="ps hasvid p4"><video src="images/shanhai/clip-5-product.mp4" muted playsinline preload="none"></video></div>
-    <div class="ps p5">
-      <svg viewBox="0 0 400 400" aria-hidden="true">
-        <circle cx="200" cy="200" r="168" fill="none" stroke="#C8952F" stroke-width="7"></circle>
-        <circle cx="200" cy="200" r="126" fill="#C8952F"></circle>
-        <path d="M118,285 L152,206 L174,246 L200,180 L226,246 L248,206 L282,285 Z" fill="#07090B"></path>
-        <rect x="118" y="285" width="164" height="10" fill="#07090B"></rect>
-      </svg>
-      <div class="n">山海志</div>
-      <div class="r"></div>
-      <div class="s">喝 下 远 古</div>
-    </div>
-
-    <div class="plock" id="plock">
-      <div class="pn" id="pName">九尾</div>
-      <div class="prule"></div>
-      <div class="pt" id="pTea">蜜桃白茶 · PEACH WHITE TEA</div>
-    </div>
-    <div class="pidx" id="pIdx">01 / 04</div>
-    <div class="pbar"></div>
+  <div class="film-box" id="filmBox">
+    <video id="brandFilm" src="images/shanhai/film-brand.mp4" poster="images/shanhai/film-poster.jpg" preload="metadata" playsinline></video>
+    <button class="film-play" id="filmPlay"><i>▶</i> 播放理念片（含音效）</button>
   </div>
 
-  <div class="promo-meta">
-    <div class="t">18 秒 · 16:9 · 四款产品 · 叠化转场 · 静音循环</div>
-    <button class="replay" id="promoReplay">↻ 重播宣传片</button>
+  <div class="film-caption">
+    <div class="t">20 秒 · 16:9 · 一镜到底 · 单一侧光 · 含音效设计</div>
+    <button class="replay" id="filmReplay">↻ 重播</button>
   </div>
 
   <div style="margin-top:60px;">
     <div class="sec-label" style="font-size:10px;">STORYBOARD · 分镜</div>
     <div class="board">
-      <div class="fr"><div class="im" style="background:#07090B"><div style="width:56%;height:1px;background:var(--gold)"></div></div><div class="cap"><b>SHOT 01 · 0–2.2s</b>纯黑场，一条赤金细线自中心向两侧延展，品牌名浮现</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/beast-1.jpg" alt=""></div><div class="cap"><b>SHOT 02 · 2.2–5.5s</b>九尾 · 蜜桃白茶 —— 下三分之一信息锁定</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/beast-2.jpg" alt=""></div><div class="cap"><b>SHOT 03 · 5.5–8.8s</b>烛龙 · 桂花红茶</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/beast-3.jpg" alt=""></div><div class="cap"><b>SHOT 04 · 8.8–12.1s</b>鲲 · 蝶豆蓝柑</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/prod-1.jpg" alt=""></div><div class="cap"><b>SHOT 05 · 12.1–15.4s</b>玄墨杯 · 产品特写</div></div>
-      <div class="fr"><div class="im"><img src="images/shanhai/world-2.jpg" alt=""></div><div class="cap"><b>SHOT 06 · 15.4–18s</b>月山图腾 + 山海志 + 「喝下远古」落版</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/film-poster.jpg" alt=""></div><div class="cap"><b>0–2s · 静</b>典藏书被侧光点亮，镂空月洞透出赤金山水</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/film-poster.jpg" alt=""></div><div class="cap"><b>2–6s · 启</b>镜头极缓推进，压凹云纹浮现，书页翻开一条缝</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/film-inner.jpg" alt=""></div><div class="cap"><b>6–11s · 现</b>完全翻开，金碧山水巨龙，金粉溢出上升</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/prod-1.jpg" alt=""></div><div class="cap"><b>11–16s · 落</b>金粉凝成云雾，落入玄墨杯，茶汤泛起金纹</div></div>
+      <div class="fr"><div class="im"><img src="images/shanhai/film-endcard.jpg" alt=""></div><div class="cap"><b>16–20s · 合</b>拉远收拢为月山图腾，「山海志 · 喝下远古」落版</div></div>
     </div>
   </div>
 </section>
@@ -413,6 +407,32 @@
       };
       if (hv.readyState >= 2) { kick(); }
       else { hv.addEventListener('loadeddata', kick, { once: true }); }
+    }
+
+    // ---- 品牌理念片播放器：点击播放（带音效），播完恢复播放按钮 ----
+    var bf = document.getElementById('brandFilm');
+    var filmBox = document.getElementById('filmBox');
+    var bPlay = document.getElementById('filmPlay');
+    var bReplay = document.getElementById('filmReplay');
+    function playBrandFilm() {
+      if (!bf) { return; }
+      bf.controls = true;
+      if (filmBox) { filmBox.classList.add('playing'); }
+      var p = bf.play();
+      if (p && p.catch) { p.catch(function () {}); }
+    }
+    if (bPlay) { bPlay.addEventListener('click', playBrandFilm); }
+    if (bReplay) {
+      bReplay.addEventListener('click', function () {
+        if (!bf) { return; }
+        try { bf.currentTime = 0; } catch (e) {}
+        playBrandFilm();
+      });
+    }
+    if (bf) {
+      bf.addEventListener('ended', function () {
+        if (filmBox) { filmBox.classList.remove('playing'); }
+      });
     }
 
     // ---- 产品宣传片：18 秒序列，叠化转场 + 下三分之一产品信息锁定 ----
