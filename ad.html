@@ -147,8 +147,9 @@
   .stage-tb th,.stage-tb td{border:1px solid #DCD7CC;padding:11px 13px;text-align:left;color:var(--dgray);}
   .stage-tb th{background:var(--ink);color:var(--paper);font-size:11px;letter-spacing:.16em;font-weight:700;}
   .stage-tb td:first-child{font-family:"Arial Black",Arial,sans-serif;font-weight:900;color:var(--ink);width:44px;}
-  .stage-tb tr.ok td:last-child{color:#2E7D5B;font-weight:900;}
-  .stage-tb tr.todo td:last-child{color:#C0392B;font-weight:900;}
+  .stage-tb td.ok{color:#2E7D5B;font-weight:900;text-align:center;}
+  .stage-tb td.no{color:#C0392B;font-weight:900;text-align:center;}
+  .stage-tb th:nth-child(4),.stage-tb th:nth-child(5){text-align:center;width:70px;}
   .stage-note{margin-top:16px;font-size:13.5px;color:var(--dgray);line-height:1.85;}
   .stage-note strong{color:var(--ink);}
 
@@ -448,30 +449,40 @@
   <h2 class="sec-title">15 秒影片</h2>
 
   <div class="prose" style="margin-bottom:26px;">
-    <p>一支 <strong>15 秒一镜到底</strong>。没有音乐，只有一个声音：<strong>撕纸</strong>。画面里唯一的颜色是签黄——货架是灰的，商品是灰的，桌面是灰的，只有一张张空白的价签是黄的。</p>
+    <p>一支 <strong>15 秒影片</strong>。没有音乐，只有一个声音：<strong>撕纸</strong>。画面里唯一的颜色是签黄——货架是灰的，商品是灰的，桌面是灰的，只有一张张空白的价签是黄的。</p>
   </div>
 
   <div class="film-box">
-    <video id="film15" src="images/ad/film-15s.mp4" poster="images/ad/film-15s-poster.jpg"
+    <video id="film15" src="images/ad/film-15s-v2.mp4" poster="images/ad/film-15s-v2-poster.jpg"
            preload="metadata" playsinline></video>
-    <button class="film-play" id="filmPlay" type="button"><i>▶</i> 播放 15 秒</button>
+    <button class="film-play" id="filmPlay" type="button"><i>▶</i> 播放当前版本</button>
   </div>
   <div class="film-cap">
-    <span>成片 · 1280×720 · 15.10s · AIGC 生成</span>
+    <span>V2 · 1280×720 · 15.07s · AIGC 生成</span>
     <span>文字层由后期叠加</span>
   </div>
 
   <div class="film-stage">
-    <h3>三段结构 · 当前进度</h3>
+    <h3>分段覆盖情况 · 两版实测</h3>
     <table class="stage-tb">
-      <thead><tr><th>段</th><th>时间</th><th>内容</th><th>状态</th></tr></thead>
+      <thead><tr><th>段</th><th>时间</th><th>内容</th><th>V1</th><th>V2</th></tr></thead>
       <tbody>
-        <tr class="ok"><td>A</td><td>0–7s</td><td>浅灰货架 → 手伸入取物 → 撕价签特写 → 价签翻面</td><td>已完成</td></tr>
-        <tr class="todo"><td>B</td><td>7–11s</td><td>七张空白价签从上方飘落到浅灰亚麻桌面</td><td>待补拍</td></tr>
-        <tr class="todo"><td>C</td><td>11–15s</td><td>七张价签静止，手的影子从右侧移入后停住</td><td>待补拍</td></tr>
+        <tr><td>A</td><td>0–2.5s</td><td>浅灰货架，手伸入取物</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+        <tr><td>B</td><td>2.5–5.5s</td><td>撕价签，纸纤维被拉起扯断</td><td class="ok">✓</td><td class="ok">✓ 更佳</td></tr>
+        <tr><td>C</td><td>5.5–7.5s</td><td>撕下的价签翻面正对镜头</td><td class="ok">✓</td><td class="no">—</td></tr>
+        <tr><td>D</td><td>7.5–9.5s</td><td>手把第一张价签放到桌面</td><td class="no">—</td><td class="no">—</td></tr>
+        <tr><td>E</td><td>9.5–12.5s</td><td>七张价签依次落下、堆叠</td><td class="no">—</td><td class="no">—</td></tr>
+        <tr><td>F</td><td>12.5–15.0s</td><td>静止，手的影子移入后停住</td><td class="no">—</td><td class="no">—</td></tr>
       </tbody>
     </table>
-    <p class="stage-note"><strong>为什么不是一镜到底。</strong>首版按「15 秒一镜到底」生成，模型只完成了约 4 秒的有效内容——撕价签之后退回起始的货架画面，直到结束。原因是<strong>一镜到底要求模型在 15 秒内连续完成 5 个场景转变，超出了它的能力上限</strong>（实际约 2–3 个节拍）。因此改为分段生成：A 段素材已可用，B、C 两段各自只有单一动作，难度低得多。补拍提示词见《心力价签-15秒顶级提示词V2》——<strong>六段，每段只做一件事，场景绝不切换，只取前 3 秒</strong>。</p>
+    <p class="stage-note">
+      <strong>V1</strong> 用「一镜到底 5 个场景」生成，完成 3 段。<strong>V2</strong> 用「六段合并提示词」生成，只完成 2 段。<br>
+      两版都出现同一现象：<strong>模型完成前 1–2 个动作后，退回第一个场景并停在那里</strong>——V1 后 10 秒、V2 后 10 秒都是静止的货架画面。<br>
+      结论已经确定：<strong>单次生成里写多个场景，必然退回首个场景兜底。</strong>因此改为<strong>单镜生成</strong>——一次生成只写一场戏、一个动作，提示词里不出现编号、不提及任何其他镜头。六条单镜提示词见《心力价签-15秒单镜生成提示词》。
+    </p>
+    <p class="stage-note" style="margin-top:10px;">
+      <strong>当前可用素材</strong>　V1 提供 A/B/C 三段；V2 的 B 段质量更好——3.5 秒处是一张正面卡纸的清晰撕口，纸纤维完整且画面中没有手，是两版里最好的一帧。<strong>补拍 D/E/F 三段后即可剪成完整成片。</strong>
+    </p>
   </div>
 
   <div class="prose" style="margin-top:30px;margin-bottom:8px;">
