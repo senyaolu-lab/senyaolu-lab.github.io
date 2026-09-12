@@ -135,35 +135,9 @@
   .shot .ds{font-size:13.5px;color:var(--dgray);line-height:1.65;}
   .shot .sd{margin-top:9px;font-size:11.5px;color:var(--gray);letter-spacing:.06em;}
 
-  /* 成片播放器 */
-  .film-box{position:relative;background:#000;border:1px solid var(--line);overflow:hidden;}
-  .film-box video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000;}
-  .film-play{
-    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-    display:inline-flex;align-items:center;gap:12px;
-    background:rgba(10,10,10,.78);backdrop-filter:blur(10px);
-    border:1px solid var(--yellow);color:var(--yellow);
-    font-family:inherit;font-size:14px;letter-spacing:.16em;font-weight:700;
-    padding:15px 30px;border-radius:999px;cursor:pointer;transition:all .28s;
-  }
-  .film-play:hover{background:var(--yellow);color:var(--ink);}
-  .film-play i{font-style:normal;font-size:12px;}
-  .film-box.playing .film-play{opacity:0;pointer-events:none;}
-  .film-cap{display:flex;justify-content:space-between;gap:16px;margin-top:12px;
-    font-size:12px;letter-spacing:.1em;color:var(--gray);}
 
-  /* 分段进度 */
-  .film-stage{margin-top:34px;border:1px solid var(--line);padding:26px 24px;background:#EDEAE2;}
-  .film-stage h3{font-size:15px;font-weight:900;letter-spacing:.1em;margin-bottom:16px;}
-  .stage-tb{width:100%;border-collapse:collapse;font-size:13.5px;}
-  .stage-tb th,.stage-tb td{border:1px solid #DCD7CC;padding:11px 13px;text-align:left;color:var(--dgray);}
-  .stage-tb th{background:var(--ink);color:var(--paper);font-size:11px;letter-spacing:.16em;font-weight:700;}
-  .stage-tb td:first-child{font-family:"Arial Black",Arial,sans-serif;font-weight:900;color:var(--ink);width:44px;}
-  .stage-tb td.ok{color:#2E7D5B;font-weight:900;text-align:center;}
-  .stage-tb td.no{color:#C0392B;font-weight:900;text-align:center;}
-  .stage-tb th:nth-child(4),.stage-tb th:nth-child(5){text-align:center;width:70px;}
-  .stage-note{margin-top:16px;font-size:13.5px;color:var(--dgray);line-height:1.85;}
-  .stage-note strong{color:var(--ink);}
+
+  .film-thumb-link{display:block;text-decoration:none;color:inherit;margin-bottom:4px;}
 
   /* 成片位 */
   .film-slot{
@@ -400,7 +374,7 @@
         <figcaption><span>材质版 · 纸张与光照</span><span>#F2E600 哑光无涂布纸</span></figcaption>
       </figure>
     </div>
-    <p class="tag-ref-note"><strong>为什么先出这两张。</strong>影片的 AIGC 生成最初失败，根因不是提示词，是<strong>顺序错了</strong>——只用文字描述「一张黄色卡纸」，模型不知道「价签」长什么样，画出来既没有吊牌孔也没有比例。正确流程是<strong>设计稿定死形象 → 图生视频只负责让它动 → 文字后期叠回去</strong>。这两张设计稿既是作品集内容，也是影片生成的首帧参考。</p>
+    <p class="tag-ref-note"><strong>为什么先出这两张。</strong>价签是整个战役的视觉原点——KV、海报、社交物料、影片全部由它派生。先把它的尺寸、比例、四层结构、纸张质感定死，后续物料才不会各说各话。<strong>这是这套视觉系统能保持一致的唯一原因。</strong></p>
   </div>
 
   <div class="prose">
@@ -476,53 +450,26 @@
 <!-- ============ 07 影片 ============ -->
 <section id="film">
   <div class="sec-label">07 / FILM</div>
-  <h2 class="sec-title">15 秒影片</h2>
+  <h2 class="sec-title">15 秒动态演绎</h2>
 
-  <div class="prose" style="margin-bottom:26px;">
-    <p>一支 <strong>15 秒影片</strong>。没有音乐，只有一个声音：<strong>撕纸</strong>。画面里唯一的颜色是签黄——货架是灰的，商品是灰的，桌面是灰的，只有一张张空白的价签是黄的。</p>
+  <div class="prose" style="margin-bottom:28px;">
+    <p>一支 <strong>15 秒品牌态度广告片</strong>。没有音乐，只有一个声音：<strong>撕纸</strong>。画面里唯一的颜色是签黄——货架是灰的，商品是灰的，桌面是灰的，只有一张张空白的价签是黄的。</p>
+    <p>情绪路径是<strong>说中 → 累积 → 停住 → 被理解</strong>：一张价签落下（说中），心力那一栏被推出来（点破），六张价签依次累加（累积），一切停住（够了），最后定格在 slogan 上（被理解）。</p>
   </div>
 
-  <div class="film-box">
-    <video id="film15" src="images/ad/film-15s-v2.mp4" poster="images/ad/film-15s-v2-poster.jpg"
-           preload="metadata" playsinline></video>
-    <button class="film-play" id="filmPlay" type="button"><i>▶</i> 播放当前版本</button>
-  </div>
-  <div class="film-cap">
-    <span>V2 · 1280×720 · 15.07s · AIGC 生成</span>
-    <span>文字层由后期叠加</span>
-  </div>
+  <a class="film-thumb-link" href="film15.html">
+    <div class="film-thumb">
+      <span class="film-k">▶</span>
+      <div class="film-tx">
+        <b>播放 · 15 秒动态演绎</b>
+        <span>纯 SVG + CSS + JS 手写 · 网页内实时渲染 · 可无缝循环</span>
+      </div>
+    </div>
+  </a>
 
-  <div class="film-stage">
-    <h3>分段覆盖情况 · 两版实测</h3>
-    <table class="stage-tb">
-      <thead><tr><th>段</th><th>时间</th><th>内容</th><th>V1</th><th>V2</th></tr></thead>
-      <tbody>
-        <tr><td>A</td><td>0–2.5s</td><td>浅灰货架，手伸入取物</td><td class="ok">✓</td><td class="ok">✓</td></tr>
-        <tr><td>B</td><td>2.5–5.5s</td><td>撕价签，纸纤维被拉起扯断</td><td class="ok">✓</td><td class="ok">✓ 更佳</td></tr>
-        <tr><td>C</td><td>5.5–7.5s</td><td>撕下的价签翻面正对镜头</td><td class="ok">✓</td><td class="no">—</td></tr>
-        <tr><td>D</td><td>7.5–9.5s</td><td>手把第一张价签放到桌面</td><td class="no">—</td><td class="no">—</td></tr>
-        <tr><td>E</td><td>9.5–12.5s</td><td>七张价签依次落下、堆叠</td><td class="no">—</td><td class="no">—</td></tr>
-        <tr><td>F</td><td>12.5–15.0s</td><td>静止，手的影子移入后停住</td><td class="no">—</td><td class="no">—</td></tr>
-      </tbody>
-    </table>
-    <p class="stage-note">
-      <strong>V1</strong> 用「一镜到底 5 个场景」生成，完成 3 段。<strong>V2</strong> 用「六段合并提示词」生成，只完成 2 段。<br>
-      两版都出现同一现象：<strong>模型完成前 1–2 个动作后，退回第一个场景并停在那里</strong>——V1 后 10 秒、V2 后 10 秒都是静止的货架画面。<br>
-      结论已经确定：<strong>单次生成里写多个场景，必然退回首个场景兜底。</strong>因此改为<strong>单镜生成</strong>——一次生成只写一场戏、一个动作，提示词里不出现编号、不提及任何其他镜头。六条单镜提示词见《心力价签-15秒单镜生成提示词》。
-    </p>
-    <p class="stage-note" style="margin-top:10px;">
-      <strong>当前可用素材</strong>　V1 提供 A/B/C 三段；V2 的 B 段质量更好——3.5 秒处是一张正面卡纸的清晰撕口，纸纤维完整且画面中没有手，是两版里最好的一帧。<strong>补拍 D/E/F 三段后即可剪成完整成片。</strong>
-    </p>
-  </div>
-
-  <div class="prose" style="margin-top:30px;margin-bottom:8px;">
-    <p><strong>分工</strong>　价签在画面里是<strong>完全空白的</strong>——不印任何字、数字、条码。AIGC 只负责卡纸的质感、纸纤维和光在纸上的落法；所有文字由后期叠加，避免 AI 生成文字糊成乱码。</p>
-  </div>
-
-  <div class="film-note">
-    <b>动态分镜（节奏参照）</b>
-    <span>下面这支动画是完整的 animatic——它把节奏、剪辑点和结尾字幕的排版全部定死了。<strong>拍法变了，但节奏不用变</strong>；结尾那 4 秒的字幕动画也可以直接录屏贴进成片。</span>
-    <a class="film-cta" href="film15.html">▶ 播放动态分镜 · 15 秒</a>
+  <div class="prose" style="margin-top:28px;">
+    <p><strong>节奏</strong>　0.45s 价签落入 ｜ 3.2s 撕裂线划开、心力栏推入 ｜ 4.55s 起六张累加、计数器 0→6 ｜ 8.9s 戛然而止、画面压暗推近 ｜ 9.9s 口号逐字浮现，朱红划线划掉「价格」，黄块压上「心力」。</p>
+    <p>全片唯一的静止在 8.9 秒处——撕了七张之后停住不动。<em>那个停顿就是这支片子要说的话。</em></p>
   </div>
 </section>
 <!-- ============ 08 媒介排期 ============ -->
