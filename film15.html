@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>心力价签 · 15 秒动态演绎 THE COST OF HEART</title>
+<title>心力价签 · 15 秒品牌态度广告片 THE COST OF HEART</title>
 <style>
   :root{
     --yellow:#F2E600; --ink:#0A0A0A; --paper:#F5F3EE;
@@ -66,53 +66,53 @@
 
   /* 01 · 0.0–1.1s 网格线画出 */
   .stage.play .grid line{animation:gridIn .5s ease-out both;}
-  .stage.play .grid line:nth-child(1){animation-delay:.10s;}
-  .stage.play .grid line:nth-child(2){animation-delay:.16s;}
-  .stage.play .grid line:nth-child(3){animation-delay:.22s;}
-  .stage.play .grid line:nth-child(4){animation-delay:.28s;}
-  .stage.play .grid line:nth-child(5){animation-delay:.34s;}
-  .stage.play .grid line:nth-child(6){animation-delay:.40s;}
-  .stage.play .grid line:nth-child(7){animation-delay:.46s;}
-  .stage.play .grid line:nth-child(8){animation-delay:.52s;}
+  .stage.play .grid line:nth-child(1){animation-delay:.04s;}
+  .stage.play .grid line:nth-child(2){animation-delay:.08s;}
+  .stage.play .grid line:nth-child(3){animation-delay:.12s;}
+  .stage.play .grid line:nth-child(4){animation-delay:.16s;}
+  .stage.play .grid line:nth-child(5){animation-delay:.20s;}
+  .stage.play .grid line:nth-child(6){animation-delay:.24s;}
+  .stage.play .grid line:nth-child(7){animation-delay:.28s;}
+  .stage.play .grid line:nth-child(8){animation-delay:.32s;}
 
   /* 02 · 1.1–4.0s 主价签落入 */
-  .stage.play .tag-main{animation:tagDrop .82s cubic-bezier(.2,.8,.2,1) 1.15s both;}
-  .stage.play .counter{animation:fadeUp .5s ease-out 2.55s both;}
+  .stage.play .tag-main{animation:tagDrop .80s cubic-bezier(.2,.8,.2,1) 1.05s both;}
+  .stage.play .counter{animation:fadeUp .45s ease-out 2.35s both;}
 
   /* 03 · 4.0–5.6s 撕裂线 + 心力栏 */
-  .stage.play .tear{animation:tearIn .46s cubic-bezier(.6,0,1,.4) 4.05s both;}
+  .stage.play .tear{animation:tearIn .40s cubic-bezier(.6,0,1,.4) 3.20s both;}
   .stage.play .tear-line{stroke-dasharray:1180;stroke-dashoffset:1180;
-    animation:drawTear .40s cubic-bezier(.55,0,1,.45) 4.05s both;}
-  .stage.play .heart-strip{animation:stripUp .60s cubic-bezier(.2,.8,.2,1) 4.60s both;}
+    animation:drawTear .34s cubic-bezier(.55,0,1,.45) 3.20s both;}
+  .stage.play .heart-strip{animation:stripUp .58s cubic-bezier(.2,.8,.2,1) 3.70s both;}
 
   /* 04 · 5.6–9.0s 价签累计堆叠 */
-  .stage.play .card:nth-child(1){animation:cardStack .50s cubic-bezier(.2,.8,.2,1) 5.70s both;}
-  .stage.play .card:nth-child(2){animation:cardStack .50s cubic-bezier(.2,.8,.2,1) 6.20s both;}
-  .stage.play .card:nth-child(3){animation:cardStack .50s cubic-bezier(.2,.8,.2,1) 6.70s both;}
-  .stage.play .card:nth-child(4){animation:cardStack .50s cubic-bezier(.2,.8,.2,1) 7.20s both;}
-  .stage.play .card:nth-child(5){animation:cardStack .50s cubic-bezier(.2,.8,.2,1) 7.70s both;}
-  .stage.play .card:nth-child(6){animation:cardStack .50s cubic-bezier(.2,.8,.2,1) 8.20s both;}
+  .stage.play .card:nth-child(1){animation:cardStack .48s cubic-bezier(.2,.8,.2,1) 4.55s both;}
+  .stage.play .card:nth-child(2){animation:cardStack .48s cubic-bezier(.2,.8,.2,1) 5.17s both;}
+  .stage.play .card:nth-child(3){animation:cardStack .48s cubic-bezier(.2,.8,.2,1) 5.79s both;}
+  .stage.play .card:nth-child(4){animation:cardStack .48s cubic-bezier(.2,.8,.2,1) 6.41s both;}
+  .stage.play .card:nth-child(5){animation:cardStack .48s cubic-bezier(.2,.8,.2,1) 7.03s both;}
+  .stage.play .card:nth-child(6){animation:cardStack .48s cubic-bezier(.2,.8,.2,1) 7.65s both;}
 
   /* 05 · 9.0–11.0s 定格 · 遮罩 · 主签推近 */
-  .stage.play .overlay{animation:fadeIn .70s ease-out 9.10s both;}
-  .stage.play .stage-scale{animation:pushIn 1.30s cubic-bezier(.4,0,.2,1) 9.30s both;}
+  .stage.play .overlay{animation:fadeIn .60s ease-out 8.90s both;}
+  .stage.play .stage-scale{animation:pushIn 1.40s cubic-bezier(.4,0,.2,1) 9.00s both;}
 
   /* 06 · 11.0–15.0s 口号浮现 */
   .stage.play #sloganChars text{animation:sloganChar .40s cubic-bezier(.2,.8,.2,1) both;}
-  .stage.play #sloganChars text:nth-child(1){animation-delay:11.05s;}
-  .stage.play #sloganChars text:nth-child(2){animation-delay:11.13s;}
-  .stage.play #sloganChars text:nth-child(3){animation-delay:11.21s;}
-  .stage.play #sloganChars text:nth-child(4){animation-delay:11.29s;}
-  .stage.play #sloganChars text:nth-child(5){animation-delay:11.37s;}
-  .stage.play #sloganChars text:nth-child(6){animation-delay:11.45s;}
-  .stage.play #sloganChars text:nth-child(7){animation-delay:11.53s;}
-  .stage.play #sloganChars text:nth-child(8){animation-delay:11.61s;}
-  .stage.play #sloganChars text:nth-child(9){animation-delay:11.69s;}
-  .stage.play #strikeLine{animation:fadeIn .30s ease-out 12.45s both;}
+  .stage.play #sloganChars text:nth-child(1){animation-delay:9.90s;}
+  .stage.play #sloganChars text:nth-child(2){animation-delay:9.96s;}
+  .stage.play #sloganChars text:nth-child(3){animation-delay:10.02s;}
+  .stage.play #sloganChars text:nth-child(4){animation-delay:10.08s;}
+  .stage.play #sloganChars text:nth-child(5){animation-delay:10.14s;}
+  .stage.play #sloganChars text:nth-child(6){animation-delay:10.20s;}
+  .stage.play #sloganChars text:nth-child(7){animation-delay:10.26s;}
+  .stage.play #sloganChars text:nth-child(8){animation-delay:10.32s;}
+  .stage.play #sloganChars text:nth-child(9){animation-delay:10.38s;}
+  .stage.play #strikeLine{animation:fadeIn .26s ease-out 11.50s both;}
   .stage #hlBox{transform-box:fill-box;transform-origin:0% 50%;}
-  .stage.play #hlBox{animation:hlIn .32s cubic-bezier(.2,.8,.2,1) 12.70s both;}
-  .stage.play #sloganChars text.hl{animation:hlCharIn .34s cubic-bezier(.2,.8,.2,1) 12.88s both;}
-  .stage.play .endcard{animation:fadeIn .50s ease-out 13.20s both;}
+  .stage.play #hlBox{animation:hlIn .28s cubic-bezier(.2,.8,.2,1) 11.75s both;}
+  .stage.play #sloganChars text.hl{animation:hlCharIn .30s cubic-bezier(.2,.8,.2,1) 11.90s both;}
+  .stage.play .endcard{animation:fadeIn .45s ease-out 12.60s both;}
 
   @keyframes gridIn{from{opacity:0;}to{opacity:.20;}}
   @keyframes tagDrop{
@@ -217,10 +217,10 @@
   <div class="hero-inner">
     <div class="hero-label">PROJECT 04 · 动态执行 / ANIMATIC</div>
     <h1 class="hero-title">15 秒动态演绎</h1>
-    <div class="hero-en">DOUBLE PRICE TAG / ANIMATIC</div>
-    <p class="hero-sub">这是 15 秒影片的<strong>动态分镜（animatic）</strong>：一张价签落下、被撕裂、露出心力那一栏；接着第二张、第三张……堆到第七张时停住。<br><br>AIGC 成片将替换画面，但<strong>节奏、剪辑点与结尾字幕的排版以此为准</strong>——结尾那 4 秒可以直接录屏贴进成片。</p>
+    <div class="hero-en">BRAND ATTITUDE FILM / 15s / MOTION GRAPHICS</div>
+    <p class="hero-sub"><strong>品牌态度广告片 · 15 秒 · 动态图形。</strong>任务不是让人"看懂创意"，是让 18–28 岁的人产生一个瞬间：<strong>「这说的就是我。」</strong><br><br>情绪路径：<strong>说中 → 累积 → 停住 → 被理解</strong>。前 1.5 秒认出价签，4 秒点破心力那一栏，9 秒停住，最后 3 秒定格在 slogan 上。<br><br>之所以用动态图形而非实拍：价签是廉价的、工业的、不高级的——<strong>这个创意要的就是它不高级</strong>。实拍试图把它拍"美"，反而失真。</p>
     <div class="hero-meta">
-      <span>动态分镜 Animatic</span>
+      <span>品牌态度广告片</span>
       <span>纯排版动画</span>
       <span>SVG + CSS + JS</span>
       <span>15.0 秒</span>
@@ -368,7 +368,7 @@
   </div>
 
   <div class="ctl">
-    <button class="btn" id="playBtn">▶ 播放 15 秒</button>
+    <button class="btn" id="playBtn">▶ 播放这支广告片</button>
     <button class="btn ghost" id="replayBtn">↺ 重播</button>
     <span class="tc">时间码 <b id="tc">00.0</b> / 15.0 s</span>
   </div>
@@ -386,37 +386,41 @@
 
     <div class="timeline">
       <div class="tl">
-        <div class="t">0.0 – 1.1s<i>SETUP</i></div>
+        <div class="t">0.00 – 0.45s<i>SETUP</i></div>
         <div class="d"><b>八条细网格线依次画出</b>，黑场建立秩序。
-          <span class="sf">节奏：0.06s 间隔，线性淡入至 20% 透明度，克制、不动声色。</span></div>
+          <span class="sf">节奏：0.04s 间隔，线性淡入至 20% 透明度。极短，只为了让价签落下时画面不是空的。</span></div>
       </div>
       <div class="tl">
-        <div class="t">1.1 – 4.0s<i>THE TAG</i></div>
+        <div class="t">0.45 – 1.85s<i>THE TAG</i></div>
         <div class="d"><b>主价签从画面上方落入</b>，带轻微过冲与 −2° 倾斜，最后停住。商品名、条码、巨大价格依次可见。
-          <span class="sf">缓动 cubic-bezier(.2,.8,.2,1)：先快后慢，像被"放"下来而不是"掉"下来。</span></div>
+          <span class="sf">缓动 cubic-bezier(.2,.8,.2,1)。<strong>广告要求：1.5 秒内观众必须认出这是价签。</strong>下落过程中即可辨识，不必等落定。</span></div>
       </div>
       <div class="tl">
-        <div class="t">4.0 – 5.6s<i>THE TEAR</i></div>
-        <div class="d"><b>一道朱红撕裂线横穿画面</b>，自左向右 0.40s 划开；紧接着黑色心力栏从下方推入，露出「今天第 4 个决定」。
-          <span class="sf">这是全片的转折点——价格的下面，藏着第二栏。</span></div>
+        <div class="t">1.85 – 3.20s<i>BREATHE</i></div>
+        <div class="d">价签静止，只留 1.3 秒的呼吸。
+          <span class="sf">这一秒是给观众"认出物件"用的——价格签是他每天都在看的东西。</span></div>
       </div>
       <div class="tl">
-        <div class="t">5.6 – 9.0s<i>ACCUMULATION</i></div>
-        <div class="d"><b>六张空价签依次堆叠</b>，从左右两侧打着不同角度飞入，左右各三张，凑满第七张。底部计数器同步从 0 跳到 6。
-          <span class="sf">节奏：每张间隔 0.5s，逐渐累积压迫感。计数器是"决定"的具象化。</span></div>
+        <div class="t">3.20 – 4.28s<i>THE TEAR</i></div>
+        <div class="d"><b>一道朱红撕裂线横穿画面</b>，自左向右 0.34s 划开；紧接着黑色心力栏从下方推入，露出「今天第 4 个决定」。
+          <span class="sf"><strong>广告要求：4 秒内点破核心。</strong>价格的下面，藏着第二栏——这是全片第一个"被说中"的瞬间。</span></div>
       </div>
       <div class="tl">
-        <div class="t">9.0 – 11.0s<i>FREEZE</i></div>
+        <div class="t">4.55 – 8.13s<i>ACCUMULATION</i></div>
+        <div class="d"><b>六张空价签依次堆叠</b>，左右各三张，打着不同角度飞入，凑满第七张。底部计数器同步从 0 跳到 6。
+          <span class="sf">节奏：每张间隔 0.62s，逐渐累积压迫感。这是全片的情绪主体——<strong>那个熟悉的疲惫感</strong>。计数器不是装饰，是"今天已经做了这么多次决定"的具象。</span></div>
+      </div>
+      <div class="tl">
+        <div class="t">8.90 – 10.40s<i>FREEZE</i></div>
         <div class="d"><b>戛然而止。</b>画面压暗 76%，同时主价签缓慢推近（1.0 → 1.42 倍）。
-          <span class="sf">全片唯一的静止——撕了七张之后，停住不动。停顿就是内容。</span></div>
+          <span class="sf">全片唯一的静止——撕了七张之后，停住不动。<strong>这一刻不是崩溃，是"今天到此为止"。</strong>观众会松一口气：原来不只我这样。</span></div>
       </div>
       <div class="tl">
-        <div class="t">11.0 – 15.0s<i>RESOLVE</i></div>
-        <div class="d"><b>口号浮现</b>，字距从 0.30em 收到 0.02em；随后一道朱红划线划掉「价格」，黄块压上「心力」。13.2s 起底部信息条淡入收尾。
-          <span class="sf">视觉语法与平面海报完全一致：红线划掉的，正是那句 slogan 自己。</span></div>
+        <div class="t">9.90 – 15.00s<i>RESOLVE</i></div>
+        <div class="d"><b>口号逐字浮现</b>（每字 0.06s）；随后朱红划线划掉「价格」，黄块压上「心力」。12.6s 起底部信息条淡入收尾，最后一屏停住约 3 秒。
+          <span class="sf">视觉语法与平面海报完全一致：红线划掉的，正是那句 slogan 自己。<strong>最后 3 秒的定格是给观众读完并记住的时间。</strong></span></div>
       </div>
-    </div>
-  </div>
+    </div>  </div>
 </section>
 
 <!-- ============ 技术规范 ============ -->
@@ -440,8 +444,9 @@
   <div class="rule"></div>
 
   <div class="prose">
-    <p><strong>为什么不做实拍。</strong>这个创意的主体是价签、数字和大字文案——也就是平面系统本身。实拍会把注意力引向道具和手部细节，反而削弱「第二种价签」这个核心机关。用纯排版动画，观众看到的每一帧都是这套视觉系统在工作。</p>
-    <p>这也是真实广告流程里的 <strong>animatic（动态分镜）</strong>：先用动画把节奏和剪辑定下来，再决定要不要实拍。<strong>这支片子的时间轴可以直接当作实拍剪辑的参照。</strong></p>
+    <p><strong>为什么不做实拍。</strong>价签是廉价的、工业的、不高级的物件——<strong>这个创意要的就是它不高级</strong>。实拍会用柔光、浅景深、纸纤维去把它拍"美"，而那种"美"恰恰消解了创意的诚实。动态图形不是妥协，是<strong>更准确</strong>。</p>
+    <p>而且这支片子是<strong>静音播放</strong>的（信息流、地铁装置）。实拍的材质与光线依赖观看条件，图形片的每一个元素都是信息——在前 1.5 秒必须认出物件、4 秒必须点破心力那一栏的约束下，图形是唯一能保证信息密度的形式。</p>
+    <p><strong>它不是 animatic，它就是成片。</strong>网页内实时渲染，可直接录屏导出 MP4，也可作为地铁装置屏幕的无缝循环素材。</p>
   </div>
 </section>
 
@@ -465,36 +470,45 @@
   var running = false;
 
   // 计数器：每次抽卡是 0.50s
-  var CARD_T0 = 5700, CARD_STEP = 500;
+  var CARD_T0 = 4550, CARD_STEP = 620;
   // 进度条：随堆叠同步，压满 520px
   var BAR_W = 520;
 
   function ease(p) { return 1 - Math.pow(1 - p, 2); }
 
+  // 由时间点推导计数器与进度条（纯函数，任何时刻都能算准）
+  function applyState(t) {
+    var v = Math.floor((t - CARD_T0) / CARD_STEP) + 1;
+    if (t < CARD_T0) v = 0;
+    if (v > 6) v = 6;
+    if (cntEl.textContent !== String(v)) cntEl.textContent = String(v);
+
+    var bp = (t - CARD_T0) / (CARD_STEP * 6);
+    if (bp < 0) bp = 0;
+    if (bp > 1) bp = 1;
+    bar.setAttribute('width', String(Math.round(ease(bp) * BAR_W)));
+
+    var sec = t / 1000;
+    if (sec < 0) sec = 0;
+    if (sec > 15) sec = 15;
+    tcEl.textContent = (sec < 10 ? '0' : '') + sec.toFixed(1);
+  }
+
   function startCounters() {
+    // 支持 ?t=毫秒 定格到指定时刻（逐帧导出用，保证与 CSS 动画同一时钟）
+    var m = /[?&]t=(\d+)/.exec(location.search);
+    if (m) {
+      var T = parseInt(m[1], 10);
+      applyState(T);
+      cancelAnimationFrame(cntRaf);
+      return;
+    }
+
     var t0 = performance.now();
     cancelAnimationFrame(cntRaf);
     function tick(now) {
       var t = now - t0;
-
-      // 计数器
-      var v = Math.floor((t - CARD_T0) / CARD_STEP) + 1;
-      if (t < CARD_T0) v = 0;
-      if (v > 6) v = 6;
-      if (t > 8600) v = 6;
-      if (cntEl.textContent !== String(v)) cntEl.textContent = String(v);
-
-      // 进度条
-      var bp = (t - CARD_T0) / (CARD_STEP * 6);
-      if (bp < 0) bp = 0;
-      if (bp > 1) bp = 1;
-      bar.setAttribute('width', String(Math.round(ease(bp) * BAR_W)));
-
-      // 时间码
-      var sec = t / 1000;
-      if (sec > 15) sec = 15;
-      tcEl.textContent = (sec < 10 ? '0' : '') + sec.toFixed(1);
-
+      applyState(t);
       if (t < DUR + 300) { cntRaf = requestAnimationFrame(tick); }
     }
     cntRaf = requestAnimationFrame(tick);
