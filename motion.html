@@ -146,6 +146,23 @@
     .board,.upcoming{grid-template-columns:1fr;}
     .tl{grid-template-columns:62px 1fr;gap:10px;}
   }
+  @media print{
+    @page{size:A4;margin:10mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    nav{display:none !important;}
+    body{background:#14191E !important;}
+    header.hero{padding:34px 0 26px !important;}
+    section{padding:26px 0 !important;max-width:100% !important;}
+    .stage{min-height:auto !important;padding:36px 20px !important;}
+    /* 打印时直接呈现动画终态 */
+    .stage:not(.play) .ring,.stage:not(.play) .moon,.stage:not(.play) .mtn,
+    .stage:not(.play) .lockup .name,.stage:not(.play) .lockup .seal,.stage:not(.play) .stage-en{opacity:1 !important;}
+    .ring{stroke-dashoffset:0 !important;}
+    .replay{display:none !important;}
+    .board,.upcoming{grid-template-columns:1fr 1fr !important;}
+    .fr,.tl,.card,tr{break-inside:avoid;}
+    footer{padding:22px 0 !important;}
+  }
 </style>
 </head>
 <body>

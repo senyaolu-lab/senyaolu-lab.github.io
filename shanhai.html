@@ -101,6 +101,19 @@
     header.hero{padding:120px 22px 70px;}
     .stats,.swatches,.upcoming,.about,.duo{grid-template-columns:1fr;}
   }
+  @media print{
+    @page{size:A4;margin:10mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    nav{display:none !important;}
+    body{background:#14191E !important;}
+    header.hero{min-height:auto !important;padding:34px 0 26px !important;}
+    section{padding:26px 0 !important;max-width:100% !important;}
+    .stack{max-width:76% !important;gap:22px !important;}
+    .img-stack{max-width:76% !important;gap:26px !important;}
+    .duo{grid-template-columns:1.6fr 1fr !important;}
+    figure,.fact,.card,.tl,.sw,.stat,.char,.fr,tr,.process,.quote{break-inside:avoid;}
+    footer{padding:22px 0 !important;}
+  }
 </style>
 </head>
 <body>

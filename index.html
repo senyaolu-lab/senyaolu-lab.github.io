@@ -77,6 +77,16 @@
     section{padding:0 22px 64px;}
     .about{grid-template-columns:1fr;gap:34px;}
   }
+  @media print{
+    @page{size:A4;margin:12mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    nav{display:none !important;}
+    header.hero{padding:26px 0 24px !important;}
+    section{padding:0 0 30px !important;}
+    .projects{gap:28px;}
+    a.project,.cover,.p-info,.about,.hero-meta,.contact li{break-inside:avoid;}
+    footer{padding:20px 0 !important;}
+  }
 </style>
 </head>
 <body>

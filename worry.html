@@ -96,6 +96,16 @@
     header.hero{padding:130px 22px 70px;}
     .facts,.chars,.upcoming{grid-template-columns:1fr;}
   }
+  @media print{
+    @page{size:A4;margin:12mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    nav{display:none !important;}
+    header.hero{padding:30px 0 24px !important;}
+    section{padding:26px 0 !important;max-width:100% !important;}
+    .stack{max-width:74% !important;gap:24px !important;}
+    figure,.fact,.card,.tl,.char,.fr,.quote{break-inside:avoid;}
+    footer{padding:22px 0 !important;}
+  }
 </style>
 </head>
 <body>
