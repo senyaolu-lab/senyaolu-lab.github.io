@@ -96,21 +96,12 @@
   .fr .cap{padding:14px 16px;font-size:12.5px;color:var(--moon-dim);line-height:1.7;}
   .fr .cap b{display:block;color:var(--gold);font-size:11px;letter-spacing:2px;margin-bottom:5px;font-weight:400;}
 
-  /* ===== 视频位 ===== */
+  /* ===== 视频片段 ===== */
   .clips{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;}
-  .clip{
-    position:relative;border:1px dashed #36424C;border-radius:14px;overflow:hidden;
-    background:#10161B;aspect-ratio:3/4;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;gap:12px;transition:border-color .3s,background .3s;
-  }
-  .clip:hover{border-color:var(--gold);background:#141C22;}
-  .clip .play{
-    width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);
-    display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:15px;padding-left:3px;
-  }
-  .clip .no{font-size:11px;letter-spacing:4px;color:var(--gold);}
-  .clip .nm{font-size:16px;letter-spacing:2px;color:var(--moon);}
-  .clip .sub{font-size:12px;color:var(--moon-dim);letter-spacing:1px;text-align:center;padding:0 16px;line-height:1.7;}
+  .clip{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0B0F13;}
+  .clip video{width:100%;height:auto;display:block;background:#0B0F13;}
+  .clip figcaption{padding:12px 14px;font-size:12.5px;color:var(--moon-dim);letter-spacing:.5px;}
+  .clip figcaption b{color:var(--gold);font-size:11px;letter-spacing:2px;margin-right:8px;font-weight:400;}
 
   /* prompt 表 */
   .pt{width:100%;border-collapse:collapse;margin-top:34px;font-size:13.5px;}
@@ -226,15 +217,30 @@
   <h2 class="sec-title">视频片段 · 图生视频</h2>
   <div class="prose" style="margin-bottom:32px;">
     <p>用已有的品牌视觉资产做 <strong>AIGC 图生视频</strong>——这些静态画面里本来就含着运动：<strong>巨龙盘绕、鲲破水而出、金雾升腾</strong>。把运动释放出来，品牌视觉就从「画面」进入了「时间」。</p>
-    <p style="font-size:13.5px;color:var(--moon-dim);">工具：可灵 / 即梦 · 图生视频 · 单条 5 秒 · 统一比例 3:4</p>
+    <p style="font-size:13.5px;color:var(--moon-dim);">工具：即梦 · 图生视频 · 单条 5 秒。<strong style="color:var(--moon-dim);font-weight:400;">网页预览为静音循环，片段均自带音效设计。</strong></p>
   </div>
 
   <div class="clips">
-    <div class="clip"><div class="play">▶</div><div class="no">V1</div><div class="nm">九尾</div><div class="sub">九尾如云雾飘动<br>花瓣缓缓飘落</div></div>
-    <div class="clip"><div class="play">▶</div><div class="no">V2</div><div class="nm">烛龙</div><div class="sub">金龙缓缓盘旋<br>烛火跳动 · 金桂飘落</div></div>
-    <div class="clip"><div class="play">▶</div><div class="no">V3</div><div class="nm">鲲</div><div class="sub">杯中水花翻涌<br>鲲鱼轻轻摆尾</div></div>
-    <div class="clip"><div class="play">▶</div><div class="no">V4</div><div class="nm">首屏主视觉</div><div class="sub">云海缓慢流动<br>杯中金雾升腾</div></div>
-    <div class="clip"><div class="play">▶</div><div class="no">V5</div><div class="nm">产品特写</div><div class="sub">镜头极缓慢环绕<br>水珠滑落 · 热气袅袅</div></div>
+    <figure class="clip">
+      <video src="images/shanhai/clip-1-jiuwei.mp4" poster="images/shanhai/beast-1.jpg" muted loop playsinline preload="none"></video>
+      <figcaption><b>V1</b>九尾 · 尾巴飘动 · 花瓣飘落</figcaption>
+    </figure>
+    <figure class="clip">
+      <video src="images/shanhai/clip-2-zhulong.mp4" poster="images/shanhai/beast-2.jpg" muted loop playsinline preload="none"></video>
+      <figcaption><b>V2</b>烛龙 · 金龙盘旋 · 烛火跳动</figcaption>
+    </figure>
+    <figure class="clip">
+      <video src="images/shanhai/clip-3-kun.mp4" poster="images/shanhai/beast-3.jpg" muted loop playsinline preload="none"></video>
+      <figcaption><b>V3</b>鲲 · 水花翻涌 · 鲲鱼摆尾</figcaption>
+    </figure>
+    <figure class="clip">
+      <video src="images/shanhai/clip-4-hero.mp4" poster="images/shanhai/hero.jpg" muted loop playsinline preload="none"></video>
+      <figcaption><b>V4</b>首屏主视觉 · 云海流动 · 金雾升腾</figcaption>
+    </figure>
+    <figure class="clip">
+      <video src="images/shanhai/clip-5-product.mp4" poster="images/shanhai/prod-1.jpg" muted loop playsinline preload="none"></video>
+      <figcaption><b>V5</b>产品特写 · 环绕运镜 · 水珠滑落</figcaption>
+    </figure>
   </div>
 
   <table class="pt">
@@ -283,6 +289,23 @@
       es.forEach(function (e) { if (e.isIntersecting) { playLogo(); io.disconnect(); } });
     }, { threshold: 0.35 });
     io.observe(stage);
+
+    // 视频懒加载播放：滚到视口才加载并播放，离开即暂停（节省带宽）
+    var vids = document.querySelectorAll('.clip video');
+    if (vids.length && 'IntersectionObserver' in window) {
+      var vio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          var v = e.target;
+          if (e.isIntersecting) {
+            var p = v.play();
+            if (p && p.catch) { p.catch(function () {}); }
+          } else if (!v.paused) {
+            v.pause();
+          }
+        });
+      }, { threshold: 0.25 });
+      for (var i = 0; i < vids.length; i++) { vio.observe(vids[i]); }
+    }
   })();
 </script>
 
