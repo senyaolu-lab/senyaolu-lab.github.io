@@ -71,6 +71,10 @@
     text-align:center;padding:26px 18px;color:var(--mid);font-size:12.5px;line-height:1.9;}
   .slot b{color:var(--jade);font-size:13px;letter-spacing:.14em;display:block;margin-bottom:8px;font-weight:700;}
 
+  .asset .box img{width:100%;height:100%;object-fit:cover;display:block;}
+  .shots5{display:grid;grid-template-columns:1fr;gap:5px;width:100%;}
+  .shots5 img{width:100%;height:auto;display:block;border:1px solid var(--line);}
+
   /* 规格卡 */
   .spec-head{background:rgba(30,51,60,.55);border:1px solid var(--line);padding:22px 24px;margin-bottom:30px;}
   .spec-head h3{font-family:"Noto Serif SC",serif;font-size:19px;font-weight:900;letter-spacing:.06em;margin-bottom:10px;}
@@ -100,9 +104,8 @@
 
   /* 角色 */
   .chars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .char .box{aspect-ratio:3/4.4;width:100%;border:2px dashed rgba(95,217,192,.45);background:var(--panel);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-    padding:22px 16px;color:var(--mid);font-size:12.5px;line-height:1.9;}
+  .char .box{aspect-ratio:3/4.4;width:100%;background:var(--panel);overflow:hidden;border:1px solid var(--line);}
+  .char .box img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;}
   .char .box b{color:var(--jade);font-size:13px;letter-spacing:.14em;display:block;margin-bottom:8px;font-weight:700;}
   .char .nm{margin-top:15px;display:flex;align-items:baseline;gap:11px;}
   .char .nm h3{font-family:"Noto Serif SC",serif;font-size:26px;font-weight:900;letter-spacing:.06em;}
@@ -262,74 +265,13 @@
 
       <!-- 封面图 -->
       <div class="asset wide">
-        <div class="ratio a-1080"><div class="box">
-          <div class="safe" style="inset:7.4% 4.2% 14.8% 4.2%"><i>SAFE 1760 × 920</i></div>
-          <div>
-            <b>详情页封面图 / 主视觉 KV</b>
-            1920 × 1080 · 16:9 · JPG
-            <span class="dim">主视觉 + 标题，无其他文字 · 焦点在安全区内</span>
-          </div>
-        </div></div>
-        <div class="tx">
-          <div class="nm">Cover Image · 1920×1080</div>
-          <div class="ds">玩家注意到的第一张图，决定要不要点进来。<em>只放主视觉与游戏标题</em>——平台明确不允许出现其他文字，所以这张图的力量必须全部来自画面本身。</div>
+        <div class="shots5">
+          <img src="images/game/shot-01-ui.jpg" alt="截图一 主界面">
+          <img src="images/game/shot-02-codex.jpg" alt="截图二 造物图鉴">
+          <img src="images/game/shot-03-zone.jpg" alt="截图三 生长域">
+          <img src="images/game/shot-04-naming.jpg" alt="截图四 嫁接合成">
+          <img src="images/game/shot-05-progress.jpg" alt="截图五 命名仪式">
         </div>
-      </div>
-
-      <!-- 推广图 -->
-      <div class="asset wide">
-        <div class="ratio a-1080"><div class="box">
-          <div>
-            <b>推广图 / Promotion Image</b>
-            1920 × 1080 · 16:9 · JPG
-            <span class="dim">用于首页卡片、合集卡片 · 同样只放标题</span>
-          </div>
-        </div></div>
-        <div class="tx">
-          <div class="nm">Promotion Image · 1920×1080</div>
-          <div class="ds">用在推荐位与合集卡片上。与封面图的区别是——<em>它会在视频自动播放前先出现</em>，所以要在 0.5 秒里完成吸引。</div>
-        </div>
-      </div>
-
-      <!-- ICON -->
-      <div class="asset">
-        <div class="ratio a-icon"><div class="box">
-          <div>
-            <b>ICON</b>
-            512 × 512
-            <span class="dim">方形 · 关键内容在安全区</span>
-          </div>
-        </div></div>
-        <div class="tx">
-          <div class="nm">ICON · 512×512</div>
-          <div class="ds">用在排行榜、发现页、动态页。<em>ICON 会直接影响这些位置的点击转化</em>——它在很小的尺寸下也必须认得出是什么。</div>
-        </div>
-      </div>
-
-      <!-- 视频封面 -->
-      <div class="asset">
-        <div class="ratio a-1256"><div class="box">
-          <div>
-            <b>视频封面</b>
-            1256 × 706
-            <span class="dim">视频必填项</span>
-          </div>
-        </div></div>
-        <div class="tx">
-          <div class="nm">Video Cover · 1256×706</div>
-          <div class="ds">视频未播放时显示。<em>这不是 KV 的缩略图</em>——它是视频的入口，要让人知道点开能看到什么。</div>
-        </div>
-      </div>
-
-      <!-- 截图 -->
-      <div class="asset">
-        <div class="ratio a-1080"><div class="box">
-          <div>
-            <b>截图 ×5（横版）</b>
-            1920 × 1080 · 16:9
-            <span class="dim">每张展示不同系统</span>
-          </div>
-        </div></div>
         <div class="tx">
           <div class="nm">Screenshots · 1920×1080</div>
           <div class="ds">五张的排序是设计过的：<em>实机界面 → 造物图鉴 → 生长域 → 命名机制 → 进度反馈</em>。每张必须展示一个不同的系统，不能重复。</div>
@@ -366,7 +308,7 @@
 
   <div class="chars">
     <div class="char">
-      <div class="box slot"><b>CH-01 立绘位</b>1400 × 2050 · 3:4.4<br>竖构图半身 · 呼吸光效 · 青瓷开片护甲</div>
+      <div class="box"><img src="images/game/char-01-yan.jpg" alt="硯 · 持陶者 角色宣传图"></div>
       <div class="nm"><h3>硯</h3><span class="en">YAN</span></div>
       <div class="ttl">持 陶 者 · 青苔庭</div>
       <div class="ds">少年。层叠青瓷护甲，裂纹里透出琉璃青的光，缝隙长出细苔。肩背一排发光的种苗囊。</div>
@@ -374,7 +316,7 @@
     </div>
 
     <div class="char">
-      <div class="box slot"><b>CH-02 立绘位</b>1400 × 2050 · 3:4.4<br>竖构图半身 · 背脊铜管 · 声波具象化</div>
+      <div class="box"><img src="images/game/char-02-zhuo.jpg" alt="灼 · 司火者 角色宣传图"></div>
       <div class="nm"><h3>灼</h3><span class="en">ZHUO</span></div>
       <div class="ttl">司 火 者 · 熔枝原</div>
       <div class="ds">成年女性。深色硬质长衣，沿脊背嵌一排中空铜管，管内发光。手持长杖，杖头是一块未熄的息壤。</div>
@@ -382,7 +324,7 @@
     </div>
 
     <div class="char">
-      <div class="box slot"><b>CH-03 立绘位</b>1400 × 2050 · 3:4.4<br>竖构图半身 · 半透明盐晶 · 倒影更清晰</div>
+      <div class="box"><img src="images/game/char-03-ling.jpg" alt="澪 · 引潮者 角色宣传图"></div>
       <div class="nm"><h3>澪</h3><span class="en">LING</span></div>
       <div class="ttl">引 潮 者 · 镜盐海</div>
       <div class="ds">少女。半透明盐晶织物，边缘溶解成雾。赤脚走过盐壳，留下短暂的光纹。</div>
