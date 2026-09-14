@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>拆包吧 瓦学弟！· 游戏二创视频</title>
+<link rel="stylesheet" href="portfolio.css">
+<style>
+  body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
+
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px var(--pad-x);
+    background:rgba(251,250,247,.82);
+    backdrop-filter:blur(18px) saturate(160%);
+    border-bottom:1px solid var(--c-line-soft);
+  }
+  .nav__back{font-size:var(--t-small);color:var(--c-ink-3);text-decoration:none;
+    transition:color .3s var(--ease);}
+  .nav__back:hover{color:var(--c-ink);}
+  .nav__id{font-size:13.5px;font-weight:700;letter-spacing:.02em;}
+
+  .head{padding:calc(var(--pad-sec) * 1.25) 0 var(--s-7);}
+  .head__badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
+    text-transform:uppercase;font-weight:700;color:var(--c-ink);
+    border:1px solid var(--c-ink);border-radius:999px;padding:7px 16px;
+    margin-bottom:var(--s-6);
+  }
+  .head__badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-ink);}
+  .head__title{font-size:var(--t-h1);line-height:1.08;letter-spacing:-.03em;font-weight:900;margin:0 0 var(--s-5);}
+  .head__title .dim{color:var(--c-mute);font-weight:300;}
+  .head__sub{font-size:var(--t-lead);color:var(--c-ink-2);max-width:58ch;line-height:1.8;margin:0;}
+
+  .meta{display:flex;flex-wrap:wrap;gap:var(--s-5) var(--s-7);
+    padding:var(--s-5) 0;margin:var(--s-7) 0 0;
+    border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line);}
+  .meta div{display:flex;flex-direction:column;gap:4px;}
+  .meta dt{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.2em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+  .meta dd{margin:0;font-size:var(--t-small);color:var(--c-ink-2);}
+
+  .player{padding:var(--pad-sec) 0 0;}
+  .player video{
+    width:100%;display:block;aspect-ratio:16/9;object-fit:cover;
+    background:#000;border:1px solid var(--c-line);
+  }
+
+  .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
+  .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
+    font-size:var(--t-cap);color:var(--c-mute);}
+  .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
+  .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
+
+  @media print{
+    @page{size:A4;margin:14mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    .nav{display:none !important;}
+    .head{padding:0 0 var(--s-5) !important;}
+    .player{padding:var(--s-6) 0 0 !important;}
+    .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
+  }
+</style>
+</head>
+<body class="pf">
+
+<nav class="nav">
+  <a class="nav__back" href="index.html">← 返回作品集</a>
+  <div class="nav__id">游戏二创 · 混剪</div>
+</nav>
+
+<header class="head pf-wrap">
+  <div class="head__badge">游戏二创视频</div>
+  <h1 class="head__title">拆包吧 瓦学弟！</h1>
+  <p class="head__sub">
+    《无畏契约》与 CS:GO 的混剪二创。把两款射击游戏里最具辨识度的元素——左轮、弹道、发光皮肤、C4 拆弹——剪进同一条片子里。
+  </p>
+
+  <dl class="meta">
+    <div><dt>Type</dt><dd>游戏二创 / 混剪</dd></div>
+    <div><dt>Source</dt><dd>VALORANT × CS:GO</dd></div>
+    <div><dt>Format</dt><dd>1280 × 720 · 40s</dd></div>
+  </dl>
+</header>
+
+<main class="pf-wrap">
+  <section class="player">
+    <video src="images/fanvid/unbox.mp4" poster="images/fanvid/unbox-poster.jpg"
+           preload="metadata" playsinline controls></video>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="pf-wrap foot__row">
+    <span>吕森垚 · 2027 届 · 山西传媒学院</span>
+    <a href="index.html">返回作品集</a>
+  </div>
+</footer>
+
+</body>
+</html>
