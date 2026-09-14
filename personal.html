@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>拆包吧 瓦学弟！· 游戏二创视频</title>
+<title>个人短片两则 · 游戏二创 & 奇幻短片</title>
 <link rel="stylesheet" href="portfolio.css">
 <style>
   body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
@@ -34,17 +34,23 @@
   .head__title .dim{color:var(--c-mute);font-weight:300;}
   .head__sub{font-size:var(--t-lead);color:var(--c-ink-2);max-width:58ch;line-height:1.8;margin:0;}
 
+  .item{padding:var(--pad-sec) 0 0;}
+  .item__kicker{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:700;margin-bottom:var(--s-4);}
+  .item__title{font-size:var(--t-h2);line-height:1.14;letter-spacing:-.022em;font-weight:900;margin:0 0 var(--s-4);}
+  .item__desc{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.88;margin:0 0 var(--s-5);max-width:58ch;}
+
   .meta{display:flex;flex-wrap:wrap;gap:var(--s-5) var(--s-7);
-    padding:var(--s-5) 0;margin:var(--s-7) 0 0;
+    padding:var(--s-4) 0;margin:0 0 var(--s-6);
     border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line);}
   .meta div{display:flex;flex-direction:column;gap:4px;}
   .meta dt{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.2em;
     text-transform:uppercase;color:var(--c-mute);font-weight:600;}
   .meta dd{margin:0;font-size:var(--t-small);color:var(--c-ink-2);}
 
-  .player{padding:var(--pad-sec) 0 0;}
-  .player video{
-    width:100%;display:block;aspect-ratio:16/9;object-fit:cover;
+  /* 视频按各自画幅显示，不裁切 */
+  .item video{
+    width:100%;height:auto;display:block;
     background:#000;border:1px solid var(--c-line);
   }
 
@@ -59,7 +65,7 @@
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
     .nav{display:none !important;}
     .head{padding:0 0 var(--s-5) !important;}
-    .player{padding:var(--s-6) 0 0 !important;}
+    .item{padding:var(--s-6) 0 0 !important;page-break-inside:avoid;}
     .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
   }
 </style>
@@ -68,28 +74,51 @@
 
 <nav class="nav">
   <a class="nav__back" href="index.html">← 返回作品集</a>
-  <div class="nav__id">游戏二创 · 混剪</div>
+  <div class="nav__id">个人创作 · 短片两则</div>
 </nav>
 
 <header class="head pf-wrap">
-  <div class="head__badge">游戏二创视频</div>
-  <h1 class="head__title">拆包吧 瓦学弟！</h1>
+  <div class="head__badge">个人创作</div>
+  <h1 class="head__title">短片两则<br><span class="dim">游戏二创 &amp; 奇幻短片</span></h1>
   <p class="head__sub">
-    《无畏契约》与 CS:GO 的混剪二创。把两款射击游戏里最具辨识度的元素——左轮、弹道、发光皮肤、C4 拆弹——剪进同一条片子里。
+    两条自己随手做的片子。一条是射击游戏的混剪二创，一条是用 AI 陪你进异世界的奇幻短片。
+    不为交差，纯属想试试能不能做出来。
   </p>
-
-  <dl class="meta">
-    <div><dt>Type</dt><dd>游戏二创 / 混剪</dd></div>
-    <div><dt>Source</dt><dd>VALORANT × CS:GO</dd></div>
-    <div><dt>Format</dt><dd>1280 × 720 · 40s</dd></div>
-  </dl>
 </header>
 
 <main class="pf-wrap">
-  <section class="player">
-    <video src="images/fanvid/unbox.mp4" poster="images/fanvid/unbox-poster.jpg"
+
+  <!-- 一 -->
+  <section class="item">
+    <div class="item__kicker">01 · 游戏二创</div>
+    <h2 class="item__title">拆包吧 瓦学弟！</h2>
+    <p class="item__desc">
+      《无畏契约》与 CS:GO 的混剪二创。把两款射击游戏里最具辨识度的元素——左轮、弹道、发光皮肤、C4 拆弹——剪进同一条片子里。
+    </p>
+    <dl class="meta">
+      <div><dt>Type</dt><dd>游戏二创 / 混剪</dd></div>
+      <div><dt>Source</dt><dd>VALORANT × CS:GO</dd></div>
+      <div><dt>Format</dt><dd>1280 × 548 · 7:3 · 41s</dd></div>
+    </dl>
+    <video src="images/personal/unbox.mp4" poster="images/personal/unbox-poster.jpg"
            preload="metadata" playsinline controls></video>
   </section>
+
+  <!-- 二 -->
+  <section class="item">
+    <div class="item__kicker">02 · 奇幻短片</div>
+    <h2 class="item__title">带着豆包勇闯异世界</h2>
+    <p class="item__desc">
+      一条奇幻题材的短片。帆船、巨龙、城堡、符文法阵——把 AI 带进一个不属于它的世界，看看会发生什么。
+    </p>
+    <dl class="meta">
+      <div><dt>Type</dt><dd>奇幻短片 / AI 内容</dd></div>
+      <div><dt>Format</dt><dd>1280 × 720 · 16:9 · 1 分 57 秒</dd></div>
+    </dl>
+    <video src="images/personal/doubao.mp4" poster="images/personal/doubao-poster.jpg"
+           preload="metadata" playsinline controls></video>
+  </section>
+
 </main>
 
 <footer class="foot">
