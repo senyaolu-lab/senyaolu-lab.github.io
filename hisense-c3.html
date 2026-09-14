@@ -43,6 +43,8 @@
   .meta dd{margin:0;font-size:var(--t-small);color:var(--c-ink-2);}
 
   .sec{padding:var(--pad-sec) 0 0;}
+  .demo{position:relative;border:1px solid var(--c-line);background:#000;overflow:hidden;}
+  .demo video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000;}
 
   /* demo 播放器 */
   .demo{position:relative;border:1px solid var(--c-line);background:#000;overflow:hidden;}
@@ -71,6 +73,8 @@
   .note strong{color:var(--c-ink);font-weight:800;}
 
   .sec{padding:var(--pad-sec) 0 0;}
+  .demo{position:relative;border:1px solid var(--c-line);background:#000;overflow:hidden;}
+  .demo video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000;}
   .mats__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
   .mats__grid video,.mats__grid img{
     width:100%;display:block;aspect-ratio:16/9;object-fit:cover;
@@ -125,6 +129,22 @@
 
 <main class="pf-wrap">
 
+  <!-- 宣传视频 -->
+  <section class="sec">
+    <div class="pf-label">宣传视频 · 非终版</div>
+    <div class="demo">
+      <video src="images/hisense/c3-promo.mp4" poster="images/hisense/c3-still-01-mars.jpg" preload="metadata" playsinline controls></video>
+    </div>
+  </section>
+
+  <!-- Demo -->
+  <section class="sec">
+    <div class="pf-label">Demo</div>
+    <div class="demo">
+      <video src="images/hisense/c3-demo.mp4" poster="images/hisense/c3-still-04-racing.jpg" preload="metadata" playsinline controls></video>
+    </div>
+  </section>
+
   <!-- 部分素材 -->
   <section class="sec">
     <div class="pf-label">部分素材</div>
@@ -133,6 +153,7 @@
       <video src="images/hisense/mat-08.mp4" poster="images/hisense/c3-mat-08.jpg" preload="metadata" playsinline controls></video>
       <video src="images/hisense/mat-18.mp4" poster="images/hisense/c3-mat-18.jpg" preload="metadata" playsinline controls></video>
       <video src="images/hisense/mat-25.mp4" poster="images/hisense/c3-mat-25.jpg" preload="metadata" playsinline controls></video>
+      <video src="images/hisense/mat-unbox.mp4" poster="images/hisense/c3-mat-unbox.jpg" preload="metadata" playsinline controls></video>
       <img src="images/hisense/c3-still-01-mars.jpg" alt="">
       <img src="images/hisense/c3-still-02-projector.jpg" alt="">
       <img src="images/hisense/c3-still-03-theater.jpg" alt="">
