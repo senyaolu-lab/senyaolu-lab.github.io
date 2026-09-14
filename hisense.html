@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hisense IFA Berlin 2024 · 社媒短片</title>
+<title>Hisense · 真实交付两条</title>
 <link rel="stylesheet" href="portfolio.css">
 <style>
   body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
@@ -21,12 +21,41 @@
   .nav__back:hover{color:var(--c-ink);}
   .nav__id{font-size:13.5px;font-weight:700;letter-spacing:.02em;}
 
-  .wrap{padding:calc(var(--pad-sec) * 1.2) 0 var(--pad-sec);}
-  .inner{display:grid;grid-template-columns:300px 1fr;gap:var(--s-10);align-items:start;}
+  /* 页首 */
+  .head{padding:calc(var(--pad-sec) * 1.25) 0 var(--s-7);}
+  .head__badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
+    text-transform:uppercase;font-weight:700;color:var(--c-ink);
+    border:1px solid var(--c-ink);border-radius:999px;padding:7px 16px;
+    margin-bottom:var(--s-6);
+  }
+  .head__badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-ink);}
+  .head__title{font-size:var(--t-h1);line-height:1.05;letter-spacing:-.03em;font-weight:900;margin:0 0 var(--s-5);}
+  .head__sub{font-size:var(--t-lead);color:var(--c-ink-2);max-width:58ch;line-height:1.8;margin:0;}
 
-  /* 左：手机 */
+  /* 条目 */
+  .item{padding:var(--s-9) 0;border-top:1px solid var(--c-line);}
+  .item:first-of-type{border-top:0;}
+  .item__kicker{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:700;margin-bottom:var(--s-4);}
+  .item__grid{display:grid;grid-template-columns:330px 1fr;gap:var(--s-9);align-items:start;}
+  .item__grid--wide{grid-template-columns:1fr;}
+  .item__title{font-size:var(--t-h2);line-height:1.14;letter-spacing:-.022em;font-weight:900;margin:0 0 var(--s-5);}
+  .item__title .dim{color:var(--c-mute);font-weight:300;}
+  .item__desc{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.88;margin:0 0 var(--s-6);max-width:56ch;}
+
+  .meta{display:flex;flex-wrap:wrap;gap:var(--s-5) var(--s-7);
+    padding:var(--s-5) 0;margin:0 0 var(--s-6);
+    border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line);}
+  .meta div{display:flex;flex-direction:column;gap:4px;}
+  .meta dt{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.2em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+  .meta dd{margin:0;font-size:var(--t-small);color:var(--c-ink-2);}
+
+  /* 竖版手机 */
   .phone{
-    width:300px;border:8px solid #0C0F12;border-radius:28px;background:#0C0F12;
+    width:330px;border:8px solid #0C0F12;border-radius:28px;background:#0C0F12;
     overflow:hidden;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.22);
   }
   .phone video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;background:#000;}
@@ -39,27 +68,26 @@
   }
   .phone__play:hover{transform:translate(-50%,-50%) scale(1.08);}
   .phone.playing .phone__play{opacity:0;pointer-events:none;}
+  .cap{margin-top:var(--s-3);font-size:var(--t-cap);color:var(--c-mute);letter-spacing:.04em;}
 
-  /* 右：信息 */
-  .info{padding-top:6px;max-width:52ch;}
-  .info__tag{
-    display:inline-block;font-family:var(--font-lat);font-size:var(--t-micro);
-    letter-spacing:.2em;text-transform:uppercase;font-weight:700;
-    color:var(--c-ink);border:1px solid var(--c-line);border-radius:999px;
-    padding:6px 14px;margin-bottom:var(--s-5);
+  /* 横版 16:9 */
+  .wide{position:relative;border:1px solid var(--c-line);background:#000;overflow:hidden;}
+  .wide img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;}
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:var(--s-5);}
+  .strip figure{margin:0;}
+  .strip img{width:100%;display:block;border:1px solid var(--c-line);aspect-ratio:16/9;object-fit:cover;}
+  .strip figcaption{margin-top:7px;font-size:var(--t-cap);color:var(--c-mute);letter-spacing:.04em;}
+
+  .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:var(--s-5);}
+  .slot{
+    border:1px dashed var(--c-line);background:var(--c-surface-2);
+    padding:var(--s-7) var(--s-5);display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;
+    min-height:150px;font-size:var(--t-cap);color:var(--c-mute);line-height:1.8;
   }
-  .info__title{font-size:var(--t-h2);line-height:1.12;letter-spacing:-.025em;
-    font-weight:900;margin:0 0 var(--s-5);}
-  .info__title .dim{color:var(--c-mute);font-weight:300;}
-  .info__desc{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.88;margin:0 0 var(--s-6);}
-
-  .meta{display:flex;flex-wrap:wrap;gap:var(--s-5) var(--s-7);
-    padding:var(--s-5) 0;margin:0 0 var(--s-6);
-    border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line);}
-  .meta div{display:flex;flex-direction:column;gap:4px;}
-  .meta dt{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.2em;
-    text-transform:uppercase;color:var(--c-mute);font-weight:600;}
-  .meta dd{margin:0;font-size:var(--t-small);color:var(--c-ink-2);}
+  .slot b{display:block;font-family:var(--font-lat);font-size:var(--t-micro);
+    letter-spacing:.2em;text-transform:uppercase;color:var(--c-ink-3);
+    font-weight:700;margin-bottom:7px;}
 
   .btn{
     display:inline-flex;align-items:center;gap:9px;
@@ -73,9 +101,7 @@
     cursor:pointer;font-family:inherit;}
   .btn--ghost:hover{border-color:var(--c-ink);}
   .row{display:flex;gap:10px;flex-wrap:wrap;}
-
-  .note{margin-top:var(--s-6);font-size:var(--t-cap);color:var(--c-mute);
-    line-height:1.8;max-width:46ch;}
+  .note{margin-top:var(--s-6);font-size:var(--t-cap);color:var(--c-mute);line-height:1.8;max-width:50ch;}
 
   .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
   .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
@@ -83,17 +109,21 @@
   .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
   .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
 
-  @media (max-width:820px){
-    .inner{grid-template-columns:1fr;gap:var(--s-8);}
-    .phone{width:100%;max-width:300px;margin:0 auto;}
+  @media (max-width:880px){
+    .item__grid{grid-template-columns:1fr;gap:var(--s-7);}
+    .phone{width:100%;max-width:330px;margin:0 auto;}
+    .strip{grid-template-columns:1fr 1fr;}
   }
   @media print{
     @page{size:A4;margin:14mm;}
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
     .nav,.phone__play,.row{display:none !important;}
-    .wrap{padding:0 !important;}
-    .inner{grid-template-columns:230px 1fr;gap:12mm;}
+    .head{padding:0 0 var(--s-5) !important;}
+    .item{padding:var(--s-6) 0 !important;page-break-inside:avoid;}
+    .item__grid{grid-template-columns:230px 1fr;gap:10mm;}
+    .item__grid--wide{grid-template-columns:1fr;}
     .phone{border-width:5px;border-radius:20px;width:230px;box-shadow:none;}
+    .strip{grid-template-columns:repeat(3,1fr);}
     .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
   }
 </style>
@@ -102,46 +132,89 @@
 
 <nav class="nav">
   <a class="nav__back" href="index.html">← 返回作品集</a>
-  <div class="nav__id">Hisense · 社媒短片</div>
+  <div class="nav__id">Hisense · 真实交付</div>
 </nav>
 
-<main class="wrap pf-wrap">
-  <div class="inner">
+<header class="head pf-wrap">
+  <div class="head__badge">真实商业项目</div>
+  <h1 class="head__title">Hisense</h1>
+  <p class="head__sub">
+    两条为海信制作的社媒与宣传内容。一条已在品牌官方账号公开发布，
+    一条是海外产品宣传的 AI 内容。
+  </p>
+</header>
 
-    <div>
-      <div class="phone" id="phone">
-        <video id="hv" src="images/hisense/hisense-wip.mp4"
-               poster="images/hisense/still-01-ifa.jpg"
-               preload="metadata" playsinline muted></video>
-        <button class="phone__play" id="hplay" type="button">▶</button>
-      </div>
-    </div>
+<main class="pf-wrap">
 
-    <div class="info">
-      <span class="info__tag">社媒短片 · 真实交付</span>
-      <h1 class="info__title">Hisense<br><span class="dim">IFA Berlin 2024</span></h1>
-      <p class="info__desc">
-        为海信 IFA Berlin 2024 制作的一条竖版社媒短片，已发布在 <strong>@hisense 官方 TikTok 账号</strong>。
-        57 秒走完整条产品线——电视、洗烘、冰箱、空调、投影，收在 ConnectLife 智能家居。
-      </p>
+  <!-- ============ 条目一 · IFA 社媒短片 ============ -->
+  <section class="item">
+    <div class="item__kicker">01 · Social Media Film · 已发布</div>
+    <div class="item__grid">
 
-      <dl class="meta">
-        <div><dt>Client</dt><dd>Hisense 海信</dd></div>
-        <div><dt>Role</dt><dd>内容制作</dd></div>
-        <div><dt>Format</dt><dd>1440 × 2560 · 57s</dd></div>
-      </dl>
-
-      <div class="row">
-        <a class="btn" href="https://www.tiktok.com/@hisense/video/7680332933458054413" target="_blank" rel="noopener">▶ 官方完成品</a>
-        <button class="btn btn--ghost" id="hreplay" type="button">↺ 重播</button>
+      <div>
+        <div class="phone" id="phone">
+          <video id="hv" src="images/hisense/hisense-wip.mp4"
+                 poster="images/hisense/still-01-ifa.jpg"
+                 preload="metadata" playsinline muted></video>
+          <button class="phone__play" id="hplay" type="button">▶</button>
+        </div>
+        <div class="cap">半成品 · 我制作中的版本</div>
       </div>
 
-      <p class="note">
-        左侧是我制作中的半成品。最终上线版由品牌方完成后期调色与包装。
-      </p>
-    </div>
+      <div>
+        <h2 class="item__title">IFA Berlin 2024<br><span class="dim">社媒短片</span></h2>
+        <p class="item__desc">
+          为海信 IFA Berlin 2024 制作的一条竖版社媒短片，已发布在 <strong>@hisense 官方 TikTok 账号</strong>。
+          57 秒走完整条产品线——电视、洗烘、冰箱、空调、投影，收在 ConnectLife 智能家居。
+        </p>
 
-  </div>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>内容制作</dd></div>
+          <div><dt>Format</dt><dd>1440 × 2560 · 57s</dd></div>
+          <div><dt>Published</dt><dd>TikTok @hisense</dd></div>
+        </dl>
+
+        <div class="row">
+          <a class="btn" href="https://www.tiktok.com/@hisense/video/7680332933458054413" target="_blank" rel="noopener">▶ 官方完成品</a>
+          <button class="btn btn--ghost" id="hreplay" type="button">↺ 重播</button>
+        </div>
+
+        <p class="note">左侧是我制作中的半成品。最终上线版由品牌方完成后期调色与包装。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 条目二 · C3 海外宣传 ============ -->
+  <section class="item">
+    <div class="item__kicker">02 · Overseas Product Film · AI 内容</div>
+    <div class="item__grid item__grid--wide">
+
+      <div>
+        <h2 class="item__title">C3 系列<br><span class="dim">海外产品宣传</span></h2>
+        <p class="item__desc">
+          为海信 C3 系列投影产品制作的海外宣传内容，5 分钟走完产品阵容、画质卖点与真实使用场景。
+        </p>
+
+        <dl class="meta">
+          <div><dt>Role</dt><dd>AI 内容制作</dd></div>
+          <div><dt>Format</dt><dd>1280 × 720 · 5 分 07 秒</dd></div>
+          <div><dt>Series</dt><dd>C3 Pro / C3 Ultra / C3 Ultra Max</dd></div>
+          <div><dt>Market</dt><dd>海外</dd></div>
+        </dl>
+
+        <div class="slots">
+          <div class="slot"><b>素材位</b>画面素材待补</div>
+          <div class="slot"><b>素材位</b>画面素材待补</div>
+          <div class="slot"><b>素材位</b>画面素材待补</div>
+        </div>
+
+        <p class="note">本条为 AI 生成内容，非最终交付版本。画面素材待补。</p>
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
 <footer class="foot">
