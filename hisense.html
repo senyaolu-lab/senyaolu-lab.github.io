@@ -76,15 +76,13 @@
   .note{margin-top:var(--s-6);font-size:var(--t-cap);color:var(--c-mute);line-height:1.8;max-width:50ch;}
 
   .mats{padding:0 0 var(--pad-sec);}
-  .mats__lead{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.85;margin:0 0 var(--s-6);max-width:52ch;}
-  .mats__strip{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
-  .mats__strip figure{margin:0;}
-  .mini{position:relative;background:#000;overflow:hidden;}
-  .mini img{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;}
-  .mini span{position:absolute;left:8px;top:8px;
-    font-family:var(--font-lat);font-size:10px;letter-spacing:.14em;font-weight:700;
-    background:rgba(0,0,0,.66);color:#fff;padding:3px 7px;border-radius:2px;}
-  .mats__strip figcaption{margin-top:7px;font-size:11.5px;color:var(--c-mute);line-height:1.6;}
+  .mats__grid{
+    display:grid;grid-template-columns:repeat(6,1fr);gap:12px;
+  }
+  .mats__grid video,.mats__grid img{
+    width:100%;display:block;aspect-ratio:9/16;object-fit:cover;
+    background:#000;border:1px solid var(--c-line);
+  }
 
   .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;}
   .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
@@ -92,10 +90,16 @@
   .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
   .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
 
+  @media (max-width:900px){
+    .mats__grid{grid-template-columns:repeat(3,1fr);gap:8px;}
+  }
+  @media (max-width:520px){
+    .mats__grid{grid-template-columns:repeat(2,1fr);}
+  }
   @media (max-width:860px){
     .grid{grid-template-columns:1fr;gap:var(--s-7);}
     .phone{width:100%;max-width:330px;margin:0 auto;}
-    .mats__strip{grid-template-columns:1fr 1fr;}
+    .mats__grid{grid-template-columns:repeat(3,1fr);}
   }
   @media print{
     @page{size:A4;margin:14mm;}
@@ -104,7 +108,7 @@
     .head{padding:0 0 var(--s-5) !important;}
     .grid{padding:var(--s-6) 0 !important;grid-template-columns:230px 1fr;gap:10mm;}
     .phone{border-width:5px;border-radius:20px;width:230px;box-shadow:none;}
-    .mats__strip{grid-template-columns:repeat(5,1fr);gap:4mm;}
+    .mats__grid{grid-template-columns:repeat(6,1fr);gap:3mm;}
     .foot{padding:var(--s-5) 0 !important;}
   }
 </style>
@@ -156,37 +160,18 @@
 
   </div>
 
-  <!-- 制作素材 -->
+  <!-- 部分素材 -->
   <section class="mats">
-    <div class="pf-label">Source Materials</div>
-    <p class="mats__lead">这条短片由以下竖版素材剪辑而成。全部 9:16，与成片比例一致。</p>
-
-    <div class="mats__strip">
-      <figure>
-        <div class="mini"><img src="images/hisense/ifc-still-01.jpg" alt=""><span>01</span></div>
-        <figcaption>IFA 门牌 · 2160×3840 / 6.53s</figcaption>
-      </figure>
-      <figure>
-        <div class="mini"><img src="images/hisense/ifc-still-02.jpg" alt=""><span>02</span></div>
-        <figcaption>云海豪宅 · 720×1280 / 8.04s</figcaption>
-      </figure>
-      <figure>
-        <div class="mini"><img src="images/hisense/ifc-still-03.jpg" alt=""><span>03</span></div>
-        <figcaption>房屋剖面 · 720×1280 / 6.08s</figcaption>
-      </figure>
-      <figure>
-        <div class="mini"><img src="images/hisense/ifc-still-04.jpg" alt=""><span>04</span></div>
-        <figcaption>植物转场 · 720×1280 / 5.09s</figcaption>
-      </figure>
-      <figure>
-        <div class="mini"><img src="images/hisense/ifc-still-05.jpg" alt=""><span>05</span></div>
-        <figcaption>洗烘 · 1440×2560 / 12.25s</figcaption>
-      </figure>
+    <div class="pf-label">部分素材</div>
+    <div class="mats__grid">
+      <img src="images/hisense/ifc-still-01.jpg" alt="">
+      <video src="images/hisense/ifc-02.mp4" poster="images/hisense/ifc-still-02.jpg" preload="metadata" playsinline controls></video>
+      <video src="images/hisense/ifc-03.mp4" poster="images/hisense/ifc-still-03.jpg" preload="metadata" playsinline controls></video>
+      <video src="images/hisense/ifc-04.mp4" poster="images/hisense/ifc-still-04.jpg" preload="metadata" playsinline controls></video>
+      <video src="images/hisense/ifc-05.mp4" poster="images/hisense/ifc-still-05.jpg" preload="metadata" playsinline controls></video>
+      <img src="images/hisense/ifc-packaging.jpg" alt="">
     </div>
-
-    <p class="note">五条素材均为竖版 9:16，分辨率从 720p 到 4K 不等，与社媒成片规格一致。</p>
   </section>
-
 </main>
 
 <footer class="foot">
