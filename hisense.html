@@ -78,6 +78,10 @@
   .strip img{width:100%;display:block;border:1px solid var(--c-line);aspect-ratio:16/9;object-fit:cover;}
   .strip figcaption{margin-top:7px;font-size:var(--t-cap);color:var(--c-mute);letter-spacing:.04em;}
 
+  .c3-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:var(--s-6);}
+  .c3-grid figure{margin:0;}
+  .c3-grid img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--c-line);}
+  .c3-grid figcaption{margin-top:8px;font-size:var(--t-cap);color:var(--c-mute);letter-spacing:.04em;}
   .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:var(--s-5);}
   .slot{
     border:1px dashed var(--c-line);background:var(--c-surface-2);
@@ -113,6 +117,7 @@
     .item__grid{grid-template-columns:1fr;gap:var(--s-7);}
     .phone{width:100%;max-width:330px;margin:0 auto;}
     .strip{grid-template-columns:1fr 1fr;}
+    .c3-grid{grid-template-columns:1fr;}
   }
   @media print{
     @page{size:A4;margin:14mm;}
@@ -124,6 +129,7 @@
     .item__grid--wide{grid-template-columns:1fr;}
     .phone{border-width:5px;border-radius:20px;width:230px;box-shadow:none;}
     .strip{grid-template-columns:repeat(3,1fr);}
+    .c3-grid{grid-template-columns:1fr 1fr;}
     .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
   }
 </style>
@@ -201,15 +207,19 @@
           <div><dt>Format</dt><dd>1280 × 720 · 5 分 07 秒</dd></div>
           <div><dt>Series</dt><dd>C3 Pro / C3 Ultra / C3 Ultra Max</dd></div>
           <div><dt>Market</dt><dd>海外</dd></div>
+          <div><dt>Version</dt><dd>Demo（非最终稿）</dd></div>
         </dl>
 
-        <div class="slots">
-          <div class="slot"><b>素材位</b>画面素材待补</div>
-          <div class="slot"><b>素材位</b>画面素材待补</div>
-          <div class="slot"><b>素材位</b>画面素材待补</div>
+        <div class="c3-grid">
+          <figure><img src="images/hisense/c3-still-01-mars.jpg" alt=""><figcaption>概念场景 · 星际</figcaption></figure>
+          <figure><img src="images/hisense/c3-still-03-theater.jpg" alt=""><figcaption>家庭影院场景</figcaption></figure>
+          <figure><img src="images/hisense/c3-still-02-projector.jpg" alt=""><figcaption>产品细节 · TUNED BY DEVIALET</figcaption></figure>
+          <figure><img src="images/hisense/c3-still-04-racing.jpg" alt=""><figcaption>观影场景 · 赛车</figcaption></figure>
         </div>
 
-        <p class="note">本条为 AI 生成内容，非最终交付版本。画面素材待补。</p>
+        <p class="note">
+          本条为 AI 生成内容。5 分 07 秒的 Demo 版本，非最终交付稿。
+        </p>
       </div>
 
     </div>
