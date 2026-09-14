@@ -3,211 +3,371 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>吕森垚 · AI 视觉设计作品集</title>
+<title>吕森垚 · 视觉设计作品集 2027</title>
+<link rel="stylesheet" href="portfolio.css">
 <style>
-  :root{
-    --bg:#FAF8F4;
-    --paper:#FFFFFF;
-    --ink:#26241F;
-    --ink2:#5C574E;
-    --gray:#948C7E;
-    --line:#E7E2D8;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif;
-    background:var(--bg);color:var(--ink);
-    line-height:1.85;-webkit-font-smoothing:antialiased;
-  }
+  body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
 
-  nav{
+  /* ================= 导航 ================= */
+  .nav{
     position:fixed;top:0;left:0;right:0;z-index:100;
     display:flex;align-items:center;justify-content:space-between;
-    padding:18px 48px;
-    background:rgba(250,248,244,.88);backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--line);
+    padding:20px var(--pad-x);
+    background:rgba(251,250,247,.82);
+    backdrop-filter:blur(18px) saturate(160%);
+    border-bottom:1px solid transparent;
+    transition:border-color .4s var(--ease),padding .4s var(--ease);
   }
-  nav .me{font-size:16px;letter-spacing:4px;font-weight:700;}
-  nav .me span{font-size:11px;letter-spacing:2px;color:var(--gray);margin-left:10px;font-weight:400;}
-  .nav-links{display:flex;gap:28px;font-size:13px;}
-  .nav-links a{text-decoration:none;color:var(--gray);}
-  .nav-links a:hover{color:var(--ink);}
-
-  header.hero{padding:180px 48px 100px;max-width:1120px;margin:0 auto;}
-  .hero-label{font-size:11px;letter-spacing:7px;color:var(--gray);margin-bottom:26px;}
-  .hero-title{font-size:clamp(44px,8vw,96px);line-height:1.1;letter-spacing:6px;font-weight:700;}
-  .hero-title em{font-style:normal;color:var(--gray);}
-  .hero-sub{margin-top:28px;font-size:16.5px;color:var(--ink2);max-width:620px;}
-  .hero-meta{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap;}
-  .hero-meta span{font-size:12px;letter-spacing:2px;color:var(--ink2);border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 18px;}
-
-  section{padding:0 48px 90px;max-width:1120px;margin:0 auto;}
-  .sec-label{font-size:11px;letter-spacing:6px;color:var(--gray);margin-bottom:14px;}
-  .sec-title{font-size:clamp(24px,3.4vw,34px);font-weight:700;letter-spacing:3px;margin-bottom:44px;}
-
-  .projects{display:grid;grid-template-columns:1fr;gap:64px;}
-  a.project{display:block;text-decoration:none;color:inherit;}
-  .cover{position:relative;overflow:hidden;border-radius:20px;background:#000;}
-  .cover img{width:100%;height:auto;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1);}
-  a.project:hover .cover img{transform:scale(1.035);}
-  .cover .tag{position:absolute;top:20px;left:20px;font-size:11px;letter-spacing:3px;color:#fff;background:rgba(0,0,0,.42);backdrop-filter:blur(8px);border-radius:999px;padding:7px 16px;}
-  .p-info{margin-top:26px;display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap;}
-  .p-info h3{font-size:clamp(22px,3vw,32px);font-weight:700;letter-spacing:3px;margin-bottom:8px;}
-  .p-info .en{font-size:12px;letter-spacing:4px;color:var(--gray);}
-  .p-info .desc{font-size:14.5px;color:var(--ink2);max-width:560px;margin-top:14px;}
-  .p-info .go{font-size:13px;letter-spacing:2px;color:var(--gray);white-space:nowrap;padding-top:8px;}
-  a.project:hover .p-info .go{color:var(--ink);}
-
-  .about{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:start;}
-  .about .prose{font-size:15.5px;color:var(--ink2);}
-  .about .prose p{margin-bottom:16px;}
-  .about .prose strong{color:var(--ink);}
-  .contact{list-style:none;}
-  .contact li{display:flex;padding:15px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink2);}
-  .contact li span{width:82px;font-size:11px;letter-spacing:3px;color:var(--gray);padding-top:3px;flex-shrink:0;}
-
-  footer{border-top:1px solid var(--line);padding:46px 48px;text-align:center;font-size:12px;color:var(--gray);letter-spacing:2px;}
-  footer .b{display:block;margin-bottom:10px;font-size:17px;letter-spacing:6px;color:var(--ink);font-weight:700;}
-
-  @media(max-width:760px){
-    nav{padding:14px 22px;}
-    .nav-links{display:none;}
-    header.hero{padding:130px 22px 70px;}
-    section{padding:0 22px 64px;}
-    .about{grid-template-columns:1fr;gap:34px;}
+  .nav.scrolled{border-bottom-color:var(--c-line-soft);padding-top:14px;padding-bottom:14px;}
+  .nav__id{display:flex;align-items:baseline;gap:12px;text-decoration:none;color:inherit;}
+  .nav__name{font-size:15px;font-weight:800;letter-spacing:.02em;}
+  .nav__role{font-family:var(--font-lat);font-size:var(--t-micro);
+    letter-spacing:.26em;text-transform:uppercase;color:var(--c-mute);}
+  .nav__links{display:flex;gap:30px;}
+  .nav__links a{
+    position:relative;text-decoration:none;color:var(--c-ink-3);
+    font-size:var(--t-small);letter-spacing:.02em;
+    transition:color .3s var(--ease);
   }
+  .nav__links a::after{
+    content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;
+    background:currentColor;transition:width .4s var(--ease);
+  }
+  .nav__links a:hover{color:var(--c-ink);}
+  .nav__links a:hover::after{width:100%;}
+
+  /* ================= 首屏 ================= */
+  .hero{padding:calc(var(--pad-sec) * 1.5) 0 var(--pad-sec);}
+  .hero__label{margin-bottom:var(--s-8);}
+  .hero__title{
+    font-size:var(--t-display);line-height:.98;letter-spacing:-.035em;font-weight:900;
+    margin:0 0 var(--s-7);
+  }
+  .hero__title .dim{color:var(--c-mute);font-weight:300;}
+  .hero__grid{
+    display:grid;grid-template-columns:1.35fr 1fr;gap:var(--s-10);
+    align-items:end;padding-top:var(--s-7);border-top:1px solid var(--c-line);
+  }
+  .hero__lead{font-size:var(--t-lead);line-height:1.8;color:var(--c-ink-2);max-width:44ch;}
+  .hero__lead strong{color:var(--c-ink);font-weight:800;}
+  .hero__facts{display:grid;gap:var(--s-4);margin:0;}
+  .fact{display:flex;justify-content:space-between;gap:var(--s-5);
+    padding-bottom:var(--s-3);border-bottom:1px solid var(--c-line-soft);
+    font-size:var(--t-small);}
+  .fact dt{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.2em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+  .fact dd{margin:0;color:var(--c-ink-2);text-align:right;}
+
+  /* ================= 项目列表 ================= */
+  .works{padding:0 0 var(--pad-sec);}
+  .work{
+    display:block;text-decoration:none;color:inherit;
+    padding-top:var(--s-9);margin-top:var(--s-9);
+    border-top:1px solid var(--c-line);
+  }
+  .work:first-of-type{border-top:0;margin-top:0;padding-top:0;}
+  .work__head{
+    display:grid;grid-template-columns:auto 1fr auto;gap:var(--s-6);
+    align-items:baseline;margin-bottom:var(--s-5);
+  }
+  .work__no{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.24em;
+    color:var(--c-mute);font-weight:600;padding-top:.5em;}
+  .work__title{font-size:var(--t-h2);letter-spacing:-.02em;font-weight:900;}
+  .work__tag{
+    font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.2em;
+    text-transform:uppercase;color:var(--c-mute);
+    border:1px solid var(--c-line);border-radius:999px;padding:6px 14px;white-space:nowrap;
+  }
+  .work__tag--live{border-color:var(--c-ink);color:var(--c-ink);font-weight:700;}
+  .work__meta{display:grid;grid-template-columns:auto 1fr;gap:var(--s-6);align-items:start;}
+  .work__en{
+    font-family:var(--font-lat);font-size:var(--t-cap);letter-spacing:.18em;
+    text-transform:uppercase;color:var(--c-mute);white-space:nowrap;padding-top:.35em;
+    min-width:150px;
+  }
+  .work__desc{font-size:var(--t-body);color:var(--c-ink-2);max-width:62ch;line-height:1.85;margin:0;}
+  .work__desc b{color:var(--c-ink);font-weight:800;}
+  .work__view{
+    display:inline-flex;align-items:center;gap:9px;margin-top:var(--s-5);
+    font-size:var(--t-small);font-weight:700;letter-spacing:.04em;color:var(--c-ink);
+  }
+  .work__view i{font-style:normal;transition:transform .45s var(--ease);display:inline-block;}
+  .work:hover .work__view i{transform:translateX(6px);}
+  .work__media{
+    margin-top:var(--s-6);overflow:hidden;border-radius:2px;background:var(--c-surface-2);
+  }
+  .work__media img{
+    width:100%;display:block;
+    transition:transform 1.1s var(--ease),filter .8s var(--ease);
+  }
+  .work:hover .work__media img{transform:scale(1.022);}
+
+  /* ================= 关于 ================= */
+  .about{background:var(--c-surface);border-top:1px solid var(--c-line);}
+  .about__grid{display:grid;grid-template-columns:1.5fr 1fr;gap:var(--s-10);align-items:start;}
+  .about__prose p{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.9;margin-bottom:var(--s-5);}
+  .about__prose strong{color:var(--c-ink);font-weight:800;}
+  .about__list{list-style:none;margin:0;padding:0;}
+  .about__list li{
+    display:flex;gap:var(--s-5);padding:var(--s-4) 0;
+    border-bottom:1px solid var(--c-line-soft);font-size:var(--t-small);color:var(--c-ink-2);
+  }
+  .about__list .k{
+    flex:0 0 74px;font-family:var(--font-lat);font-size:var(--t-micro);
+    letter-spacing:.2em;text-transform:uppercase;color:var(--c-mute);
+    font-weight:600;padding-top:.24em;
+  }
+
+  /* ================= 页脚 ================= */
+  .foot{border-top:1px solid var(--c-line);padding:var(--s-10) 0 var(--s-8);}
+  .foot__grid{display:flex;justify-content:space-between;gap:var(--s-8);flex-wrap:wrap;align-items:flex-end;}
+  .foot__name{font-size:var(--t-h3);font-weight:900;letter-spacing:-.01em;}
+  .foot__role{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
+    text-transform:uppercase;color:var(--c-mute);margin-top:8px;}
+  .foot__links{display:flex;gap:var(--s-6);flex-wrap:wrap;}
+  .foot__links a{
+    font-size:var(--t-small);color:var(--c-ink-3);text-decoration:none;
+    border-bottom:1px solid var(--c-line);padding-bottom:3px;
+    transition:color .3s var(--ease),border-color .3s var(--ease);
+  }
+  .foot__links a:hover{color:var(--c-ink);border-color:var(--c-ink);}
+  .foot__legal{
+    margin-top:var(--s-8);padding-top:var(--s-5);border-top:1px solid var(--c-line-soft);
+    display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
+    font-size:var(--t-cap);color:var(--c-mute);
+  }
+
+  /* ================= 响应式 ================= */
+  @media (max-width:900px){
+    .hero__grid{grid-template-columns:1fr;gap:var(--s-8);}
+    .work__head{grid-template-columns:auto 1fr;gap:var(--s-4);}
+    .work__tag{grid-column:2;justify-self:start;margin-top:var(--s-2);}
+    .work__meta{grid-template-columns:1fr;gap:var(--s-3);}
+    .work__en{min-width:0;}
+    .about__grid{grid-template-columns:1fr;gap:var(--s-8);}
+    .nav__links{display:none;}
+  }
+
+  /* ================= 打印 ================= */
   @media print{
-    @page{size:A4;margin:12mm;}
+    @page{size:A4;margin:13mm;}
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
-    nav{display:none !important;}
-    header.hero{padding:26px 0 24px !important;}
-    section{padding:0 0 30px !important;}
-    .projects{gap:28px;}
-    a.project,.cover,.p-info,.about,.hero-meta,.contact li{break-inside:avoid;}
-    footer{padding:20px 0 !important;}
+    .nav{display:none !important;}
+    .hero{padding:0 0 var(--s-6) !important;}
+    .pf-sec,.works{padding:var(--s-6) 0 !important;}
+    .work{page-break-inside:avoid;padding-top:var(--s-6);margin-top:var(--s-6);}
+    .work__media img{transition:none;}
+    .foot{padding:var(--s-6) 0 !important;}
   }
 </style>
 </head>
-<body>
+<body class="pf">
 
-<nav>
-  <div class="me">吕森垚<span>AI 视觉设计</span></div>
-  <div class="nav-links">
-    <a href="#work">作品</a>
+<nav class="nav" id="nav">
+  <a class="nav__id" href="index.html">
+    <span class="nav__name">吕森垚</span>
+    <span class="nav__role">Visual Design · 2027</span>
+  </a>
+  <div class="nav__links">
+    <a href="#works">作品</a>
     <a href="#about">关于</a>
     <a href="#contact">联系</a>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="hero-label">PORTFOLIO 2027</div>
-  <h1 class="hero-title">吕森垚<br><em>AI 视觉设计</em></h1>
-  <p class="hero-sub">专注品牌视觉与 IP 设计，擅长把 AIGC 融入完整的设计流程——从品牌策略、视觉系统到产品落地，追求「可控、可量产、有辨识度」的视觉表达。</p>
-  <div class="hero-meta">
-    <span>山西传媒学院</span>
-    <span>2027 届应届</span>
-    <span>品牌视觉</span>
-    <span>IP 设计</span>
-    <span>广告创意</span>
-    <span>AIGC</span>
+<!-- ================= 首屏 ================= -->
+<header class="hero pf-wrap">
+  <div class="pf-label hero__label">Portfolio 2027</div>
+  <h1 class="hero__title">吕森垚<br><span class="dim">视觉设计</span></h1>
+
+  <div class="hero__grid">
+    <p class="hero__lead">
+      做过真实的商业项目——为海信 IFA Berlin 2024 制作的短片已发布在品牌官方账号上。
+      同时在自主项目里覆盖<strong>三种完全不同的视觉语言</strong>：暗黑东方史诗、柔和治愈潮玩、冷感工业排印。
+    </p>
+    <dl class="hero__facts">
+      <div class="fact"><dt>School</dt><dd>山西传媒学院</dd></div>
+      <div class="fact"><dt>Year</dt><dd>2027 届</dd></div>
+      <div class="fact"><dt>Focus</dt><dd>品牌视觉 · IP 设计</dd></div>
+      <div class="fact"><dt>Tools</dt><dd>即梦 / MJ / SD / PS / Figma</dd></div>
+    </dl>
   </div>
 </header>
 
-<section id="work">
-  <div class="sec-label">SELECTED WORK</div>
-  <h2 class="sec-title">精选项目</h2>
+<!-- ================= 作品 ================= -->
+<section class="works pf-wrap pf-sec" id="works">
+  <div class="pf-label">Selected Work</div>
 
-  <div class="projects">
+  <!-- 01 -->
+  <a class="work pf-reveal" href="hisense.html">
+    <div class="work__head">
+      <span class="work__no">01</span>
+      <h2 class="work__title">Hisense × IFA Berlin 2024</h2>
+      <span class="work__tag work__tag--live">已发布</span>
+    </div>
+    <div class="work__meta">
+      <span class="work__en">Real Client Project</span>
+      <div>
+        <p class="work__desc">
+          为海信 IFA Berlin 2024 展会项目制作的竖版短视频内容，已发布在 <b>@hisense 官方 TikTok 账号</b>。
+          一支 57 秒的片子走完整条产品线——电视、洗烘、冰箱、空调、投影，收在 ConnectLife 智能家居。
+        </p>
+        <span class="work__view">查看项目 <i>→</i></span>
+      </div>
+    </div>
+    <div class="work__media"><img src="images/hisense/still-02-family.jpg" alt="Hisense IFA Berlin 2024"></div>
+  </a>
 
-    <a class="project" href="shanhai.html">
-      <div class="cover">
-        <span class="tag">PROJECT 01 · 品牌全案</span>
-        <img src="images/shanhai/hero.jpg" alt="山海志">
+  <!-- 02 -->
+  <a class="work pf-reveal" href="shanhai.html">
+    <div class="work__head">
+      <span class="work__no">02</span>
+      <h2 class="work__title">山海志</h2>
+      <span class="work__tag">品牌全案</span>
+    </div>
+    <div class="work__meta">
+      <span class="work__en">Shanhai Zhi</span>
+      <div>
+        <p class="work__desc">
+          新中式志怪茶饮品牌全案。以《山海经》异兽为题材，构建可收藏的「异兽图鉴」体系；
+          视觉语言为东方暗黑奇幻——<b>玄墨、赤金、朱砂</b>。含品牌策略、视觉系统、专属杯型、五兽海报、包装与周边。
+        </p>
+        <span class="work__view">查看项目 <i>→</i></span>
       </div>
-      <div class="p-info">
-        <div>
-          <h3>山海志</h3>
-          <div class="en">S H A N H A I &nbsp; Z H I</div>
-          <div class="desc">新中式志怪茶饮品牌全案。以《山海经》异兽为题材，构建可收藏的「异兽图鉴」体系；视觉语言为东方暗黑奇幻——玄墨、赤金、朱砂。含品牌策略、视觉系统、专属杯型、五兽海报、产品、包装与周边。</div>
-        </div>
-        <div class="go">查看项目 →</div>
-      </div>
-    </a>
+    </div>
+    <div class="work__media"><img src="images/shanhai/hero.jpg" alt="山海志 品牌全案"></div>
+  </a>
 
-    <a class="project" href="worry.html">
-      <div class="cover">
-        <span class="tag">PROJECT 02 · 潮玩 IP</span>
-        <img src="images/worry/card-1-jiaojiao.jpg" alt="烦恼收容所">
+  <!-- 03 -->
+  <a class="work pf-reveal" href="worry.html">
+    <div class="work__head">
+      <span class="work__no">03</span>
+      <h2 class="work__title">烦恼收容所</h2>
+      <span class="work__tag">潮玩 IP</span>
+    </div>
+    <div class="work__meta">
+      <span class="work__en">Worry Shelter</span>
+      <div>
+        <p class="work__desc">
+          治愈系毛绒潮玩 IP。不做「可爱动物」，而是把焦虑、拖延、社恐等负面情绪拟人化成<b>七只小怪兽</b>，
+          并以「收养」作为核心机制。含 IP 定位、世界观、角色体系、盲盒包装与周边。
+        </p>
+        <span class="work__view">查看项目 <i>→</i></span>
       </div>
-      <div class="p-info">
-        <div>
-          <h3>烦恼收容所</h3>
-          <div class="en">W O R R Y &nbsp; S H E L T E R</div>
-          <div class="desc">治愈系毛绒潮玩 IP。不做"可爱动物"，而是把焦虑、拖延、社恐等负面情绪拟人化成七只小怪兽，并以「收养」作为核心机制。含 IP 定位、世界观、角色体系、盲盒包装与周边。</div>
-        </div>
-        <div class="go">查看项目 →</div>
-      </div>
-    </a>
+    </div>
+    <div class="work__media"><img src="images/worry/card-1-jiaojiao.jpg" alt="烦恼收容所 潮玩 IP"></div>
+  </a>
 
-    <a class="project" href="motion.html">
-      <div class="cover">
-        <span class="tag">PROJECT 03 · 品牌动态演绎</span>
-        <img src="images/shanhai/beast-2.jpg" alt="山海志 品牌动态演绎">
+  <!-- 04 -->
+  <a class="work pf-reveal" href="ad.html">
+    <div class="work__head">
+      <span class="work__no">04</span>
+      <h2 class="work__title">心力价签</h2>
+      <span class="work__tag">广告战役</span>
+    </div>
+    <div class="work__meta">
+      <span class="work__en">The Cost of Heart</span>
+      <div>
+        <p class="work__desc">
+          洞察驱动的广告战役。洞察：年轻人不是没钱了，是没劲了——<b>省钱的本质是心力不足</b>。
+          核心创意：给商品贴上第二种价签，写上它消耗你多少心力。含主视觉、六张系列海报、社交物料、互动装置与 15 秒影片。
+        </p>
+        <span class="work__view">查看项目 <i>→</i></span>
       </div>
-      <div class="p-info">
-        <div>
-          <h3>山海志 · 动态演绎</h3>
-          <div class="en">M O T I O N &nbsp; I D E N T I T Y</div>
-          <div class="desc">把静态的品牌视觉延展到时间维度。含 Logo 动态演绎（网页实时播放）、15 秒品牌片头分镜、动态海报与完整动效规范——让品牌在动起来之后，依然「沉稳、高级」。</div>
-        </div>
-        <div class="go">查看项目 →</div>
-      </div>
-    </a>
+    </div>
+    <div class="work__media"><img src="images/ad/02-kv-main.png" alt="心力价签 广告战役"></div>
+  </a>
 
-    <a class="project" href="ad.html">
-      <div class="cover">
-        <span class="tag">PROJECT 04 · 广告战役</span>
-        <img src="images/ad/02-kv-main.png" alt="心力价签 广告战役">
+  <!-- 05 -->
+  <a class="work pf-reveal" href="motion.html">
+    <div class="work__head">
+      <span class="work__no">05</span>
+      <h2 class="work__title">山海志 · 动态演绎</h2>
+      <span class="work__tag">动态视觉</span>
+    </div>
+    <div class="work__meta">
+      <span class="work__en">Motion Identity</span>
+      <div>
+        <p class="work__desc">
+          把静态的品牌视觉延展到时间维度。含 Logo 动态演绎（网页实时播放）、品牌理念片与完整动效规范
+          ——让品牌在动起来之后，依然<b>沉稳、高级</b>。
+        </p>
+        <span class="work__view">查看项目 <i>→</i></span>
       </div>
-      <div class="p-info">
-        <div>
-          <h3>心力价签</h3>
-          <div class="en">T H E &nbsp; C O S T &nbsp; O F &nbsp; H E A R T</div>
-          <div class="desc">洞察驱动的广告战役。洞察：年轻人不是没钱了，是没劲了——省钱的本质是心力不足。核心创意：给商品贴上第二种价签，写上它消耗你多少心力。含主视觉、六张系列海报、社交物料、线下互动装置与 15 秒影片脚本。</div>
-        </div>
-        <div class="go">查看项目 →</div>
-      </div>
-    </a>
-
-</div>
+    </div>
+    <div class="work__media"><img src="images/shanhai/beast-2.jpg" alt="山海志 动态演绎"></div>
+  </a>
 </section>
 
-<section id="about">
-  <div class="sec-label">ABOUT</div>
-  <h2 class="sec-title">关于我</h2>
-  <div class="about">
-    <div class="prose">
-      <p><strong>吕森垚</strong>，山西传媒学院 2027 届应届生。</p>
-      <p>我的作品集刻意覆盖三种完全不同的视觉语言——「山海志」是暗黑史诗的商业品牌，「烦恼收容所」是柔和治愈的潮玩 IP，「心力价签」是冷感工业的排印广告。这是为了证明：<strong>我不是只会一种风格的设计师。</strong></p>
-      <p>在四个项目中，我负责全部品牌策略、视觉系统建立与版式设计；画面视觉由我完成 AIGC 提示词设计与风格控制，再经人工精修与统一编排，保证系列视觉的一致性。</p>
-    </div>
-    <div>
-      <ul class="contact" id="contact">
-        <li><span>姓名</span>吕森垚</li>
-        <li><span>学校</span>山西传媒学院</li>
-        <li><span>届别</span>2027 届应届</li>
-        <li><span>方向</span>AI 视觉设计 / 品牌视觉 / IP 设计 / 广告创意</li>
-        <li><span>工具</span>即梦 / Midjourney / SD / PS / Figma</li>
+<!-- ================= 关于 ================= -->
+<section class="about pf-sec" id="about">
+  <div class="pf-wrap">
+    <div class="pf-label">About</div>
+    <div class="about__grid">
+      <div class="about__prose">
+        <p><strong>吕森垚</strong>，山西传媒学院 2027 届应届生，方向为品牌视觉与 IP 设计。</p>
+        <p>我做过真实的商业交付——为海信 IFA Berlin 2024 制作的短片已发布在品牌官方账号上。这证明我不只是会做漂亮的东西，而是能在真实的需求与时间里交付。</p>
+        <p>同时，我的自主项目刻意覆盖三种完全不同的视觉语言：「山海志」是暗黑史诗的商业品牌，「烦恼收容所」是柔和治愈的潮玩 IP，「心力价签」是冷感工业的排印广告。<strong>这是为了证明我不是只会一种风格的设计师。</strong></p>
+        <p>在项目中我负责品牌策略、视觉系统建立与版式设计；画面视觉通过 AIGC 完成提示词设计与风格控制，再经人工精修与统一编排，保证系列视觉的一致性。</p>
+      </div>
+      <ul class="about__list" id="contact">
+        <li><span class="k">Name</span><span>吕森垚</span></li>
+        <li><span class="k">School</span><span>山西传媒学院</span></li>
+        <li><span class="k">Year</span><span>2027 届应届</span></li>
+        <li><span class="k">Focus</span><span>品牌视觉 / IP 设计 / 广告创意</span></li>
+        <li><span class="k">Email</span><span>【待填】</span></li>
+        <li><span class="k">Tools</span><span>即梦 / Midjourney / SD / PS / Figma</span></li>
       </ul>
     </div>
   </div>
 </section>
 
-<footer>
-  <span class="b">吕森垚 · 作品集</span>
-  AI 视觉设计 · 品牌视觉 · IP 设计 · 广告创意
+<!-- ================= 页脚 ================= -->
+<footer class="foot">
+  <div class="pf-wrap">
+    <div class="foot__grid">
+      <div>
+        <div class="foot__name">吕森垚 · 作品集 2027</div>
+        <div class="foot__role">Brand Visual · IP Design · Motion</div>
+      </div>
+      <div class="foot__links">
+        <a href="hisense.html">Hisense</a>
+        <a href="shanhai.html">山海志</a>
+        <a href="worry.html">烦恼收容所</a>
+        <a href="ad.html">心力价签</a>
+        <a href="motion.html">动态演绎</a>
+      </div>
+    </div>
+    <div class="foot__legal">
+      <span>山西传媒学院 · 2027 届应届生</span>
+      <span>© 2026 吕森垚</span>
+    </div>
+  </div>
 </footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  var onScroll = function () {
+    if (window.scrollY > 24) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var els = document.querySelectorAll('.pf-reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (e) { e.classList.add('is-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
 
 </body>
 </html>
