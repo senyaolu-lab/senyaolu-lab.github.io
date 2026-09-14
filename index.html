@@ -105,11 +105,12 @@
   /* ================= 真实交付轻量条 ================= */
   .live__row{
     display:grid;grid-template-columns:220px 1fr;gap:var(--s-7);
-    padding:var(--s-7) 0 var(--s-9);
-    margin-bottom:var(--s-9);
+    padding:var(--s-6) 0;
     border-bottom:1px solid var(--c-line);
     text-decoration:none;color:inherit;align-items:center;
   }
+  .live__row:first-of-type{padding-top:0;}
+  .live__row:last-of-type{margin-bottom:var(--s-8);}
   .live__thumb{position:relative;border-radius:2px;overflow:hidden;background:var(--c-surface-2);}
   .live__thumb img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;
     transition:transform 1s var(--ease);}
@@ -232,13 +233,26 @@
 <!-- ================= 真实交付（轻量条） ================= -->
   <a class="live__row pf-reveal" href="hisense.html">
     <div class="live__thumb">
-      <img src="images/hisense/still-01-ifa.jpg" alt="Hisense IFA Berlin 2024">
+      <img src="images/hisense/still-01-ifa.jpg" alt="Hisense IFA Berlin 2024 社媒短片">
       <span class="live__badge">已发布</span>
     </div>
     <div class="live__body">
-      <div class="live__kicker">真实商业项目 · 两条交付</div>
-      <h3 class="live__title">Hisense · 社媒短片与海外宣传</h3>
-      <p class="live__desc">为海信制作的两条内容：IFA Berlin 2024 的竖版社媒短片（<b>已发布在官方 TikTok 账号</b>），以及 C3 系列投影的海外宣传内容。</p>
+      <div class="live__kicker">真实商业项目 · 社媒</div>
+      <h3 class="live__title">Hisense · IFA Berlin 2024 社媒短片</h3>
+      <p class="live__desc">一条竖版社媒短片，<b>已发布在 @hisense 官方 TikTok 账号</b>。57 秒走完整条产品线——电视、洗烘、冰箱、空调、投影，收在 ConnectLife 智能家居。</p>
+      <span class="live__go">查看 <i>→</i></span>
+    </div>
+  </a>
+
+  <a class="live__row pf-reveal" href="hisense-c3.html">
+    <div class="live__thumb">
+      <img src="images/hisense/c3-still-02-projector.jpg" alt="Hisense C3 系列海外宣传">
+      <span class="live__badge">AI 内容</span>
+    </div>
+    <div class="live__body">
+      <div class="live__kicker">真实商业项目 · 宣传</div>
+      <h3 class="live__title">Hisense · C3 系列海外产品宣传</h3>
+      <p class="live__desc">为 C3 系列投影制作的海外宣传内容，5 分钟走完产品阵容、画质卖点与真实使用场景，含 <b>Dolby Vision、IMAX Enhanced</b> 等认证卖点的呈现。</p>
       <span class="live__go">查看 <i>→</i></span>
     </div>
   </a>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hisense C3 系列 · 海外产品宣传</title>
+<link rel="stylesheet" href="portfolio.css">
+<style>
+  body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
+
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px var(--pad-x);
+    background:rgba(251,250,247,.82);
+    backdrop-filter:blur(18px) saturate(160%);
+    border-bottom:1px solid var(--c-line-soft);
+  }
+  .nav__back{font-size:var(--t-small);color:var(--c-ink-3);text-decoration:none;
+    transition:color .3s var(--ease);}
+  .nav__back:hover{color:var(--c-ink);}
+  .nav__id{font-size:13.5px;font-weight:700;letter-spacing:.02em;}
+
+  .head{padding:calc(var(--pad-sec) * 1.25) 0 var(--s-7);}
+  .head__badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
+    text-transform:uppercase;font-weight:700;color:var(--c-ink);
+    border:1px solid var(--c-ink);border-radius:999px;padding:7px 16px;
+    margin-bottom:var(--s-6);
+  }
+  .head__badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-ink);}
+  .head__title{font-size:var(--t-h1);line-height:1.05;letter-spacing:-.03em;font-weight:900;margin:0 0 var(--s-5);}
+  .head__title .dim{color:var(--c-mute);font-weight:300;}
+  .head__sub{font-size:var(--t-lead);color:var(--c-ink-2);max-width:58ch;line-height:1.8;margin:0;}
+
+  .meta{display:flex;flex-wrap:wrap;gap:var(--s-5) var(--s-7);
+    padding:var(--s-5) 0;margin:var(--s-7) 0 0;
+    border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line);}
+  .meta div{display:flex;flex-direction:column;gap:4px;}
+  .meta dt{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.2em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+  .meta dd{margin:0;font-size:var(--t-small);color:var(--c-ink-2);}
+
+  .sec{padding:var(--pad-sec) 0 0;}
+
+  /* demo 播放器 */
+  .demo{position:relative;border:1px solid var(--c-line);background:#000;overflow:hidden;}
+  .demo video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#000;}
+  .demo__play{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:78px;height:78px;border-radius:50%;border:0;padding-left:6px;
+    background:rgba(255,255,255,.94);color:var(--c-ink);font-size:26px;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+    transition:transform .3s var(--ease);
+  }
+  .demo__play:hover{transform:translate(-50%,-50%) scale(1.07);}
+  .demo.playing .demo__play{opacity:0;pointer-events:none;}
+  .demo__cap{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
+    margin-top:var(--s-3);font-size:var(--t-cap);color:var(--c-mute);letter-spacing:.04em;}
+
+  /* 素材网格 */
+  .stills{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:var(--s-6);}
+  .stills figure{margin:0;}
+  .stills img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;
+    border:1px solid var(--c-line);}
+  .stills figcaption{margin-top:8px;font-size:var(--t-cap);color:var(--c-mute);letter-spacing:.04em;}
+
+  .note{margin-top:var(--s-7);padding-top:var(--s-5);border-top:1px solid var(--c-line-soft);
+    font-size:var(--t-small);color:var(--c-ink-3);line-height:1.85;max-width:58ch;}
+  .note strong{color:var(--c-ink);font-weight:800;}
+
+  .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
+  .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
+    font-size:var(--t-cap);color:var(--c-mute);}
+  .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
+  .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
+
+  @media (max-width:760px){
+    .stills{grid-template-columns:1fr;}
+  }
+  @media print{
+    @page{size:A4;margin:14mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    .nav,.demo__play{display:none !important;}
+    .head{padding:0 0 var(--s-5) !important;}
+    .sec{padding:var(--s-6) 0 0 !important;}
+    .demo,.stills figure{break-inside:avoid;}
+    .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
+  }
+</style>
+</head>
+<body class="pf">
+
+<nav class="nav">
+  <a class="nav__back" href="index.html">← 返回作品集</a>
+  <div class="nav__id">Hisense · C3 海外宣传</div>
+</nav>
+
+<header class="head pf-wrap">
+  <div class="head__badge">真实商业项目 · AI 内容</div>
+  <h1 class="head__title">C3 系列<br><span class="dim">海外产品宣传</span></h1>
+  <p class="head__sub">
+    为海信 C3 系列投影产品制作的海外宣传内容。5 分钟走完产品阵容、画质卖点与真实使用场景，
+    含 Dolby Vision、IMAX Enhanced 等认证卖点的呈现。
+  </p>
+
+  <dl class="meta">
+    <div><dt>Client</dt><dd>Hisense 海信</dd></div>
+    <div><dt>Role</dt><dd>AI 内容制作</dd></div>
+    <div><dt>Series</dt><dd>C3 Pro / C3 Ultra / C3 Ultra Max</dd></div>
+    <div><dt>Format</dt><dd>1280 × 720 · 5 分 07 秒</dd></div>
+    <div><dt>Market</dt><dd>海外</dd></div>
+    <div><dt>Version</dt><dd>Demo（非最终稿）</dd></div>
+  </dl>
+</header>
+
+<main class="pf-wrap">
+
+  <!-- Demo -->
+  <section class="sec">
+    <div class="stills" style="grid-template-columns:1fr;margin-top:0;">
+      <figure><img src="images/hisense/c3-still-01-mars.jpg" alt=""><figcaption>概念场景 · 星际</figcaption></figure>
+    </div>
+    <div class="demo__cap">
+      <span>Demo 版本 · 非最终交付稿 · 5 分 07 秒</span>
+      <span>影片文件待补</span>
+    </div>
+  </section>
+
+  <!-- 素材 -->
+  <section class="sec">
+    <div class="pf-label">Materials</div>
+    <div class="stills">
+      <figure><img src="images/hisense/c3-still-03-theater.jpg" alt=""><figcaption>家庭影院场景</figcaption></figure>
+      <figure><img src="images/hisense/c3-still-02-projector.jpg" alt=""><figcaption>产品细节 · TUNED BY DEVIALET</figcaption></figure>
+      <figure><img src="images/hisense/c3-still-04-racing.jpg" alt=""><figcaption>观影场景 · 赛车</figcaption></figure>
+    </div>
+
+    <p class="note">
+      <strong>关于版本。</strong>本页为 Demo 版本，非最终交付稿。
+      素材为 1080p 拍摄，成片输出 720p。
+    </p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="pf-wrap foot__row">
+    <span>吕森垚 · 2027 届 · 山西传媒学院</span>
+    <a href="index.html">返回作品集</a>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
