@@ -70,6 +70,13 @@
     font-size:var(--t-small);color:var(--c-ink-3);line-height:1.85;max-width:58ch;}
   .note strong{color:var(--c-ink);font-weight:800;}
 
+  .sec{padding:var(--pad-sec) 0 0;}
+  .mats__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .mats__grid video,.mats__grid img{
+    width:100%;display:block;aspect-ratio:16/9;object-fit:cover;
+    background:#000;border:1px solid var(--c-line);
+  }
+
   .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
   .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
     font-size:var(--t-cap);color:var(--c-mute);}
@@ -78,6 +85,7 @@
 
   @media (max-width:760px){
     .stills{grid-template-columns:1fr;}
+    .mats__grid{grid-template-columns:1fr 1fr;}
   }
   @media print{
     @page{size:A4;margin:14mm;}
@@ -117,32 +125,20 @@
 
 <main class="pf-wrap">
 
-  <!-- Demo -->
+  <!-- 部分素材 -->
   <section class="sec">
-    <div class="stills" style="grid-template-columns:1fr;margin-top:0;">
-      <figure><img src="images/hisense/c3-still-01-mars.jpg" alt=""><figcaption>概念场景 · 星际</figcaption></figure>
-    </div>
-    <div class="demo__cap">
-      <span>Demo 版本 · 非最终交付稿 · 5 分 07 秒</span>
-      <span>影片文件待补</span>
+    <div class="pf-label">部分素材</div>
+    <div class="mats__grid">
+      <video src="images/hisense/mat-01.mp4" poster="images/hisense/c3-mat-01.jpg" preload="metadata" playsinline controls></video>
+      <video src="images/hisense/mat-08.mp4" poster="images/hisense/c3-mat-08.jpg" preload="metadata" playsinline controls></video>
+      <video src="images/hisense/mat-18.mp4" poster="images/hisense/c3-mat-18.jpg" preload="metadata" playsinline controls></video>
+      <video src="images/hisense/mat-25.mp4" poster="images/hisense/c3-mat-25.jpg" preload="metadata" playsinline controls></video>
+      <img src="images/hisense/c3-still-01-mars.jpg" alt="">
+      <img src="images/hisense/c3-still-02-projector.jpg" alt="">
+      <img src="images/hisense/c3-still-03-theater.jpg" alt="">
+      <img src="images/hisense/c3-still-04-racing.jpg" alt="">
     </div>
   </section>
-
-  <!-- 素材 -->
-  <section class="sec">
-    <div class="pf-label">Materials</div>
-    <div class="stills">
-      <figure><img src="images/hisense/c3-still-03-theater.jpg" alt=""><figcaption>家庭影院场景</figcaption></figure>
-      <figure><img src="images/hisense/c3-still-02-projector.jpg" alt=""><figcaption>产品细节 · TUNED BY DEVIALET</figcaption></figure>
-      <figure><img src="images/hisense/c3-still-04-racing.jpg" alt=""><figcaption>观影场景 · 赛车</figcaption></figure>
-    </div>
-
-    <p class="note">
-      <strong>关于版本。</strong>本页为 Demo 版本，非最终交付稿。
-      素材为 1080p 拍摄，成片输出 720p。
-    </p>
-  </section>
-
 </main>
 
 <footer class="foot">
