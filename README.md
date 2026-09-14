@@ -9,9 +9,9 @@
 
 ## 项目列表
 
-### 附一 · Hisense IFA Berlin 2024 — 社媒短片（真实商业项目）
+### 附一 · Hisense IFA Berlin 2026 — 社媒短片（真实商业项目）
 
-为海信 IFA Berlin 2024 制作的一条竖版社媒短片，**已发布在 @hisense 官方 TikTok 账号**。
+为海信 IFA Berlin 2026 制作的一条竖版社媒短片，**已发布在 @hisense 官方 TikTok 账号**。
 1440×2560 / 57 秒，走完整条产品线——电视、洗烘、冰箱、空调、投影，收在 ConnectLife 智能家居。
 
 📄 页面：`hisense.html`　|　官方完成品：https://www.tiktok.com/@hisense/video/7680332933458054413
