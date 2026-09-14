@@ -54,18 +54,26 @@
     background:#000;border:1px solid var(--c-line);
   }
 
+  .mats{margin-top:var(--s-8);}
+  .mats__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:var(--s-4);}
+  .mats__grid img{width:100%;display:block;border:1px solid var(--c-line);}
+
   .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
   .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
     font-size:var(--t-cap);color:var(--c-mute);}
   .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
   .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
 
+  @media (max-width:700px){
+    .mats__grid{grid-template-columns:1fr;}
+  }
   @media print{
     @page{size:A4;margin:14mm;}
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
     .nav{display:none !important;}
     .head{padding:0 0 var(--s-5) !important;}
     .item{padding:var(--s-6) 0 0 !important;page-break-inside:avoid;}
+    .mats__grid img{break-inside:avoid;}
     .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
   }
 </style>
@@ -98,6 +106,18 @@
     </dl>
     <video src="images/personal/unbox.mp4" poster="images/personal/unbox-poster.jpg"
            preload="metadata" playsinline controls></video>
+
+    <div class="mats">
+      <div class="pf-label">部分素材</div>
+      <div class="mats__grid">
+        <img src="images/personal/fan-01-c4.jpg" alt="">
+        <img src="images/personal/fan-02-vfx.jpg" alt="">
+        <img src="images/personal/fan-03-terrorist.jpg" alt="">
+        <img src="images/personal/fan-04-phoenix.jpg" alt="">
+        <img src="images/personal/fan-05-bullet.jpg" alt="">
+        <img src="images/personal/fan-06-revolver.jpg" alt="">
+      </div>
+    </div>
   </section>
 
   <!-- 二 -->
