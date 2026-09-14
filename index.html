@@ -102,6 +102,37 @@
   }
   .work:hover .work__media img{transform:scale(1.022);}
 
+  /* ================= 真实交付轻量条 ================= */
+  .live__row{
+    display:grid;grid-template-columns:220px 1fr;gap:var(--s-7);
+    padding:var(--s-7) 0 var(--s-9);
+    margin-bottom:var(--s-9);
+    border-bottom:1px solid var(--c-line);
+    text-decoration:none;color:inherit;align-items:center;
+  }
+  .live__thumb{position:relative;border-radius:2px;overflow:hidden;background:var(--c-surface-2);}
+  .live__thumb img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;
+    transition:transform 1s var(--ease);}
+  .live:hover .live__thumb img{transform:scale(1.03);}
+  .live__badge{
+    position:absolute;left:10px;top:10px;
+    font-family:var(--font-lat);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    font-weight:700;background:var(--c-ink);color:#fff;
+    padding:5px 10px;border-radius:999px;
+  }
+  .live__kicker{font-family:var(--font-lat);font-size:var(--t-micro);
+    letter-spacing:.2em;text-transform:uppercase;color:var(--c-mute);
+    font-weight:600;margin-bottom:var(--s-3);}
+  .live__title{font-size:var(--t-h3);font-weight:900;letter-spacing:-.015em;margin:0 0 var(--s-3);}
+  .live__desc{font-size:var(--t-small);color:var(--c-ink-2);line-height:1.85;margin:0 0 var(--s-4);max-width:56ch;}
+  .live__go{font-size:var(--t-small);font-weight:700;color:var(--c-ink);
+    display:inline-flex;align-items:center;gap:8px;}
+  .live__go i{font-style:normal;transition:transform .45s var(--ease);display:inline-block;}
+  .live:hover .live__go i{transform:translateX(6px);}
+  @media (max-width:760px){
+    .live__row{grid-template-columns:1fr;gap:var(--s-5);}
+  }
+
   /* ================= 关于 ================= */
   .about{background:var(--c-surface);border-top:1px solid var(--c-line);}
   .about__grid{display:grid;grid-template-columns:1.5fr 1fr;gap:var(--s-10);align-items:start;}
@@ -198,30 +229,25 @@
 <section class="works pf-wrap pf-sec" id="works">
   <div class="pf-label">Selected Work</div>
 
-  <!-- 01 -->
-  <a class="work pf-reveal" href="hisense.html">
-    <div class="work__head">
-      <span class="work__no">01</span>
-      <h2 class="work__title">Hisense × IFA Berlin 2024</h2>
-      <span class="work__tag work__tag--live">已发布</span>
+<!-- ================= 真实交付（轻量条） ================= -->
+  <a class="live__row pf-reveal" href="hisense.html">
+    <div class="live__thumb">
+      <img src="images/hisense/still-01-ifa.jpg" alt="Hisense IFA Berlin 2024">
+      <span class="live__badge">真实交付</span>
     </div>
-    <div class="work__meta">
-      <span class="work__en">Real Client Project</span>
-      <div>
-        <p class="work__desc">
-          为海信 IFA Berlin 2024 展会项目制作的竖版短视频内容，已发布在 <b>@hisense 官方 TikTok 账号</b>。
-          一支 57 秒的片子走完整条产品线——电视、洗烘、冰箱、空调、投影，收在 ConnectLife 智能家居。
-        </p>
-        <span class="work__view">查看项目 <i>→</i></span>
-      </div>
+    <div class="live__body">
+      <div class="live__kicker">已发布 · TikTok @hisense</div>
+      <h3 class="live__title">Hisense · IFA Berlin 2024 社媒短片</h3>
+      <p class="live__desc">为海信 IFA Berlin 2024 制作的一条竖版社媒短片，已发布在品牌官方账号。57 秒走完整条产品线。</p>
+      <span class="live__go">查看 <i>→</i></span>
     </div>
-    <div class="work__media"><img src="images/hisense/still-02-family.jpg" alt="Hisense IFA Berlin 2024"></div>
   </a>
 
-  <!-- 02 -->
+
+  <!-- 01 -->
   <a class="work pf-reveal" href="shanhai.html">
     <div class="work__head">
-      <span class="work__no">02</span>
+      <span class="work__no">01</span>
       <h2 class="work__title">山海志</h2>
       <span class="work__tag">品牌全案</span>
     </div>
@@ -238,10 +264,10 @@
     <div class="work__media"><img src="images/shanhai/hero.jpg" alt="山海志 品牌全案"></div>
   </a>
 
-  <!-- 03 -->
+  <!-- 02 -->
   <a class="work pf-reveal" href="worry.html">
     <div class="work__head">
-      <span class="work__no">03</span>
+      <span class="work__no">02</span>
       <h2 class="work__title">烦恼收容所</h2>
       <span class="work__tag">潮玩 IP</span>
     </div>
@@ -258,10 +284,10 @@
     <div class="work__media"><img src="images/worry/card-1-jiaojiao.jpg" alt="烦恼收容所 潮玩 IP"></div>
   </a>
 
-  <!-- 04 -->
+  <!-- 03 -->
   <a class="work pf-reveal" href="ad.html">
     <div class="work__head">
-      <span class="work__no">04</span>
+      <span class="work__no">03</span>
       <h2 class="work__title">心力价签</h2>
       <span class="work__tag">广告战役</span>
     </div>
@@ -278,10 +304,10 @@
     <div class="work__media"><img src="images/ad/02-kv-main.png" alt="心力价签 广告战役"></div>
   </a>
 
-  <!-- 05 -->
+  <!-- 04 -->
   <a class="work pf-reveal" href="motion.html">
     <div class="work__head">
-      <span class="work__no">05</span>
+      <span class="work__no">04</span>
       <h2 class="work__title">山海志 · 动态演绎</h2>
       <span class="work__tag">动态视觉</span>
     </div>
@@ -297,6 +323,7 @@
     </div>
     <div class="work__media"><img src="images/shanhai/beast-2.jpg" alt="山海志 动态演绎"></div>
   </a>
+
 </section>
 
 <!-- ================= 关于 ================= -->
