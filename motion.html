@@ -179,8 +179,27 @@
     header.hero{padding:120px 22px 80px;min-height:86vh;}
     .showcase{grid-template-columns:repeat(2,1fr);}
     .tl{grid-template-columns:70px 1fr;gap:10px;}
-  }
-</style>
+  }  
+    /* ============ 打印 ============ */
+    @media print{
+    img,figure,table,blockquote{break-inside:avoid !important;}
+      @page{size:A4;margin:12mm;}
+      *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+      nav{display:none !important;}
+      header.hero{
+        min-height:auto !important;padding:0 0 10mm !important;
+        page-break-after:avoid;
+      }
+      section{padding:9mm 0 !important;page-break-inside:avoid;}
+      .showcase{grid-template-columns:repeat(3,1fr) !important;}
+      .showcase > *{break-inside:avoid;}
+      .tl{grid-template-columns:26mm 1fr !important;}
+      .film-box{break-inside:avoid;}
+      .spec{font-size:10pt !important;}
+      .spec th,.spec td{padding:3mm 4mm !important;font-size:9pt !important;}
+      .spec th{width:32mm !important;}
+      footer{padding:6mm 0 !important;page-break-before:avoid;}
+    }</style>
 </head>
 <body>
 

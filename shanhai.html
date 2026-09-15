@@ -112,7 +112,8 @@
     .stats,.swatches,.upcoming,.about,.duo{grid-template-columns:1fr;}
   }
   @media print{
-    @page{size:A4;margin:10mm;}
+    img,figure,table,blockquote{break-inside:avoid !important;}
+    @page{size:A4;margin:12mm;}
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
     nav{display:none !important;}
     body{background:#14191E !important;}

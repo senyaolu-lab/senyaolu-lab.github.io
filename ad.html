@@ -219,7 +219,8 @@
     .flipwrap{padding:20px;}
   }
   @media print{
-    @page{size:A4;margin:11mm;}
+    img,figure,table,blockquote{break-inside:avoid !important;}
+    @page{size:A4;margin:12mm;}
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
     nav{display:none !important;}
     header.hero{padding:22px 0 0 !important;}

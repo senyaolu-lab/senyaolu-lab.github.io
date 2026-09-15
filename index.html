@@ -182,7 +182,8 @@
 
   /* ================= 打印 ================= */
   @media print{
-    @page{size:A4;margin:13mm;}
+    img,figure,table,blockquote{break-inside:avoid !important;}
+    @page{size:A4;margin:12mm;}
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
     .nav{display:none !important;}
     .hero{padding:0 0 var(--s-6) !important;}

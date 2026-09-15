@@ -191,7 +191,8 @@
     .tl{grid-template-columns:78px 1fr;gap:14px;}
   }
   @media print{
-    @page{size:A4;margin:11mm;}
+    img,figure,table,blockquote{break-inside:avoid !important;}
+    @page{size:A4;margin:12mm;}
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
     nav{display:none !important;}
     header.hero{padding:20px 0 20px !important;}
