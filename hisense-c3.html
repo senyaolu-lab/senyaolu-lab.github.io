@@ -86,8 +86,7 @@
     @page{size:A4;margin:12mm;}
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
     img,figure,table,blockquote{break-inside:avoid !important;}
-    .board{display:none !important;}
-    .src::after{content:"　完整原表见附录横向页";}
+    .src::after{content:"　完整原表见附录横向页（11 页）";}
     .nav{display:none !important;}
     .head{padding:0 0 var(--s-5) !important;}
     .sec{padding:var(--s-6) 0 0 !important;page-break-inside:avoid;}
@@ -100,26 +99,20 @@
   }
 
   /* 分镜脚本表 */
-  .board{overflow-x:auto;border:1px solid var(--c-line);background:#fff;-webkit-overflow-scrolling:touch;}
-  .board table{border-collapse:collapse;font-size:11px;min-width:1560px;table-layout:fixed;}
-  .board th{
-    text-align:left;padding:9px 10px;background:var(--c-surface-2);
-    font-family:var(--font-lat);font-size:9.5px;letter-spacing:.1em;
-    color:var(--c-ink-3);font-weight:700;border:1px solid var(--c-line);white-space:nowrap;
-  }
-  .board td{padding:9px 10px;border:1px solid var(--c-line-soft);
-    vertical-align:top;line-height:1.65;color:var(--c-ink-2);
-    word-break:break-word;font-size:11px;}
-  .board .no{width:52px;text-align:center;font-family:var(--font-lat);font-weight:800;color:var(--c-ink);}
-  .board th.no{text-align:center;}
-  .board td.vis{width:240px;color:var(--c-ink);}
-  .board td.en{width:230px;}
-  .board td.zh{width:220px;color:var(--c-ink);}
-  .board th:nth-child(2),.board th:nth-child(5),.board th:nth-child(8),
-  .board th:nth-child(9),.board th:nth-child(10),.board th:nth-child(11),
-  .board th:nth-child(12){width:86px;}
   .src{margin-top:var(--s-3);font-size:var(--t-cap);color:var(--c-mute);}
 
+  /* 原表文档视图 */
+  .doc{
+    border:1px solid var(--c-line);background:var(--c-surface-2);
+    max-height:78vh;overflow-y:auto;padding:12px;
+  }
+  .doc a{display:block;}
+  .doc img{width:100%;display:block;border:1px solid var(--c-line);background:#fff;
+    transition:opacity .3s var(--ease);}
+  .doc a:hover img{opacity:.86;}
+  .doc a + a{margin-top:10px;}
+  .doc__hint{font-size:var(--t-cap);color:var(--c-mute);margin:0 0 var(--s-3);}
+  .src{margin-top:var(--s-3);font-size:var(--t-cap);color:var(--c-mute);}
 </style>
 </head>
 <body class="pf">
@@ -165,65 +158,22 @@
   <!-- 分镜脚本 -->
   <section class="sec">
     <div class="pf-label">分镜脚本</div>
-    <p class="sec__lead">完整脚本表，保留原表全部字段：镜号、场景、画面、镜头运用、中英文旁白、花字、音效、音乐、时长、参考分镜、备注。</p>
-    <div class="board">
-      <table>
-        <thead>
-      <tr><th class="no">镜号</th><th>场景</th><th>画面</th><th>镜头运用</th><th>英文旁白</th><th>汉语旁白</th><th>花字</th><th>音效</th><th>音乐</th><th>时长 (秒)</th><th>参考分镜</th><th>备注</th></tr>
-        </thead>
-        <tbody>
-      <tr><td class="no">—</td><td>开场</td><td class="vis">星球旋转，变化成为三款机器</td><td>远景</td><td class="en">After a long day’s work home, do you wish ordinary nights could be full of new surprises?</td><td class="zh">当你忙碌一天回到家中，是否渴望平凡夜晚能够拥有全新可能？</td><td>—</td><td>特效音效</td><td>轻松音乐</td><td>—</td><td>生成参考视频</td><td>—</td></tr>
-      <tr><td class="no">1</td><td>—</td><td class="vis">场景从黑色背景缓慢转变真实家居场景，雷蒙站在三款机器旁边（或者后面）</td><td>中景</td><td class="en">Hello everyone, I’m Raymond.</td><td class="zh">大家好，我雷蒙。</td><td>—</td><td>特效音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>综述</td><td class="vis">三款产品的组合展示</td><td>中景</td><td class="en">Today’s star: Hisense C3 Family projectors. They deliver exactly this feeling.</td><td class="zh">我们今天的主角海信 C3 家族投影，它们就能给你带来这种体验。 </td><td>—</td><td>转场音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">2</td><td>—</td><td class="vis">针对三款产品外观的特写镜头展示</td><td>特写</td><td class="en">All C3 models share the same design: square architectural base, balanced U-shaped bracket and iconic large lens. </td><td class="zh">C3家族全系采用统一设计语言，方形建筑质感底台搭配均衡U形支架与辨识度拉满的大尺寸镜头</td><td>—</td><td>转场音效<br></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">针对底座出音口的特写镜头展示</td><td>特写</td><td class="en">A built-in integrated subwoofer saves extra speakers.</td><td class="zh">底台内置一体式低音炮，无需额外添置音箱</td><td>—</td><td>科技音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">3</td><td>—</td><td class="vis">三款机器在各种家居环境中的真实使用场景</td><td>远景</td><td class="en">The sleek body fits all home styles easily.</td><td class="zh">简约机身自然融入各类家居空间</td><td>—</td><td>环境音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">4</td><td>—</td><td class="vis">雷蒙口播，站起身来向右侧走开；随后切镜头，雷蒙从后方入镜，用户坐在沙发上，用户用手拿起游戏手柄准备打游戏，同时雷蒙打响指，场景发生变化，投影画面中的场景裸眼3D的形式生长蔓延出画面，向客厅的地面生长，两人好奇的走进游戏场景，随后切镜头到游戏场景内部，用户一边行走一边变形成为机甲战士</td><td>远景</td><td class="en">Let’s experience the charm of C3 Family from your first-person view.</td><td class="zh">接下来带你第一视角感受C3家族的绝对魅力</td><td>—</td><td>科技音效，灵力音效，转场音效</td><td>—</td><td>—</td><td>生成参考视频</td><td>—</td></tr>
-      <tr><td class="no">5</td><td>游戏</td><td class="vis">机甲游戏内部场景，用户变成的机甲抓住雷蒙，将雷蒙放置在自己胸口的位置，同时机甲模拟变形金刚变形，变成一辆赛车，周围的环境在加速中扭曲变化成为夜景的霓虹街道</td><td>远景</td><td class="en">Amazing! Watch, with 2K240Hz high refresh rate, fast-moving mecha scenes are smooth with no motion blur!</td><td class="zh">爽爆了！快看，依托2K240Hz高刷，机甲高速机动画面顺滑没有任何拖影！</td><td>XboxCloudGaming云游戏</td><td>战争，环境音效，破空声，机械</td><td>—</td><td>—</td><td>生成参考视频</td><td>机甲游戏</td></tr>
-      <tr><td class="no">6</td><td>—</td><td class="vis">用户坐在主驾驶操控赛车，雷蒙坐在副驾驶进行讲解</td><td>远景</td><td class="en">VRR Variable Refresh Rate adapts to changing frame rates and eliminates screen tearing.</td><td class="zh">配合VRR可变刷新率适配波动帧率，杜绝画面撕裂。</td><td>千兆网口、WiFi7</td><td>赛车轰鸣，疾驰风声</td><td>—</td><td>—</td><td>生成参考视频</td><td>赛车游戏</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">赛车猛然刹车，用户和雷蒙被猛地甩了出去，四周的环境随之变化，两个人稳稳地被一头西方飞龙接在背上</td><td>远景</td><td class="en">Blazing‑fast speed! Ultra‑low 1ms input lag gives instant response with zero lag.</td><td class="zh">风驰电掣的速度！1ms超低输入延迟，操作实时响应，没有任何滞后感！</td><td>Bluetooth5.4</td><td>翅膀扇风，飞翔，龙吟</td><td>—</td><td>—</td><td>生成参考视频</td><td>参考权游</td></tr>
-      <tr><td class="no">—</td><td>安装板块</td><td class="vis">飞龙突然化作粒子消失，雷蒙和用户从龙背上跌落，雷蒙和用户从游戏场景急速下坠，雷蒙落在沙发上</td><td>远景</td><td class="en">Is it only great for gaming? Absolutely not. It also excels at building a cozy home theater.</td><td class="zh">它擅长的只有游戏吗？当然不是，打造一个温馨的家庭影院仍然是它的优势</td><td>—</td><td>下坠，转场音效，环境音效</td><td>—</td><td>—</td><td>生成参考视频</td><td>张</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">相关素材</td><td>特写,中景</td><td class="en">Wide‑angle gimbal supports 360° horizontal and 260° vertical flexible projection for all viewing scenarios.</td><td class="zh">超大角度云台，能够支持360°水平、260°垂直随心调投，满足各种观影场景</td><td>—</td><td>科技音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">相关素材</td><td>远景</td><td class="en">Equipped with AutoMagic AI Adjusting 3.0 for easy automatic calibration.</td><td class="zh">搭载AutoMagicAIAdjusting3.0智能自动调校，操作简单</td><td>—</td><td>科技音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">相关素材</td><td>远景</td><td class="en">0.9–1.5x wide lossless optical zoom delivers screens from 65 to 300 inches freely.</td><td class="zh">0.9-1.5超广无损光学变焦，自由呈现65-300寸巨幅观影画面</td><td>—</td><td>科技音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">遥控器使用画面，背景是正在使用中的投影仪和投射在白墙上的画面</td><td>特写</td><td class="en">Backlit remote included for clear control in dark viewing environments.</td><td class="zh">标配背光遥控器，暗光观影操作也能一目了然</td><td>—</td><td>按键音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">相关素材</td><td>远景</td><td class="en">±100% vertical &amp; ±35% horizontal lens shift. Center your image without moving the projector or rewiring, </td><td class="zh">垂直±100%、水平±35%大角度镜头移轴，无需挪动机身、重新布线就能精细校准画面居中</td><td>—</td><td>科技音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">雷蒙口播</td><td>中景</td><td class="en">Alright, once set up, you get genuine cinema visuals at home.</td><td class="zh">Ok,当我们的设备安装完毕，迎接我们的将会是真正的影院画面</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>成像原理</td><td class="vis">相关素材/机器内部结构动画模拟三色光线穿梭效果</td><td>特写</td><td class="en">C3 Family adopts the core Hisense LPU Digital Laser Engine. It abandons white light filtering and uses independent red, green, blue lasers as primary imaging colors.</td><td class="zh">C3家族搭载核心HisenseLPU数字激光引擎，摒弃白光滤色方案，直接采用红、绿、蓝三色独立激光作为成像基础原色。</td><td>—</td><td>特效音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">三色光束变成三色混杂粒子爆炸，升格镜头围绕爆炸粒子环绕运镜，粒子瞬间变成一朵红色鲜花，上面挂着露珠，慢镜头环绕，随后鲜花再次变成崩裂成绿色粒子，镜头继续环绕，粒子再次汇聚变成绿植，镜头继续环绕，绿植崩裂成蓝色粒子，再次汇聚成蓝色赛车，赛车猛然启动，冲出画面</td><td>远景</td><td class="en">Tri-color lasers form images via DLP technology. Millions of tiny micro-mirrors work at high speed </td><td class="zh">三色激光经由DLP技术成像，芯片内数百万微型反射镜高速运作</td><td>—</td><td>科技音效</td><td>—</td><td>—</td><td>生成参考视频</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">近距离展现投影幕布上的蓝色赛车行驶的电影大片震撼画面</td><td>特写</td><td class="en">for pixel-level precise light control, producing sharp steady images.</td><td class="zh">像素级精准控光，输出清晰稳定的画面</td><td>—</td><td>环境音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">近距离展现投影幕布上的电影大片震撼画面</td><td>特写</td><td class="en">Certified by Dolby Vision and IMAX Enhanced, it brings theater-grade viewing experience home.</td><td class="zh">搭配DolbyVision、IMAXEnhanced双认证，在家就能收获院线级真实观影质感</td><td>—</td><td>环境音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>画质板块</td><td class="vis">雷蒙口播</td><td>近景</td><td class="en">Naturally, Great cinematic pictures are more than just bright vivid colors.</td><td class="zh">当然，真正的电影画面不仅仅取决于它的色彩有多么的炫目</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">常规家庭客厅家庭影院场景，幕布光线从明亮自动转变为暗场，空白幕布上开始播放夜晚场景的电影画面</td><td>远景</td><td class="en">When the story turns to night, what black will the image deliver? This is why new-generation black-level performance counts.</td><td class="zh">当故事进入夜色，画面又会呈现怎样的黑？这正是新一代黑场表现尤为重要的地方</td><td>—</td><td>环境音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">雷蒙口播</td><td>近景</td><td class="en">C3 Ultra combines optical hardware and intelligent image processing for lifelike dark scenes.</td><td class="zh">为了让暗场更加真实，C3Ultra将光学硬件与智能画面处理结合起来</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">画面里一个人从幕布前方走过，随着人物的走动，画面中的场景抓逐渐从白天变成夜晚，但是不仅仅是光线的变化，整体的氛围都是合理的，随后切镜头，男人手中拿着红酒杯，过肩拍摄投影幕画面</td><td>远景</td><td class="en">Manually adjustable Iris Lens lets you tweak settings by room and preference, balancing brightness and contrast to your liking.</td><td class="zh">手动可调IrisLens使得用户可以根据自己的房间与观影偏好选择合适的设置，在更高亮度与更深对比之间找到更适合自己的平衡</td><td>—</td><td>环境音效，按键音效，转场音效</td><td>—</td><td>—</td><td>生成参考视频</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">对比度较高的黑白电影画面</td><td>远景</td><td class="en">EBL builds solid foundation for shadows and black backgrounds</td><td class="zh">EBL让阴影和黑色背景拥有更加扎实的基础</td><td> </td><td>环境音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">口播+卖点图动态</td><td>—</td><td class="en">For comparison, this is the Sony XW-7000, retailing at around $14,000.<br>But price isn’t the only point.<br>On paper, the XR10 achieves higher brightness.<br>It doesn’t just compete—it redefines what’s possible in this category.</td><td class="zh">作为对比，这是索尼 XW-7000，售价约 14,000 美元。<br>但价格并非唯一重点。<br>从数据上看，XR10 拥有更高的亮度。<br>它不只是与之抗衡，更重新定义了这一品类的上限。</td><td>—</td><td>—</td><td>—</td><td>14</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">口播环境，竞品对比</td><td>—</td><td class="en">What’s more, traditional projectors simply can’t reach or sustain 6000 lumens over long periods of time.<br>The XR10 does.</td><td class="zh">更重要的是，传统投影设备无法达到，也无法长时间稳定保持 6000 流明亮度。<br>而 XR10 做到了。</td><td>—</td><td>—</td><td>—</td><td>10</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">雷蒙口播</td><td>近景</td><td class="en">while dynamic grayscale delivers smoother transition between blacks of different depths to retain textures, outlines and details in the image.</td><td class="zh">并且动态灰阶负责呈现不同深浅黑色之间更细腻的过渡，让纹理、轮廓和细节能够留在画面中</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">镜头从幕布上面逐渐拉出，展现幕布上播放的暗夜电影大片以及光线昏暗的家庭影院场景</td><td>远景</td><td class="en">These three technologies together create cinema-level black performance.</td><td class="zh">三者共同构成了影院真正需要的黑场。黑色更深，但其中的细节并没有消失</td><td>—</td><td>转场音效，环境音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>音质板块</td><td class="vis">雷蒙口播</td><td>近景</td><td class="en">Immersive sound completes a home theater.</td><td class="zh">完整家庭影院同样离不开沉浸式立体音效</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">切换电影人物对白场景、战争场景、演唱会场景</td><td>特写</td><td class="en">The full sound system of C3 Ultra is professionally tuned by Devialet. A built‑in 2.1‑channel subwoofer pairs with DTS Virtual:X </td><td class="zh">C3Ultra全套音响由Devialet专业调校，机身底座内置2.1声道低音炮，搭配DTSVirtualX虚拟环绕声，</td><td>—</td><td>环境音效，投影仪播放音乐</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">随着音乐和野外环境音响起，特效画面展示声波在投影仪四周扩散的效果镜头，随着声波的弥漫扩散，场景以投影仪为中心向四周变化为池塘，随着投影仪的震动，睡眠向四周扩散出水波纹（展现投影仪声音给人的身临其境）</td><td>近景</td><td class="en">for deep bass down to 50Hz.Sound fills your living room, no extra wall‑mount speakers required.</td><td class="zh">实现50Hz深沉低音下潜，声音铺满整个客厅，不用额外搭配壁挂音响</td><td>—</td><td>人物对白，战争场景音效，演唱会歌声音乐音效</td><td>—</td><td>—</td><td>生成参考视频</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">雷蒙口播</td><td>近景</td><td class="en"> one projector delivers full-room surround theater sound. </td><td class="zh">一台投影就能实现全屋环绕影院声效</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>流明与Max</td><td class="vis">雷蒙口播</td><td>近景</td><td class="en">Brightness tops projector users’ concerns. The C3 Ultra delivers high brightness of 4000 ANSI lumens.</td><td class="zh">关于投影仪用户最关心的亮度问题，C3Ultra拥有4000ANSI流明高亮度加持</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">傍晚时分，常规家庭客厅未拉窗帘的场景，衔接到投影幕布上面的画面，画面为夜晚的城市夜景建筑</td><td>远景</td><td class="en">Even in uncovered living rooms, light and shadow stay distinct. Architectural shadows and dark textures remain clear.</td><td class="zh">即便客厅无遮光，仍然可以做到明暗层次分明，阴影中的画面也能清晰分辨</td><td>—</td><td>转场音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">幕布中的画面，黑白灰层次分明的电影画面</td><td>—</td><td class="en">With 5000:1 native contrast ratio, it separates highlights, mid‑tones and shadows,</td><td class="zh">搭配5000:1原生对比度，拉开画面高光、中灰、暗部的光影层次，</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">雷蒙口播</td><td>—</td><td class="en"> and restores the movie’s original light‑and‑shadow logic.</td><td class="zh">完整还原影片原生光影逻辑</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">雷蒙口播切max特写</td><td>近景</td><td class="en">For parameter-focused AV enthusiasts: C3 Ultra Max upgrades to 5000 ANSI lumens. </td><td class="zh">当然，如果你是痴迷于参数的影音发烧友，C3UltraMax搭载升级后的5000ANSI流明充沛高亮光源</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">专业级家庭影院场景的正面全景画面</td><td>远景</td><td class="en">For large screens in dedicated home theaters, its image performance stays excellent.</td><td class="zh">面对独立影音室铺设超大画幅幕布，它的画面表现同样出色</td><td>—</td><td>转场音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">专业级家庭影院场景的幕布以及幕布上面投射的画面</td><td>特写</td><td class="en">With extended optimized optical zoom range and long-throw lens shift design, it fits custom layouts for dedicated home theaters，</td><td class="zh">辅以拓展优化的光学变焦区间与大行程镜头移轴设计</td><td>—</td><td>转场音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">缓慢后拉侧面展现完整的家庭影院全景</td><td>远景</td><td class="en">builds your exclusive theater with authentic cinema feel.</td><td class="zh">全方位构筑院线质感十足的专属私人影音空间</td><td>—</td><td>—</td><td>—</td><td>10</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>Pro</td><td class="vis">雷蒙口播</td><td>近景</td><td class="en">Premium big-screen enjoyment shouldn’t be limited to people with dedicated home theaters.</td><td class="zh">出色的大屏体验，不应该以拥有一间专属影院为前提</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">九宫格展现投影仪在各种家居场景、户外场景的使用画面，九宫格分别翻牌，变成对应的feature</td><td>—</td><td class="en">C3 Family brings core premium experience to more rooms </td><td class="zh">C3家族最重要的体验，也能够进入更多空间、更多日常</td><td>—</td><td>转场音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">—</td><td>近景</td><td class="en">and daily lives at a competitive price.</td><td class="zh">同时拥有更具竞争力的价格</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>结尾</td><td class="vis">雷蒙口播，身后的环境逐渐变化成浅蓝色粒子并逐渐消散，随后衔接落版</td><td>中景</td><td class="en">Great tech knows when to blend quietly into space, and when to transform it fully. I&amp;#39;m Raymond, see you next time.</td><td class="zh">最好的技术懂得什么时候安静地融入空间，又在什么时候彻底改变整个空间。我是雷蒙，期待下期再见</td><td>—</td><td>科技音效</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      <tr><td class="no">—</td><td>—</td><td class="vis">—</td><td>—</td><td class="en">—</td><td class="zh">—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>姜</td></tr>
-      <tr><td class="no">如需新增，请在此行上方直接插入</td><td>—</td><td class="vis">—</td><td>—</td><td class="en">—</td><td class="zh">—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-        </tbody>
-      </table>
+    <p class="sec__lead">《C3 家族数字人脚本》原表，59 行 × 18 列。以下为原表截图，未作任何删改。</p>
+    <p class="doc__hint">点击任意一页可查看原图</p>
+    <div class="doc">
+      <a href="images/hisense/c3script-01.jpg" target="_blank" rel="noopener"><img src="images/hisense/c3script-01.jpg" alt=""></a>
+      <a href="images/hisense/c3script-02.jpg" target="_blank" rel="noopener"><img src="images/hisense/c3script-02.jpg" alt=""></a>
+      <a href="images/hisense/c3script-03.jpg" target="_blank" rel="noopener"><img src="images/hisense/c3script-03.jpg" alt=""></a>
+      <a href="images/hisense/c3script-04.jpg" target="_blank" rel="noopener"><img src="images/hisense/c3script-04.jpg" alt=""></a>
+      <a href="images/hisense/c3script-05.jpg" target="_blank" rel="noopener"><img src="images/hisense/c3script-05.jpg" alt=""></a>
+      <a href="images/hisense/c3script-06.jpg" target="_blank" rel="noopener"><img src="images/hisense/c3script-06.jpg" alt=""></a>
+      <a href="images/hisense/c3script-07.jpg" target="_blank" rel="noopener"><img src="images/hisense/c3script-07.jpg" alt=""></a>
+      <a href="images/hisense/c3script-08.jpg" target="_blank" rel="noopener"><img src="images/hisense/c3script-08.jpg" alt=""></a>
+      <a href="images/hisense/c3script-09.jpg" target="_blank" rel="noopener"><img src="images/hisense/c3script-09.jpg" alt=""></a>
+      <a href="images/hisense/c3script-10.jpg" target="_blank" rel="noopener"><img src="images/hisense/c3script-10.jpg" alt=""></a>
+      <a href="images/hisense/c3script-11.jpg" target="_blank" rel="noopener"><img src="images/hisense/c3script-11.jpg" alt=""></a>
     </div>
-    <p class="src">以上为脚本原表内容，未作删改。</p>
+    <p class="src">《C3 家族数字人脚本》原表截图，内容未作删改。完整原表另见 PDF 附录（A4 横向 11 页）。</p>
   </section>
   <!-- 角色设定 -->
   <section class="sec">
