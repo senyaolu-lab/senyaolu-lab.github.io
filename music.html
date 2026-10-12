@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 音乐 · 黑暗独立摇滚 &amp; 国风抒情</title>
+<link rel="stylesheet" href="portfolio.css">
+<style>
+  body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
+
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px var(--pad-x);
+    background:rgba(251,250,247,.82);
+    backdrop-filter:blur(18px) saturate(160%);
+    border-bottom:1px solid var(--c-line-soft);
+  }
+  .nav__back{font-size:var(--t-small);color:var(--c-ink-3);text-decoration:none;transition:color .3s var(--ease);}
+  .nav__back:hover{color:var(--c-ink);}
+  .nav__id{font-size:13.5px;font-weight:700;letter-spacing:.02em;}
+
+  .head{padding:calc(var(--pad-sec) * 1.25) 0 var(--s-7);}
+  .head__badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
+    text-transform:uppercase;font-weight:700;color:var(--c-ink);
+    border:1px solid var(--c-ink);border-radius:999px;padding:7px 16px;margin-bottom:var(--s-6);
+  }
+  .head__badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-ink);}
+  .head__title{font-size:var(--t-h1);line-height:1.05;letter-spacing:-.03em;font-weight:900;margin:0 0 var(--s-5);}
+  .head__title .dim{color:var(--c-mute);font-weight:300;}
+  .head__sub{font-size:var(--t-lead);color:var(--c-ink-2);max-width:58ch;line-height:1.8;margin:0;}
+
+  /* 曲目 */
+  .track{padding:var(--pad-sec) 0 0;}
+  .track__hd{display:flex;align-items:baseline;gap:var(--s-5);
+    padding-bottom:var(--s-4);border-bottom:1px solid var(--c-line);margin-bottom:var(--s-7);flex-wrap:wrap;}
+  .track__no{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.24em;color:var(--c-mute);font-weight:700;}
+  .track__t{font-size:var(--t-h2);font-weight:900;letter-spacing:-.022em;margin:0;}
+  .track__t .dim{color:var(--c-mute);font-weight:300;}
+  .track__meta{margin-left:auto;font-family:var(--font-lat);font-size:var(--t-micro);
+    letter-spacing:.16em;text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+
+  .style{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.9;margin:0 0 var(--s-5);max-width:60ch;}
+  .style b{color:var(--c-ink);font-weight:800;}
+
+  .player{
+    display:flex;align-items:center;gap:var(--s-5);
+    background:var(--c-surface-2);border:1px solid var(--c-line);
+    padding:var(--s-4) var(--s-5);margin:0 0 var(--s-6);
+  }
+  .player audio{width:100%;height:38px;display:block;}
+  .player__lab{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.16em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:700;flex:0 0 auto;}
+
+  /* 歌词 */
+  .lyr{
+    background:var(--c-surface);border:1px solid var(--c-line);
+    border-left:3px solid var(--c-ink);padding:var(--s-6) var(--s-7);
+    font-size:var(--t-small);line-height:2;color:var(--c-ink-2);
+    white-space:pre-line;max-width:74ch;margin:0 0 var(--s-6);
+  }
+  .lyr em{font-style:normal;color:var(--c-mute);font-size:var(--t-cap);letter-spacing:.06em;}
+
+  /* 纯音乐 */
+  .inst{display:grid;gap:0;}
+  .inst__row{
+    display:grid;grid-template-columns:1fr 320px;gap:var(--s-7);
+    align-items:center;padding:var(--s-6) 0;border-bottom:1px solid var(--c-line-soft);
+  }
+  .inst__row:last-child{border-bottom:0;}
+  .inst__t{font-size:var(--t-h3);font-weight:800;letter-spacing:-.015em;margin:0 0 6px;}
+  .inst__d{font-size:var(--t-small);color:var(--c-ink-2);line-height:1.8;margin:0;}
+  .inst__row audio{width:100%;height:38px;display:block;}
+
+  .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
+  .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
+    font-size:var(--t-cap);color:var(--c-mute);}
+  .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
+  .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
+
+  @media (max-width:760px){
+    .inst__row{grid-template-columns:1fr;gap:var(--s-4);}
+  }
+  @media print{
+    @page{size:A4;margin:12mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    img,figure,table,blockquote{break-inside:avoid !important;}
+    .nav{display:none !important;}
+    .head{padding:0 0 var(--s-5) !important;}
+    .track{padding:var(--s-7) 0 0 !important;}
+    .player,.lyr,.inst__row{break-inside:avoid;}
+    .player audio,.inst__row audio{display:none !important;}
+    .player{padding:3mm 4mm !important;}
+    .lyr{padding:4mm 5mm !important;font-size:8pt !important;line-height:1.75 !important;}
+    .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
+  }
+</style>
+</head>
+<body class="pf">
+
+<nav class="nav">
+  <a class="nav__back" href="index.html">← 返回作品集</a>
+  <div class="nav__id">AI 音乐 · 五首</div>
+</nav>
+
+<header class="head pf-wrap">
+  <div class="head__badge">个人创作 · AI 音乐</div>
+  <h1 class="head__title">AI 音乐<br><span class="dim">两首人声 · 三首配乐</span></h1>
+  <p class="head__sub">
+    两首带词的人声作品，一首走黑暗独立摇滚，一首走国风抒情；另有纯音乐三首，
+    服务于毕业设计的氛围与情绪铺陈。词、曲、编制与混音方向均由本人设定。
+  </p>
+</header>
+
+<main class="pf-wrap">
+
+  <!-- ============ 01 ============ -->
+  <section class="track">
+    <div class="track__hd">
+      <span class="track__no">01</span>
+      <h2 class="track__t">Don't Haunt Me Any More</h2>
+      <span class="track__meta">Dark Indie Rock · 3:54</span>
+    </div>
+
+    <p class="style">
+      <b>黑暗独立摇滚 / 后朋克抗议抒情曲。</b>粗犷的磁带饱和感，干爽的主歌配上宽广的板式混响人声。
+      灵感来自儿童丰富的想象力在受到恐吓时所受的心理影响——孩子在恐惧里会把影子放大成怪物，
+      而这首歌要写的是：那个被吓大的孩子，后来怎么把恐惧还回去。
+    </p>
+
+    <div class="player">
+      <span class="player__lab">Play</span>
+      <audio controls preload="metadata" src="audio/haunt.mp3"></audio>
+    </div>
+
+    <div class="lyr">[Verse 1]
+You shut the door too hard
+Said monsters live in here
+Your shadow on the wall
+Was bigger than my fear
+
+The hallway held my breath
+The staircase knew my name
+I learned to sleep with one eye open
+And wake up still the same
+
+[Pre-Chorus]
+I was small
+You were loud
+Every promise came out jagged
+Every room held your cloud
+
+[Chorus]
+Don't haunt me anymore
+Don't haunt me anymore
+I was just a child
+Trying to make it through the dark
+
+Don't haunt me anymore
+Don't haunt me anymore
+Let my heart unclench
+Let it learn how to start
+
+[Verse 2]
+Your words fell like cold rain
+Inside my ribs at night
+I folded up my feelings
+To stay out of your fight
+
+I wore your anger like a name
+Too heavy for my skin
+Now every slammed-up memory
+Still tries to let you in
+
+[Pre-Chorus]
+I was small
+You were loud
+Every promise came out jagged
+Every room held your cloud
+
+[Chorus]
+Don't haunt me anymore
+Don't haunt me anymore
+I was just a child
+Trying to make it through the dark
+
+Don't haunt me anymore
+Don't haunt me anymore
+Let my heart unclench
+Let it learn how to start
+
+[Bridge]
+I am here now
+I am awake
+I can name the wreckage
+I can feel it break
+
+I will not live there
+In that locked-up scene
+I can hold the hurting
+And still come back clean
+
+[Final Chorus]
+Don't haunt me anymore
+Don't haunt me anymore
+I was just a child
+Trying to make it through the dark
+
+Don't haunt me anymore
+Don't haunt me anymore
+Let my heart unclench
+Let it learn how to start
+
+Heal me now
+Heal me now
+Let the frightened little one
+Finally come home</div>
+  </section>
+
+  <!-- ============ 02 ============ -->
+  <section class="track">
+    <div class="track__hd">
+      <span class="track__no">02</span>
+      <h2 class="track__t">人间借我</h2>
+      <span class="track__meta">Chinese Pop Ballad · 4:17</span>
+    </div>
+
+    <p class="style">
+      <b>中国国风流行抒情曲。</b>稀疏的三角钢琴与古筝琶音铺底，笛子主奏、二胡对位旋律，
+      指弹原声吉他与温暖的立式贝斯托住低频；女声气息清晰，不炫技。
+      写法借自汉语谦辞里的「借」——清风明月是借的，人生代代也是借的；
+      用具体旧物件（长凳、炉火、夕阳）去写抽象的孤独。
+    </p>
+
+    <div class="player">
+      <span class="player__lab">Play</span>
+      <audio controls preload="metadata" src="audio/jiewa.mp3"></audio>
+    </div>
+
+    <div class="lyr">[Intro]
+(soft piano, guzheng harmonics, one breath)
+mm—— mm——
+
+[Verse 1]
+我借了三十年的月光
+才看清人间什么模样
+站台上的人都不说话
+风把名字吹散在肩上
+
+我借了半张旧长凳
+听陌生人讲他的城
+谁不是借一副身体
+住进这趟说不清的旅程
+
+[Pre-Chorus]
+借我一句谎
+好把昨天圆上
+借我一点暖
+让这冬天不那么长
+
+[Chorus]
+借我一场冬 借我一个夏
+借我一盏灯 走过长夜啊
+我把手伸进人海的风里头
+捞一把心里的火
+
+借我一首歌 借我一杯茶
+借我一个名字 能被谁记得啊
+这人间什么都没欠我
+是我欠了它 一句谢谢啊
+
+[Verse 2]
+我借了最后一点夕阳
+把它擦亮成你的模样
+说好要一起走的人啊
+后来都替我走完了远方
+
+我借了别人的炉火
+烘一件冻僵的自我
+以为借得够多了
+就能把缺口填满一点
+
+[Pre-Chorus]
+借我一点疯
+好把遗憾开成花
+借我一声喊
+让这沉默有个回答
+
+[Chorus]
+借我一场冬 借我一个夏
+借我一盏灯 走过长夜啊
+我把手伸进人海的风里头
+捞一把心里的火
+
+借我一首歌 借我一杯茶
+借我一个名字 能被谁记得啊
+这人间什么都没欠我
+是我欠了它 一句谢谢啊
+
+[Bridge]
+原来我不是来讨的
+我是来还的
+原来我也能点一盏
+在别人路过的地方
+
+(lift, drums build, strings rise, then drop everything for one line)
+
+不是所有的光都要来自太阳
+有些是我自己 亲手点亮的
+
+[Final Chorus]
+(up a whole step, full band, layered harmonies)
+
+借我一场冬 借我一个夏
+借我一盏灯 走过长夜啊
+我把手伸进人海的风里头
+捞一把 亲手点亮的火
+
+借我一首歌 借我一杯茶
+借我一个名字 能被谁记得啊
+这人间从来没欠过我
+现在我点一盏 等你路过 就换
+
+[Outro]
+mm—— 借我一场冬
+mm—— 借我一个夏
+(fade on piano and humming)</div>
+  </section>
+
+  <!-- ============ 03 ============ -->
+  <section class="track">
+    <div class="track__hd">
+      <span class="track__no">03</span>
+      <h2 class="track__t">纯音乐三首</h2>
+      <span class="track__meta">Instrumental · 毕设配乐</span>
+    </div>
+    <p class="style">
+      三首纯音乐均服务于本人的<b>毕业设计</b>，分别对应追逐、孤寂与挣扎三种情绪。
+    </p>
+
+    <div class="inst">
+      <div class="inst__row">
+        <div>
+          <h3 class="inst__t">Suffocating Pursuit</h3>
+          <p class="inst__d">纯音乐伴奏，表达紧张的追逐感。节奏推进不留空隙。</p>
+        </div>
+        <audio controls preload="metadata" src="audio/pursuit.mp3"></audio>
+      </div>
+      <div class="inst__row">
+        <div>
+          <h3 class="inst__t">Hope Extinguished</h3>
+          <p class="inst__d">环境乐，优雅孤寂感。留白多，情绪悬在半空。</p>
+        </div>
+        <audio controls preload="metadata" src="audio/hope.mp3"></audio>
+      </div>
+      <div class="inst__row">
+        <div>
+          <h3 class="inst__t">Suffocating Heat</h3>
+          <p class="inst__d">黑暗氛围音乐，表达在绝望与希望之间摸索的状态。</p>
+        </div>
+        <audio controls preload="metadata" src="audio/heat.mp3"></audio>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="pf-wrap foot__row">
+    <span>吕森垚 · 2027 届 · 山西传媒学院</span>
+    <a href="index.html">返回作品集</a>
+  </div>
+</footer>
+
+</body>
+</html>
