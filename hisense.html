@@ -96,10 +96,23 @@
   @media (max-width:520px){
     .mats__grid{grid-template-columns:repeat(2,1fr);}
   }
+  /* ===== 微信视频号 · 小绿人 ===== */
+  .lgm{padding:0 0 var(--pad-sec);}
+  .lgm__lead{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.88;
+    margin:0 0 var(--s-7);max-width:56ch;}
+  .lgm__grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-9);max-width:760px;}
+  .lgm__grid figure{margin:0;}
+  .lgm .phone{width:100%;max-width:330px;}
+  .lgm figcaption{margin-top:var(--s-4);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .lgm figcaption b{font-size:var(--t-small);font-weight:800;color:var(--c-ink);}
+  .lgm figcaption span{font-family:var(--font-lat);font-size:var(--t-micro);
+    letter-spacing:.16em;text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+
   @media (max-width:860px){
     .grid{grid-template-columns:1fr;gap:var(--s-7);}
     .phone{width:100%;max-width:330px;margin:0 auto;}
     .mats__grid{grid-template-columns:repeat(3,1fr);}
+    .lgm__grid{grid-template-columns:1fr;max-width:none;}
   }
   @media print{
     img,figure,table,blockquote{break-inside:avoid !important;}
@@ -110,6 +123,9 @@
     .grid{padding:var(--s-6) 0 !important;grid-template-columns:230px 1fr;gap:10mm;}
     .phone{border-width:5px;border-radius:20px;width:230px;box-shadow:none;}
     .mats__grid{grid-template-columns:repeat(6,1fr);gap:3mm;}
+    .lgm{padding:var(--s-6) 0 0 !important;}
+    .lgm__grid{grid-template-columns:1fr 1fr;gap:8mm;max-width:none;}
+    .lgm .phone{max-width:200px;break-inside:avoid;}
     .foot{padding:var(--s-5) 0 !important;}
   }
 </style>
@@ -171,6 +187,32 @@
       <video src="images/hisense/ifc-04.mp4" poster="images/hisense/ifc-still-04.jpg" preload="metadata" playsinline controls></video>
       <video src="images/hisense/ifc-05.mp4" poster="images/hisense/ifc-still-05.jpg" preload="metadata" playsinline controls></video>
       <img src="images/hisense/ifc-packaging.jpg" alt="">
+    </div>
+  </section>
+
+  <!-- 微信视频号 · 小绿人形象 -->
+  <section class="lgm">
+    <div class="pf-label">微信视频号 · 小绿人形象</div>
+    <p class="lgm__lead">
+      海信微信视频号的小绿人形象社媒内容。围绕这个自有 IP 形象做的小体量短片，
+      按节点发布，与门店大屏走的是两条不同的内容线。
+    </p>
+
+    <div class="lgm__grid">
+      <figure>
+        <div class="phone">
+          <video src="images/hisense/lgm-emptycity.mp4" poster="images/hisense/lgm-emptycity-poster.jpg"
+                 preload="metadata" playsinline controls></video>
+        </div>
+        <figcaption><b>小绿人 · 空城计</b><span>1:13</span></figcaption>
+      </figure>
+      <figure>
+        <div class="phone">
+          <video src="images/hisense/lgm-national.mp4" poster="images/hisense/lgm-national-poster.jpg"
+                 preload="metadata" playsinline controls></video>
+        </div>
+        <figcaption><b>小绿人 · 国庆节闪身步</b><span>0:34</span></figcaption>
+      </figure>
     </div>
   </section>
 </main>
