@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 点亮创意棱镜 · 腾讯青科实训营 主视觉</title>
+<link rel="stylesheet" href="portfolio.css">
+<style>
+  body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
+
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px var(--pad-x);
+    background:rgba(251,250,247,.82);
+    backdrop-filter:blur(18px) saturate(160%);
+    border-bottom:1px solid var(--c-line-soft);
+  }
+  .nav__back{font-size:var(--t-small);color:var(--c-ink-3);text-decoration:none;transition:color .3s var(--ease);}
+  .nav__back:hover{color:var(--c-ink);}
+  .nav__id{font-size:13.5px;font-weight:700;letter-spacing:.02em;}
+
+  .head{padding:calc(var(--pad-sec) * 1.25) 0 var(--s-7);}
+  .head__badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
+    text-transform:uppercase;font-weight:700;color:var(--c-ink);
+    border:1px solid var(--c-ink);border-radius:999px;padding:7px 16px;margin-bottom:var(--s-6);
+  }
+  .head__badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-ink);}
+  .head__title{font-size:var(--t-h1);line-height:1.05;letter-spacing:-.03em;font-weight:900;margin:0 0 var(--s-5);}
+  .head__title .dim{color:var(--c-mute);font-weight:300;}
+  .head__sub{font-size:var(--t-lead);color:var(--c-ink-2);max-width:58ch;line-height:1.85;margin:0;}
+
+  .meta{display:flex;flex-wrap:wrap;gap:var(--s-5) var(--s-7);
+    padding:var(--s-5) 0;margin:var(--s-7) 0 0;
+    border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line);}
+  .meta div{display:flex;flex-direction:column;gap:4px;}
+  .meta dt{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.2em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+  .meta dd{margin:0;font-size:var(--t-small);color:var(--c-ink-2);}
+
+  .sec{padding:var(--pad-sec) 0 0;}
+  .sec__lead{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.9;
+    margin:0 0 var(--s-6);max-width:62ch;}
+  .sec__lead b{color:var(--c-ink);font-weight:800;}
+
+  /* 深色展示区：契合画面的科技感 */
+  .stage{background:#080B14;padding:var(--s-6);border:1px solid var(--c-line);}
+  .stage img{width:100%;display:block;}
+  .stage--pad{padding:clamp(16px,4vw,48px);}
+
+  .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start;}
+  .g3 figure,.g2 figure{margin:0;}
+  .g3 img,.g2 img{width:100%;display:block;border:1px solid var(--c-line);background:#080B14;}
+  .g3 figcaption,.g2 figcaption{margin-top:8px;font-size:var(--t-cap);
+    color:var(--c-mute);letter-spacing:.04em;line-height:1.6;
+    display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  .g3 figcaption b,.g2 figcaption b{font-family:var(--font-lat);font-weight:700;color:var(--c-ink-2);}
+
+  /* 长图容器 */
+  .scroll{max-height:78vh;overflow-y:auto;border:1px solid var(--c-line);background:#080B14;
+    padding:var(--s-4);}
+  .scroll img{width:100%;display:block;}
+  .scroll::-webkit-scrollbar{width:8px;}
+  .scroll::-webkit-scrollbar-thumb{background:var(--c-line);border-radius:4px;}
+
+  .note{background:var(--c-surface);border:1px solid var(--c-line);border-left:3px solid var(--c-ink);
+    padding:var(--s-6) var(--s-7);margin-top:var(--s-7);}
+  .note p{margin:0;font-size:var(--t-small);line-height:2;color:var(--c-ink-2);}
+  .note p + p{margin-top:var(--s-4);}
+
+  .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
+  .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
+    font-size:var(--t-cap);color:var(--c-mute);}
+  .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
+  .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
+
+  @media (max-width:760px){
+    .g3,.g2{grid-template-columns:1fr;}
+  }
+  @media print{
+    @page{size:A4;margin:12mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    img,figure,table,blockquote{break-inside:avoid !important;}
+    .nav{display:none !important;}
+    .head{padding:0 0 var(--s-5) !important;}
+    .sec{padding:var(--s-6) 0 0 !important;}
+    .stage,.g3 figure,.g2 figure{break-inside:avoid;}
+    .g3,.g2{gap:3mm !important;}
+    .scroll{max-height:none !important;overflow:visible !important;}
+    .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
+  }
+</style>
+</head>
+<body class="pf">
+
+<nav class="nav">
+  <a class="nav__back" href="index.html">← 返回作品集</a>
+  <div class="nav__id">AI 点亮创意棱镜</div>
+</nav>
+
+<header class="head pf-wrap">
+  <div class="head__badge">视觉设计 · 主视觉海报</div>
+  <h1 class="head__title">AI 点亮创意棱镜<br><span class="dim">腾讯青科实训营 · AI 创意设计主题营</span></h1>
+  <p class="head__sub">
+    一张主视觉，适配从横版到竖版的多套投放尺寸，并延伸出动态版本与活动详情长图。
+  </p>
+
+  <dl class="meta">
+    <div><dt>Project</dt><dd>腾讯青科实训营 · AI 创意设计主题营</dd></div>
+    <div><dt>Type</dt><dd>主视觉海报 / 物料延展</dd></div>
+    <div><dt>Formats</dt><dd>16:9 · 4:5 · 3:4 · 9:16</dd></div>
+    <div><dt>Extra</dt><dd>动态视频 + 详情长图</dd></div>
+  </dl>
+</header>
+
+<main class="pf-wrap">
+
+  <!-- 主视觉 -->
+  <section class="sec">
+    <div class="pf-label">主视觉</div>
+    <p class="sec__lead">
+      画面以一颗悬浮于深空的多面水晶体为核心——冰冷的几何结构中迸发出一道炽亮光束，
+      化作万千彩色数据流与粒子光带奔涌而出，隐喻<b>「零基础的普通想法，经 AI 折射后绽放出无限创意可能」</b>。
+      深蓝夜色背景搭配青、紫、洋红的霓虹光效，营造年轻、未来、专业的科技氛围。
+    </p>
+    <div class="stage stage--pad">
+      <img src="images/prism/prism-16x9.jpg" alt="AI 点亮创意棱镜 主视觉 16:9">
+    </div>
+  </section>
+
+  <!-- 动态版本 -->
+  <section class="sec">
+    <div class="pf-label">动态版本</div>
+    <p class="sec__lead">主视觉的动态演绎，用于线上投放与现场循环播放。</p>
+    <div class="stage">
+      <video src="images/prism/prism-motion.mp4" poster="images/prism/prism-motion-poster.jpg"
+             preload="metadata" playsinline autoplay muted loop></video>
+    </div>
+  </section>
+
+  <!-- 多尺寸适配 -->
+  <section class="sec">
+    <div class="pf-label">多尺寸适配</div>
+    <p class="sec__lead">
+      同一套视觉语言按投放位重新构图：竖版把水晶下移、留出标题区，方版收紧两侧光带，保证任何尺寸下信息层级都成立。
+    </p>
+    <div class="g3">
+      <figure>
+        <img src="images/prism/prism-4x5.jpg" alt="">
+        <figcaption><b>4:5</b> 信息流</figcaption>
+      </figure>
+      <figure>
+        <img src="images/prism/prism-3x4.jpg" alt="">
+        <figcaption><b>3:4</b> 详情页头图</figcaption>
+      </figure>
+      <figure>
+        <img src="images/prism/prism-9x16.jpg" alt="">
+        <figcaption><b>9:16</b> 竖屏 / 朋友圈</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 详情长图 -->
+  <section class="sec">
+    <div class="pf-label">活动详情长图</div>
+    <p class="sec__lead">
+      承接主视觉的光效与配色，把课程信息拆成「这是一场什么样的训练营 / 三大亮点 / 3 小时流程 / 适合谁 / 报名」五个信息层。
+    </p>
+    <div class="scroll">
+      <img src="images/prism/prism-detail.jpg" alt="活动详情长图">
+    </div>
+  </section>
+
+  <!-- 设计说明 -->
+  <section class="sec">
+    <div class="pf-label">设计说明</div>
+    <div class="note">
+      <p>
+        标题采用锐利的发光立体字压于上方，底部以 HUD 风格标签「零基础体验 AI 设计」与
+        「线上课程｜完成作品获电子证书」收束信息层级。
+      </p>
+      <p>
+        整体传达：<b>AI 不是替代创意，而是让每一个普通人的创意被看见、被放大。</b>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="pf-wrap foot__row">
+    <span>吕森垚 · 2027 届 · 山西传媒学院</span>
+    <a href="index.html">返回作品集</a>
+  </div>
+</footer>
+
+</body>
+</html>
