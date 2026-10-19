@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>静默海拔 SILENT ALTITUDE · AI Coding 超级网页</title>
+<link rel="stylesheet" href="portfolio.css">
+<style>
+  body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
+
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px var(--pad-x);
+    background:rgba(251,250,247,.82);
+    backdrop-filter:blur(18px) saturate(160%);
+    border-bottom:1px solid var(--c-line-soft);
+  }
+  .nav__back{font-size:var(--t-small);color:var(--c-ink-3);text-decoration:none;transition:color .3s var(--ease);}
+  .nav__back:hover{color:var(--c-ink);}
+  .nav__id{font-size:13.5px;font-weight:700;letter-spacing:.02em;}
+
+  .head{padding:calc(var(--pad-sec) * 1.25) 0 var(--s-7);}
+  .head__badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
+    text-transform:uppercase;font-weight:700;color:var(--c-ink);
+    border:1px solid var(--c-ink);border-radius:999px;padding:7px 16px;margin-bottom:var(--s-6);
+  }
+  .head__badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-ink);}
+  .head__title{font-size:var(--t-h1);line-height:1.05;letter-spacing:-.03em;font-weight:900;margin:0 0 var(--s-4);}
+  .head__title .en{display:block;font-family:var(--font-lat);font-size:.52em;letter-spacing:.16em;
+    font-weight:400;color:var(--c-mute);margin-top:.18em;text-transform:uppercase;}
+  .head__sub{font-size:var(--t-lead);color:var(--c-ink-2);max-width:58ch;line-height:1.8;margin:0;}
+
+  .meta{display:flex;flex-wrap:wrap;gap:var(--s-5) var(--s-7);
+    padding:var(--s-5) 0;margin:var(--s-7) 0 0;
+    border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line);}
+  .meta div{display:flex;flex-direction:column;gap:4px;}
+  .meta dt{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.2em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+  .meta dd{margin:0;font-size:var(--t-small);color:var(--c-ink-2);}
+
+  .live{display:inline-flex;align-items:center;gap:10px;margin-top:var(--s-6);
+    font-size:var(--t-small);font-weight:700;color:var(--c-ink);text-decoration:none;
+    border-bottom:2px solid var(--c-ink);padding-bottom:3px;transition:gap .3s var(--ease);}
+  .live:hover{gap:16px;}
+  .live span{font-family:var(--font-lat);font-weight:600;letter-spacing:.04em;}
+
+  .sec{padding:var(--pad-sec) 0 0;}
+  .sec__lead{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.9;
+    margin:0 0 var(--s-6);max-width:62ch;}
+  .sec__lead b{color:var(--c-ink);font-weight:800;}
+
+  /* 深色展台 */
+  .stage{background:#0A0908;padding:clamp(14px,3vw,40px);border:1px solid var(--c-line);}
+  .stage img{width:100%;display:block;}
+
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .g2 figure{margin:0;}
+  .g2 img{width:100%;display:block;border:1px solid var(--c-line);background:#0A0908;}
+  .g2 figcaption{margin-top:8px;font-size:var(--t-cap);color:var(--c-mute);
+    letter-spacing:.04em;line-height:1.6;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  .g2 figcaption b{font-family:var(--font-lat);font-weight:700;color:var(--c-ink-2);}
+
+  /* 技术清单 */
+  .tech{border-top:1px solid var(--c-line);}
+  .tech__row{display:grid;grid-template-columns:150px 1fr;gap:var(--s-5);
+    padding:var(--s-5) 0;border-bottom:1px solid var(--c-line-soft);align-items:start;}
+  .tech__k{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.16em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:700;padding-top:3px;}
+  .tech__v{font-size:var(--t-small);color:var(--c-ink-2);line-height:1.85;margin:0;}
+  .tech__v b{color:var(--c-ink);font-weight:800;}
+
+  .quote{background:var(--c-surface);border:1px solid var(--c-line);border-left:3px solid var(--c-ink);
+    padding:var(--s-6) var(--s-7);margin-top:var(--s-6);}
+  .quote p{margin:0;font-size:var(--t-small);line-height:2;color:var(--c-ink-2);}
+
+  .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
+  .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
+    font-size:var(--t-cap);color:var(--c-mute);}
+  .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
+  .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
+
+  @media (max-width:760px){ .g2{grid-template-columns:1fr;} .tech__row{grid-template-columns:1fr;gap:6px;} }
+  @media print{
+    @page{size:A4;margin:12mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    img,figure,table,blockquote{break-inside:avoid !important;}
+    .nav{display:none !important;}
+    .head{padding:0 0 var(--s-5) !important;}
+    .sec{padding:var(--s-6) 0 0 !important;}
+    .stage,.g2 figure{break-inside:avoid;}
+    .g2{gap:3mm !important;}
+    .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
+  }
+</style>
+</head>
+<body class="pf">
+
+<nav class="nav">
+  <a class="nav__back" href="index.html">← 返回作品集</a>
+  <div class="nav__id">静默海拔 · Silent Altitude</div>
+</nav>
+
+<header class="head pf-wrap">
+  <div class="head__badge">AI Coding · 超级网页</div>
+  <h1 class="head__title">静默海拔<span class="en">Silent Altitude</span></h1>
+  <p class="head__sub">
+    一个完整的个人作品集网站。<b>从视觉素材到前端代码，全部由 AI 在对话中协作产出</b>——
+    包括文生图与图生视频生成的影像、React 前端、3D 物理工牌与滚动动效。
+  </p>
+
+  <dl class="meta">
+    <div><dt>Project</dt><dd>腾讯青科实训营 · AI Coding 超级网页</dd></div>
+    <div><dt>Type</dt><dd>整站设计与开发</dd></div>
+    <div><dt>Stack</dt><dd>React + Vite / Three.js</dd></div>
+    <div><dt>Role</dt><dd>AI 协作全流程</dd></div>
+    <div><dt>Status</dt><dd>已上线</dd></div>
+  </dl>
+
+  <a class="live" href="https://silent-altitude-12811.app.workbuddy.host/" target="_blank" rel="noopener">
+    打开线上站点 <span>↗</span>
+  </a>
+</header>
+
+<main class="pf-wrap">
+
+  <!-- 首屏 -->
+  <section class="sec">
+    <div class="pf-label">首屏</div>
+    <p class="sec__lead">
+      深色极简的开场。影像里一台发光的电脑立在高原草甸上，
+      背后是雪山与晨光——「静默海拔」这个题目本身就是对克制的一次表态。
+    </p>
+    <div class="stage">
+      <img src="images/sa/sa-hero.jpg" alt="静默海拔 首屏">
+    </div>
+  </section>
+
+  <!-- 关于 + 3D 工牌 -->
+  <section class="sec">
+    <div class="pf-label">关于 · 3D 工牌</div>
+    <p class="sec__lead">
+      右侧的工牌是一个可拖拽的 3D 物体：集成 React Bits 官方 Lanyard 组件，
+      用 Three.js 做挂绳的物理模拟，拖动时会像真工牌一样摆动、回弹。
+    </p>
+    <div class="stage">
+      <img src="images/sa/sa-about.jpg" alt="关于与 3D 工牌">
+    </div>
+  </section>
+
+  <!-- 宣言 + 作品列表 -->
+  <section class="sec">
+    <div class="pf-label">宣言与作品列表</div>
+    <p class="sec__lead">
+      一段中英双语的宣言作为页面节奏的停顿，随后进入作品列表；
+      底部以一枚环形印章收尾。
+    </p>
+    <div class="g2">
+      <figure>
+        <img src="images/sa/sa-manifesto.jpg" alt="">
+        <figcaption><b>MANIFESTO</b> 于无声处,听山脊之风</figcaption>
+      </figure>
+      <figure>
+        <img src="images/sa/sa-works.jpg" alt="">
+        <figcaption><b>WORKS</b> 作品列表与环形印章</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 技术实现 -->
+  <section class="sec">
+    <div class="pf-label">技术实现</div>
+    <div class="tech">
+      <div class="tech__row">
+        <div class="tech__k">影像生成</div>
+        <p class="tech__v">视频由<b>文生图 + 图生视频</b>模型生成，并<b>逐帧锚定首帧构图</b>，保证镜头语言的连贯。</p>
+      </div>
+      <div class="tech__row">
+        <div class="tech__k">前端</div>
+        <p class="tech__v">基于 <b>React + Vite</b> 构建，构建后以静态站点直接发布上线。</p>
+      </div>
+      <div class="tech__row">
+        <div class="tech__k">3D 工牌</div>
+        <p class="tech__v">集成 <b>React Bits 官方 Lanyard 组件</b>，以 <b>Three.js</b> 做物理模拟。</p>
+      </div>
+      <div class="tech__row">
+        <div class="tech__k">动效</div>
+        <p class="tech__v">采用<b>原生 rAF 滚动进度驱动</b>与 <b>IntersectionObserver</b>，无重型依赖。</p>
+      </div>
+      <div class="tech__row">
+        <div class="tech__k">可用性</div>
+        <p class="tech__v">支持 <b>prefers-reduced-motion</b> 与<b>移动端降级</b>。</p>
+      </div>
+      <div class="tech__row">
+        <div class="tech__k">工具</div>
+        <p class="tech__v">全部在 <b>workbuddy</b> 中完成。</p>
+      </div>
+    </div>
+
+    <div class="quote">
+      <p>全部代码与视觉素材均由 AI 在对话中协作产出。</p>
+    </div>
+  </section>
+
+  <!-- 访问 -->
+  <section class="sec">
+    <div class="pf-label">访问</div>
+    <p class="sec__lead">
+      线上为静态站点，可直接访问；桌面端可拖拽工牌，移动端自动降级。
+    </p>
+    <a class="live" href="https://silent-altitude-12811.app.workbuddy.host/" target="_blank" rel="noopener">
+      silent-altitude-12811.app.workbuddy.host <span>↗</span>
+    </a>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="pf-wrap foot__row">
+    <span>吕森垚 · 2027 届 · 山西传媒学院</span>
+    <a href="index.html">返回作品集</a>
+  </div>
+</footer>
+
+</body>
+</html>
