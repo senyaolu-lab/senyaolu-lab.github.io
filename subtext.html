@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>话里有话 · 中文潜台词双向解码器</title>
+<link rel="stylesheet" href="portfolio.css">
+<style>
+  body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
+
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px var(--pad-x);
+    background:rgba(251,250,247,.82);
+    backdrop-filter:blur(18px) saturate(160%);
+    border-bottom:1px solid var(--c-line-soft);
+  }
+  .nav__back{font-size:var(--t-small);color:var(--c-ink-3);text-decoration:none;transition:color .3s var(--ease);}
+  .nav__back:hover{color:var(--c-ink);}
+  .nav__id{font-size:13.5px;font-weight:700;letter-spacing:.02em;}
+
+  .head{padding:calc(var(--pad-sec) * 1.25) 0 var(--s-7);}
+  .head__badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
+    text-transform:uppercase;font-weight:700;color:var(--c-ink);
+    border:1px solid var(--c-ink);border-radius:999px;padding:7px 16px;margin-bottom:var(--s-6);
+  }
+  .head__badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-ink);}
+  .head__title{font-size:var(--t-h1);line-height:1.05;letter-spacing:-.03em;font-weight:900;margin:0 0 var(--s-4);}
+  .head__title .dim{color:var(--c-mute);font-weight:300;font-size:.5em;display:block;letter-spacing:-.01em;margin-top:.2em;}
+  .head__sub{font-size:var(--t-lead);color:var(--c-ink-2);max-width:58ch;line-height:1.8;margin:0;}
+
+  .meta{display:flex;flex-wrap:wrap;gap:var(--s-5) var(--s-7);
+    padding:var(--s-5) 0;margin:var(--s-7) 0 0;
+    border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line);}
+  .meta div{display:flex;flex-direction:column;gap:4px;}
+  .meta dt{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.2em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+  .meta dd{margin:0;font-size:var(--t-small);color:var(--c-ink-2);}
+
+  .live{display:inline-flex;align-items:center;gap:10px;margin-top:var(--s-6);
+    font-size:var(--t-small);font-weight:700;color:var(--c-ink);text-decoration:none;
+    border-bottom:2px solid var(--c-ink);padding-bottom:3px;transition:gap .3s var(--ease);}
+  .live:hover{gap:16px;}
+  .live span{font-family:var(--font-lat);font-weight:600;letter-spacing:.04em;}
+
+  .sec{padding:var(--pad-sec) 0 0;}
+  .sec__lead{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.9;
+    margin:0 0 var(--s-6);max-width:62ch;}
+  .sec__lead b{color:var(--c-ink);font-weight:800;}
+
+  /* 手机截图 */
+  .phone{background:var(--c-surface-2);border:1px solid var(--c-line);overflow:hidden;}
+  .phone img{width:100%;display:block;aspect-ratio:460/940;object-fit:cover;}
+
+  .one{max-width:330px;margin:0 auto;}
+  .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:760px;margin:0 auto;}
+  .row3 figure,.row2 figure{margin:0;}
+  .one figcaption,.row3 figcaption,.row2 figcaption{margin-top:10px;font-size:var(--t-cap);
+    color:var(--c-mute);letter-spacing:.04em;line-height:1.6;}
+  .one figcaption b,.row3 figcaption b,.row2 figcaption b{display:block;font-size:var(--t-small);
+    color:var(--c-ink);font-weight:800;margin-bottom:3px;}
+
+  /* 数据条 */
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--c-line);
+    border:1px solid var(--c-line);margin-bottom:var(--s-7);}
+  .kpi{background:var(--c-bg);padding:var(--s-5);}
+  .kpi__n{font-family:var(--font-lat);font-size:clamp(26px,3vw,38px);font-weight:800;
+    letter-spacing:-.03em;line-height:1;color:var(--c-ink);}
+  .kpi__n em{font-style:normal;font-size:.5em;font-weight:700;color:var(--c-mute);margin-left:2px;}
+  .kpi__l{font-size:var(--t-cap);color:var(--c-mute);margin-top:8px;line-height:1.5;}
+
+  .note{background:var(--c-surface);border:1px solid var(--c-line);border-left:3px solid var(--c-ink);
+    padding:var(--s-6) var(--s-7);margin-top:var(--s-6);}
+  .note p{margin:0;font-size:var(--t-small);line-height:2;color:var(--c-ink-2);}
+  .note p + p{margin-top:var(--s-4);}
+  .note b{color:var(--c-ink);font-weight:800;}
+
+  .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
+  .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
+    font-size:var(--t-cap);color:var(--c-mute);}
+  .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
+  .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
+
+  @media (max-width:820px){
+    .row3,.row2{grid-template-columns:1fr;max-width:330px;margin:0 auto;}
+    .kpis{grid-template-columns:1fr 1fr;}
+  }
+  @media print{
+    @page{size:A4;margin:12mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    img,figure,table,blockquote{break-inside:avoid !important;}
+    .nav{display:none !important;}
+    .head{padding:0 0 var(--s-5) !important;}
+    .sec{padding:var(--s-6) 0 0 !important;}
+    .phone,figure{break-inside:avoid;}
+    .one{max-width:240px;}
+    .row3{gap:4mm !important;}
+    .row2{gap:4mm !important;max-width:330px;}
+    .kpis{grid-template-columns:repeat(4,1fr) !important;}
+    .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
+  }
+</style>
+</head>
+<body class="pf">
+
+<nav class="nav">
+  <a class="nav__back" href="index.html">← 返回作品集</a>
+  <div class="nav__id">话里有话 · Subtext CN</div>
+</nav>
+
+<header class="head pf-wrap">
+  <div class="head__badge">AI 产品 · 独立负责</div>
+  <h1 class="head__title">话里有话<span class="dim">中文潜台词双向解码器</span></h1>
+  <p class="head__sub">
+    一款 AI 原生的沟通能力训练产品。识别中文高语境沟通中<b>「字面 ≠ 真实」</b>的意图鸿沟，
+    帮助用户听懂别人、也不被误解。
+  </p>
+
+  <dl class="meta">
+    <div><dt>Type</dt><dd>AI 产品 · 可交互原型</dd></div>
+    <div><dt>Role</dt><dd>独立负责全流程</dd></div>
+    <div><dt>Scope</dt><dd>需求洞察 / 竞品分析 / AI 架构 / 评测体系 / 原型</dd></div>
+    <div><dt>Status</dt><dd>已上线可玩</dd></div>
+  </dl>
+
+  <a class="live" href="https://subtext-decoder-80121.app.workbuddy.host/?sharecode=E4BSOCKZY2" target="_blank" rel="noopener">
+    打开线上原型 <span>↗</span>
+  </a>
+</header>
+
+<main class="pf-wrap">
+
+  <!-- 首页 -->
+  <section class="sec">
+    <div class="pf-label">产品</div>
+    <p class="sec__lead">
+      中文真正的意思,藏在没说出口的那半句里。产品把这件事拆成两条路径——
+      <b>听懂别人的</b>(解码),和<b>别让别人听错你的</b>(发前体检)。
+      再叠一层游戏化:段位、题库、词库,把一个能力训练做成愿意反复打开的东西。
+    </p>
+    <div class="one">
+      <figure>
+        <div class="phone"><img src="images/hlyh/hlyh-home.jpg" alt="话里有话 首页"></div>
+        <figcaption><b>首页</b>段位 · 四个入口 · 今日一句</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 核心体验 -->
+  <section class="sec">
+    <div class="pf-label">核心体验</div>
+    <p class="sec__lead">
+      解码结果不是一句「他其实是这个意思」,而是<b>三层拆解</b>——字面义、真实意图、情绪与诉求,
+      再叠加一根<b>关系坐标</b>(权力距离 × 亲密度)解释「为什么他会这么说」。
+      词库与题库同源:41 条人工标注金标语料,既当字典看,也当题目练。
+    </p>
+    <div class="row3">
+      <figure>
+        <div class="phone"><img src="images/hlyh/hlyh-decode.jpg" alt="三层解码"></div>
+        <figcaption><b>三层解码</b>字面义 / 真实意图 / 情绪与诉求,附关系坐标与回复建议</figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><img src="images/hlyh/hlyh-dex.jpg" alt="潜台词词库"></div>
+        <figcaption><b>潜台词词库</b>41 条语料按 11 类关系归类,每条给「可以这么回」</figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><img src="images/hlyh/hlyh-game.jpg" alt="段位闯关"></div>
+        <figcaption><b>段位闯关</b>十题一轮、20 秒限时,四选一猜真实意图,连击加成</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- AI 架构 -->
+  <section class="sec">
+    <div class="pf-label">AI 架构</div>
+    <p class="sec__lead">
+      <b>双引擎、物理隔离。</b>判定走确定性(R1 Router 本地规则 / 小模型),生成走大模型(R2 Decoder、R3 Strategist)。
+      两条路径分开,是为了让安全的那条不赌概率。
+    </p>
+
+    <div class="kpis">
+      <div class="kpi"><div class="kpi__n">3<em>层</em></div><div class="kpi__l">路由 → 解码 → 策略</div></div>
+      <div class="kpi"><div class="kpi__n">60<em>%</em></div><div class="kpi__l">低语境请求被规则挡掉</div></div>
+      <div class="kpi"><div class="kpi__n">0<em>ms</em></div><div class="kpi__l">本地判定延迟</div></div>
+      <div class="kpi"><div class="kpi__n">70<em>分</em></div><div class="kpi__l">模型不可用时的降级答案</div></div>
+    </div>
+
+    <p class="sec__lead" style="margin-bottom:var(--s-6);">
+      为什么不全交给大模型——页面上直接回答了这个问题:成本(每次解码 3 次调用不可承受)、
+      延迟(用户是吵架或开会现场打开,&gt;2 秒就退出)、可解释(规则命中能列依据,黑盒不能)、
+      降级(模型挂了产品不裸奔)。
+    </p>
+
+    <div class="row2">
+      <figure>
+        <div class="phone"><img src="images/hlyh/hlyh-lab.jpg" alt="AI 实验室"></div>
+        <figcaption><b>AI 实验室</b>双引擎架构与四条取舍,直接把产品经理视角摊开给评委看</figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><img src="images/hlyh/hlyh-prompt.jpg" alt="Prompt 卡片"></div>
+        <figcaption><b>Prompt 卡片</b>三个角色的真实 Prompt 全部公开可查,包括约束与反例</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 评测与护栏 -->
+  <section class="sec">
+    <div class="pf-label">评测与护栏</div>
+    <p class="sec__lead">
+      <b>AI 产品的核心不是模型,是评测。</b>内置 41 条人工标注数据,点一下就在本地真跑一遍,
+      不是截图。而这个产品里,<b>误报比漏判更致命</b>——把寒暄解读成敌意,会让用户不再相信任何关系。
+    </p>
+
+    <div class="kpis">
+      <div class="kpi"><div class="kpi__n">41<em>/41</em></div><div class="kpi__l">总体准确率 100%</div></div>
+      <div class="kpi"><div class="kpi__n">0<em>%</em></div><div class="kpi__l">误报率(把正常话判成有深意)</div></div>
+      <div class="kpi"><div class="kpi__n">0<em>条</em></div><div class="kpi__l">漏判(真有深意没看出来)</div></div>
+      <div class="kpi"><div class="kpi__n">8<em>类</em></div><div class="kpi__l">分层召回全部满分</div></div>
+    </div>
+
+    <div class="row2">
+      <figure>
+        <div class="phone"><img src="images/hlyh/hlyh-eval.jpg" alt="评测集"></div>
+        <figcaption><b>评测集 Eval</b>41 条金标数据本地真跑,输出准确率、误报率与分层召回</figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><img src="images/hlyh/hlyh-guard.jpg" alt="护栏"></div>
+        <figcaption><b>护栏 Guardrails</b>置信度 &lt; 0.6 禁止给结论;禁止操纵性话术;不替代真人</figcaption>
+      </figure>
+    </div>
+
+    <div class="note">
+      <p>
+        最大的风险不是判错,是<b>判太深</b>——把全世界都解读成话里有话,用户就再也没法正常说话了。
+      </p>
+      <p>
+        所以每条解码都必须同时给出「可能就是字面意思」的反面证据;置信度低于 0.6 时强制引导
+        「直接问本人」,宁可不说,不可说错。
+      </p>
+    </div>
+  </section>
+
+  <!-- 访问 -->
+  <section class="sec">
+    <div class="pf-label">访问</div>
+    <p class="sec__lead">线上为可交互原型,手机端体验完整。</p>
+    <a class="live" href="https://subtext-decoder-80121.app.workbuddy.host/?sharecode=E4BSOCKZY2" target="_blank" rel="noopener">
+      subtext-decoder-80121.app.workbuddy.host <span>↗</span>
+    </a>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="pf-wrap foot__row">
+    <span>吕森垚 · 2027 届 · 山西传媒学院</span>
+    <a href="index.html">返回作品集</a>
+  </div>
+</footer>
+
+</body>
+</html>
