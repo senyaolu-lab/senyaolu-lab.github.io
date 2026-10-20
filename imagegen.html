@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图片生成 · AI 视觉素材 58 张</title>
+<link rel="stylesheet" href="portfolio.css">
+<style>
+  body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
+  .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;
+    justify-content:space-between;padding:20px var(--pad-x);background:rgba(251,250,247,.82);
+    backdrop-filter:blur(18px) saturate(160%);border-bottom:1px solid var(--c-line-soft);}
+  .nav__back{font-size:var(--t-small);color:var(--c-ink-3);text-decoration:none;transition:color .3s var(--ease);}
+  .nav__back:hover{color:var(--c-ink);}
+  .nav__id{font-size:13.5px;font-weight:700;letter-spacing:.02em;}
+
+  .head{padding:calc(var(--pad-sec) * 1.25) 0 var(--s-7);}
+  .head__badge{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-lat);
+    font-size:var(--t-micro);letter-spacing:.22em;text-transform:uppercase;font-weight:700;
+    color:var(--c-ink);border:1px solid var(--c-ink);border-radius:999px;padding:7px 16px;margin-bottom:var(--s-6);}
+  .head__badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-ink);}
+  .head__title{font-size:var(--t-h1);line-height:1.05;letter-spacing:-.03em;font-weight:900;margin:0 0 var(--s-4);}
+  .head__title .dim{display:block;color:var(--c-mute);font-weight:300;font-size:.5em;margin-top:.2em;}
+  .head__sub{font-size:var(--t-lead);color:var(--c-ink-2);max-width:58ch;line-height:1.8;margin:0;}
+
+  .meta{display:flex;flex-wrap:wrap;gap:var(--s-5) var(--s-7);padding:var(--s-5) 0;
+    margin:var(--s-7) 0 0;border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line);}
+  .meta div{display:flex;flex-direction:column;gap:4px;}
+  .meta dt{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.2em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+  .meta dd{margin:0;font-size:var(--t-small);color:var(--c-ink-2);}
+
+  .cat{padding:var(--pad-sec) 0 0;}
+  .cat__hd{display:flex;align-items:baseline;gap:var(--s-5);flex-wrap:wrap;
+    padding-bottom:var(--s-4);border-bottom:1px solid var(--c-line);margin-bottom:var(--s-6);}
+  .cat__no{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.24em;color:var(--c-mute);font-weight:700;}
+  .cat__t{font-size:var(--t-h2);font-weight:900;letter-spacing:-.022em;margin:0;}
+  .cat__en{margin-left:auto;font-family:var(--font-lat);font-size:var(--t-micro);
+    letter-spacing:.18em;text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+  .cat__lead{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.88;margin:0 0 var(--s-6);max-width:62ch;}
+  .cat__n{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.14em;
+    color:var(--c-mute);font-weight:600;}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .grid a{display:block;overflow:hidden;background:var(--c-surface-2);border:1px solid var(--c-line);}
+  .grid img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;
+    transition:transform .5s var(--ease),opacity .35s var(--ease);}
+  .grid a:hover img{transform:scale(1.03);opacity:.92;}
+
+  .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
+  .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
+    font-size:var(--t-cap);color:var(--c-mute);}
+  .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
+  .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
+
+  @media (max-width:760px){ .grid{grid-template-columns:repeat(2,1fr);gap:8px;} }
+  @media print{
+    @page{size:A4;margin:12mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    img,figure,table,blockquote{break-inside:avoid !important;}
+    .nav{display:none !important;}
+    .head{padding:0 0 var(--s-5) !important;}
+    .cat{padding:var(--s-6) 0 0 !important;}
+    .grid{grid-template-columns:repeat(3,1fr) !important;gap:3mm !important;}
+    .cat__hd{break-after:avoid;}
+    .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
+  }
+</style>
+</head>
+<body class="pf">
+
+<nav class="nav">
+  <a class="nav__back" href="index.html">← 返回作品集</a>
+  <div class="nav__id">图片生成 · 58 张</div>
+</nav>
+
+<header class="head pf-wrap">
+  <div class="head__badge">个人创作 · 图片生成</div>
+  <h1 class="head__title">图片生成<span class="dim">AI 视觉素材 · 六个方向</span></h1>
+  <p class="head__sub">
+    58 张用 AI 生成的视觉素材，按用途分成六个方向：角色设定、角色特写、幻想生物、
+    场景与史诗、潮玩与毛绒、产品与商业。<b>统一 16:9 画幅，统一出图参数</b>，
+    每张都单独调过提示词与构图，不是一次批量跑出来的。
+  </p>
+
+  <dl class="meta">
+    <div><dt>Type</dt><dd>AI 图片生成</dd></div>
+    <div><dt>Count</dt><dd>58 张 · 6 个方向</dd></div>
+    <div><dt>Format</dt><dd>16:9 · 1400px</dd></div>
+    <div><dt>Tool</dt><dd>Midjourney</dd></div>
+  </dl>
+</header>
+
+<main class="pf-wrap">
+  <section class="cat">
+    <div class="cat__hd">
+      <span class="cat__no">01</span>
+      <h2 class="cat__t">角色设定</h2>
+      <span class="cat__en">Character Design · 11 图</span>
+    </div>
+    <p class="cat__lead">多视图、三视图与成套设计稿。看的是同一个角色在不同姿态与配色下是否还是同一个人。</p>
+    <div class="grid">
+      <a href="images/gen/char-01.jpg" target="_blank" rel="noopener"><img src="images/gen/char-01.jpg" alt="角色设定" loading="lazy"></a>
+      <a href="images/gen/char-02.jpg" target="_blank" rel="noopener"><img src="images/gen/char-02.jpg" alt="角色设定" loading="lazy"></a>
+      <a href="images/gen/char-03.jpg" target="_blank" rel="noopener"><img src="images/gen/char-03.jpg" alt="角色设定" loading="lazy"></a>
+      <a href="images/gen/char-04.jpg" target="_blank" rel="noopener"><img src="images/gen/char-04.jpg" alt="角色设定" loading="lazy"></a>
+      <a href="images/gen/char-05.jpg" target="_blank" rel="noopener"><img src="images/gen/char-05.jpg" alt="角色设定" loading="lazy"></a>
+      <a href="images/gen/char-06.jpg" target="_blank" rel="noopener"><img src="images/gen/char-06.jpg" alt="角色设定" loading="lazy"></a>
+      <a href="images/gen/char-07.jpg" target="_blank" rel="noopener"><img src="images/gen/char-07.jpg" alt="角色设定" loading="lazy"></a>
+      <a href="images/gen/char-08.jpg" target="_blank" rel="noopener"><img src="images/gen/char-08.jpg" alt="角色设定" loading="lazy"></a>
+      <a href="images/gen/char-09.jpg" target="_blank" rel="noopener"><img src="images/gen/char-09.jpg" alt="角色设定" loading="lazy"></a>
+      <a href="images/gen/char-10.jpg" target="_blank" rel="noopener"><img src="images/gen/char-10.jpg" alt="角色设定" loading="lazy"></a>
+      <a href="images/gen/char-11.jpg" target="_blank" rel="noopener"><img src="images/gen/char-11.jpg" alt="角色设定" loading="lazy"></a>
+    </div>
+  </section>
+  <section class="cat">
+    <div class="cat__hd">
+      <span class="cat__no">02</span>
+      <h2 class="cat__t">角色特写</h2>
+      <span class="cat__en">Character Portrait · 14 图</span>
+    </div>
+    <p class="cat__lead">电影感的人像与角色特写。考的是皮肤、毛发、眼神光与景深——离得越近，破绽越藏不住。</p>
+    <div class="grid">
+      <a href="images/gen/face-01.jpg" target="_blank" rel="noopener"><img src="images/gen/face-01.jpg" alt="角色特写" loading="lazy"></a>
+      <a href="images/gen/face-02.jpg" target="_blank" rel="noopener"><img src="images/gen/face-02.jpg" alt="角色特写" loading="lazy"></a>
+      <a href="images/gen/face-03.jpg" target="_blank" rel="noopener"><img src="images/gen/face-03.jpg" alt="角色特写" loading="lazy"></a>
+      <a href="images/gen/face-04.jpg" target="_blank" rel="noopener"><img src="images/gen/face-04.jpg" alt="角色特写" loading="lazy"></a>
+      <a href="images/gen/face-05.jpg" target="_blank" rel="noopener"><img src="images/gen/face-05.jpg" alt="角色特写" loading="lazy"></a>
+      <a href="images/gen/face-06.jpg" target="_blank" rel="noopener"><img src="images/gen/face-06.jpg" alt="角色特写" loading="lazy"></a>
+      <a href="images/gen/face-07.jpg" target="_blank" rel="noopener"><img src="images/gen/face-07.jpg" alt="角色特写" loading="lazy"></a>
+      <a href="images/gen/face-08.jpg" target="_blank" rel="noopener"><img src="images/gen/face-08.jpg" alt="角色特写" loading="lazy"></a>
+      <a href="images/gen/face-09.jpg" target="_blank" rel="noopener"><img src="images/gen/face-09.jpg" alt="角色特写" loading="lazy"></a>
+      <a href="images/gen/face-10.jpg" target="_blank" rel="noopener"><img src="images/gen/face-10.jpg" alt="角色特写" loading="lazy"></a>
+      <a href="images/gen/face-11.jpg" target="_blank" rel="noopener"><img src="images/gen/face-11.jpg" alt="角色特写" loading="lazy"></a>
+      <a href="images/gen/face-12.jpg" target="_blank" rel="noopener"><img src="images/gen/face-12.jpg" alt="角色特写" loading="lazy"></a>
+      <a href="images/gen/face-13.jpg" target="_blank" rel="noopener"><img src="images/gen/face-13.jpg" alt="角色特写" loading="lazy"></a>
+      <a href="images/gen/face-14.jpg" target="_blank" rel="noopener"><img src="images/gen/face-14.jpg" alt="角色特写" loading="lazy"></a>
+    </div>
+  </section>
+  <section class="cat">
+    <div class="cat__hd">
+      <span class="cat__no">03</span>
+      <h2 class="cat__t">幻想生物</h2>
+      <span class="cat__en">Fantasy Creature · 8 图</span>
+    </div>
+    <p class="cat__lead">羽毛、绒毛与鳞片混在一起的非现实生物。重点是材质可信度：让人相信它真的长过这些东西。</p>
+    <div class="grid">
+      <a href="images/gen/beast-01.jpg" target="_blank" rel="noopener"><img src="images/gen/beast-01.jpg" alt="幻想生物" loading="lazy"></a>
+      <a href="images/gen/beast-02.jpg" target="_blank" rel="noopener"><img src="images/gen/beast-02.jpg" alt="幻想生物" loading="lazy"></a>
+      <a href="images/gen/beast-03.jpg" target="_blank" rel="noopener"><img src="images/gen/beast-03.jpg" alt="幻想生物" loading="lazy"></a>
+      <a href="images/gen/beast-04.jpg" target="_blank" rel="noopener"><img src="images/gen/beast-04.jpg" alt="幻想生物" loading="lazy"></a>
+      <a href="images/gen/beast-05.jpg" target="_blank" rel="noopener"><img src="images/gen/beast-05.jpg" alt="幻想生物" loading="lazy"></a>
+      <a href="images/gen/beast-06.jpg" target="_blank" rel="noopener"><img src="images/gen/beast-06.jpg" alt="幻想生物" loading="lazy"></a>
+      <a href="images/gen/beast-07.jpg" target="_blank" rel="noopener"><img src="images/gen/beast-07.jpg" alt="幻想生物" loading="lazy"></a>
+      <a href="images/gen/beast-08.jpg" target="_blank" rel="noopener"><img src="images/gen/beast-08.jpg" alt="幻想生物" loading="lazy"></a>
+    </div>
+  </section>
+  <section class="cat">
+    <div class="cat__hd">
+      <span class="cat__no">04</span>
+      <h2 class="cat__t">场景与史诗</h2>
+      <span class="cat__en">Scene & Epic · 12 图</span>
+    </div>
+    <p class="cat__lead">从一间有生活痕迹的室内，到巨大的生物压过地平线。尺度感与环境叙事是这一组的考点。</p>
+    <div class="grid">
+      <a href="images/gen/scene-01.jpg" target="_blank" rel="noopener"><img src="images/gen/scene-01.jpg" alt="场景与史诗" loading="lazy"></a>
+      <a href="images/gen/scene-02.jpg" target="_blank" rel="noopener"><img src="images/gen/scene-02.jpg" alt="场景与史诗" loading="lazy"></a>
+      <a href="images/gen/scene-03.jpg" target="_blank" rel="noopener"><img src="images/gen/scene-03.jpg" alt="场景与史诗" loading="lazy"></a>
+      <a href="images/gen/scene-04.jpg" target="_blank" rel="noopener"><img src="images/gen/scene-04.jpg" alt="场景与史诗" loading="lazy"></a>
+      <a href="images/gen/scene-05.jpg" target="_blank" rel="noopener"><img src="images/gen/scene-05.jpg" alt="场景与史诗" loading="lazy"></a>
+      <a href="images/gen/scene-06.jpg" target="_blank" rel="noopener"><img src="images/gen/scene-06.jpg" alt="场景与史诗" loading="lazy"></a>
+      <a href="images/gen/scene-07.jpg" target="_blank" rel="noopener"><img src="images/gen/scene-07.jpg" alt="场景与史诗" loading="lazy"></a>
+      <a href="images/gen/scene-08.jpg" target="_blank" rel="noopener"><img src="images/gen/scene-08.jpg" alt="场景与史诗" loading="lazy"></a>
+      <a href="images/gen/scene-09.jpg" target="_blank" rel="noopener"><img src="images/gen/scene-09.jpg" alt="场景与史诗" loading="lazy"></a>
+      <a href="images/gen/scene-10.jpg" target="_blank" rel="noopener"><img src="images/gen/scene-10.jpg" alt="场景与史诗" loading="lazy"></a>
+      <a href="images/gen/scene-11.jpg" target="_blank" rel="noopener"><img src="images/gen/scene-11.jpg" alt="场景与史诗" loading="lazy"></a>
+      <a href="images/gen/scene-12.jpg" target="_blank" rel="noopener"><img src="images/gen/scene-12.jpg" alt="场景与史诗" loading="lazy"></a>
+    </div>
+  </section>
+  <section class="cat">
+    <div class="cat__hd">
+      <span class="cat__no">05</span>
+      <h2 class="cat__t">潮玩与毛绒</h2>
+      <span class="cat__en">Art Toy · 5 图</span>
+    </div>
+    <p class="cat__lead">毛绒质感的潮玩群像。绒面纤维、车缝线、玩偶比例——要经得起近看，也要经得起放在一起看。</p>
+    <div class="grid">
+      <a href="images/gen/toy-01.jpg" target="_blank" rel="noopener"><img src="images/gen/toy-01.jpg" alt="潮玩与毛绒" loading="lazy"></a>
+      <a href="images/gen/toy-02.jpg" target="_blank" rel="noopener"><img src="images/gen/toy-02.jpg" alt="潮玩与毛绒" loading="lazy"></a>
+      <a href="images/gen/toy-03.jpg" target="_blank" rel="noopener"><img src="images/gen/toy-03.jpg" alt="潮玩与毛绒" loading="lazy"></a>
+      <a href="images/gen/toy-04.jpg" target="_blank" rel="noopener"><img src="images/gen/toy-04.jpg" alt="潮玩与毛绒" loading="lazy"></a>
+      <a href="images/gen/toy-05.jpg" target="_blank" rel="noopener"><img src="images/gen/toy-05.jpg" alt="潮玩与毛绒" loading="lazy"></a>
+    </div>
+  </section>
+  <section class="cat">
+    <div class="cat__hd">
+      <span class="cat__no">06</span>
+      <h2 class="cat__t">产品与商业</h2>
+      <span class="cat__en">Commercial · 8 图</span>
+    </div>
+    <p class="cat__lead">产品静物、宠物食品广告与游戏宣传 KV。这一组按商业交付的要求做：留白、版式位、可放字的区域。</p>
+    <div class="grid">
+      <a href="images/gen/prod-01.jpg" target="_blank" rel="noopener"><img src="images/gen/prod-01.jpg" alt="产品与商业" loading="lazy"></a>
+      <a href="images/gen/prod-02.jpg" target="_blank" rel="noopener"><img src="images/gen/prod-02.jpg" alt="产品与商业" loading="lazy"></a>
+      <a href="images/gen/prod-03.jpg" target="_blank" rel="noopener"><img src="images/gen/prod-03.jpg" alt="产品与商业" loading="lazy"></a>
+      <a href="images/gen/prod-04.jpg" target="_blank" rel="noopener"><img src="images/gen/prod-04.jpg" alt="产品与商业" loading="lazy"></a>
+      <a href="images/gen/prod-05.jpg" target="_blank" rel="noopener"><img src="images/gen/prod-05.jpg" alt="产品与商业" loading="lazy"></a>
+      <a href="images/gen/prod-06.jpg" target="_blank" rel="noopener"><img src="images/gen/prod-06.jpg" alt="产品与商业" loading="lazy"></a>
+      <a href="images/gen/prod-07.jpg" target="_blank" rel="noopener"><img src="images/gen/prod-07.jpg" alt="产品与商业" loading="lazy"></a>
+      <a href="images/gen/prod-08.jpg" target="_blank" rel="noopener"><img src="images/gen/prod-08.jpg" alt="产品与商业" loading="lazy"></a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="pf-wrap foot__row">
+    <span>吕森垚 · 2027 届 · 山西传媒学院</span>
+    <a href="index.html">返回作品集</a>
+  </div>
+</footer>
+
+</body>
+</html>
