@@ -73,8 +73,13 @@
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
     .nav{display:none !important;}
     .head{padding:0 0 var(--s-5) !important;}
-    .item{padding:var(--s-6) 0 0 !important;page-break-inside:avoid;}
-    .mats__grid img{break-inside:avoid;}
+    /* 一个条目含 6 张素材图，会比一页还高；不能整块 avoid，否则整条被丢弃 */
+    .item{padding:6mm 0 0 !important;}
+    .item img,.item video{max-height:112mm !important;width:auto !important;
+      max-width:100% !important;display:block;margin:0 auto !important;}
+    .mats{margin-top:5mm !important;}
+    .mats__grid{grid-template-columns:repeat(3,1fr) !important;gap:3mm !important;}
+    .mats__grid img{break-inside:avoid;max-height:none !important;width:100% !important;}
     .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
   }
 </style>

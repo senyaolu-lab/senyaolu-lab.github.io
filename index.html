@@ -149,13 +149,20 @@
     letter-spacing:.2em;text-transform:uppercase;color:var(--c-mute);
     font-weight:600;padding-top:.24em;
   }
+  .about__link{color:var(--c-ink);text-decoration:none;
+    border-bottom:1px solid var(--c-line);transition:border-color .3s var(--ease);}
+  .about__link:hover{border-color:var(--c-ink);}
 
   /* ================= 页脚 ================= */
   .foot{border-top:1px solid var(--c-line);padding:var(--s-10) 0 var(--s-8);}
   .foot__grid{display:flex;justify-content:space-between;gap:var(--s-8);flex-wrap:wrap;align-items:flex-end;}
   .foot__name{font-size:var(--t-h3);font-weight:900;letter-spacing:-.01em;}
   .foot__role{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
-    text-transform:uppercase;color:var(--c-mute);margin-top:8px;}
+    text-transform:uppercase;color:var(--c-mute);margin-top:8px;display:inline-block;}
+  .foot__web{text-transform:none;letter-spacing:.05em;font-size:12.5px;
+    color:var(--c-ink-2);text-decoration:none;border-bottom:1px solid var(--c-line);
+    padding-bottom:2px;transition:color .3s var(--ease),border-color .3s var(--ease);}
+  .foot__web:hover{color:var(--c-ink);border-color:var(--c-ink);}
   .foot__links{display:flex;gap:var(--s-6);flex-wrap:wrap;}
   .foot__links a{
     font-size:var(--t-small);color:var(--c-ink-3);text-decoration:none;
@@ -186,11 +193,33 @@
     @page{size:A4;margin:12mm;}
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
     .nav{display:none !important;}
-    .hero{padding:0 0 var(--s-6) !important;}
-    .pf-sec,.works{padding:var(--s-6) 0 !important;}
-    .work{page-break-inside:avoid;padding-top:var(--s-6);margin-top:var(--s-6);}
-    .work__media img{transition:none;}
-    .foot{padding:var(--s-6) 0 !important;}
+
+    /* A4 打印视口约 794px，会误触发 760/900px 的移动端断点，这里显式还原桌面栅格 */
+    .hero__grid{grid-template-columns:1fr 1fr !important;gap:10mm !important;align-items:start;}
+    .live__row{grid-template-columns:52mm 1fr !important;gap:7mm !important;
+      padding:4.5mm 0 !important;break-inside:avoid;align-items:center;}
+    .live__row:first-of-type{padding-top:0 !important;}
+    .live__row:last-of-type{margin-bottom:0 !important;}
+    .live__thumb img{aspect-ratio:4/3;}
+    .live__title{font-size:13pt !important;line-height:1.3 !important;}
+    .live__kicker{font-size:6.5pt !important;}
+    .live__desc{font-size:8pt !important;line-height:1.65 !important;margin-bottom:2mm !important;}
+    .live__go{font-size:8pt !important;}
+    .live__badge{font-size:6.5pt !important;padding:2px 6px !important;}
+
+    .work__head{grid-template-columns:auto 1fr auto !important;gap:6mm !important;}
+    .work__meta{grid-template-columns:52mm 1fr !important;gap:8mm !important;}
+    .about__list{grid-template-columns:1fr 1fr !important;}
+
+    .hero{padding:0 0 6mm !important;}
+    .hero__title{font-size:32pt !important;}
+    .pf-sec,.works{padding:6mm 0 !important;}
+    .work{page-break-inside:avoid;padding-top:6mm;margin-top:6mm;}
+    /* 竖图整宽会超过页高而被丢弃，这里限高并居中 */
+    .work__media{background:transparent !important;}
+    .work__media img{width:auto !important;max-width:100% !important;max-height:132mm !important;
+      display:block;margin:0 auto;transition:none;}
+    .foot{padding:6mm 0 !important;}
   }
 </style>
 </head>
@@ -447,6 +476,7 @@
         <li><span class="k">School</span><span>山西传媒学院</span></li>
         <li><span class="k">Year</span><span>2027 届应届</span></li>
         <li><span class="k">Email</span><span>【待填】</span></li>
+        <li><span class="k">Web</span><span><a href="https://senyaolu-lab.github.io/" target="_blank" rel="noopener" class="about__link">senyaolu-lab.github.io</a></span></li>
         <li><span class="k">Tools</span><span>主流 AIGC 工具 / Agent 辅助 / 相关专业软件</span></li>
       </ul>
     </div>
@@ -459,7 +489,7 @@
     <div class="foot__grid">
       <div>
         <div class="foot__name">吕森垚 · 作品集 2027</div>
-        <div class="foot__role">Brand Visual · IP Design · Motion</div>
+        <a class="foot__role foot__web" href="https://senyaolu-lab.github.io/" target="_blank" rel="noopener">senyaolu-lab.github.io</a>
       </div>
       <div class="foot__links">
         <a href="hisense.html">Hisense</a>
