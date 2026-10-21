@@ -38,7 +38,12 @@
 
   /* ================= 首屏 ================= */
   .hero{padding:calc(var(--pad-sec) * 1.5) 0 var(--pad-sec);}
-  .hero__label{margin-bottom:var(--s-8);}
+  .hero__label{margin-bottom:var(--s-8);display:flex;align-items:baseline;
+    justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;}
+  .hero__web{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.08em;
+    color:var(--c-ink-2);text-decoration:none;border-bottom:1px solid var(--c-line);
+    padding-bottom:2px;transition:color .3s var(--ease),border-color .3s var(--ease);}
+  .hero__web:hover{color:var(--c-ink);border-color:var(--c-ink);}
   .hero__title{
     font-size:var(--t-display);line-height:.98;letter-spacing:-.035em;font-weight:900;
     margin:0 0 var(--s-7);
@@ -240,7 +245,10 @@
 
 <!-- ================= 首屏 ================= -->
 <header class="hero pf-wrap">
-  <div class="pf-label hero__label">Portfolio 2027</div>
+  <div class="hero__label">
+    <div class="pf-label">Portfolio 2027</div>
+    <a class="hero__web" href="https://senyaolu-lab.github.io/" target="_blank" rel="noopener">senyaolu-lab.github.io</a>
+  </div>
   <h1 class="hero__title">吕森垚<br><span class="dim">视觉设计</span></h1>
 
   <div class="hero__grid">
