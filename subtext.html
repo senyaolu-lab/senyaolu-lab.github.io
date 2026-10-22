@@ -190,19 +190,19 @@
     </div>
 
     <p class="sec__lead" style="margin-bottom:var(--s-6);">
-      为什么不全交给大模型——页面上直接回答了这个问题:成本(每次解码 3 次调用不可承受)、
-      延迟(用户是吵架或开会现场打开,&gt;2 秒就退出)、可解释(规则命中能列依据,黑盒不能)、
-      降级(模型挂了产品不裸奔)。
+      不全交给大模型是算过账的:每次解码 3 次调用,成本扛不住;
+      用户多在吵架或开会现场打开,&gt;2 秒就退出;规则命中能列依据,黑盒不能;
+      模型不可用时,规则库仍能给出 70 分的答案。
     </p>
 
     <div class="row2">
       <figure>
         <div class="phone"><img src="images/hlyh/hlyh-lab.jpg" alt="AI 实验室"></div>
-        <figcaption><b>AI 实验室</b>双引擎架构与四条取舍,直接把产品经理视角摊开给评委看</figcaption>
+        <figcaption><b>AI 实验室</b>双引擎架构、四条取舍与可编辑的 Prompt</figcaption>
       </figure>
       <figure>
         <div class="phone"><img src="images/hlyh/hlyh-prompt.jpg" alt="Prompt 卡片"></div>
-        <figcaption><b>Prompt 卡片</b>三个角色的真实 Prompt 全部公开可查,包括约束与反例</figcaption>
+        <figcaption><b>Prompt 卡片</b>三个角色的 Prompt 全部公开,包括约束与反例</figcaption>
       </figure>
     </div>
   </section>
@@ -211,8 +211,9 @@
   <section class="sec">
     <div class="pf-label">评测与护栏</div>
     <p class="sec__lead">
-      <b>AI 产品的核心不是模型,是评测。</b>内置 41 条人工标注数据,点一下就在本地真跑一遍,
-      不是截图。而这个产品里,<b>误报比漏判更致命</b>——把寒暄解读成敌意,会让用户不再相信任何关系。
+      <b>AI 产品的核心不是模型,是评测。</b>41 条人工标注数据内置在原型里,点击即在本机跑完,
+      输出总体准确率、误报率与分层召回。这个品类里,<b>误报比漏判更致命</b>——
+      把寒暄解读成敌意,会让用户不再相信任何关系。
     </p>
 
     <div class="kpis">
@@ -225,7 +226,7 @@
     <div class="row2">
       <figure>
         <div class="phone"><img src="images/hlyh/hlyh-eval.jpg" alt="评测集"></div>
-        <figcaption><b>评测集 Eval</b>41 条金标数据本地真跑,输出准确率、误报率与分层召回</figcaption>
+        <figcaption><b>评测集 Eval</b>41 条金标数据,输出准确率、误报率与分层召回</figcaption>
       </figure>
       <figure>
         <div class="phone"><img src="images/hlyh/hlyh-guard.jpg" alt="护栏"></div>
