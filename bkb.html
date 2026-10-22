@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLACK KING BAR · BKB 品牌识别</title>
+<link rel="stylesheet" href="portfolio.css">
+<style>
+  body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
+
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px var(--pad-x);
+    background:rgba(251,250,247,.82);
+    backdrop-filter:blur(18px) saturate(160%);
+    border-bottom:1px solid var(--c-line-soft);
+  }
+  .nav__back{font-size:var(--t-small);color:var(--c-ink-3);text-decoration:none;transition:color .3s var(--ease);}
+  .nav__back:hover{color:var(--c-ink);}
+  .nav__id{font-size:13.5px;font-weight:700;letter-spacing:.02em;}
+
+  .head{padding:calc(var(--pad-sec) * 1.25) 0 var(--s-7);}
+  .head__badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
+    text-transform:uppercase;font-weight:700;color:var(--c-ink);
+    border:1px solid var(--c-ink);border-radius:999px;padding:7px 16px;margin-bottom:var(--s-6);
+  }
+  .head__badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-ink);}
+  .head__title{font-size:var(--t-h1);line-height:1.02;letter-spacing:-.03em;font-weight:900;margin:0 0 var(--s-4);}
+  .head__title .dim{display:block;color:var(--c-mute);font-weight:300;font-size:.46em;
+    letter-spacing:.01em;margin-top:.22em;}
+  .head__sub{font-size:var(--t-lead);color:var(--c-ink-2);max-width:58ch;line-height:1.8;margin:0;}
+
+  .meta{display:flex;flex-wrap:wrap;gap:var(--s-5) var(--s-7);
+    padding:var(--s-5) 0;margin:var(--s-7) 0 0;
+    border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line);}
+  .meta div{display:flex;flex-direction:column;gap:4px;}
+  .meta dt{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.2em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+  .meta dd{margin:0;font-size:var(--t-small);color:var(--c-ink-2);}
+
+  .sec{padding:var(--pad-sec) 0 0;}
+  .sec__lead{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.9;
+    margin:0 0 var(--s-6);max-width:62ch;}
+  .sec__lead b{color:var(--c-ink);font-weight:800;}
+
+  /* 深色展台 */
+  .stage{background:#0C0A08;border:1px solid var(--c-line);}
+  .stage img{width:100%;display:block;}
+  .stage--pad{padding:clamp(12px,3vw,36px);}
+
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .g2 figure{margin:0;}
+  .g2 figcaption{margin-top:9px;font-size:var(--t-cap);color:var(--c-mute);
+    letter-spacing:.04em;line-height:1.6;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  .g2 figcaption b{font-family:var(--font-lat);font-weight:700;color:var(--c-ink-2);}
+
+  /* 口号 */
+  .creed{background:#0C0A08;border:1px solid var(--c-line);
+    padding:clamp(28px,6vw,72px) clamp(20px,5vw,56px);text-align:center;}
+  .creed p{margin:0;font-family:var(--font-lat);font-weight:700;color:#E9C87A;
+    font-size:clamp(19px,3.1vw,34px);letter-spacing:.06em;line-height:1.5;}
+  .creed p span{display:block;color:#8C8578;font-weight:400;font-size:.5em;
+    letter-spacing:.22em;margin-top:.5em;}
+
+  .note{background:var(--c-surface);border:1px solid var(--c-line);border-left:3px solid var(--c-ink);
+    padding:var(--s-6) var(--s-7);margin-top:var(--s-6);}
+  .note p{margin:0;font-size:var(--t-small);line-height:2;color:var(--c-ink-2);}
+  .note b{color:var(--c-ink);font-weight:800;}
+
+  .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
+  .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
+    font-size:var(--t-cap);color:var(--c-mute);}
+  .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
+  .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
+
+  @media (max-width:760px){ .g2{grid-template-columns:1fr;} }
+  @media print{
+    @page{size:A4;margin:12mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    img,figure,table,blockquote{break-inside:avoid !important;}
+    .nav{display:none !important;}
+    .head{padding:0 0 var(--s-5) !important;}
+    .sec{padding:var(--s-6) 0 0 !important;}
+    .stage,.g2 figure,.creed{break-inside:avoid;}
+    .g2{gap:3mm !important;}
+    .creed p{font-size:15pt !important;}
+    .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
+  }
+</style>
+</head>
+<body class="pf">
+
+<nav class="nav">
+  <a class="nav__back" href="index.html">← 返回作品集</a>
+  <div class="nav__id">BLACK KING BAR · BKB</div>
+</nav>
+
+<header class="head pf-wrap">
+  <div class="head__badge">自主项目 · 品牌识别</div>
+  <h1 class="head__title">BLACK KING BAR<span class="dim">BKB · 粉丝战队品牌识别 / 推定设计</span></h1>
+  <p class="head__sub">
+    为 DOTA 2 假想战队做的成套品牌识别。名字取自游戏里的黑皇杖——
+    一件让英雄免疫所有法术的装备。整个标识就建立在这句话上:
+    <b>法术会破,王不会。</b>
+  </p>
+
+  <dl class="meta">
+    <div><dt>Type</dt><dd>品牌识别 · 推定设计</dd></div>
+    <div><dt>Source</dt><dd>DOTA 2 / Black King Bar</dd></div>
+    <div><dt>System</dt><dd>十二等分几何 · 黑曜石与金</dd></div>
+    <div><dt>Type</dt><dd>Cinzel Black</dd></div>
+    <div><dt>Applications</dt><dd>队服 / 直播 / 横幅 / 头像</dd></div>
+  </dl>
+</header>
+
+<main class="pf-wrap">
+
+  <!-- 01 概念 -->
+  <section class="sec">
+    <div class="pf-label">01 · 概念</div>
+    <p class="sec__lead">
+      黑皇杖在游戏里的作用是<b>短暂免疫一切法术</b>。所以标识的核心不是「王冠好看」,
+      而是把「不受影响」这件事画出来:一顶冠冕扣在骑士头盔上,一条黑带横过面部,
+      正中的宝石就是那件装备本身。冠冕宣示身份,黑带宣告免疫。
+    </p>
+
+    <div class="creed">
+      <p>SPELLS BREAK.<br>THE KING DOES NOT.<span>法术会破,王不会</span></p>
+    </div>
+
+    <div style="padding-top:16px;">
+      <div class="stage">
+        <img src="images/bkb/bkb-showcase.jpg" alt="BKB 主标识与字标">
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 标志 -->
+  <section class="sec">
+    <div class="pf-label">02 · 标志</div>
+    <p class="sec__lead">
+      一个母标,拆出三个能独立使用的形态:横版组合、纯徽记、方版头像。
+      徽记在 16px 下仍然认得出冠冕与黑带的对比关系。
+    </p>
+
+    <div class="stage stage--pad">
+      <img src="images/bkb/bkb-horizontal.jpg" alt="BKB 横版组合">
+    </div>
+
+    <div class="g2" style="margin-top:16px;">
+      <figure>
+        <div class="stage stage--pad"><img src="images/bkb/bkb-icon.jpg" alt="BKB 徽记"></div>
+        <figcaption><b>MARK</b>徽记单独使用</figcaption>
+      </figure>
+      <figure>
+        <div class="stage stage--pad"><img src="images/bkb/bkb-avatar.jpg" alt="BKB 头像"></div>
+        <figcaption><b>AVATAR</b>社媒方版头像</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 03 系统 -->
+  <section class="sec">
+    <div class="pf-label">03 · 系统</div>
+    <p class="sec__lead">
+      徽记建立在一套<b>十二等分几何</b>上——外环、冠冕、黑带、宝石都落在同一组辅助线上,
+      换尺寸或换介质时不会走形。配色只有黑曜石与金,加一颗红宝石做唯一的高饱和点;
+      字标用 Cinzel Black,衬线带雕刻感,与金质的质感对得上。
+    </p>
+    <div class="stage stage--pad">
+      <img src="images/bkb/bkb-system.jpg" alt="BKB 识别系统">
+    </div>
+  </section>
+
+  <!-- 04 应用 -->
+  <section class="sec">
+    <div class="pf-label">04 · 应用</div>
+    <p class="sec__lead">
+      落到真实的使用场景:队服上的织唛、直播界面里的角标与比分条、赛事横幅。
+      金在黑底上的发光边缘要压得住，否则一上直播就会糊。
+    </p>
+    <div class="stage stage--pad">
+      <img src="images/bkb/bkb-apps.jpg" alt="BKB 应用">
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="pf-wrap foot__row">
+    <span>吕森垚 · 2027 届 · 山西传媒学院</span>
+    <a href="index.html">返回作品集</a>
+  </div>
+</footer>
+
+</body>
+</html>
