@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 创新 UI 设计 · 三个产品界面</title>
+<link rel="stylesheet" href="portfolio.css">
+<style>
+  body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
+
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px var(--pad-x);
+    background:rgba(251,250,247,.82);
+    backdrop-filter:blur(18px) saturate(160%);
+    border-bottom:1px solid var(--c-line-soft);
+  }
+  .nav__back{font-size:var(--t-small);color:var(--c-ink-3);text-decoration:none;transition:color .3s var(--ease);}
+  .nav__back:hover{color:var(--c-ink);}
+  .nav__id{font-size:13.5px;font-weight:700;letter-spacing:.02em;}
+
+  .head{padding:calc(var(--pad-sec) * 1.25) 0 var(--s-7);}
+  .head__badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
+    text-transform:uppercase;font-weight:700;color:var(--c-ink);
+    border:1px solid var(--c-ink);border-radius:999px;padding:7px 16px;margin-bottom:var(--s-6);
+  }
+  .head__badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-ink);}
+  .head__title{font-size:var(--t-h1);line-height:1.04;letter-spacing:-.03em;font-weight:900;margin:0 0 var(--s-4);}
+  .head__title .dim{display:block;color:var(--c-mute);font-weight:300;font-size:.48em;margin-top:.2em;}
+  .head__sub{font-size:var(--t-lead);color:var(--c-ink-2);max-width:58ch;line-height:1.8;margin:0;}
+
+  .meta{display:flex;flex-wrap:wrap;gap:var(--s-5) var(--s-7);
+    padding:var(--s-5) 0;margin:var(--s-7) 0 0;
+    border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line);}
+  .meta div{display:flex;flex-direction:column;gap:4px;}
+  .meta dt{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.2em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+  .meta dd{margin:0;font-size:var(--t-small);color:var(--c-ink-2);}
+
+  .sec{padding:var(--pad-sec) 0 0;}
+  .sec__lead{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.9;
+    margin:0 0 var(--s-6);max-width:62ch;}
+  .sec__lead b{color:var(--c-ink);font-weight:800;}
+
+  /* 深色展台 */
+  .stage{background:#070708;border:1px solid var(--c-line);}
+  .stage img{width:100%;display:block;}
+
+  /* 单项目 */
+  .pj{padding:var(--pad-sec) 0 0;}
+  .pj__hd{display:flex;align-items:baseline;gap:var(--s-5);flex-wrap:wrap;
+    padding-bottom:var(--s-4);border-bottom:1px solid var(--c-line);margin-bottom:var(--s-5);}
+  .pj__no{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.24em;
+    color:var(--c-mute);font-weight:700;}
+  .pj__t{font-size:var(--t-h2);font-weight:900;letter-spacing:-.022em;margin:0;}
+  .pj__t .dim{color:var(--c-mute);font-weight:300;}
+  .pj__tag{margin-left:auto;font-family:var(--font-lat);font-size:var(--t-micro);
+    letter-spacing:.16em;text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+  .pj__d{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.9;margin:0 0 var(--s-5);max-width:62ch;}
+  .pj__d b{color:var(--c-ink);font-weight:800;}
+
+  /* 系统 */
+  .sys{border-top:1px solid var(--c-line);}
+  .sys__row{display:grid;grid-template-columns:130px 1fr;gap:var(--s-5);
+    padding:var(--s-5) 0;border-bottom:1px solid var(--c-line-soft);align-items:start;}
+  .sys__k{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.16em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:700;padding-top:3px;}
+  .sys__v{font-size:var(--t-small);color:var(--c-ink-2);line-height:1.85;margin:0;}
+  .sys__v b{color:var(--c-ink);font-weight:800;}
+  .swatch{display:inline-flex;align-items:center;gap:8px;margin-right:18px;}
+  .swatch i{display:inline-block;width:13px;height:13px;border-radius:2px;
+    border:1px solid rgba(0,0,0,.12);vertical-align:-2px;}
+
+  .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
+  .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
+    font-size:var(--t-cap);color:var(--c-mute);}
+  .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
+  .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
+
+  @media (max-width:760px){ .sys__row{grid-template-columns:1fr;gap:5px;} }
+  @media print{
+    @page{size:A4;margin:12mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    img,figure,table,blockquote{break-inside:avoid !important;}
+    .nav{display:none !important;}
+    .head{padding:0 0 var(--s-5) !important;}
+    .sec,.pj{padding:var(--s-6) 0 0 !important;}
+    .stage{break-inside:avoid;}
+    .pj__hd{break-after:avoid;}
+    .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
+  }
+</style>
+</head>
+<body class="pf">
+
+<nav class="nav">
+  <a class="nav__back" href="index.html">← 返回作品集</a>
+  <div class="nav__id">AI UI · 三个产品界面</div>
+</nav>
+
+<header class="head pf-wrap">
+  <div class="head__badge">个人创作 · UI 设计</div>
+  <h1 class="head__title">为智能时代,<br>设计会思考的界面。<span class="dim">AI 产品界面设计 · 三个研究方向</span></h1>
+  <p class="head__sub">
+    三个 AI 产品的界面设计，从对话式助手、数据洞察到生成式创作工作台，
+    覆盖移动端与桌面端。同一套视觉系统贯穿三个产品：<b>近黑底、单一信号色、发丝线分区</b>。
+  </p>
+
+  <dl class="meta">
+    <div><dt>Projects</dt><dd>03 个</dd></div>
+    <div><dt>Screens</dt><dd>05 个界面</dd></div>
+    <div><dt>Platforms</dt><dd>移动端 · 桌面端</dd></div>
+    <div><dt>Role</dt><dd>主设计师 · UI / 视觉</dd></div>
+    <div><dt>Tool</dt><dd>workbuddy</dd></div>
+  </dl>
+</header>
+
+<main class="pf-wrap">
+
+  <!-- 01 灵屿 -->
+  <section class="pj">
+    <div class="pj__hd">
+      <span class="pj__no">01</span>
+      <h2 class="pj__t">灵屿 LingYu <span class="dim">· AI 对话助手</span></h2>
+      <span class="pj__tag">iOS 移动端 · 对话式 AI · 2026</span>
+    </div>
+    <p class="pj__d">
+      一款以「灵感沉淀」为核心的对话式 AI 应用。设计上刻意避开聊天软件的泡泡感:
+      AI 的回答用<b>输出式排版</b>呈现——标题、小节、列表分好层级,读起来像一份被编好的文档;
+      紫色只出现在与智能相关的位置,其余交给层级灰。
+    </p>
+    <div class="stage"><img src="images/ui/ui-lingyu.jpg" alt="灵屿 LingYu · AI 对话助手"></div>
+  </section>
+
+  <!-- 02 观星 -->
+  <section class="pj">
+    <div class="pj__hd">
+      <span class="pj__no">02</span>
+      <h2 class="pj__t">观星 Observe <span class="dim">· AI 数据洞察平台</span></h2>
+      <span class="pj__tag">Web 桌面端 · 数据可视化</span>
+    </div>
+    <p class="pj__d">
+      面向增长团队的数据看板。AI 自动归因异常波动,把<b>「看数据」变成「读结论」</b>——
+      除了常规的趋势与排名,右侧多一块「AI 智能洞察」,直接给出原因假设与可执行建议。
+      视觉延续暗色系谱,用发丝线与层级灰代替厚重卡片阴影。
+    </p>
+    <div class="stage"><img src="images/ui/ui-observe.jpg" alt="观星 Observe · AI 数据洞察平台"></div>
+  </section>
+
+  <!-- 03 Nebula -->
+  <section class="pj">
+    <div class="pj__hd">
+      <span class="pj__no">03</span>
+      <h2 class="pj__t">Nebula <span class="dim">· AI 生成式创作工作台</span></h2>
+      <span class="pj__tag">macOS 桌面端 · 多模态生成</span>
+    </div>
+    <p class="pj__d">
+      为设计师打造的生成式工作台。<b>三栏结构</b>把对话、生成参数与产物预览放在同一屏:
+      左边是会话与历史,中间是对话与流式输出,右边是实时预览。
+      生成结果不包成聊天泡泡,而是直接摊开参数与产物,<b>让输出像「作品」而非「聊天」</b>。
+    </p>
+    <div class="stage"><img src="images/ui/ui-nebula.jpg" alt="Nebula · AI 生成式创作工作台"></div>
+  </section>
+
+  <!-- 视觉系统 -->
+  <section class="sec">
+    <div class="pf-label">视觉系统</div>
+    <p class="sec__lead">
+      三个产品共用一套变量。底色压到近黑，让界面本身退到后面；
+      紫色作为唯一信号色，只标记「这是 AI 在说话」的位置，其余全部交给灰度层级。
+    </p>
+    <div class="sys">
+      <div class="sys__row">
+        <div class="sys__k">底色</div>
+        <p class="sys__v"><span class="swatch"><i style="background:#070708"></i>#070708</span> 近黑,不纯黑——留一点余地方便分辨层级。</p>
+      </div>
+      <div class="sys__row">
+        <div class="sys__k">信号色</div>
+        <p class="sys__v"><span class="swatch"><i style="background:#9333EA"></i>#9333EA</span> 唯一的高饱和色,只用于智能相关元素:AI 消息、生成按钮、当前状态。</p>
+      </div>
+      <div class="sys__row">
+        <div class="sys__k">字体</div>
+        <p class="sys__v"><b>Inter</b>（数字与西文）· <b>Noto Sans SC</b>（中文）· <b>JetBrains Mono</b>（标签与参数）。</p>
+      </div>
+      <div class="sys__row">
+        <div class="sys__k">分隔</div>
+        <p class="sys__v"><b>1px 发丝线</b>代替卡片阴影,配合编辑档案式的排版节奏。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="pf-wrap foot__row">
+    <span>吕森垚 · 2027 届 · 山西传媒学院</span>
+    <a href="index.html">返回作品集</a>
+  </div>
+</footer>
+
+</body>
+</html>
