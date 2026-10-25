@@ -23,10 +23,10 @@ function updateProjects() {
     card.hidden = !visible;
     if (visible) shown++;
   });
-  $('.result-count').textContent = `SHOWING ${String(shown).padStart(2, '0')} / 16`;
+  $('.result-count').textContent = `SHOWING ${String(shown).padStart(2, '0')} / ${cards.length}`;
   more.hidden = category !== 'all';
   more.style.display = category === 'all' ? '' : 'none';
-  more.innerHTML = expanded ? '收起项目 <span>↑</span>' : '展开全部 16 个项目 <span>↓</span>';
+  more.innerHTML = expanded ? '收起项目 <span>↑</span>' : `展开全部 ${cards.length} 个项目 <span>↓</span>`;
   more.setAttribute('aria-expanded', String(expanded));
 }
 $$('[data-filter]').forEach(button => button.addEventListener('click', () => {
