@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>山海志 · 品牌动态演绎 MOTION</title>
-<link rel="stylesheet" href="portfolio.css">
+<link href="portfolio.css" rel="stylesheet"/>
 <style>
   :root{
     --ink:#14191E; --ink2:#1B2228; --gold:#C8952F; --gold-b:#D9A93F;
@@ -200,199 +201,169 @@
       .spec th{width:32mm !important;}
       footer{padding:6mm 0 !important;page-break-before:avoid;}
     }</style>
-</head>
-<body>
-
-<nav>
-  <div style="display:flex;align-items:center;gap:22px;">
-    <a class="back" href="index.html">← 作品集</a>
-    <div class="brand">山海志<span>MOTION</span></div>
-  </div>
-  <div class="nav-links">
-    <a href="#logo">Logo 演绎</a>
-    <a href="#film">品牌理念片</a>
-    <a href="#concept">创作理念</a>
-    <a href="#showcase">产品动态</a>
-    <a href="#spec">规范</a>
-  </div>
-</nav>
-
+<link href="case-theme.css" rel="stylesheet"/><link href="favicon.svg" rel="icon" type="image/svg+xml"/><script defer="" src="case.js"></script></head>
+<body class="case-page">
+<nav class="nav"><a class="nav__back" href="index.html#work">↖ 全部作品</a><a class="case-brand" href="index.html">SENYAO<span>®</span></a><a aria-label="切换到游戏策划作品集" class="portfolio-switch" href="https://senyaolu-lab.github.io/portfolio/">游戏作品集 ↗</a></nav>
 <!-- ========== 首屏：视频背景，播完定格 ========== -->
 <header class="hero">
-  <video class="hero-bg" id="heroVid" src="images/shanhai/clip-4-hero.mp4" autoplay muted playsinline preload="auto"></video>
-  <div class="hero-veil"></div>
-  <div class="hero-inner">
-    <div class="hero-label">PROJECT 03 · 品牌动态演绎</div>
-    <h1 class="hero-title">让山海活过来</h1>
-    <div class="hero-en">M O T I O N &nbsp; I D E N T I T Y</div>
-    <p class="hero-sub">把静态的品牌视觉系统，延展到时间维度</p>
-  </div>
+<video class="hero-bg" controls="" id="heroVid" muted="" playsinline="" preload="none" src="https://senyaolu-lab.github.io/images/shanhai/clip-4-hero.mp4"></video>
+<div class="hero-veil"></div>
+<div class="hero-inner">
+<div class="hero-label">PROJECT 03 · 品牌动态演绎</div>
+<h1 class="hero-title">让山海活过来</h1>
+<div class="hero-en">M O T I O N   I D E N T I T Y</div>
+<p class="hero-sub">把静态的品牌视觉系统，延展到时间维度</p>
+</div>
 </header>
-
 <!-- ========== 01 Logo 动态演绎 ========== -->
 <section id="logo">
-  <div class="sec-label">01 · LOGO MOTION</div>
-  <h2 class="sec-title">Logo 动态演绎</h2>
-  <div class="prose" style="margin-bottom:32px;">
-    <p>月山图腾的「生长」：<strong>金环画出 → 满月浮现 → 群山升起 → 字标浮现 → 朱砂落印</strong>。全程从一片纯黑开始，到 Logo 完整呈现。</p>
-    <p style="font-size:13.5px;color:var(--moon-dim);">以 SVG + CSS 实现，网页内实时渲染，无需视频文件。</p>
-  </div>
-
-  <div class="stage play" id="stage">
-    <svg class="logo-svg" viewBox="0 0 400 400" aria-label="月山图腾">
-      <circle class="ring" cx="200" cy="200" r="168"></circle>
-      <circle class="moon" cx="200" cy="200" r="126"></circle>
-      <g class="mtn">
-        <path d="M118,285 L152,206 L174,246 L200,180 L226,246 L248,206 L282,285 Z"></path>
-        <rect x="118" y="285" width="164" height="10"></rect>
-      </g>
-    </svg>
-    <div class="lockup">
-      <div class="name">山海志</div>
-      <div class="seal">志</div>
-    </div>
-    <div class="stage-en">S H A N H A I &nbsp; Z H I</div>
-  </div>
-
-  <div style="text-align:center;margin-bottom:10px;">
-    <button class="replay" id="replay">↻ 重播动画</button>
-  </div>
-
-  <div class="timeline">
-    <div class="tl"><div class="t">0.0–0.3s</div><div class="d"><strong style="color:var(--moon);font-weight:400;">纯黑场</strong> —— 画面上什么都没有</div></div>
-    <div class="tl"><div class="t">0.3–1.3s</div><div class="d">赤金外环顺时针画出（stroke 描边）</div></div>
-    <div class="tl"><div class="t">0.7–1.5s</div><div class="d">赤金满月自中心放大浮现</div></div>
-    <div class="tl"><div class="t">1.4–2.2s</div><div class="d">玄墨群山自底部升起</div></div>
-    <div class="tl"><div class="t">2.2–3.1s</div><div class="d">「山海志」字标浮现，字距由紧到松</div></div>
-    <div class="tl"><div class="t">3.0–3.6s</div><div class="d">朱砂「志」印落下（带回弹）</div></div>
-    <div class="tl"><div class="t">3.6s 后</div><div class="d">Logo 完整呈现，定格</div></div>
-  </div>
+<div class="sec-label">01 · LOGO MOTION</div>
+<h2 class="sec-title">Logo 动态演绎</h2>
+<div class="prose" style="margin-bottom:32px;">
+<p>月山图腾的「生长」：<strong>金环画出 → 满月浮现 → 群山升起 → 字标浮现 → 朱砂落印</strong>。全程从一片纯黑开始，到 Logo 完整呈现。</p>
+<p style="font-size:13.5px;color:var(--moon-dim);">以 SVG + CSS 实现，网页内实时渲染，无需视频文件。</p>
+</div>
+<div class="stage play" id="stage">
+<svg aria-label="月山图腾" class="logo-svg" viewbox="0 0 400 400">
+<circle class="ring" cx="200" cy="200" r="168"></circle>
+<circle class="moon" cx="200" cy="200" r="126"></circle>
+<g class="mtn">
+<path d="M118,285 L152,206 L174,246 L200,180 L226,246 L248,206 L282,285 Z"></path>
+<rect height="10" width="164" x="118" y="285"></rect>
+</g>
+</svg>
+<div class="lockup">
+<div class="name">山海志</div>
+<div class="seal">志</div>
+</div>
+<div class="stage-en">S H A N H A I   Z H I</div>
+</div>
+<div style="text-align:center;margin-bottom:10px;">
+<button class="replay" id="replay">↻ 重播动画</button>
+</div>
+<div class="timeline">
+<div class="tl"><div class="t">0.0–0.3s</div><div class="d"><strong style="color:var(--moon);font-weight:400;">纯黑场</strong> —— 画面上什么都没有</div></div>
+<div class="tl"><div class="t">0.3–1.3s</div><div class="d">赤金外环顺时针画出（stroke 描边）</div></div>
+<div class="tl"><div class="t">0.7–1.5s</div><div class="d">赤金满月自中心放大浮现</div></div>
+<div class="tl"><div class="t">1.4–2.2s</div><div class="d">玄墨群山自底部升起</div></div>
+<div class="tl"><div class="t">2.2–3.1s</div><div class="d">「山海志」字标浮现，字距由紧到松</div></div>
+<div class="tl"><div class="t">3.0–3.6s</div><div class="d">朱砂「志」印落下（带回弹）</div></div>
+<div class="tl"><div class="t">3.6s 后</div><div class="d">Logo 完整呈现，定格</div></div>
+</div>
 </section>
-
 <!-- ========== 02 品牌理念片 ========== -->
 <section id="film">
-  <div class="sec-label">02 · BRAND FILM</div>
-  <h2 class="sec-title">品牌理念片 · 20 秒</h2>
-  <div class="prose" style="margin-bottom:36px;">
-    <p>一支表达品牌理念的短片：<strong>一本《山海经》典藏巨著被侧光点亮 → 书页翻开露出金碧山水巨龙 → 画中金粉溢出、凝成云雾落入玄墨杯 → 一切收拢为月山图腾</strong>。</p>
-    <p style="font-size:13.5px;color:var(--moon-dim);">一镜到底 · 20 秒 · 单一侧光 · 画面由 AIGC 生成。含音效设计，点击播放。</p>
-  </div>
-
-  <div class="film-box" id="filmBox">
-    <video id="brandFilm" src="images/shanhai/film-brand.mp4" poster="images/shanhai/film-poster.jpg" preload="metadata" playsinline></video>
-    <button class="film-play" id="filmPlay"><i>▶</i> 播放理念片（含音效）</button>
-  </div>
-
-  <div class="film-caption">
-    <div class="t">20 秒 · 16:9 · 一镜到底 · 单一侧光 · 含音效设计</div>
-    <button class="replay" id="filmReplay">↻ 重播</button>
-  </div>
+<div class="sec-label">02 · BRAND FILM</div>
+<h2 class="sec-title">品牌理念片 · 20 秒</h2>
+<div class="prose" style="margin-bottom:36px;">
+<p>一支表达品牌理念的短片：<strong>一本《山海经》典藏巨著被侧光点亮 → 书页翻开露出金碧山水巨龙 → 画中金粉溢出、凝成云雾落入玄墨杯 → 一切收拢为月山图腾</strong>。</p>
+<p style="font-size:13.5px;color:var(--moon-dim);">一镜到底 · 20 秒 · 单一侧光 · 画面由 AIGC 生成。含音效设计，点击播放。</p>
+</div>
+<div class="film-box" id="filmBox">
+<video controls="" id="brandFilm" playsinline="" poster="images/shanhai/film-poster.webp" preload="none" src="https://senyaolu-lab.github.io/images/shanhai/film-brand.mp4"></video>
+<button class="film-play" id="filmPlay"><i>▶</i> 播放理念片（含音效）</button>
+</div>
+<div class="film-caption">
+<div class="t">20 秒 · 16:9 · 一镜到底 · 单一侧光 · 含音效设计</div>
+<button class="replay" id="filmReplay">↻ 重播</button>
+</div>
 </section>
-
 <!-- ========== 03 创作理念 ========== -->
 <section id="concept">
-  <div class="sec-label">03 · CONCEPT</div>
-  <h2 class="sec-title">创作理念</h2>
-
-  <div class="quote">
-    三千年前，有人把想象写进了《山海》。<br>
+<div class="sec-label">03 · CONCEPT</div>
+<h2 class="sec-title">创作理念</h2>
+<div class="quote">
+    三千年前，有人把想象写进了《山海》。<br/>
     今天，我们把它煮进了一杯茶。
   </div>
-
-  <div class="notes">
-    <div class="nc">
-      <div class="k">01</div>
-      <h3>为什么从一本书开始</h3>
-      <p>《山海经》不是怪书，是中国人最早的想象力。用一本典藏巨著作为全片起点，是为了把「品牌从哪里来」讲清楚——山海志不是凭空造出来的，它有三千年可以追溯的来处。</p>
-    </div>
-    <div class="nc">
-      <div class="k">02</div>
-      <h3>为什么是镂空月洞</h3>
-      <p>封面中央镂空一轮满月，月光处透出内页的赤金山水。意境从「透」里出来，而不是从「雕」里出来——这是东方美学「虚实相生」的当代转译，也是整支片子最核心的设计动作。</p>
-    </div>
-    <div class="nc">
-      <div class="k">03</div>
-      <h3>为什么是金粉落入茶杯</h3>
-      <p>画中的金粉溢出纸面、凝成云雾、落入杯中——这一步是全片的题眼。它把「读」变成了「喝」，把远古和当下接在了一起。品牌的 slogan「喝下远古」，在这里被翻译成了一个可以被看见的动作。</p>
-    </div>
-    <div class="nc">
-      <div class="k">04</div>
-      <h3>为什么只用一束光</h3>
-      <p>全片只有来自右上 45° 的单一硬质侧光。单一光源让封面每一处浮雕、烫金、压凹都产生真实的明暗关系，也让画面保持克制——<strong style="color:var(--gold-b);font-weight:400;">华丽不等于喧闹</strong>。</p>
-    </div>
-  </div>
-
-  <div class="craft">
-    <div class="cf"><div class="n">镂空</div><div class="d">月洞透光，意境从「透」中生出</div></div>
-    <div class="cf"><div class="n">烫金</div><div class="d">只在侧光下才显出金色的克制</div></div>
-    <div class="cf"><div class="n">压凹</div><div class="d">流云纹浅到几乎看不见，需侧光才浮现</div></div>
-    <div class="cf"><div class="n">金碧山水</div><div class="d">石青石绿打底、泥金勾线，中国最华丽的绘画语言</div></div>
-  </div>
+<div class="notes">
+<div class="nc">
+<div class="k">01</div>
+<h3>为什么从一本书开始</h3>
+<p>《山海经》不是怪书，是中国人最早的想象力。用一本典藏巨著作为全片起点，是为了把「品牌从哪里来」讲清楚——山海志不是凭空造出来的，它有三千年可以追溯的来处。</p>
+</div>
+<div class="nc">
+<div class="k">02</div>
+<h3>为什么是镂空月洞</h3>
+<p>封面中央镂空一轮满月，月光处透出内页的赤金山水。意境从「透」里出来，而不是从「雕」里出来——这是东方美学「虚实相生」的当代转译，也是整支片子最核心的设计动作。</p>
+</div>
+<div class="nc">
+<div class="k">03</div>
+<h3>为什么是金粉落入茶杯</h3>
+<p>画中的金粉溢出纸面、凝成云雾、落入杯中——这一步是全片的题眼。它把「读」变成了「喝」，把远古和当下接在了一起。品牌的 slogan「喝下远古」，在这里被翻译成了一个可以被看见的动作。</p>
+</div>
+<div class="nc">
+<div class="k">04</div>
+<h3>为什么只用一束光</h3>
+<p>全片只有来自右上 45° 的单一硬质侧光。单一光源让封面每一处浮雕、烫金、压凹都产生真实的明暗关系，也让画面保持克制——<strong style="color:var(--gold-b);font-weight:400;">华丽不等于喧闹</strong>。</p>
+</div>
+</div>
+<div class="craft">
+<div class="cf"><div class="n">镂空</div><div class="d">月洞透光，意境从「透」中生出</div></div>
+<div class="cf"><div class="n">烫金</div><div class="d">只在侧光下才显出金色的克制</div></div>
+<div class="cf"><div class="n">压凹</div><div class="d">流云纹浅到几乎看不见，需侧光才浮现</div></div>
+<div class="cf"><div class="n">金碧山水</div><div class="d">石青石绿打底、泥金勾线，中国最华丽的绘画语言</div></div>
+</div>
 </section>
-
 <!-- ========== 03 产品动态展示 ========== -->
 <section id="showcase">
-  <div class="sec-label">04 · PRODUCT MOTION</div>
-  <h2 class="sec-title">产品动态展示</h2>
-  <div class="prose" style="margin-bottom:36px;">
-    <p>五款产品动态成片，由品牌视觉资产经 <strong>AIGC 图生视频</strong>生成——把画面里本就含着的运动释放出来：<strong>巨龙盘绕、鲲破水而出、金雾升腾</strong>。</p>
-    <p style="font-size:13.5px;color:var(--moon-dim);">网页预览为静音循环；片段均自带音效设计。</p>
-  </div>
-
-  <div class="showcase">
-    <figure class="sc">
-      <div class="fr2">
-        <span class="tag">V1</span>
-        <video src="images/shanhai/clip-1-jiuwei.mp4" poster="images/shanhai/beast-1.jpg" muted loop playsinline preload="none"></video>
-      </div>
-      <figcaption>九尾<em>蜜桃白茶</em></figcaption>
-    </figure>
-    <figure class="sc">
-      <div class="fr2">
-        <span class="tag">V2</span>
-        <video src="images/shanhai/clip-2-zhulong.mp4" poster="images/shanhai/beast-2.jpg" muted loop playsinline preload="none"></video>
-      </div>
-      <figcaption>烛龙<em>桂花红茶</em></figcaption>
-    </figure>
-    <figure class="sc">
-      <div class="fr2">
-        <span class="tag">V3</span>
-        <video src="images/shanhai/clip-3-kun.mp4" poster="images/shanhai/beast-3.jpg" muted loop playsinline preload="none"></video>
-      </div>
-      <figcaption>鲲<em>蝶豆蓝柑</em></figcaption>
-    </figure>
-    <figure class="sc">
-      <div class="fr2">
-        <span class="tag">V4</span>
-        <video src="images/shanhai/clip-5-product.mp4" poster="images/shanhai/prod-1.jpg" muted loop playsinline preload="none"></video>
-      </div>
-      <figcaption>玄墨杯<em>产品特写</em></figcaption>
-    </figure>
-  </div>
+<div class="sec-label">04 · PRODUCT MOTION</div>
+<h2 class="sec-title">产品动态展示</h2>
+<div class="prose" style="margin-bottom:36px;">
+<p>五款产品动态成片，由品牌视觉资产经 <strong>AIGC 图生视频</strong>生成——把画面里本就含着的运动释放出来：<strong>巨龙盘绕、鲲破水而出、金雾升腾</strong>。</p>
+<p style="font-size:13.5px;color:var(--moon-dim);">网页预览为静音循环；片段均自带音效设计。</p>
+</div>
+<div class="showcase">
+<figure class="sc">
+<div class="fr2">
+<span class="tag">V1</span>
+<video controls="" loop="" muted="" playsinline="" poster="images/shanhai/beast-1.webp" preload="none" src="https://senyaolu-lab.github.io/images/shanhai/clip-1-jiuwei.mp4"></video>
+</div>
+<figcaption>九尾<em>蜜桃白茶</em></figcaption>
+</figure>
+<figure class="sc">
+<div class="fr2">
+<span class="tag">V2</span>
+<video controls="" loop="" muted="" playsinline="" poster="images/shanhai/beast-2.webp" preload="none" src="https://senyaolu-lab.github.io/images/shanhai/clip-2-zhulong.mp4"></video>
+</div>
+<figcaption>烛龙<em>桂花红茶</em></figcaption>
+</figure>
+<figure class="sc">
+<div class="fr2">
+<span class="tag">V3</span>
+<video controls="" loop="" muted="" playsinline="" poster="images/shanhai/beast-3.webp" preload="none" src="https://senyaolu-lab.github.io/images/shanhai/clip-3-kun.mp4"></video>
+</div>
+<figcaption>鲲<em>蝶豆蓝柑</em></figcaption>
+</figure>
+<figure class="sc">
+<div class="fr2">
+<span class="tag">V4</span>
+<video controls="" loop="" muted="" playsinline="" poster="images/shanhai/prod-1.webp" preload="none" src="https://senyaolu-lab.github.io/images/shanhai/clip-5-product.mp4"></video>
+</div>
+<figcaption>玄墨杯<em>产品特写</em></figcaption>
+</figure>
+</div>
 </section>
-
 <!-- ========== 04 规范 ========== -->
 <section id="spec">
-  <div class="sec-label">05 · MOTION SPEC</div>
-  <h2 class="sec-title">动效规范</h2>
-  <table class="spec">
-    <tr><th>主缓动</th><td><code>cubic-bezier(.2,.8,.2,1)</code>　先快后慢，沉稳有力</td></tr>
-    <tr><th>次缓动</th><td><code>cubic-bezier(.4,0,.2,1)</code>　用于转场</td></tr>
-    <tr><th>回弹</th><td><code>cubic-bezier(.34,1.56,.64,1)</code>　仅用于印章落下</td></tr>
-    <tr><th>最短时长</th><td>单元素动效 ≥ 0.6s —— 低于 0.6s 会显得廉价</td></tr>
-    <tr><th>转场</th><td>统一用叠化（cross-dissolve），禁用花哨转场</td></tr>
-    <tr><th>运镜</th><td>只用「缓慢推进」与「缓慢拉远」；单镜头位移 ≤ 15% 画幅</td></tr>
-    <tr><th>节奏</th><td>每 2 秒至少一次视觉变化，避免长时间静止</td></tr>
-    <tr><th>生成约束</th><td>图生视频的镜头运动必须「慢而稳」；禁用快速推拉、甩镜、强抖动</td></tr>
-  </table>
+<div class="sec-label">05 · MOTION SPEC</div>
+<h2 class="sec-title">动效规范</h2>
+<table class="spec">
+<tr><th>主缓动</th><td><code>cubic-bezier(.2,.8,.2,1)</code>　先快后慢，沉稳有力</td></tr>
+<tr><th>次缓动</th><td><code>cubic-bezier(.4,0,.2,1)</code>　用于转场</td></tr>
+<tr><th>回弹</th><td><code>cubic-bezier(.34,1.56,.64,1)</code>　仅用于印章落下</td></tr>
+<tr><th>最短时长</th><td>单元素动效 ≥ 0.6s —— 低于 0.6s 会显得廉价</td></tr>
+<tr><th>转场</th><td>统一用叠化（cross-dissolve），禁用花哨转场</td></tr>
+<tr><th>运镜</th><td>只用「缓慢推进」与「缓慢拉远」；单镜头位移 ≤ 15% 画幅</td></tr>
+<tr><th>节奏</th><td>每 2 秒至少一次视觉变化，避免长时间静止</td></tr>
+<tr><th>生成约束</th><td>图生视频的镜头运动必须「慢而稳」；禁用快速推拉、甩镜、强抖动</td></tr>
+</table>
 </section>
-
 <footer>
-  <span class="b">山海志 · 品牌动态演绎</span>
- 吕森垚　·　山西传媒学院 2027 届<br><br>
-  <a href="index.html">← 返回作品集</a>
+<span class="b">山海志 · 品牌动态演绎</span>
+ 吕森垚　·　山西传媒学院 2027 届<br/><br/>
+<a href="index.html">← 返回作品集</a>
 </footer>
-
 <script>
   (function () {
     // ---- Logo 演绎 ----
@@ -548,6 +519,5 @@
     }
   })();
 </script>
-
 </body>
 </html>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>吃随便 · 微信小程序 · 崂山区美食随机转盘</title>
-<link rel="stylesheet" href="portfolio.css">
+<link href="portfolio.css" rel="stylesheet"/>
 <style>
   /* 本页用深色底，和「吃随便」小程序本身的暗色界面呼应 */
   body{font-family:var(--font-sans);background:#14151a;color:var(--c-ink-inv);}
@@ -173,433 +174,399 @@
     .shot,.card,.step,.kpi{break-inside:avoid;}
   }
 </style>
-</head>
-<body class="pf">
-
-<nav class="nav">
-  <a class="nav__back" href="index.html">← 返回作品集</a>
-  <div class="nav__id">吃随便 · 微信小程序</div>
-</nav>
-
+<link href="case-theme.css" rel="stylesheet"/><link href="favicon.svg" rel="icon" type="image/svg+xml"/><script defer="" src="case.js"></script></head>
+<body class="pf case-page">
+<nav class="nav"><a class="nav__back" href="index.html#work">↖ 全部作品</a><a class="case-brand" href="index.html">SENYAO<span>®</span></a><a aria-label="切换到游戏策划作品集" class="portfolio-switch" href="https://senyaolu-lab.github.io/portfolio/">游戏作品集 ↗</a></nav>
 <header class="head pf-wrap">
-  <div class="head__badge">AI 小程序项目 · 崂山区</div>
-  <h1 class="head__title">吃随便<br><span class="dim">附近美食随机转盘</span></h1>
-  <p class="head__sub">
+<div class="head__badge">AI 小程序项目 · 崂山区</div>
+<h1 class="head__title">吃随便<br/><span class="dim">附近美食随机转盘</span></h1>
+<p class="head__sub">
     一个真正能用的微信小程序：读取手机定位，找到附近店铺，用
     <b>老虎机 / 大转盘 / 随机抽</b> 三种方式替你决定今天吃什么。
     首版聚焦<b>青岛市崂山区</b>，内置 140 家真实店铺，断网也能摇。
   </p>
-
-  <div class="kpis">
-    <div class="kpi"><b>3</b><span>种随机方式</span></div>
-    <div class="kpi"><b>4</b><span>档搜索半径</span></div>
-    <div class="kpi"><b>140</b><span>家内置店铺</span></div>
-    <div class="kpi"><b>断网</b><span>也能摇（本地计算）</span></div>
-    <div class="kpi"><b>237</b><span>项自动化测试</span></div>
-  </div>
+<div class="kpis">
+<div class="kpi"><b>3</b><span>种随机方式</span></div>
+<div class="kpi"><b>4</b><span>档搜索半径</span></div>
+<div class="kpi"><b>140</b><span>家内置店铺</span></div>
+<div class="kpi"><b>断网</b><span>也能摇（本地计算）</span></div>
+<div class="kpi"><b>237</b><span>项自动化测试</span></div>
+</div>
 </header>
-
 <main class="pf-wrap">
-
-  <!-- ============ 界面 ============ -->
-  <section class="sec">
-    <div class="sec__hd">
-      <span class="sec__no">01</span>
-      <h2 class="sec__t">三种随机方式 <span class="dim">同一批店铺，三种心理体验</span></h2>
-      <span class="sec__meta">Interface</span>
-    </div>
-
-    <div class="shots">
-      <!-- 老虎机 -->
-      <div>
-        <div class="shot">
-          <div class="shot__bar">
-            <span class="shot__brand">🍽 吃随便</span>
-            <span class="shot__loc">青岛 · 36.107,120.469</span>
-          </div>
-          <div class="shot__body">
-            <div class="shot__tabs">
-              <div class="shot__tab on">老虎机</div><div class="shot__tab">大转盘</div>
-              <div class="shot__tab">随机抽</div><div class="shot__tab">美食栏</div>
-            </div>
-            <div class="reel">
-              <div class="reel__row dim">星巴克</div>
-              <div class="reel__row">小龙坎老火锅</div>
-              <div class="reel__row dim">沪上阿姨</div>
-              <div class="reel__bar"></div>
-            </div>
-            <div class="btns"><div class="btn p">开摇！</div><div class="btn">随便</div></div>
-          </div>
-        </div>
-        <div class="shot__cap"><b>老虎机</b><br>纵向滚动逐格减速，金色指针框住的就是结果</div>
-      </div>
-
-      <!-- 大转盘 -->
-      <div>
-        <div class="shot">
-          <div class="shot__bar">
-            <span class="shot__brand">🍽 吃随便</span>
-            <span class="shot__loc">青岛 · 36.107,120.469</span>
-          </div>
-          <div class="shot__body">
-            <div class="shot__tabs">
-              <div class="shot__tab">老虎机</div><div class="shot__tab on">大转盘</div>
-              <div class="shot__tab">随机抽</div><div class="shot__tab">美食栏</div>
-            </div>
-            <div class="wheel">
-              <div class="pin"></div>
-              <svg viewBox="0 0 128 128" aria-hidden="true">
-                <path d="M64 64 L64 6 A58 58 0 0 1 114.2 35 Z" fill="#ffc247"/>
-                <path d="M64 64 L114.2 35 A58 58 0 0 1 114.2 93 Z" fill="#ff9d2e"/>
-                <path d="M64 64 L114.2 93 A58 58 0 0 1 64 122 Z" fill="#f2704a"/>
-                <path d="M64 64 L64 122 A58 58 0 0 1 13.8 93 Z" fill="#e15b7a"/>
-                <path d="M64 64 L13.8 93 A58 58 0 0 1 13.8 35 Z" fill="#a86bd4"/>
-                <path d="M64 64 L13.8 35 A58 58 0 0 1 64 6 Z" fill="#5b8ee1"/>
-                <circle cx="64" cy="64" r="13" fill="#14151a" stroke="#ffc247" stroke-width="2"/>
-                <text x="64" y="68" font-size="12" fill="#ffc247" text-anchor="middle" font-weight="700">吃</text>
-                <circle cx="98" cy="61" r="5" fill="#14151a" stroke="#fff" stroke-width="2"/>
-              </svg>
-            </div>
-            <div class="btns"><div class="btn p">开摇！</div><div class="btn">随便</div></div>
-          </div>
-        </div>
-        <div class="shot__cap"><b>大转盘</b><br>canvas 绘制的彩色扇区，转 5 圈减速，指针指谁就是谁</div>
-      </div>
-
-      <!-- 随机抽 -->
-      <div>
-        <div class="shot">
-          <div class="shot__bar">
-            <span class="shot__brand">🍽 吃随便</span>
-            <span class="shot__loc">青岛 · 36.107,120.469</span>
-          </div>
-          <div class="shot__body">
-            <div class="shot__tabs">
-              <div class="shot__tab">老虎机</div><div class="shot__tab">大转盘</div>
-              <div class="shot__tab on">随机抽</div><div class="shot__tab">美食栏</div>
-            </div>
-            <div class="roll">
-              <div class="roll__dots">
-                <span class="roll__dot on"></span><span class="roll__dot on"></span><span class="roll__dot"></span>
-              </div>
-              <div class="roll__name">半天妖烤鱼</div>
-              <div class="roll__sub">就它了</div>
-            </div>
-            <div class="btns"><div class="btn p">换一个（剩 2 次）</div><div class="btn">重新开始</div></div>
-          </div>
-        </div>
-        <div class="shot__cap"><b>随机抽</b><br>名字高速闪烁 1.4 秒后定格，最直接的一种</div>
-      </div>
-    </div>
-
-    <div class="box box--ok" style="margin-top:var(--s-7)">
-      <b>重摇上限 3 次 —— 这是整个产品的灵魂。</b>
+<!-- ============ 界面 ============ -->
+<section class="sec">
+<div class="sec__hd">
+<span class="sec__no">01</span>
+<h2 class="sec__t">三种随机方式 <span class="dim">同一批店铺，三种心理体验</span></h2>
+<span class="sec__meta">Interface</span>
+</div>
+<div class="shots">
+<!-- 老虎机 -->
+<div>
+<div class="shot">
+<div class="shot__bar">
+<span class="shot__brand">🍽 吃随便</span>
+<span class="shot__loc">青岛 · 36.107,120.469</span>
+</div>
+<div class="shot__body">
+<div class="shot__tabs">
+<div class="shot__tab on">老虎机</div><div class="shot__tab">大转盘</div>
+<div class="shot__tab">随机抽</div><div class="shot__tab">美食栏</div>
+</div>
+<div class="reel">
+<div class="reel__row dim">星巴克</div>
+<div class="reel__row">小龙坎老火锅</div>
+<div class="reel__row dim">沪上阿姨</div>
+<div class="reel__bar"></div>
+</div>
+<div class="btns"><div class="btn p">开摇！</div><div class="btn">随便</div></div>
+</div>
+</div>
+<div class="shot__cap"><b>老虎机</b><br/>纵向滚动逐格减速，金色指针框住的就是结果</div>
+</div>
+<!-- 大转盘 -->
+<div>
+<div class="shot">
+<div class="shot__bar">
+<span class="shot__brand">🍽 吃随便</span>
+<span class="shot__loc">青岛 · 36.107,120.469</span>
+</div>
+<div class="shot__body">
+<div class="shot__tabs">
+<div class="shot__tab">老虎机</div><div class="shot__tab on">大转盘</div>
+<div class="shot__tab">随机抽</div><div class="shot__tab">美食栏</div>
+</div>
+<div class="wheel">
+<div class="pin"></div>
+<svg aria-hidden="true" viewbox="0 0 128 128">
+<path d="M64 64 L64 6 A58 58 0 0 1 114.2 35 Z" fill="#ffc247"></path>
+<path d="M64 64 L114.2 35 A58 58 0 0 1 114.2 93 Z" fill="#ff9d2e"></path>
+<path d="M64 64 L114.2 93 A58 58 0 0 1 64 122 Z" fill="#f2704a"></path>
+<path d="M64 64 L64 122 A58 58 0 0 1 13.8 93 Z" fill="#e15b7a"></path>
+<path d="M64 64 L13.8 93 A58 58 0 0 1 13.8 35 Z" fill="#a86bd4"></path>
+<path d="M64 64 L13.8 35 A58 58 0 0 1 64 6 Z" fill="#5b8ee1"></path>
+<circle cx="64" cy="64" fill="#14151a" r="13" stroke="#ffc247" stroke-width="2"></circle>
+<text fill="#ffc247" font-size="12" font-weight="700" text-anchor="middle" x="64" y="68">吃</text>
+<circle cx="98" cy="61" fill="#14151a" r="5" stroke="#fff" stroke-width="2"></circle>
+</svg>
+</div>
+<div class="btns"><div class="btn p">开摇！</div><div class="btn">随便</div></div>
+</div>
+</div>
+<div class="shot__cap"><b>大转盘</b><br/>canvas 绘制的彩色扇区，转 5 圈减速，指针指谁就是谁</div>
+</div>
+<!-- 随机抽 -->
+<div>
+<div class="shot">
+<div class="shot__bar">
+<span class="shot__brand">🍽 吃随便</span>
+<span class="shot__loc">青岛 · 36.107,120.469</span>
+</div>
+<div class="shot__body">
+<div class="shot__tabs">
+<div class="shot__tab">老虎机</div><div class="shot__tab">大转盘</div>
+<div class="shot__tab on">随机抽</div><div class="shot__tab">美食栏</div>
+</div>
+<div class="roll">
+<div class="roll__dots">
+<span class="roll__dot on"></span><span class="roll__dot on"></span><span class="roll__dot"></span>
+</div>
+<div class="roll__name">半天妖烤鱼</div>
+<div class="roll__sub">就它了</div>
+</div>
+<div class="btns"><div class="btn p">换一个（剩 2 次）</div><div class="btn">重新开始</div></div>
+</div>
+</div>
+<div class="shot__cap"><b>随机抽</b><br/>名字高速闪烁 1.4 秒后定格，最直接的一种</div>
+</div>
+</div>
+<div class="box box--ok" style="margin-top:var(--s-7)">
+<b>重摇上限 3 次 —— 这是整个产品的灵魂。</b>
       所有"随机决定"类产品最大的失败模式是：用户一直摇，摇到最后还是没决定。
       所以第 4 次重摇会被拦下来并推销当前结果：「饿不饿？就吃这家吧」。
       实测这一个小设计就能把"纠结 10 分钟"压缩到"30 秒内开吃"。
     </div>
-  </section>
-
-  <!-- ============ 界面细节 ============ -->
-  <section class="sec">
-    <div class="sec__hd">
-      <span class="sec__no">02</span>
-      <h2 class="sec__t">筛选 · 美食栏 · 我的店池</h2>
-      <span class="sec__meta">Detail</span>
-    </div>
-
-    <div class="grid2">
-      <div>
-        <div class="shot" style="margin-bottom:var(--s-5)">
-          <div class="shot__bar"><span class="shot__brand">🍽 吃随便</span><span class="shot__loc">附近美食 · 18 家</span></div>
-          <div class="shot__body">
-            <div class="list">
-              <div class="item pick">
-                <div class="item__main">
-                  <div class="item__n">小龙坎老火锅 <span class="tag hot">我的</span></div>
-                  <div class="item__s">餐厅 · 火锅 · 建议进店</div>
-                </div>
-                <div class="item__d">662m</div>
-              </div>
-              <div class="item">
-                <div class="item__main">
-                  <div class="item__n">半天妖烤鱼</div>
-                  <div class="item__s">餐厅 · 烤鱼 · 建议进店</div>
-                </div>
-                <div class="item__d">651m</div>
-              </div>
-              <div class="item">
-                <div class="item__main">
-                  <div class="item__n">味千拉面 <span class="tag">外卖</span></div>
-                  <div class="item__s">快餐 · 西北菜 · 可外卖</div>
-                </div>
-                <div class="item__d">642m</div>
-              </div>
-              <div class="item">
-                <div class="item__main">
-                  <div class="item__n">星巴克</div>
-                  <div class="item__s">咖啡/饮品 · 咖啡 · 可外卖</div>
-                </div>
-                <div class="item__d">651m</div>
-              </div>
-              <div class="item">
-                <div class="item__main">
-                  <div class="item__n">比格比萨</div>
-                  <div class="item__s">餐厅 · 披萨 · 可外卖</div>
-                </div>
-                <div class="item__d">511m</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="shot__cap" style="text-align:left;margin-top:0">
-          <b>美食栏</b>：不只随机 —— 也可以自己翻着看，点一下就选定。
+</section>
+<!-- ============ 界面细节 ============ -->
+<section class="sec">
+<div class="sec__hd">
+<span class="sec__no">02</span>
+<h2 class="sec__t">筛选 · 美食栏 · 我的店池</h2>
+<span class="sec__meta">Detail</span>
+</div>
+<div class="grid2">
+<div>
+<div class="shot" style="margin-bottom:var(--s-5)">
+<div class="shot__bar"><span class="shot__brand">🍽 吃随便</span><span class="shot__loc">附近美食 · 18 家</span></div>
+<div class="shot__body">
+<div class="list">
+<div class="item pick">
+<div class="item__main">
+<div class="item__n">小龙坎老火锅 <span class="tag hot">我的</span></div>
+<div class="item__s">餐厅 · 火锅 · 建议进店</div>
+</div>
+<div class="item__d">662m</div>
+</div>
+<div class="item">
+<div class="item__main">
+<div class="item__n">半天妖烤鱼</div>
+<div class="item__s">餐厅 · 烤鱼 · 建议进店</div>
+</div>
+<div class="item__d">651m</div>
+</div>
+<div class="item">
+<div class="item__main">
+<div class="item__n">味千拉面 <span class="tag">外卖</span></div>
+<div class="item__s">快餐 · 西北菜 · 可外卖</div>
+</div>
+<div class="item__d">642m</div>
+</div>
+<div class="item">
+<div class="item__main">
+<div class="item__n">星巴克</div>
+<div class="item__s">咖啡/饮品 · 咖啡 · 可外卖</div>
+</div>
+<div class="item__d">651m</div>
+</div>
+<div class="item">
+<div class="item__main">
+<div class="item__n">比格比萨</div>
+<div class="item__s">餐厅 · 披萨 · 可外卖</div>
+</div>
+<div class="item__d">511m</div>
+</div>
+</div>
+</div>
+</div>
+<div class="shot__cap" style="text-align:left;margin-top:0">
+<b>美食栏</b>：不只随机 —— 也可以自己翻着看，点一下就选定。
           距离、类型、菜系、是否可外卖都标清楚。
         </div>
-      </div>
-
-      <div>
-        <div class="card card--gold" style="margin-bottom:var(--s-5)">
-          <h4>我的店池</h4>
-          <p>
+</div>
+<div>
+<div class="card card--gold" style="margin-bottom:var(--s-5)">
+<h4>我的店池</h4>
+<p>
             自己添加常吃的店，<b>权重 ×1.8</b>，并且<b>断网也能摇</b>。
             三种加法：地图选店 / 用当前定位 / 从附近发现一键加入。
           </p>
-        </div>
-
-        <div class="card" style="margin-bottom:var(--s-5)">
-          <h4>加权随机，不是纯随机</h4>
-          <table class="tbl" style="margin-top:10px">
-            <tr><th>因素</th><th>权重</th></tr>
-            <tr><td>距离</td><td>越远越不容易被选中</td></tr>
-            <tr><td>最近吃过</td><td>×0.3 降权</td></tr>
-            <tr><td>我的店池</td><td>×1.8 升权</td></tr>
-          </table>
-          <p style="margin-top:12px;font-size:var(--t-cap);color:var(--c-mute-inv)">
-            实测分布（2km 档，三家店 100m / 800m / 1900m）：<br>
+</div>
+<div class="card" style="margin-bottom:var(--s-5)">
+<h4>加权随机，不是纯随机</h4>
+<table class="tbl" style="margin-top:10px">
+<tr><th>因素</th><th>权重</th></tr>
+<tr><td>距离</td><td>越远越不容易被选中</td></tr>
+<tr><td>最近吃过</td><td>×0.3 降权</td></tr>
+<tr><td>我的店池</td><td>×1.8 升权</td></tr>
+</table>
+<p style="margin-top:12px;font-size:var(--t-cap);color:var(--c-mute-inv)">
+            实测分布（2km 档，三家店 100m / 800m / 1900m）：<br/>
             近 46.5% · 中 35.5% · 远 17.9% —— 近店明显更容易中，但远店仍有机会。
           </p>
-        </div>
-
-        <div class="card">
-          <h4>范围与方式</h4>
-          <p style="margin-bottom:10px">
-            <span class="tag hot">500m</span><span class="tag">1km</span>
-            <span class="tag">1.5km</span><span class="tag">2km</span>
-          </p>
-          <p>
-            <span class="tag hot">全部</span><span class="tag">外卖</span><span class="tag">进店</span>
-          </p>
-          <p style="margin-top:10px;font-size:var(--t-cap);color:var(--c-mute-inv)">
+</div>
+<div class="card">
+<h4>范围与方式</h4>
+<p style="margin-bottom:10px">
+<span class="tag hot">500m</span><span class="tag">1km</span>
+<span class="tag">1.5km</span><span class="tag">2km</span>
+</p>
+<p>
+<span class="tag hot">全部</span><span class="tag">外卖</span><span class="tag">进店</span>
+</p>
+<p style="margin-top:10px;font-size:var(--t-cap);color:var(--c-mute-inv)">
             切换档位<b>不重新联网</b>：按最大半径一次拉取，本地过滤，所以切换是瞬时的。
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 自动加载 ============ -->
-  <section class="sec">
-    <div class="sec__hd">
-      <span class="sec__no">03</span>
-      <h2 class="sec__t">打开就出店 <span class="dim">不需要点任何按钮</span></h2>
-      <span class="sec__meta">Auto Load</span>
-    </div>
-
-    <div class="flow">
-      <div class="step"><span class="step__n">1</span><b>定位</b><span>微信 GPS（真机最准）→ 失败自动退到 IP 定位</span></div>
-      <div class="step"><span class="step__n">2</span><b>立即出店</b><span>内置数据 / 缓存 <b style="color:#ffc247">0ms</b> 返回，界面马上有东西可摇</span></div>
-      <div class="step"><span class="step__n">3</span><b>后台刷新</b><span>联网拉最新数据，不阻塞界面，下次进来就是新的</span></div>
-      <div class="step"><span class="step__n">4</span><b>逐级兜底</b><span>内置 → 缓存 → 我的店池 → 引导用地图选店</span></div>
-    </div>
-
-    <div class="grid3">
-      <div class="card">
-        <h4>崂山区内置数据</h4>
-        <p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ 自动加载 ============ -->
+<section class="sec">
+<div class="sec__hd">
+<span class="sec__no">03</span>
+<h2 class="sec__t">打开就出店 <span class="dim">不需要点任何按钮</span></h2>
+<span class="sec__meta">Auto Load</span>
+</div>
+<div class="flow">
+<div class="step"><span class="step__n">1</span><b>定位</b><span>微信 GPS（真机最准）→ 失败自动退到 IP 定位</span></div>
+<div class="step"><span class="step__n">2</span><b>立即出店</b><span>内置数据 / 缓存 <b style="color:#ffc247">0ms</b> 返回，界面马上有东西可摇</span></div>
+<div class="step"><span class="step__n">3</span><b>后台刷新</b><span>联网拉最新数据，不阻塞界面，下次进来就是新的</span></div>
+<div class="step"><span class="step__n">4</span><b>逐级兜底</b><span>内置 → 缓存 → 我的店池 → 引导用地图选店</span></div>
+</div>
+<div class="grid3">
+<div class="card">
+<h4>崂山区内置数据</h4>
+<p>
           从 OpenStreetMap 抓取并清洗出的<b>崂山区真实店铺</b>，按距离排序内置进小程序。
           人在崂山区附近时秒开；离开这个范围会自动忽略，不会推荐外地的店。
         </p>
-      </div>
-      <div class="card">
-        <h4>地图选店（全国通用）</h4>
-        <p>
+</div>
+<div class="card">
+<h4>地图选店（全国通用）</h4>
+<p>
           点「地图选店」从腾讯地图点一家店，返回的店名就是<b>腾讯地图 POI</b>。
           系统自动判定类型、菜系、是否可外卖，<b>一次点击直接入库</b>。
         </p>
-      </div>
-      <div class="card">
-        <h4>位置漂移保护</h4>
-        <p>
+</div>
+<div class="card">
+<h4>位置漂移保护</h4>
+<p>
           缓存只在离当前位置 3km 内才用；内置数据只在离崂山区中心 25km 内才用。
           这条有专门的自动化测试守着。
         </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 断网能力 ============ -->
-  <section class="sec">
-    <div class="sec__hd">
-      <span class="sec__no">03+</span>
-      <h2 class="sec__t">断网能用吗 <span class="dim">说清前提，不含糊承诺</span></h2>
-      <span class="sec__meta">Offline</span>
-    </div>
-
-    <div class="grid2">
-      <div class="card" style="border-color:rgba(47,158,111,.5);background:linear-gradient(160deg,rgba(47,158,111,.10),transparent)">
-        <h4 style="color:#5fd39b">✓ 断网真的能做到</h4>
-        <ul>
-          <li><b>摇出结果</b>：内置 140 家 + 你存的店，三种随机方式全部可用（纯本地计算）</li>
-          <li><b>切换半径 / 外卖 / 进店</b>：本地过滤，不联网</li>
-          <li><b>美食栏浏览</b>：完整可用</li>
-          <li><b>连定位都没有时</b>：直接把内置数据当「崂山区列表」端出来，<b>不会是空屏</b></li>
-        </ul>
-      </div>
-      <div class="card" style="border-color:rgba(224,83,61,.5);background:linear-gradient(160deg,rgba(224,83,61,.10),transparent)">
-        <h4 style="color:#ff8f7a">✗ 断网做不到</h4>
-        <ul>
-          <li>导航 —— 需要地图瓦片</li>
-          <li>「去美团搜这家」—— 需要跳转外部 App</li>
-          <li>拉取崂山区<b>以外</b>的店 —— 内置数据只有崂山区</li>
-          <li>第一次打开小程序本身 —— 需先从微信服务器下载</li>
-        </ul>
-      </div>
-    </div>
-
-    <h3 style="font-size:var(--t-h3);margin:var(--s-7) 0 var(--s-4)">三层定位回退</h3>
-    <div class="flow">
-      <div class="step"><span class="step__n">1</span><b>GPS</b><span>微信原生定位，<b style="color:#ffc247">不需要网络</b>。实测出店 140 家</span></div>
-      <div class="step"><span class="step__n">2</span><b>IP 定位</b><span>GPS 被拒时退到这里。<b>需要网络</b>，断网时会失败</span></div>
-      <div class="step"><span class="step__n">3</span><b>无定位兜底</b><span>把内置数据当默认列表，距离标注「相对崂山区中心」</span></div>
-      <div class="step" style="border-color:rgba(47,158,111,.6)"><span class="step__n" style="background:#2f9e6f;color:#fff">✓</span><b>结果</b><span>三层全覆盖，<b>实测不会出现空屏</b></span></div>
-    </div>
-
-    <div class="box box--ok">
-      <b>这里修过一个真缺陷：</b>最初版本的「无定位」路径直接返回失败提示 ——
+</div>
+</div>
+</section>
+<!-- ============ 断网能力 ============ -->
+<section class="sec">
+<div class="sec__hd">
+<span class="sec__no">03+</span>
+<h2 class="sec__t">断网能用吗 <span class="dim">说清前提，不含糊承诺</span></h2>
+<span class="sec__meta">Offline</span>
+</div>
+<div class="grid2">
+<div class="card" style="border-color:rgba(47,158,111,.5);background:linear-gradient(160deg,rgba(47,158,111,.10),transparent)">
+<h4 style="color:#5fd39b">✓ 断网真的能做到</h4>
+<ul>
+<li><b>摇出结果</b>：内置 140 家 + 你存的店，三种随机方式全部可用（纯本地计算）</li>
+<li><b>切换半径 / 外卖 / 进店</b>：本地过滤，不联网</li>
+<li><b>美食栏浏览</b>：完整可用</li>
+<li><b>连定位都没有时</b>：直接把内置数据当「崂山区列表」端出来，<b>不会是空屏</b></li>
+</ul>
+</div>
+<div class="card" style="border-color:rgba(224,83,61,.5);background:linear-gradient(160deg,rgba(224,83,61,.10),transparent)">
+<h4 style="color:#ff8f7a">✗ 断网做不到</h4>
+<ul>
+<li>导航 —— 需要地图瓦片</li>
+<li>「去美团搜这家」—— 需要跳转外部 App</li>
+<li>拉取崂山区<b>以外</b>的店 —— 内置数据只有崂山区</li>
+<li>第一次打开小程序本身 —— 需先从微信服务器下载</li>
+</ul>
+</div>
+</div>
+<h3 style="font-size:var(--t-h3);margin:var(--s-7) 0 var(--s-4)">三层定位回退</h3>
+<div class="flow">
+<div class="step"><span class="step__n">1</span><b>GPS</b><span>微信原生定位，<b style="color:#ffc247">不需要网络</b>。实测出店 140 家</span></div>
+<div class="step"><span class="step__n">2</span><b>IP 定位</b><span>GPS 被拒时退到这里。<b>需要网络</b>，断网时会失败</span></div>
+<div class="step"><span class="step__n">3</span><b>无定位兜底</b><span>把内置数据当默认列表，距离标注「相对崂山区中心」</span></div>
+<div class="step" style="border-color:rgba(47,158,111,.6)"><span class="step__n" style="background:#2f9e6f;color:#fff">✓</span><b>结果</b><span>三层全覆盖，<b>实测不会出现空屏</b></span></div>
+</div>
+<div class="box box--ok">
+<b>这里修过一个真缺陷：</b>最初版本的「无定位」路径直接返回失败提示 ——
       意味着「全新安装 + 断网 + 拒绝定位权限」的用户会看到一片空白，那「断网能用」就是假的。
       现在改成：没有位置也把内置数据端出来，并把距离口径明确标注，不假装那是精确距离。
       这条有 <b>19 项离线测试</b>守着。
     </div>
-  </section>
-
-  <!-- ============ 数据与工程 ============ -->
-  <section class="sec">
-    <div class="sec__hd">
-      <span class="sec__no">05</span>
-      <h2 class="sec__t">数据来源与工程质量</h2>
-      <span class="sec__meta">Under the Hood</span>
-    </div>
-
-    <div class="stack" style="margin-bottom:var(--s-7)">
-      <span class="pill">定位 <b>微信 wx.getLocation</b></span>
-      <span class="pill">网络定位 <b>ipwho.is → api.ip.sb</b></span>
-      <span class="pill">店铺 <b>OpenStreetMap (ODbL)</b></span>
-      <span class="pill">地图选店 <b>腾讯地图 POI</b></span>
-      <span class="pill">反向地理编码 <b>三级降级</b></span>
-    </div>
-
-    <div class="grid2">
-      <div>
-        <h3 style="font-size:var(--t-h3);margin-bottom:var(--s-4)">不做什么</h3>
-        <div class="box box--warn">
-          <b>不读取美团 / 饿了么 / 高德的数据。</b>
+</section>
+<!-- ============ 数据与工程 ============ -->
+<section class="sec">
+<div class="sec__hd">
+<span class="sec__no">05</span>
+<h2 class="sec__t">数据来源与工程质量</h2>
+<span class="sec__meta">Under the Hood</span>
+</div>
+<div class="stack" style="margin-bottom:var(--s-7)">
+<span class="pill">定位 <b>微信 wx.getLocation</b></span>
+<span class="pill">网络定位 <b>ipwho.is → api.ip.sb</b></span>
+<span class="pill">店铺 <b>OpenStreetMap (ODbL)</b></span>
+<span class="pill">地图选店 <b>腾讯地图 POI</b></span>
+<span class="pill">反向地理编码 <b>三级降级</b></span>
+</div>
+<div class="grid2">
+<div>
+<h3 style="font-size:var(--t-h3);margin-bottom:var(--s-4)">不做什么</h3>
+<div class="box box--warn">
+<b>不读取美团 / 饿了么 / 高德的数据。</b>
           小程序运行在微信沙箱里，读不到其它应用的数据；外卖平台也没有公开接口，
           且小程序强制 HTTPS + 域名白名单，爬虫方案在真机上必然失败，也违反平台条款。
         </div>
-        <div class="box box--warn">
-          <b>不编造评分和人均价格。</b>
+<div class="box box--warn">
+<b>不编造评分和人均价格。</b>
           OpenStreetMap 没有这两个字段，就照实只显示距离和菜系。
           要看真实评价，用「去美团搜这家」复制店名，切到 App 粘贴搜索。
           <b>宁可少给，不给假数据。</b>
-        </div>
-      </div>
-
-      <div>
-        <h3 style="font-size:var(--t-h3);margin-bottom:var(--s-4)">测出来的，不是猜的</h3>
-        <table class="tbl">
-          <tr><th>套件</th><th>项数</th><th>覆盖</th></tr>
-          <tr><td>guess</td><td>57</td><td>店名→类型/菜系/外卖推断；中文名不被误杀</td></tr>
-          <tr><td>smoke</td><td>51</td><td>语法、去重筛选、存储、504 识别、加权分布</td></tr>
-          <tr><td>autoload</td><td>47</td><td>自动加载、秒开性能、缓存漂移、城市名兜底</td></tr>
-          <tr><td>page_test</td><td>28</td><td>页面逻辑、三种随机模式、canvas 绘制、重摇上限</td></tr>
-          <tr><td>live_data</td><td>22</td><td>联网拉真实店铺（会真的撞上 504 并验证恢复）</td></tr>
-          <tr><td>offline_test</td><td>19</td><td><b>断网行为</b>：模拟全部网络失败，验证不空屏</td></tr>
-          <tr><td>geo_locate</td><td>12</td><td>HTTPS 定位、降级链、城市名映射</td></tr>
-        </table>
-        <p style="margin-top:var(--s-4);font-size:var(--t-cap);color:var(--c-mute-inv)">
+</div>
+</div>
+<div>
+<h3 style="font-size:var(--t-h3);margin-bottom:var(--s-4)">测出来的，不是猜的</h3>
+<table class="tbl">
+<tr><th>套件</th><th>项数</th><th>覆盖</th></tr>
+<tr><td>guess</td><td>57</td><td>店名→类型/菜系/外卖推断；中文名不被误杀</td></tr>
+<tr><td>smoke</td><td>51</td><td>语法、去重筛选、存储、504 识别、加权分布</td></tr>
+<tr><td>autoload</td><td>47</td><td>自动加载、秒开性能、缓存漂移、城市名兜底</td></tr>
+<tr><td>page_test</td><td>28</td><td>页面逻辑、三种随机模式、canvas 绘制、重摇上限</td></tr>
+<tr><td>live_data</td><td>22</td><td>联网拉真实店铺（会真的撞上 504 并验证恢复）</td></tr>
+<tr><td>offline_test</td><td>19</td><td><b>断网行为</b>：模拟全部网络失败，验证不空屏</td></tr>
+<tr><td>geo_locate</td><td>12</td><td>HTTPS 定位、降级链、城市名映射</td></tr>
+</table>
+<p style="margin-top:var(--s-4);font-size:var(--t-cap);color:var(--c-mute-inv)">
           合计 <b style="color:#ffc247">237 项</b>，全部通过。
         </p>
-      </div>
-    </div>
-
-    <h3 style="font-size:var(--t-h3);margin:var(--s-8) 0 var(--s-4)">踩过的坑（都已修复并加了测试守护）</h3>
-    <table class="tbl">
-      <tr><th style="width:26%">坑</th><th>现象与处理</th></tr>
-      <tr>
-        <td>HTTP 定位真机失效</td>
-        <td><code>ip-api.com</code> 的 HTTPS 端点已不可用，而小程序真机强制 HTTPS →
+</div>
+</div>
+<h3 style="font-size:var(--t-h3);margin:var(--s-8) 0 var(--s-4)">踩过的坑（都已修复并加了测试守护）</h3>
+<table class="tbl">
+<tr><th style="width:26%">坑</th><th>现象与处理</th></tr>
+<tr>
+<td>HTTP 定位真机失效</td>
+<td><code>ip-api.com</code> 的 HTTPS 端点已不可用，而小程序真机强制 HTTPS →
           改为 <code>ipwho.is</code> 两级降级</td>
-      </tr>
-      <tr>
-        <td>微信 UA 被镜像拒绝</td>
-        <td><code>wx.request</code> <b>不允许设置 User-Agent</b>，微信强制注入自己的 UA，
+</tr>
+<tr>
+<td>微信 UA 被镜像拒绝</td>
+<td><code>wx.request</code> <b>不允许设置 User-Agent</b>，微信强制注入自己的 UA，
           而多数 Overpass 镜像对微信 UA 返回 <b>406</b> → 镜像按实测可用性重排，只留能用的</td>
-      </tr>
-      <tr>
-        <td>Overpass 返回错误页</td>
-        <td>实测同一查询三次里两次返回 <b>HTTP 504 + text/html</b> 的 XML 错误页 →
+</tr>
+<tr>
+<td>Overpass 返回错误页</td>
+<td>实测同一查询三次里两次返回 <b>HTTP 504 + text/html</b> 的 XML 错误页 →
           按状态码 + content-type 双重校验，退避重试 + 换镜像</td>
-      </tr>
-      <tr>
-        <td>中文店名被误杀</td>
-        <td>JS 里 <code>\W</code> 把<b>所有中文当非单词字符</b>，导致中文店名全被过滤掉 →
+</tr>
+<tr>
+<td>中文店名被误杀</td>
+<td>JS 里 <code>\W</code> 把<b>所有中文当非单词字符</b>，导致中文店名全被过滤掉 →
           改用显式字符类判断（<code>guess_test</code> 里 30 个真实店名守着这条）</td>
-      </tr>
-      <tr>
-        <td>「星巴克」推断不出咖啡</td>
-        <td>它是 Starbucks 的<b>音译</b>，字面里没有"咖啡"二字 →
+</tr>
+<tr>
+<td>「星巴克」推断不出咖啡</td>
+<td>它是 Starbucks 的<b>音译</b>，字面里没有"咖啡"二字 →
           菜系规则补入品牌词，并把泛匹配（如"冰"）降权，避免「蜜雪冰城」被抢成冰品</td>
-      </tr>
-    </table>
-  </section>
-
-  <!-- ============ 工程结构 ============ -->
-  <section class="sec">
-    <div class="sec__hd">
-      <span class="sec__no">06</span>
-      <h2 class="sec__t">工程结构</h2>
-      <span class="sec__meta">Structure</span>
-    </div>
-
-    <div class="card" style="font-family:var(--font-mono);font-size:var(--t-cap);line-height:2;color:var(--c-ink-inv-2)">
-      <div>吃随便小程序/</div>
-      <div>├── app.js / app.json / app.wxss&nbsp;&nbsp;<span style="color:#6f7685">全局状态 · 页面注册 · 样式</span></div>
-      <div>├── data/</div>
-      <div>│&nbsp;&nbsp;&nbsp;└── shops-laoshan.js&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6f7685">崂山区内置店铺（真实 OSM 数据）</span></div>
-      <div>├── utils/</div>
-      <div>│&nbsp;&nbsp;&nbsp;├── overpass.js&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6f7685">镜像轮询 + 504 识别 + 退避重试</span></div>
-      <div>│&nbsp;&nbsp;&nbsp;├── autoload.js&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6f7685">自动加载 · 四级兜底 · 后台刷新</span></div>
-      <div>│&nbsp;&nbsp;&nbsp;├── guess.js&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6f7685">店名 → 类型/菜系/外卖 推断</span></div>
-      <div>│&nbsp;&nbsp;&nbsp;├── geo.js&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6f7685">距离计算 · 三级降级反向地理编码</span></div>
-      <div>│&nbsp;&nbsp;&nbsp;└── storage.js&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6f7685">本地持久化</span></div>
-      <div>├── pages/</div>
-      <div>│&nbsp;&nbsp;&nbsp;├── index/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6f7685">三种随机模式 + 美食栏</span></div>
-      <div>│&nbsp;&nbsp;&nbsp;├── pool/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6f7685">我的店池 · 地图选店</span></div>
-      <div>│&nbsp;&nbsp;&nbsp;└── setting/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6f7685">位置设置 · 数据管理</span></div>
-      <div>└── tests/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6f7685">6 个测试套件 · 237 项断言</span></div>
-    </div>
-  </section>
-
-  <footer class="foot">
-    <div class="foot__row">
-      <span>吃随便 · 微信小程序 · 首版覆盖青岛市崂山区（140 家内置店铺）</span>
-      <span>店铺数据 <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap (ODbL)</a></span>
-    </div>
-  </footer>
-
+</tr>
+</table>
+</section>
+<!-- ============ 工程结构 ============ -->
+<section class="sec">
+<div class="sec__hd">
+<span class="sec__no">06</span>
+<h2 class="sec__t">工程结构</h2>
+<span class="sec__meta">Structure</span>
+</div>
+<div class="card" style="font-family:var(--font-mono);font-size:var(--t-cap);line-height:2;color:var(--c-ink-inv-2)">
+<div>吃随便小程序/</div>
+<div>├── app.js / app.json / app.wxss  <span style="color:#6f7685">全局状态 · 页面注册 · 样式</span></div>
+<div>├── data/</div>
+<div>│   └── shops-laoshan.js    <span style="color:#6f7685">崂山区内置店铺（真实 OSM 数据）</span></div>
+<div>├── utils/</div>
+<div>│   ├── overpass.js       <span style="color:#6f7685">镜像轮询 + 504 识别 + 退避重试</span></div>
+<div>│   ├── autoload.js       <span style="color:#6f7685">自动加载 · 四级兜底 · 后台刷新</span></div>
+<div>│   ├── guess.js          <span style="color:#6f7685">店名 → 类型/菜系/外卖 推断</span></div>
+<div>│   ├── geo.js            <span style="color:#6f7685">距离计算 · 三级降级反向地理编码</span></div>
+<div>│   └── storage.js        <span style="color:#6f7685">本地持久化</span></div>
+<div>├── pages/</div>
+<div>│   ├── index/            <span style="color:#6f7685">三种随机模式 + 美食栏</span></div>
+<div>│   ├── pool/             <span style="color:#6f7685">我的店池 · 地图选店</span></div>
+<div>│   └── setting/          <span style="color:#6f7685">位置设置 · 数据管理</span></div>
+<div>└── tests/               <span style="color:#6f7685">6 个测试套件 · 237 项断言</span></div>
+</div>
+</section>
+<footer class="foot">
+<div class="foot__row">
+<span>吃随便 · 微信小程序 · 首版覆盖青岛市崂山区（140 家内置店铺）</span>
+<span>店铺数据 <a href="https://www.openstreetmap.org/copyright" rel="noopener noreferrer" target="_blank">OpenStreetMap (ODbL)</a></span>
+</div>
+</footer>
 </main>
-
 <script>
   // 入场动效（与全站一致）
   (function () {
@@ -616,6 +583,5 @@
     els.forEach(function (el) { io.observe(el) });
   })();
 </script>
-
 </body>
 </html>
