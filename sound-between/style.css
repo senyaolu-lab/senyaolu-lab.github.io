@@ -5,3 +5,16 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
 @media(max-width:650px){nav a.portfolio-back{display:block;font-size:11px}nav>a:not(.portfolio-back):not(.nav-last){display:none}}
+
+
+/* Direct access to the complete case-study PDF. */
+.case-pdf-entry{display:flex;justify-content:space-between;align-items:center;gap:28px;padding-top:30px;padding-bottom:30px;border-bottom:1px solid #191b1a24;}
+.case-pdf-entry .pdf-eyebrow{font:700 9px/1.6 Arial,sans-serif;letter-spacing:2px;color:var(--blue);margin:0 0 9px;}
+.case-pdf-entry h2{font-size:23px;line-height:1.5;letter-spacing:-.025em;color:var(--ink);margin:0;}
+.case-pdf-entry h2 span{font-size:12px;font-weight:400;letter-spacing:0;opacity:.55;margin-left:13px;white-space:nowrap;}
+.case-pdf-entry .pdf-summary{font-size:11px;line-height:1.8;color:var(--ink);opacity:.62;margin-top:7px;}
+.case-pdf-entry .pdf-open{display:flex;align-items:center;justify-content:space-between;gap:36px;min-width:164px;padding:16px 21px;background:var(--blue);color:var(--paper);font-size:13px;line-height:1.4;white-space:nowrap;}
+.case-pdf-entry .pdf-open:hover{opacity:.86;}
+.case-pdf-entry .pdf-open span{font-size:22px;line-height:16px;}
+@media(max-width:650px){.case-pdf-entry{gap:18px;padding-top:24px;padding-bottom:24px;}.case-pdf-entry h2{font-size:18px;}.case-pdf-entry h2 span{font-size:10px;margin-left:6px;}.case-pdf-entry .pdf-summary{font-size:9px;max-width:190px;}.case-pdf-entry .pdf-open{min-width:113px;gap:15px;padding:13px 14px;font-size:11px;}}
+
