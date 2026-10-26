@@ -1,0 +1,9 @@
+{
+  "package": "@google/model-viewer",
+  "version": "4.4.0",
+  "repository": {
+    "url": "git+https://github.com/google/model-viewer.git",
+    "type": "git"
+  },
+  "tarball": "https://registry.npmjs.org/@google/model-viewer/-/model-viewer-4.4.0.tgz"
+}
