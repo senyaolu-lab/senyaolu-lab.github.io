@@ -1,0 +1,483 @@
+{
+  "title": "deadlock游戏宣传包",
+  "language": "en",
+  "video": false,
+  "designed_png_exports": 32,
+  "print_pdf_pages": 27,
+  "editorial_pdf_pages": 21,
+  "site": "index.html",
+  "files": [
+    {
+      "path": "app.js",
+      "bytes": 19083
+    },
+    {
+      "path": "assets/asset-sources.json",
+      "bytes": 13685
+    },
+    {
+      "path": "assets/campaign-city-wide.png",
+      "bytes": 2415979
+    },
+    {
+      "path": "assets/campaign-poster.png",
+      "bytes": 3142123
+    },
+    {
+      "path": "assets/central_park_01.webp",
+      "bytes": 128414
+    },
+    {
+      "path": "assets/chinatown_01.jpg",
+      "bytes": 204704
+    },
+    {
+      "path": "assets/deadlock-logo-dark.svg",
+      "bytes": 57794
+    },
+    {
+      "path": "assets/factory_02.webp",
+      "bytes": 137934
+    },
+    {
+      "path": "assets/fairfax_plaza_01.jpg",
+      "bytes": 211007
+    },
+    {
+      "path": "assets/haunted_slums_01.jpg",
+      "bytes": 206971
+    },
+    {
+      "path": "assets/hero-dynamo-background.webp",
+      "bytes": 1576558
+    },
+    {
+      "path": "assets/hero-dynamo.webp",
+      "bytes": 135118
+    },
+    {
+      "path": "assets/hero-infernus-background.webp",
+      "bytes": 1271598
+    },
+    {
+      "path": "assets/hero-infernus.webp",
+      "bytes": 101026
+    },
+    {
+      "path": "assets/hero-ivy-background.webp",
+      "bytes": 1701170
+    },
+    {
+      "path": "assets/hero-ivy.webp",
+      "bytes": 149790
+    },
+    {
+      "path": "assets/theater_03.jpg",
+      "bytes": 120054
+    },
+    {
+      "path": "assets/uptown_02.webp",
+      "bytes": 194802
+    },
+    {
+      "path": "creative-prompts.txt",
+      "bytes": 5318
+    },
+    {
+      "path": "downloads/creator-kit.zip",
+      "bytes": 13560186
+    },
+    {
+      "path": "editorial/campaign-guide.html",
+      "bytes": 14933
+    },
+    {
+      "path": "editorial/campaign-guide.pdf",
+      "bytes": 123886
+    },
+    {
+      "path": "editorial/community-playbook.html",
+      "bytes": 13905
+    },
+    {
+      "path": "editorial/community-playbook.pdf",
+      "bytes": 108368
+    },
+    {
+      "path": "editorial/creator-factsheet.html",
+      "bytes": 11467
+    },
+    {
+      "path": "editorial/creator-factsheet.pdf",
+      "bytes": 102324
+    },
+    {
+      "path": "editorial/index.html",
+      "bytes": 8412
+    },
+    {
+      "path": "editorial/release-calendar.html",
+      "bytes": 13781
+    },
+    {
+      "path": "editorial/release-calendar.pdf",
+      "bytes": 101867
+    },
+    {
+      "path": "editorial/social-copy.html",
+      "bytes": 19349
+    },
+    {
+      "path": "editorial/social-copy.pdf",
+      "bytes": 119969
+    },
+    {
+      "path": "editorial/sources.json",
+      "bytes": 8034
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 282
+    },
+    {
+      "path": "index.html",
+      "bytes": 15598
+    },
+    {
+      "path": "print/campaign-16x9.png",
+      "bytes": 5282996
+    },
+    {
+      "path": "print/campaign-4x5.png",
+      "bytes": 4926529
+    },
+    {
+      "path": "print/campaign-overview.html",
+      "bytes": 4271
+    },
+    {
+      "path": "print/campaign-overview.png",
+      "bytes": 1478467
+    },
+    {
+      "path": "print/campaign-square.png",
+      "bytes": 4210743
+    },
+    {
+      "path": "print/campaign-variants.html",
+      "bytes": 10382
+    },
+    {
+      "path": "print/city-chinatown.png",
+      "bytes": 3709394
+    },
+    {
+      "path": "print/city-guide.html",
+      "bytes": 9347
+    },
+    {
+      "path": "print/city-guide.pdf",
+      "bytes": 587533
+    },
+    {
+      "path": "print/city-plaza.png",
+      "bytes": 3851614
+    },
+    {
+      "path": "print/city-theater.png",
+      "bytes": 2990868
+    },
+    {
+      "path": "print/contact-sheet.html",
+      "bytes": 2867
+    },
+    {
+      "path": "print/gameplay-primer.html",
+      "bytes": 15111
+    },
+    {
+      "path": "print/gameplay-primer.pdf",
+      "bytes": 1127819
+    },
+    {
+      "path": "print/hero-dossiers.html",
+      "bytes": 9885
+    },
+    {
+      "path": "print/hero-dossiers.pdf",
+      "bytes": 1127357
+    },
+    {
+      "path": "print/hero-dynamo.png",
+      "bytes": 1229227
+    },
+    {
+      "path": "print/hero-infernus.png",
+      "bytes": 1886504
+    },
+    {
+      "path": "print/hero-ivy.png",
+      "bytes": 3549795
+    },
+    {
+      "path": "print/index.html",
+      "bytes": 12134
+    },
+    {
+      "path": "print/manifest.json",
+      "bytes": 10899
+    },
+    {
+      "path": "print/offline-a3-poster.png",
+      "bytes": 5781724
+    },
+    {
+      "path": "print/offline-collectibles.png",
+      "bytes": 3332669
+    },
+    {
+      "path": "print/offline-kit.html",
+      "bytes": 13029
+    },
+    {
+      "path": "print/offline-kit.pdf",
+      "bytes": 1670726
+    },
+    {
+      "path": "print/offline-postcard.png",
+      "bytes": 3951375
+    },
+    {
+      "path": "print/offline-stickers.png",
+      "bytes": 3143208
+    },
+    {
+      "path": "print/pdf-verification.json",
+      "bytes": 569
+    },
+    {
+      "path": "print/previews/campaign-16x9.png",
+      "bytes": 166931
+    },
+    {
+      "path": "print/previews/campaign-4x5.png",
+      "bytes": 345811
+    },
+    {
+      "path": "print/previews/campaign-square.png",
+      "bytes": 263924
+    },
+    {
+      "path": "print/previews/city-chinatown.png",
+      "bytes": 265772
+    },
+    {
+      "path": "print/previews/city-plaza.png",
+      "bytes": 271288
+    },
+    {
+      "path": "print/previews/city-theater.png",
+      "bytes": 237436
+    },
+    {
+      "path": "print/previews/hero-dynamo.png",
+      "bytes": 108570
+    },
+    {
+      "path": "print/previews/hero-infernus.png",
+      "bytes": 151195
+    },
+    {
+      "path": "print/previews/hero-ivy.png",
+      "bytes": 253300
+    },
+    {
+      "path": "print/previews/offline-a3-poster.png",
+      "bytes": 382497
+    },
+    {
+      "path": "print/previews/offline-collectibles.png",
+      "bytes": 227059
+    },
+    {
+      "path": "print/previews/offline-postcard.png",
+      "bytes": 254361
+    },
+    {
+      "path": "print/previews/offline-stickers.png",
+      "bytes": 218451
+    },
+    {
+      "path": "print/previews/primer-01.png",
+      "bytes": 43934
+    },
+    {
+      "path": "print/previews/primer-02.png",
+      "bytes": 233974
+    },
+    {
+      "path": "print/previews/primer-03.png",
+      "bytes": 194139
+    },
+    {
+      "path": "print/previews/primer-04.png",
+      "bytes": 47001
+    },
+    {
+      "path": "print/previews/primer-05.png",
+      "bytes": 210083
+    },
+    {
+      "path": "print/previews/social-01.png",
+      "bytes": 264768
+    },
+    {
+      "path": "print/previews/social-02.png",
+      "bytes": 242127
+    },
+    {
+      "path": "print/previews/social-03.png",
+      "bytes": 114523
+    },
+    {
+      "path": "print/previews/social-04.png",
+      "bytes": 146293
+    },
+    {
+      "path": "print/previews/social-05.png",
+      "bytes": 84937
+    },
+    {
+      "path": "print/previews/social-06.png",
+      "bytes": 205104
+    },
+    {
+      "path": "print/previews/social-07.png",
+      "bytes": 213842
+    },
+    {
+      "path": "print/previews/social-08.png",
+      "bytes": 159804
+    },
+    {
+      "path": "print/previews/social-09.png",
+      "bytes": 163137
+    },
+    {
+      "path": "print/previews/social-10.png",
+      "bytes": 262945
+    },
+    {
+      "path": "print/previews/social-11.png",
+      "bytes": 149805
+    },
+    {
+      "path": "print/previews/social-12.png",
+      "bytes": 88595
+    },
+    {
+      "path": "print/previews/wallpaper-desktop.png",
+      "bytes": 184711
+    },
+    {
+      "path": "print/previews/wallpaper-phone.png",
+      "bytes": 495209
+    },
+    {
+      "path": "print/primer-01.png",
+      "bytes": 407988
+    },
+    {
+      "path": "print/primer-02.png",
+      "bytes": 3456694
+    },
+    {
+      "path": "print/primer-03.png",
+      "bytes": 2795796
+    },
+    {
+      "path": "print/primer-04.png",
+      "bytes": 418563
+    },
+    {
+      "path": "print/primer-05.png",
+      "bytes": 3021629
+    },
+    {
+      "path": "print/qa-layout.json",
+      "bytes": 2
+    },
+    {
+      "path": "print/social-01.png",
+      "bytes": 4249954
+    },
+    {
+      "path": "print/social-02.png",
+      "bytes": 3661729
+    },
+    {
+      "path": "print/social-03.png",
+      "bytes": 1510042
+    },
+    {
+      "path": "print/social-04.png",
+      "bytes": 2238410
+    },
+    {
+      "path": "print/social-05.png",
+      "bytes": 1024011
+    },
+    {
+      "path": "print/social-06.png",
+      "bytes": 2943578
+    },
+    {
+      "path": "print/social-07.png",
+      "bytes": 2918675
+    },
+    {
+      "path": "print/social-08.png",
+      "bytes": 2413086
+    },
+    {
+      "path": "print/social-09.png",
+      "bytes": 183205
+    },
+    {
+      "path": "print/social-10.png",
+      "bytes": 4238655
+    },
+    {
+      "path": "print/social-11.png",
+      "bytes": 2256090
+    },
+    {
+      "path": "print/social-12.png",
+      "bytes": 1170671
+    },
+    {
+      "path": "print/social-cards.html",
+      "bytes": 15737
+    },
+    {
+      "path": "print/social-cards.pdf",
+      "bytes": 3127144
+    },
+    {
+      "path": "print/wallpaper-desktop.png",
+      "bytes": 7948185
+    },
+    {
+      "path": "print/wallpaper-phone.png",
+      "bytes": 7157307
+    },
+    {
+      "path": "README.txt",
+      "bytes": 2934
+    },
+    {
+      "path": "style.css",
+      "bytes": 20109
+    }
+  ]
+}

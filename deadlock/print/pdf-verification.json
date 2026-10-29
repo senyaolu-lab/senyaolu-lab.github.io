@@ -1,0 +1,32 @@
+[
+  {
+    "file": "hero-dossiers.pdf",
+    "pages": 3,
+    "bytes": 1127357,
+    "textExtractable": true
+  },
+  {
+    "file": "city-guide.pdf",
+    "pages": 3,
+    "bytes": 587533,
+    "textExtractable": true
+  },
+  {
+    "file": "gameplay-primer.pdf",
+    "pages": 5,
+    "bytes": 1127819,
+    "textExtractable": true
+  },
+  {
+    "file": "social-cards.pdf",
+    "pages": 12,
+    "bytes": 3127144,
+    "textExtractable": true
+  },
+  {
+    "file": "offline-kit.pdf",
+    "pages": 4,
+    "bytes": 1670726,
+    "textExtractable": true
+  }
+]

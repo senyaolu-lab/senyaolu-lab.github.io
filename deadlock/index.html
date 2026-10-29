@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#101c1d" name="theme-color"/>
+<title>deadlock游戏宣传包</title>
+<meta content="Every street has a secret. Explore the city, meet three remarkable heroes, find your playstyle and discover a complete unofficial Deadlock campaign collection." name="description"/>
+<meta content="deadlock游戏宣传包" property="og:title"/><meta content="An unofficial city atlas, hero collection and field guide." property="og:description"/><meta content="https://senyaolu-lab.github.io/deadlock/assets/campaign-city-wide.png" property="og:image"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/><link href="style.css" rel="stylesheet"/><script defer="" src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<a aria-label="deadlock游戏宣传包首页" class="wordmark" href="#">D<span class="wordmark-star">✦</span>L <span class="wordmark-sub">deadlock游戏宣传包</span></a>
+<nav aria-label="Main navigation"><a href="#city">The city</a><a href="#heroes">The locals</a><a href="#field-guide">Field guide</a><a href="#collection">The collection</a></nav>
+<a class="header-link" href="#finder">Find your playstyle <span aria-hidden="true">↗</span></a>
+<button aria-controls="mobile-nav" aria-expanded="false" class="menu-toggle" id="menu-toggle">Menu <span>+</span></button>
+</header>
+<div class="mobile-nav" hidden="" id="mobile-nav"><a href="#city">The city</a><a href="#heroes">The locals</a><a href="#field-guide">Field guide</a><a href="#collection">The collection</a><a href="#finder">Find your playstyle</a></div>
+<main id="main">
+<section aria-labelledby="hero-heading" class="hero">
+<img alt="Original campaign illustration of a haunted New York skyline watched over by spectral eyes" class="hero-art" fetchpriority="high" src="assets/campaign-city-wide.png"/>
+<div class="hero-scrim"></div>
+<div class="hero-content wrap">
+<p class="eyebrow"><span class="tiny-diamond">◆</span> AN UNOFFICIAL DEADLOCK CAMPAIGN <span class="hero-edition">VOL. 01 / NYC</span></p>
+<h1 id="hero-heading">THE CITY<br/>HAS A HOLD<br/><em>ON YOU.</em></h1>
+<div class="hero-bottom"><p>Strange streets. Unforgettable locals.<br/>A different kind of fight around every corner.</p><a class="button button-light" href="#city">Enter the city <span>↓</span></a></div>
+</div>
+<div class="hero-caption"><span>ILLUSTRATED CAMPAIGN ART</span><span>WELCOME TO THE CURSED APPLE</span><span>SCROLL TO EXPLORE ↓</span></div>
+</section>
+<section class="dispatch wrap">
+<span class="stamp">VISITOR’S<br/>DISPATCH<br/><b>No. 001</b></span>
+<h2>A city worth<br/>getting <em>lost in.</em></h2>
+<div><p>Deadlock is Valve’s multiplayer game in early development. Its unusual city brings supernatural personalities and third-person combat into a world of shifting opportunities.</p><p class="small">This independent fan campaign is a creative invitation to explore. For the latest game status and access information, visit the <a href="https://store.steampowered.com/app/1422450/Deadlock/" rel="noopener noreferrer" target="_blank">official Steam page ↗</a>.</p></div>
+</section>
+<section class="city-section paper" id="city">
+<div class="wrap">
+<div class="section-kicker"><span>01 / THE CITY</span><span>AN ILLUSTRATED VISITOR’S GUIDE</span></div>
+<div class="section-heading"><h2>Take the<br/><em>long way home.</em></h2><p>The neighborhood changes. The feeling stays with you.<br/>Select a stop to discover a different side of the city.</p></div>
+<div class="city-explorer">
+<div aria-label="Illustrated city stops" class="atlas-map">
+<svg aria-hidden="true" viewbox="0 0 600 580"><defs><pattern height="61" id="blocks" patterntransform="rotate(-17)" patternunits="userSpaceOnUse" width="53"><rect fill="none" height="40" rx="1" stroke="currentColor" stroke-width="1" width="34" x="7" y="7"></rect></pattern></defs><path d="M80 25 550 20 520 440 390 555 65 545Z" fill="url(#blocks)" opacity=".22"></path><path d="M150 40 260 135 130 245 330 350 450 470" fill="none" stroke="#a25a35" stroke-dasharray="5 6" stroke-width="3"></path><path d="M40 490C190 390 370 530 560 300" fill="none" opacity=".24" stroke="#6f8274" stroke-width="22"></path><path d="M30 495C200 398 375 530 570 305" fill="none" stroke="#6f8274" stroke-width="1"></path><text fill="currentColor" font-family="Georgia" font-size="15" x="430" y="65">N</text><path d="m435 75-5 21 5-4 5 4Z" fill="currentColor"></path><text fill="currentColor" font-family="Arial" font-size="12" letter-spacing="3" x="34" y="567">THE CURSED APPLE / SELECT A STOP</text></svg>
+<button aria-pressed="true" class="map-pin selected" data-stop="uptown" style="--x:25%;--y:14%"><b>01</b><span>Uptown</span></button>
+<button aria-pressed="false" class="map-pin" data-stop="park" style="--x:56%;--y:28%"><b>02</b><span>Central Park</span></button>
+<button aria-pressed="false" class="map-pin" data-stop="theater" style="--x:23%;--y:44%"><b>03</b><span>Theater</span></button>
+<button aria-pressed="false" class="map-pin" data-stop="chinatown" style="--x:62%;--y:58%"><b>04</b><span>Chinatown</span></button>
+<button aria-pressed="false" class="map-pin" data-stop="haunted" style="--x:34%;--y:73%"><b>05</b><span>Haunted Lot</span></button>
+<div class="map-note">A creative visitor’s atlas.<br/>Not a tactical map.</div>
+</div>
+<article aria-live="polite" class="city-feature"><div class="photo-frame"><img alt="Uptown environment from Deadlock’s official update page" id="city-photo" loading="lazy" src="assets/uptown_02.webp"/><span id="city-number">01</span></div><div class="city-copy"><p class="eyebrow" id="city-category">YOUR FIRST STOP</p><h3 id="city-name">Uptown</h3><p id="city-description">The official visitor’s guide begins here: a route into the action, framed by the city’s unmistakable skyline.</p><a href="https://www.playdeadlock.com/cityneversleeps" rel="noopener noreferrer" target="_blank">Explore the official city update <span>↗</span></a></div></article>
+</div>
+<p class="caption">Environment images: Valve’s City Never Sleeps update. Tour copy and map design: this fan campaign.</p>
+</div>
+</section>
+<section class="heroes-section wrap" id="heroes">
+<div class="section-kicker"><span>02 / THE LOCALS</span><span>THREE PERSONALITIES. THREE INVITATIONS.</span></div>
+<div class="section-heading"><h2>Not your<br/><em>usual neighbors.</em></h2><p>Meet a few of the city’s remarkable residents.<br/>Open a dossier. Find a point of connection.</p></div>
+<div class="hero-grid">
+<button class="hero-card" data-hero="infernus"><div class="hero-portrait rust"><span class="dossier-number">FILE / 01</span><img alt="Infernus character portrait" loading="lazy" src="assets/hero-infernus.webp"/><span class="hero-insignia">✦</span></div><div class="hero-label"><span class="eyebrow">KEEP THE PRESSURE ON</span><h3>Infernus <span>↗</span></h3><p>Leave a lasting impression.</p></div></button>
+<button class="hero-card" data-hero="dynamo"><div class="hero-portrait green"><span class="dossier-number">FILE / 02</span><img alt="Dynamo character portrait" loading="lazy" src="assets/hero-dynamo.webp"/><span class="hero-insignia">◎</span></div><div class="hero-label"><span class="eyebrow">CHANGE THE MOMENT</span><h3>Dynamo <span>↗</span></h3><p>Make a little space. Change everything.</p></div></button>
+<button class="hero-card" data-hero="ivy"><div class="hero-portrait sand"><span class="dossier-number">FILE / 03</span><img alt="Ivy character portrait" loading="lazy" src="assets/hero-ivy.webp"/><span class="hero-insignia">❧</span></div><div class="hero-label"><span class="eyebrow">BRING SOMEONE WITH YOU</span><h3>Ivy <span>↗</span></h3><p>Some things are better together.</p></div></button>
+</div><p class="caption">Character artwork from game-resource references. Descriptive campaign themes, not official role classifications.</p>
+</section>
+<section class="field-section paper" id="field-guide">
+<div class="wrap"><div class="section-kicker"><span>03 / THE FIELD GUIDE</span><span>FIVE THINGS TO TAKE WITH YOU</span></div>
+<div class="section-heading"><h2>More than<br/><em>a good shot.</em></h2><p>A pocket-sized introduction to the decisions<br/>behind the action. Explore the five entries.</p></div>
+<div class="guide-layout"><div aria-label="Gameplay primer" class="guide-tabs" role="tablist"><button aria-controls="guide-panel" aria-selected="true" data-guide="0" id="tab-0" role="tab" tabindex="0"><span>01</span> Move with purpose <b>↗</b></button><button aria-controls="guide-panel" aria-selected="false" data-guide="1" id="tab-1" role="tab" tabindex="-1"><span>02</span> Make growth count <b>↗</b></button><button aria-controls="guide-panel" aria-selected="false" data-guide="2" id="tab-2" role="tab" tabindex="-1"><span>03</span> Find your combination <b>↗</b></button><button aria-controls="guide-panel" aria-selected="false" data-guide="3" id="tab-3" role="tab" tabindex="-1"><span>04</span> Play the objective <b>↗</b></button><button aria-controls="guide-panel" aria-selected="false" data-guide="4" id="tab-4" role="tab" tabindex="-1"><span>05</span> Make it a team game <b>↗</b></button></div>
+<article aria-labelledby="tab-0" class="guide-panel" id="guide-panel" role="tabpanel" tabindex="0"><div class="guide-visual" id="guide-visual"></div><div class="guide-panel-copy"><span class="eyebrow" id="guide-label">FIELD NOTE / 01</span><h3 id="guide-title">Move with purpose.</h3><p id="guide-copy"></p><p class="guide-tip" id="guide-tip"></p></div></article></div>
+<p class="caption">An introductory fan guide. Game mechanics and balance evolve during development. Follow the current in-game tutorial and official updates.</p>
+</div>
+</section>
+<section class="finder-section wrap" id="finder">
+<div class="section-kicker"><span>04 / A QUESTION OF CHARACTER</span><span>FOUR QUESTIONS. ONE STARTING POINT.</span></div>
+<div class="finder-grid"><div><h2>What brings<br/><em>you here?</em></h2><p>Your instincts say something about your style.<br/>Answer four questions to meet a possible match.</p><div aria-hidden="true" class="finder-seal">D<span>✦</span>L</div><p class="caption">A playful campaign quiz, not a competitive assessment.<br/>Everything happens in your browser.</p></div><div aria-live="polite" class="quiz-box" id="quiz"></div></div>
+</section>
+<section class="community-section paper" id="community"><div class="wrap community-grid"><div class="community-art"><img alt="Theater district in Deadlock" loading="lazy" src="assets/theater_03.jpg"/><div class="community-ticket"><span>OPEN YOUR EYES</span><b>THE CITY<br/>IS THE STORY.</b><span>FAN SCREENSHOT CHALLENGE</span></div></div><div><p class="eyebrow">05 / A COMMUNITY INVITATION</p><h2>Show us<br/><em>your corner.</em></h2><p>One place. One frame. One sentence. Discover the city through the eyes of the people who play in it.</p><p>Our community playbook brings together a complete screenshot-challenge concept: the creative brief, submission template, judging criteria and moderation notes.</p><a class="button button-dark" href="editorial/community-playbook.html" rel="noopener" target="_blank">Read the playbook <span>↗</span></a><p class="caption">Ready-to-run event concept. No live submissions or scheduled event.</p></div></div></section>
+<section class="collection-section wrap" id="collection"><div class="section-kicker"><span>06 / TAKE A PIECE OF THE CITY</span><span>THE CAMPAIGN COLLECTION</span></div><div class="section-heading"><h2>Made to<br/><em>be passed on.</em></h2><p>Explore the visual collection and the editorial kit.<br/>Download a piece, or take the complete creator pack.</p></div><div class="collection-toolbar"><div aria-label="Filter collection" class="filter-buttons"><button aria-pressed="true" class="active" data-filter="all">All</button><button aria-pressed="false" data-filter="art">Artwork</button><button aria-pressed="false" data-filter="print">Print &amp; social</button><button aria-pressed="false" data-filter="editorial">Editorial</button></div><a class="text-link" download="" href="downloads/creator-kit.zip" id="kit-download">Creator kit .zip <span>↓</span></a></div><div class="collection-grid" id="collection-grid"></div><p aria-live="polite" class="caption" id="collection-count"></p></section>
+<section class="faq-section paper"><div class="wrap faq-grid"><div><p class="eyebrow">BEFORE YOU GO</p><h2>A few<br/><em>good questions.</em></h2></div><div class="faq-items"><details><summary>Is this an official Deadlock website?<span>+</span></summary><p>No. This is an independent, unofficial fan campaign. Deadlock and its characters belong to Valve. Original campaign artwork, copy and layouts are presented as fan concepts.</p></details><details><summary>How can I play Deadlock?<span>+</span></summary><p>At the research check on October 29, 2026, the Steam page described early development and access through invitations from existing playtesters. Check the <a href="https://store.steampowered.com/app/1422450/Deadlock/" rel="noopener noreferrer" target="_blank">official Steam page</a> for the current position. This site does not issue invitations.</p></details><details><summary>Are these images actual game screenshots?<span>+</span></summary><p>The city-explorer images are official game-environment material. The large atmospheric campaign illustration and poster are original AI-assisted concept art, not gameplay screenshots. Hero portraits are game-resource references. See the asset register for individual sources.</p></details><details><summary>What is in the creator kit?<span>+</span></summary><p>The kit includes campaign artwork, editorial guides, a factsheet, publication copy, a community playbook, a release plan and source information. Individual print collections are also available below. It is a fan-campaign package, not Valve’s official press kit.</p></details><details><summary>Does the playstyle finder save my answers?<span>+</span></summary><p>No answers are transmitted or stored. The quiz runs locally in the page. You can optionally download a personal result card. There are no trackers or signup forms.</p></details></div></div></section>
+<section class="closing"><div class="wrap"><p class="eyebrow">YOUR NEXT STOP</p><h2>Some cities<br/><em>stay with you.</em></h2><a class="button button-light" href="https://store.steampowered.com/app/1422450/Deadlock/" rel="noopener noreferrer" target="_blank">Discover Deadlock on Steam <span>↗</span></a><p>Early development. Follow official channels for access and updates.</p></div></section>
+</main>
+<footer class="wrap footer"><a class="wordmark" href="#">D<span class="wordmark-star">✦</span>L</a><p>deadlock游戏宣传包 / THE CURSED APPLE / AN UNOFFICIAL FAN CAMPAIGN<br/><span>Game and character rights belong to Valve. Research checked October 29, 2026.</span></p><div><a href="editorial/index.html" rel="noopener" target="_blank">Campaign documents ↗</a><a href="assets/asset-sources.json" rel="noopener" target="_blank">Asset sources ↗</a><a href="../index.html#work">返回作品集 ↗</a></div></footer>
+<dialog aria-labelledby="dossier-title" class="hero-dialog" id="hero-dialog"><button aria-label="Close hero dossier" class="dialog-close">Close ×</button><div id="dossier-content"></div></dialog>
+<div class="toast" id="toast" role="status"></div>
+</body></html>

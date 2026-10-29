@@ -1,0 +1,206 @@
+{
+  "project": "Deadlock — The City Has a Hold on You",
+  "edition": "01",
+  "verified_on": "2026-10-29",
+  "language": "en",
+  "project_type": "Independent fan campaign",
+  "evidence_policy": "Official game status comes from Valve's Steam page. Community references support restrained hero summaries. Campaign copy, visual framing, activity rules and rollout plans are original proposals, not official announcements.",
+  "sources": [
+    {
+      "id": "VALVE-STEAM",
+      "title": "Deadlock on Steam",
+      "url": "https://store.steampowered.com/app/1422450/Deadlock/",
+      "publisher": "Valve",
+      "evidence_type": "official",
+      "used_for": [
+        "Game title",
+        "Developer and publisher",
+        "Early-development status",
+        "Friend-invite access",
+        "Release date unannounced"
+      ],
+      "verification": "Official store text returned by web search; checked 29 October 2026.",
+      "refresh_before_publication": true
+    },
+    {
+      "id": "VALVE-CITY",
+      "title": "Deadlock — City Never Sleeps",
+      "url": "https://www.playdeadlock.com/cityneversleeps",
+      "publisher": "Valve",
+      "evidence_type": "official",
+      "used_for": [
+        "Official campaign/site reference",
+        "Environment source context"
+      ],
+      "verification": "Official root URL redirected to this page; detailed asset provenance is maintained by the separate asset-source manifest.",
+      "refresh_before_publication": true
+    },
+    {
+      "id": "WIKI-INFERNUS",
+      "title": "Infernus — The Deadlock Wiki",
+      "url": "https://deadlock.wiki/Infernus",
+      "publisher": "The Deadlock Wiki community",
+      "evidence_type": "community_reference",
+      "used_for": [
+        "Fire identity",
+        "Flame Dash",
+        "Qualitative pursuit and burn description"
+      ],
+      "verification": "Indexed page excerpts inspected. Direct full-page fetch was restricted. No numerical balance values used.",
+      "refresh_before_publication": true
+    },
+    {
+      "id": "WIKI-DYNAMO",
+      "title": "Dynamo — The Deadlock Wiki",
+      "url": "https://deadlock.wiki/Dynamo",
+      "publisher": "The Deadlock Wiki community",
+      "evidence_type": "community_reference",
+      "used_for": [
+        "Support and healing",
+        "Repositioning",
+        "Singularity"
+      ],
+      "verification": "Indexed excerpts of canonical and redirect pages inspected. Full-page retrieval was blocked. No numerical balance values used.",
+      "refresh_before_publication": true
+    },
+    {
+      "id": "WIKI-IVY",
+      "title": "Ivy — The Deadlock Wiki",
+      "url": "https://deadlock.wiki/Ivy",
+      "publisher": "The Deadlock Wiki community",
+      "evidence_type": "community_reference",
+      "used_for": [
+        "Air Drop",
+        "Ally-focused abilities"
+      ],
+      "verification": "Indexed update/reference snippets inspected; full-page fetch was restricted. Character role is described broadly, without numerical balance claims.",
+      "refresh_before_publication": true
+    },
+    {
+      "id": "COMMUNITY-HERO-DATA",
+      "title": "Deadlock API — Hero assets",
+      "url": "https://api.deadlock-api.com/v1/assets/heroes",
+      "publisher": "Deadlock API community",
+      "evidence_type": "community_game_data_mirror",
+      "used_for": [
+        "Independent cross-check of broad hero descriptions"
+      ],
+      "verification": "Asset-research agent inspected the current returned game-data descriptions. This is not a Valve-operated API.",
+      "refresh_before_publication": true
+    },
+    {
+      "id": "STEAM-ASSETS",
+      "title": "Store Graphical Assets",
+      "url": "https://partner.steamgames.com/doc/store/assets/standard",
+      "publisher": "Valve / Steamworks",
+      "evidence_type": "official_platform_documentation",
+      "used_for": [
+        "Asset families",
+        "Actual gameplay screenshots versus promotional art"
+      ],
+      "verification": "Official documentation inspected.",
+      "refresh_before_publication": true
+    },
+    {
+      "id": "STEAM-RULES",
+      "title": "Graphical Asset Rules",
+      "url": "https://partner.steamgames.com/doc/store/assets/rules",
+      "publisher": "Valve / Steamworks",
+      "evidence_type": "official_platform_documentation",
+      "used_for": [
+        "Distinguishing promotional concepts from Steam-ready capsules"
+      ],
+      "verification": "Official documentation inspected. No product-page upload or access is claimed.",
+      "refresh_before_publication": true
+    },
+    {
+      "id": "STEAM-EVENTS",
+      "title": "Events and Announcements Tools",
+      "url": "https://partner.steamgames.com/doc/marketing/event_tools",
+      "publisher": "Valve / Steamworks",
+      "evidence_type": "official_platform_documentation",
+      "used_for": [
+        "Official-channel permissions and announcement context"
+      ],
+      "verification": "Official documentation inspected. The fan rollout uses its own host channel.",
+      "refresh_before_publication": true
+    },
+    {
+      "id": "STEAM-MARKETING",
+      "title": "Best Practices, Marketing",
+      "url": "https://partner.steamgames.com/doc/marketing/bestpractices",
+      "publisher": "Valve / Steamworks",
+      "evidence_type": "official_platform_documentation",
+      "used_for": [
+        "Iterative release planning",
+        "Experimentation",
+        "Sustained communication"
+      ],
+      "verification": "Official documentation inspected. The fourteen-day timetable is an original recommendation.",
+      "refresh_before_publication": false
+    },
+    {
+      "id": "STEAM-UTM",
+      "title": "UTM Analytics",
+      "url": "https://partner.steamgames.com/doc/marketing/utm_analytics",
+      "publisher": "Valve / Steamworks",
+      "evidence_type": "official_platform_documentation",
+      "used_for": [
+        "Required View Marketing Traffic Data permission",
+        "Measurement limits",
+        "Playtest app conversions are not reported"
+      ],
+      "verification": "Official documentation inspected including permissions and FAQ.",
+      "refresh_before_publication": true
+    },
+    {
+      "id": "GAMEMAKER-MARKETING",
+      "title": "How To Market Your Indie Games For (Almost) Free",
+      "url": "https://gamemaker.io/en/blog/market-an-indie-game",
+      "publisher": "GameMaker",
+      "author": "Ross Bramble",
+      "published": "2023-03-19",
+      "evidence_type": "first_party_industry_guidance",
+      "used_for": [
+        "Concise positioning",
+        "Community replies",
+        "Synchronized marketing assets",
+        "Presskit preparation"
+      ],
+      "verification": "Article inspected. No performance guarantee adopted.",
+      "refresh_before_publication": false
+    },
+    {
+      "id": "TOUKANA-PRESSKIT",
+      "title": "Dorfromantik Presskit",
+      "url": "https://www.toukana.com/dorfromantik/presskit",
+      "publisher": "Toukana Interactive",
+      "evidence_type": "developer_example",
+      "used_for": [
+        "Factsheet and kit organization"
+      ],
+      "verification": "Developer's live presskit inspected for structure. No text or artwork reproduced.",
+      "refresh_before_publication": false
+    }
+  ],
+  "creative_material": {
+    "tagline": "THE CITY HAS A HOLD ON YOU.",
+    "hero_headlines": {
+      "Infernus": "HEAT FINDS A WAY.",
+      "Dynamo": "MAKE SPACE. CHANGE THE FIGHT.",
+      "Ivy": "SOMEONE HAS YOUR BACK."
+    },
+    "activity": "Streetlight Stories",
+    "note": "These are original fan-campaign concepts, not quotes, official class names, in-game claims or Valve-announced events."
+  },
+  "excluded_claims": [
+    "Announced release date",
+    "Open access or guaranteed invitation",
+    "Official endorsement",
+    "Invented review scores",
+    "Guaranteed campaign results",
+    "Prize or game-key offer",
+    "Official Steamworks reporting access"
+  ],
+  "asset_link_note": "Editorial asset IDs are defined in campaign-guide.html. Visual source attribution belongs to the delivery's separate asset manifest."
+}

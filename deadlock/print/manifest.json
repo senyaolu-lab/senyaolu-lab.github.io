@@ -1,0 +1,471 @@
+{
+  "title": "Deadlock Campaign Print Collection",
+  "language": "en",
+  "colourSpace": "RGB",
+  "note": "Print proofs; final stock, bleed and colour conversion require print-provider preflight.",
+  "groups": {
+    "hero-dossiers": [
+      "hero-infernus",
+      "hero-dynamo",
+      "hero-ivy"
+    ],
+    "city-guide": [
+      "city-theater",
+      "city-chinatown",
+      "city-plaza"
+    ],
+    "gameplay-primer": [
+      "primer-01",
+      "primer-02",
+      "primer-03",
+      "primer-04",
+      "primer-05"
+    ],
+    "social-cards": [
+      "social-01",
+      "social-02",
+      "social-03",
+      "social-04",
+      "social-05",
+      "social-06",
+      "social-07",
+      "social-08",
+      "social-09",
+      "social-10",
+      "social-11",
+      "social-12"
+    ],
+    "offline-kit": [
+      "offline-a3-poster",
+      "offline-collectibles",
+      "offline-stickers",
+      "offline-postcard"
+    ],
+    "campaign-variants": [
+      "campaign-16x9",
+      "campaign-square",
+      "campaign-4x5",
+      "wallpaper-desktop",
+      "wallpaper-phone"
+    ]
+  },
+  "assets": [
+    {
+      "id": "hero-infernus",
+      "file": "hero-infernus.png",
+      "width": 2160,
+      "height": 2700,
+      "cssWidth": 1080,
+      "cssHeight": 1350,
+      "type": "PNG",
+      "preview": "previews/hero-infernus.png",
+      "previewWidth": 440,
+      "previewHeight": 550
+    },
+    {
+      "id": "hero-dynamo",
+      "file": "hero-dynamo.png",
+      "width": 2160,
+      "height": 2700,
+      "cssWidth": 1080,
+      "cssHeight": 1350,
+      "type": "PNG",
+      "preview": "previews/hero-dynamo.png",
+      "previewWidth": 440,
+      "previewHeight": 550
+    },
+    {
+      "id": "hero-ivy",
+      "file": "hero-ivy.png",
+      "width": 2160,
+      "height": 2700,
+      "cssWidth": 1080,
+      "cssHeight": 1350,
+      "type": "PNG",
+      "preview": "previews/hero-ivy.png",
+      "previewWidth": 440,
+      "previewHeight": 550
+    },
+    {
+      "id": "city-theater",
+      "file": "city-theater.png",
+      "width": 2160,
+      "height": 2700,
+      "cssWidth": 1080,
+      "cssHeight": 1350,
+      "type": "PNG",
+      "preview": "previews/city-theater.png",
+      "previewWidth": 440,
+      "previewHeight": 550
+    },
+    {
+      "id": "city-chinatown",
+      "file": "city-chinatown.png",
+      "width": 2160,
+      "height": 2700,
+      "cssWidth": 1080,
+      "cssHeight": 1350,
+      "type": "PNG",
+      "preview": "previews/city-chinatown.png",
+      "previewWidth": 440,
+      "previewHeight": 550
+    },
+    {
+      "id": "city-plaza",
+      "file": "city-plaza.png",
+      "width": 2160,
+      "height": 2700,
+      "cssWidth": 1080,
+      "cssHeight": 1350,
+      "type": "PNG",
+      "preview": "previews/city-plaza.png",
+      "previewWidth": 440,
+      "previewHeight": 550
+    },
+    {
+      "id": "primer-01",
+      "file": "primer-01.png",
+      "width": 2160,
+      "height": 2700,
+      "cssWidth": 1080,
+      "cssHeight": 1350,
+      "type": "PNG",
+      "preview": "previews/primer-01.png",
+      "previewWidth": 440,
+      "previewHeight": 550
+    },
+    {
+      "id": "primer-02",
+      "file": "primer-02.png",
+      "width": 2160,
+      "height": 2700,
+      "cssWidth": 1080,
+      "cssHeight": 1350,
+      "type": "PNG",
+      "preview": "previews/primer-02.png",
+      "previewWidth": 440,
+      "previewHeight": 550
+    },
+    {
+      "id": "primer-03",
+      "file": "primer-03.png",
+      "width": 2160,
+      "height": 2700,
+      "cssWidth": 1080,
+      "cssHeight": 1350,
+      "type": "PNG",
+      "preview": "previews/primer-03.png",
+      "previewWidth": 440,
+      "previewHeight": 550
+    },
+    {
+      "id": "primer-04",
+      "file": "primer-04.png",
+      "width": 2160,
+      "height": 2700,
+      "cssWidth": 1080,
+      "cssHeight": 1350,
+      "type": "PNG",
+      "preview": "previews/primer-04.png",
+      "previewWidth": 440,
+      "previewHeight": 550
+    },
+    {
+      "id": "primer-05",
+      "file": "primer-05.png",
+      "width": 2160,
+      "height": 2700,
+      "cssWidth": 1080,
+      "cssHeight": 1350,
+      "type": "PNG",
+      "preview": "previews/primer-05.png",
+      "previewWidth": 440,
+      "previewHeight": 550
+    },
+    {
+      "id": "social-01",
+      "file": "social-01.png",
+      "width": 2160,
+      "height": 2160,
+      "cssWidth": 1080,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/social-01.png",
+      "previewWidth": 440,
+      "previewHeight": 440
+    },
+    {
+      "id": "social-02",
+      "file": "social-02.png",
+      "width": 2160,
+      "height": 2160,
+      "cssWidth": 1080,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/social-02.png",
+      "previewWidth": 440,
+      "previewHeight": 440
+    },
+    {
+      "id": "social-03",
+      "file": "social-03.png",
+      "width": 2160,
+      "height": 2160,
+      "cssWidth": 1080,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/social-03.png",
+      "previewWidth": 440,
+      "previewHeight": 440
+    },
+    {
+      "id": "social-04",
+      "file": "social-04.png",
+      "width": 2160,
+      "height": 2160,
+      "cssWidth": 1080,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/social-04.png",
+      "previewWidth": 440,
+      "previewHeight": 440
+    },
+    {
+      "id": "social-05",
+      "file": "social-05.png",
+      "width": 2160,
+      "height": 2160,
+      "cssWidth": 1080,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/social-05.png",
+      "previewWidth": 440,
+      "previewHeight": 440
+    },
+    {
+      "id": "social-06",
+      "file": "social-06.png",
+      "width": 2160,
+      "height": 2160,
+      "cssWidth": 1080,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/social-06.png",
+      "previewWidth": 440,
+      "previewHeight": 440
+    },
+    {
+      "id": "social-07",
+      "file": "social-07.png",
+      "width": 2160,
+      "height": 2160,
+      "cssWidth": 1080,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/social-07.png",
+      "previewWidth": 440,
+      "previewHeight": 440
+    },
+    {
+      "id": "social-08",
+      "file": "social-08.png",
+      "width": 2160,
+      "height": 2160,
+      "cssWidth": 1080,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/social-08.png",
+      "previewWidth": 440,
+      "previewHeight": 440
+    },
+    {
+      "id": "social-09",
+      "file": "social-09.png",
+      "width": 2160,
+      "height": 2160,
+      "cssWidth": 1080,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/social-09.png",
+      "previewWidth": 440,
+      "previewHeight": 440
+    },
+    {
+      "id": "social-10",
+      "file": "social-10.png",
+      "width": 2160,
+      "height": 2160,
+      "cssWidth": 1080,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/social-10.png",
+      "previewWidth": 440,
+      "previewHeight": 440
+    },
+    {
+      "id": "social-11",
+      "file": "social-11.png",
+      "width": 2160,
+      "height": 2160,
+      "cssWidth": 1080,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/social-11.png",
+      "previewWidth": 440,
+      "previewHeight": 440
+    },
+    {
+      "id": "social-12",
+      "file": "social-12.png",
+      "width": 2160,
+      "height": 2160,
+      "cssWidth": 1080,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/social-12.png",
+      "previewWidth": 440,
+      "previewHeight": 440
+    },
+    {
+      "id": "offline-a3-poster",
+      "file": "offline-a3-poster.png",
+      "width": 2244,
+      "height": 3174,
+      "cssWidth": 1122,
+      "cssHeight": 1587,
+      "type": "PNG",
+      "preview": "previews/offline-a3-poster.png",
+      "previewWidth": 440,
+      "previewHeight": 622
+    },
+    {
+      "id": "offline-collectibles",
+      "file": "offline-collectibles.png",
+      "width": 2244,
+      "height": 3174,
+      "cssWidth": 1122,
+      "cssHeight": 1587,
+      "type": "PNG",
+      "preview": "previews/offline-collectibles.png",
+      "previewWidth": 440,
+      "previewHeight": 622
+    },
+    {
+      "id": "offline-stickers",
+      "file": "offline-stickers.png",
+      "width": 2244,
+      "height": 3174,
+      "cssWidth": 1122,
+      "cssHeight": 1587,
+      "type": "PNG",
+      "preview": "previews/offline-stickers.png",
+      "previewWidth": 440,
+      "previewHeight": 622
+    },
+    {
+      "id": "offline-postcard",
+      "file": "offline-postcard.png",
+      "width": 2244,
+      "height": 3174,
+      "cssWidth": 1122,
+      "cssHeight": 1587,
+      "type": "PNG",
+      "preview": "previews/offline-postcard.png",
+      "previewWidth": 440,
+      "previewHeight": 622
+    },
+    {
+      "id": "campaign-16x9",
+      "file": "campaign-16x9.png",
+      "width": 3200,
+      "height": 1800,
+      "cssWidth": 1600,
+      "cssHeight": 900,
+      "type": "PNG",
+      "preview": "previews/campaign-16x9.png",
+      "previewWidth": 440,
+      "previewHeight": 248
+    },
+    {
+      "id": "campaign-square",
+      "file": "campaign-square.png",
+      "width": 2160,
+      "height": 2160,
+      "cssWidth": 1080,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/campaign-square.png",
+      "previewWidth": 440,
+      "previewHeight": 440
+    },
+    {
+      "id": "campaign-4x5",
+      "file": "campaign-4x5.png",
+      "width": 2160,
+      "height": 2700,
+      "cssWidth": 1080,
+      "cssHeight": 1350,
+      "type": "PNG",
+      "preview": "previews/campaign-4x5.png",
+      "previewWidth": 440,
+      "previewHeight": 550
+    },
+    {
+      "id": "wallpaper-desktop",
+      "file": "wallpaper-desktop.png",
+      "width": 3840,
+      "height": 2160,
+      "cssWidth": 1920,
+      "cssHeight": 1080,
+      "type": "PNG",
+      "preview": "previews/wallpaper-desktop.png",
+      "previewWidth": 440,
+      "previewHeight": 248
+    },
+    {
+      "id": "wallpaper-phone",
+      "file": "wallpaper-phone.png",
+      "width": 2160,
+      "height": 3840,
+      "cssWidth": 1080,
+      "cssHeight": 1920,
+      "type": "PNG",
+      "preview": "previews/wallpaper-phone.png",
+      "previewWidth": 440,
+      "previewHeight": 782
+    }
+  ],
+  "pdfCollections": [
+    {
+      "file": "hero-dossiers.pdf",
+      "pages": 3,
+      "bytes": 1127357,
+      "textExtractable": true
+    },
+    {
+      "file": "city-guide.pdf",
+      "pages": 3,
+      "bytes": 587533,
+      "textExtractable": true
+    },
+    {
+      "file": "gameplay-primer.pdf",
+      "pages": 5,
+      "bytes": 1127819,
+      "textExtractable": true
+    },
+    {
+      "file": "social-cards.pdf",
+      "pages": 12,
+      "bytes": 3127144,
+      "textExtractable": true
+    },
+    {
+      "file": "offline-kit.pdf",
+      "pages": 4,
+      "bytes": 1670726,
+      "textExtractable": true
+    }
+  ],
+  "overview": "campaign-overview.png"
+}
