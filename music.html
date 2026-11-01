@@ -4,326 +4,553 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AI 音乐 · 黑暗独立摇滚 &amp; 国风抒情</title>
+<title>AI 音乐 · 五首人声与三首配乐</title>
 <link href="portfolio.css" rel="stylesheet"/>
-<style>
-  body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
-
-  .nav{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:20px var(--pad-x);
-    background:rgba(251,250,247,.82);
-    backdrop-filter:blur(18px) saturate(160%);
-    border-bottom:1px solid var(--c-line-soft);
-  }
-  .nav__back{font-size:var(--t-small);color:var(--c-ink-3);text-decoration:none;transition:color .3s var(--ease);}
-  .nav__back:hover{color:var(--c-ink);}
-  .nav__id{font-size:13.5px;font-weight:700;letter-spacing:.02em;}
-
-  .head{padding:calc(var(--pad-sec) * 1.25) 0 var(--s-7);}
-  .head__badge{
-    display:inline-flex;align-items:center;gap:9px;
-    font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
-    text-transform:uppercase;font-weight:700;color:var(--c-ink);
-    border:1px solid var(--c-ink);border-radius:999px;padding:7px 16px;margin-bottom:var(--s-6);
-  }
-  .head__badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-ink);}
-  .head__title{font-size:var(--t-h1);line-height:1.05;letter-spacing:-.03em;font-weight:900;margin:0 0 var(--s-5);}
-  .head__title .dim{color:var(--c-mute);font-weight:300;}
-  .head__sub{font-size:var(--t-lead);color:var(--c-ink-2);max-width:58ch;line-height:1.8;margin:0;}
-
-  /* 曲目 */
-  .track{padding:var(--pad-sec) 0 0;}
-  .track__hd{display:flex;align-items:baseline;gap:var(--s-5);
-    padding-bottom:var(--s-4);border-bottom:1px solid var(--c-line);margin-bottom:var(--s-7);flex-wrap:wrap;}
-  .track__no{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.24em;color:var(--c-mute);font-weight:700;}
-  .track__t{font-size:var(--t-h2);font-weight:900;letter-spacing:-.022em;margin:0;}
-  .track__t .dim{color:var(--c-mute);font-weight:300;}
-  .track__meta{margin-left:auto;font-family:var(--font-lat);font-size:var(--t-micro);
-    letter-spacing:.16em;text-transform:uppercase;color:var(--c-mute);font-weight:600;}
-
-  .style{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.9;margin:0 0 var(--s-5);max-width:60ch;}
-  .style b{color:var(--c-ink);font-weight:800;}
-
-  .player{
-    display:flex;align-items:center;gap:var(--s-5);
-    background:var(--c-surface-2);border:1px solid var(--c-line);
-    padding:var(--s-4) var(--s-5);margin:0 0 var(--s-6);
-  }
-  .player audio{width:100%;height:38px;display:block;}
-  .player__lab{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.16em;
-    text-transform:uppercase;color:var(--c-mute);font-weight:700;flex:0 0 auto;}
-
-  /* 歌词 */
-  .lyr{
-    background:var(--c-surface);border:1px solid var(--c-line);
-    border-left:3px solid var(--c-ink);padding:var(--s-6) var(--s-7);
-    font-size:var(--t-small);line-height:2;color:var(--c-ink-2);
-    white-space:pre-line;max-width:74ch;margin:0 0 var(--s-6);
-  }
-  .lyr em{font-style:normal;color:var(--c-mute);font-size:var(--t-cap);letter-spacing:.06em;}
-
-  /* 纯音乐 */
-  .inst{display:grid;gap:0;}
-  .inst__row{
-    display:grid;grid-template-columns:1fr 320px;gap:var(--s-7);
-    align-items:center;padding:var(--s-6) 0;border-bottom:1px solid var(--c-line-soft);
-  }
-  .inst__row:last-child{border-bottom:0;}
-  .inst__t{font-size:var(--t-h3);font-weight:800;letter-spacing:-.015em;margin:0 0 6px;}
-  .inst__d{font-size:var(--t-small);color:var(--c-ink-2);line-height:1.8;margin:0;}
-  .inst__row audio{width:100%;height:38px;display:block;}
-
-  .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
-  .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
-    font-size:var(--t-cap);color:var(--c-mute);}
-  .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
-  .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
-
-  @media (max-width:760px){
-    .inst__row{grid-template-columns:1fr;gap:var(--s-4);}
-  }
-  @media print{
-    @page{size:A4;margin:12mm;}
-    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
-    img,figure,table,blockquote{break-inside:avoid !important;}
-    .nav{display:none !important;}
-    .head{padding:0 0 var(--s-5) !important;}
-    .track{padding:var(--s-7) 0 0 !important;}
-    .player,.lyr,.inst__row{break-inside:avoid;}
-    .player audio,.inst__row audio{display:none !important;}
-    .player{padding:3mm 4mm !important;}
-    .lyr{padding:4mm 5mm !important;font-size:8pt !important;line-height:1.75 !important;}
-    .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
-  }
+<style>
+  body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-ink);}
+
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px var(--pad-x);
+    background:rgba(251,250,247,.82);
+    backdrop-filter:blur(18px) saturate(160%);
+    border-bottom:1px solid var(--c-line-soft);
+  }
+  .nav__back{font-size:var(--t-small);color:var(--c-ink-3);text-decoration:none;transition:color .3s var(--ease);}
+  .nav__back:hover{color:var(--c-ink);}
+  .nav__id{font-size:13.5px;font-weight:700;letter-spacing:.02em;}
+
+  .head{padding:calc(var(--pad-sec) * 1.25) 0 var(--s-7);}
+  .head__badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.22em;
+    text-transform:uppercase;font-weight:700;color:var(--c-ink);
+    border:1px solid var(--c-ink);border-radius:999px;padding:7px 16px;margin-bottom:var(--s-6);
+  }
+  .head__badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-ink);}
+  .head__title{font-size:var(--t-h1);line-height:1.05;letter-spacing:-.03em;font-weight:900;margin:0 0 var(--s-5);}
+  .head__title .dim{color:var(--c-mute);font-weight:300;}
+  .head__sub{font-size:var(--t-lead);color:var(--c-ink-2);max-width:58ch;line-height:1.8;margin:0;}
+
+  /* 曲目 */
+  .track{padding:var(--pad-sec) 0 0;}
+  .track__hd{display:flex;align-items:baseline;gap:var(--s-5);
+    padding-bottom:var(--s-4);border-bottom:1px solid var(--c-line);margin-bottom:var(--s-7);flex-wrap:wrap;}
+  .track__no{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.24em;color:var(--c-mute);font-weight:700;}
+  .track__t{font-size:var(--t-h2);font-weight:900;letter-spacing:-.022em;margin:0;}
+  .track__t .dim{color:var(--c-mute);font-weight:300;}
+  .track__meta{margin-left:auto;font-family:var(--font-lat);font-size:var(--t-micro);
+    letter-spacing:.16em;text-transform:uppercase;color:var(--c-mute);font-weight:600;}
+
+  .style{font-size:var(--t-body);color:var(--c-ink-2);line-height:1.9;margin:0 0 var(--s-5);max-width:60ch;}
+  .style b{color:var(--c-ink);font-weight:800;}
+
+  .player{
+    display:flex;align-items:center;gap:var(--s-5);
+    background:var(--c-surface-2);border:1px solid var(--c-line);
+    padding:var(--s-4) var(--s-5);margin:0 0 var(--s-6);
+  }
+  .player audio{width:100%;height:38px;display:block;}
+  .player__lab{font-family:var(--font-lat);font-size:var(--t-micro);letter-spacing:.16em;
+    text-transform:uppercase;color:var(--c-mute);font-weight:700;flex:0 0 auto;}
+
+  /* 歌词 */
+  .lyr{
+    background:var(--c-surface);border:1px solid var(--c-line);
+    border-left:3px solid var(--c-ink);padding:var(--s-6) var(--s-7);
+    font-size:var(--t-small);line-height:2;color:var(--c-ink-2);
+    white-space:pre-line;max-width:74ch;margin:0 0 var(--s-6);
+  }
+  .lyr em{font-style:normal;color:var(--c-mute);font-size:var(--t-cap);letter-spacing:.06em;}
+
+  /* 纯音乐 */
+  .inst{display:grid;gap:0;}
+  .inst__row{
+    display:grid;grid-template-columns:1fr 320px;gap:var(--s-7);
+    align-items:center;padding:var(--s-6) 0;border-bottom:1px solid var(--c-line-soft);
+  }
+  .inst__row:last-child{border-bottom:0;}
+  .inst__t{font-size:var(--t-h3);font-weight:800;letter-spacing:-.015em;margin:0 0 6px;}
+  .inst__d{font-size:var(--t-small);color:var(--c-ink-2);line-height:1.8;margin:0;}
+  .inst__row audio{width:100%;height:38px;display:block;}
+
+  .foot{border-top:1px solid var(--c-line);padding:var(--s-7) 0;margin-top:var(--pad-sec);}
+  .foot__row{display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;
+    font-size:var(--t-cap);color:var(--c-mute);}
+  .foot__row a{color:var(--c-ink-3);text-decoration:none;border-bottom:1px solid var(--c-line);}
+  .foot__row a:hover{color:var(--c-ink);border-color:var(--c-ink);}
+
+  @media (max-width:760px){
+    .inst__row{grid-template-columns:1fr;gap:var(--s-4);}
+  }
+  @media print{
+    @page{size:A4;margin:12mm;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+    img,figure,table,blockquote{break-inside:avoid !important;}
+    .nav{display:none !important;}
+    .head{padding:0 0 var(--s-5) !important;}
+    .track{padding:var(--s-7) 0 0 !important;}
+    .player,.lyr,.inst__row{break-inside:avoid;}
+    .player audio,.inst__row audio{display:none !important;}
+    .player{padding:3mm 4mm !important;}
+    .lyr{padding:4mm 5mm !important;font-size:8pt !important;line-height:1.75 !important;}
+    .foot{margin-top:var(--s-6);padding:var(--s-5) 0 !important;}
+  }
 </style>
-<link href="case-theme.css" rel="stylesheet"/><link href="favicon.svg" rel="icon" type="image/svg+xml"/><script defer="" src="case.js"></script></head>
+<link href="case-theme.css" rel="stylesheet"/><link href="favicon.svg" rel="icon" type="image/svg+xml"/><script defer="" src="case.js"></script><style>.lyrics-toggle{margin-bottom:32px}.lyrics-toggle summary{cursor:pointer;color:#c5f879;padding:16px 0;font-size:14px}.lyrics-toggle .lyr{max-width:100%;overflow-wrap:anywhere}.track__t{overflow-wrap:anywhere}.player audio{min-width:0}@media(max-width:760px){.track__t{font-size:26px}.lyr{padding:20px!important}.player{padding:14px!important;gap:12px}}</style></head>
 <body class="pf case-page">
 <nav class="nav"><a class="nav__back" href="index.html#work">↖ 全部作品</a><a class="case-brand" href="index.html">SENYAO<span>®</span></a><a aria-label="切换到游戏策划作品集" class="portfolio-switch" href="https://senyaolu-lab.github.io/portfolio/">游戏作品集 ↗</a></nav>
 <header class="head pf-wrap">
 <div class="head__badge">个人创作 · AI 音乐</div>
-<h1 class="head__title">AI 音乐<br/><span class="dim">两首人声 · 三首配乐</span></h1>
-<p class="head__sub">
-    两首带词的人声作品，一首走黑暗独立摇滚，一首走国风抒情；另有纯音乐三首，
-    服务于毕业设计的氛围与情绪铺陈。词、曲、编制与混音方向均由本人设定。
-  </p>
+<h1 class="head__title">AI 音乐<br/><span class="dim">五首人声 · 三首配乐</span></h1>
+<p class="head__sub">五首人声作品，涵盖中文、日文与英文；另有三首毕业设计配乐，记录不同的情绪与音乐表达。</p>
 </header>
-<main class="pf-wrap">
+<main class="pf-wrap"><section class="track" id="highway"><div class="track__hd"><span class="track__no">01</span><h2 class="track__t" lang="ja">夜明け前のハイウェイ</h2><span class="track__meta">日语人声 · 4:17</span></div><div class="player"><span class="player__lab">Play</span><audio aria-label="播放：夜明け前のハイウェイ" controls="" preload="none" src="audio/highway.mp3"></audio></div><details class="lyrics-toggle"><summary>展开完整歌词</summary><div class="lyr" lang="ja">[Intro: soft piano, station ambience, distant train]
+(whisper) ねえ、まだ眠らないで
+
+[Verse 1]
+始発(しはつ)の前に　終電(しゅうでん)が過ぎて
+君のイヤホンから　流れてた歌を
+僕は覚えてる　歌詞(かし)は一つも知らないまま
+駅前の自販機(じはんき)が　光を数えてた
+
+[Pre-Chorus]
+今夜で最後だと　知っていたのに
+僕たちは明日(あした)の話(はなし)をしていた
+消えていく街灯(がいとう)を
+指でなぞって　笑った
+
+[Chorus]
+夜明け前のハイウェイ
+君をまだ　名前で呼べない
+この歌が終わる前に
+もう一度　嘘でもいいから
+「またね」って　言わせて
+夜明け前のハイウェイ
+忘れることは　許されないんだ
+僕らは　美しいまま　ここに置いていく
+
+[Interlude: piano motif, glockenspiel]
+
+[Verse 2: stripped back, closer vocal]
+君の借りた傘(かさ)を　返す日が来なくて
+部屋の隅(すみ)で　半年(はんとし)が経(た)った
+静寂(しじま)より静かな歌を
+君はいつも　探していたね
+
+[Pre-Chorus 2]
+時計(とけい)の音(おと)が　足音(あしおと)みたいで
+現実(げんじつ)が　ゆっくり僕を撫(な)でる
+大丈夫(だいじょうぶ)　と言った声が
+今でも　少し　震えてる
+
+[Chorus 2]
+夜明け前のハイウェイ
+君をまだ　光で探してる
+この歌が終わる前に
+もう一度　痛くてもいいから
+その手を　握らせて
+夜明け前のハイウェイ
+忘れることは　許されないんだ
+僕らは　美しいまま　ここに置いていく
+
+[Bridge: piano only, very intimate]
+百円(ひゃくえん)で買える　三分間(さんぷんかん)の夢
+誰にも言えない　本当のことを
+カセットテープに　残せたなら
+ぜんぶ　ぜんぶ
+君に　聴かせたい
+
+(FULL BAND STOP — one breath)
+
+[Final Chorus: key change up 3 semitones, drums double-time feel, strings flourish]
+(半音3つ上げて)
+夜明け前のハイウェイ
+朝(あさ)が来る　その一歩(いっぽ)手前(てまえ)で
+この歌が終わっても
+何度でも　何度でも
+君の名を　呼ぶよ
+
+夜明け前のハイウェイ
+忘れない　忘れたくないんだ
+僕らは　美しいまま
+美しいまま
+ここに　生きている
+
+[Outro: fade, piano and one voice]
+ねえ、まだ眠らないで
+…また、夜明け前に
+
+[End]</div></details></section><section class="track" id="frill"><div class="track__hd"><span class="track__no">02</span><h2 class="track__t" lang="ja">フリルの鎧</h2><span class="track__meta">日语人声 · 5:20</span></div><div class="player"><span class="player__lab">Play</span><audio aria-label="播放：フリルの鎧" controls="" preload="none" src="audio/frill.mp3"></audio></div><details class="lyrics-toggle"><summary>展开完整歌词</summary><div class="lyr" lang="ja">[Intro]
+(Ah— まだ眠れるわ)
+(Ah— 夢の国へ)
+
+[Verse 1]
+満員電車に押し潰されて
+スーツの皺がため息になる
+「確認お願いします」の嵐
+私の名前 誰も呼ばない
+
+[Verse 2]
+定時は遠い 星みたいだ
+カフェインで脈を誤魔化して
+笑顔のスタンプ 貼り付けて
+心はフォルダに閉じ込めた
+
+[Pre-Chorus]
+帰り道 ショーウィンドウ
+ピンクのドレスが泣いてるみたい
+「もう無理」って呟いた声
+リボンでそっと結び直す
+
+[Chorus]
+お願い フリルの鎧を着せて
+今日だけ 私を私に返して
+ティアラの重さは 現実の重さじゃない
+きらめきの魔法で 息をさせて
+くるり 回れば おとぎの国
+薔薇のお茶会 メリーゴーランド
+傷ついたハートに パニエを重ねて
+私はお姫様 逃げてもいいでしょう？
+
+[Verse 3]
+鏡の前 少女が笑う
+「おかえりなさい」って 嘘みたい
+ピンクのリボン 結び直したら
+泣き虫の私 抱きしめた
+
+[Pre-Chorus]
+夢は現実の敵じゃない
+明日を着替える 秘密のクローゼット
+涙の分だけ フリルは膨らみ
+守ってくれる 柔らかな盾
+
+[Chorus]
+お願い フリルの鎧を着せて
+今日だけ 弱さを強さに変えて
+ティアラの輝きは 誰かのためじゃない
+私が私を 許すための光
+ふわり 舞えば 星の舞踏会
+ガラスの靴より リボンの靴で
+潰れた心に パニエをふくらませ
+私はお姫様 泣いてもいいでしょう？
+
+[Bridge]
+朝が来る 逃げ場は終わる
+でもドレスの魔法は消えない
+だってこの手で 選んだドレス
+私の中に 残ってる
+(Ah— もう大丈夫)
+(Ah— 私がいる)
+
+[Final Chorus]
+さあ フリルの鎧を脱いで
+現実のドアを ノックしよう
+ティアラはしまって 胸の奥に
+「またね」って笑って ヒールを鳴らす
+満員電車も コピー機の音も
+私を壊せない もう知ってる
+フリルの記憶を お守りにして
+月曜日の私 歩き出す
+
+[Outro]
+お姫様は 終電に乗る
+夢の国から ただいま
+明日も戦う その前に
+今日の私を 抱きしめて
+(ラララ…)</div></details></section><section class="track" id="afterglow"><div class="track__hd"><span class="track__no">03</span><h2 class="track__t" lang="en">In the Afterglow</h2><span class="track__meta">英语人声 · 3:42</span></div><div class="player"><span class="player__lab">Play</span><audio aria-label="播放：In the Afterglow" controls="" preload="none" src="audio/afterglow.mp3"></audio></div><details class="lyrics-toggle"><summary>展开完整歌词</summary><div class="lyr" lang="en">[Intro]
+(Soft synth pad, filtered vocal chops)
+Ooh-ooh, ooh-ooh
+Ooh-ooh, ooh-ooh
+
+[Verse 1]
+Midnight on the freeway, city's barely breathing
+I still see your name in every neon sign
+We were young and reckless, chasing something gleaming
+Now I'm holding shadows where you used to lie
+
+[Pre-Chorus]
+And I know, and I know, and I know
+We can't go back
+But my heart, but my heart, but my heart
+Still beats like that
+
+[Chorus]
+We were golden in the afterglow
+Dancing on the edge of letting go
+Every time I hear the radio
+I feel you, I feel you, I feel you
+We were lightning in a midnight sky
+Burning every color, burning bright
+Even when the morning comes alone
+I feel you, I feel you, I feel you
+In the afterglow
+
+[Post-Chorus]
+Ooh-ooh, ooh-ooh
+In the afterglow
+Ooh-ooh, ooh-ooh
+
+[Verse 2]
+Coffee on the counter, two cups but I'm alone
+Your hoodie in the closet still smells like the coast
+I've been trying to forget you, but the night won't let me go
+Every song I write keeps pulling me back home
+
+[Pre-Chorus]
+And I know, and I know, and I know
+We can't go back
+But my heart, but my heart, but my heart
+Still beats like that
+
+[Chorus]
+We were golden in the afterglow
+Dancing on the edge of letting go
+Every time I hear the radio
+I feel you, I feel you, I feel you
+We were lightning in a midnight sky
+Burning every color, burning bright
+Even when the morning comes alone
+I feel you, I feel you, I feel you
+In the afterglow
+
+[Bridge]
+Maybe we were never meant to last forever
+Maybe we were meant to light the dark
+If I only get one more night together
+I'd still give you all my heart
+
+[Final Chorus - Key Up +1, bigger harmonies]
+We were golden in the afterglow
+Dancing on the edge of letting go
+Every time I hear the radio
+I feel you, I feel you, I feel you
+We were lightning in a midnight sky
+Burning every color, burning bright
+Even when the morning comes alone
+I feel you, I feel you, I feel you
+In the afterglow
+
+[Outro]
+Ooh-ooh, ooh-ooh
+In the afterglow
+Ooh-ooh, ooh-ooh
+(Fade with vocal chops, piano, synth pad)</div></details></section>
 <!-- ============ 01 ============ -->
 <section class="track">
 <div class="track__hd">
-<span class="track__no">01</span>
+<span class="track__no">04</span>
 <h2 class="track__t">Don't Haunt Me Any More</h2>
 <span class="track__meta">Dark Indie Rock · 3:54</span>
 </div>
 <p class="style">
-<b>黑暗独立摇滚 / 后朋克抗议抒情曲。</b>粗犷的磁带饱和感，干爽的主歌配上宽广的板式混响人声。
-      灵感来自儿童丰富的想象力在受到恐吓时所受的心理影响——孩子在恐惧里会把影子放大成怪物，
-      而这首歌要写的是：那个被吓大的孩子，后来怎么把恐惧还回去。
+<b>黑暗独立摇滚 / 后朋克抗议抒情曲。</b>粗犷的磁带饱和感，干爽的主歌配上宽广的板式混响人声。
+      灵感来自儿童丰富的想象力在受到恐吓时所受的心理影响——孩子在恐惧里会把影子放大成怪物，
+      而这首歌要写的是：那个被吓大的孩子，后来怎么把恐惧还回去。
     </p>
 <div class="player">
 <span class="player__lab">Play</span>
 <audio controls="" preload="none" src="https://senyaolu-lab.github.io/audio/haunt.mp3"></audio>
 </div>
-<div class="lyr">[Verse 1]
-You shut the door too hard
-Said monsters live in here
-Your shadow on the wall
-Was bigger than my fear
-
-The hallway held my breath
-The staircase knew my name
-I learned to sleep with one eye open
-And wake up still the same
-
-[Pre-Chorus]
-I was small
-You were loud
-Every promise came out jagged
-Every room held your cloud
-
-[Chorus]
-Don't haunt me anymore
-Don't haunt me anymore
-I was just a child
-Trying to make it through the dark
-
-Don't haunt me anymore
-Don't haunt me anymore
-Let my heart unclench
-Let it learn how to start
-
-[Verse 2]
-Your words fell like cold rain
-Inside my ribs at night
-I folded up my feelings
-To stay out of your fight
-
-I wore your anger like a name
-Too heavy for my skin
-Now every slammed-up memory
-Still tries to let you in
-
-[Pre-Chorus]
-I was small
-You were loud
-Every promise came out jagged
-Every room held your cloud
-
-[Chorus]
-Don't haunt me anymore
-Don't haunt me anymore
-I was just a child
-Trying to make it through the dark
-
-Don't haunt me anymore
-Don't haunt me anymore
-Let my heart unclench
-Let it learn how to start
-
-[Bridge]
-I am here now
-I am awake
-I can name the wreckage
-I can feel it break
-
-I will not live there
-In that locked-up scene
-I can hold the hurting
-And still come back clean
-
-[Final Chorus]
-Don't haunt me anymore
-Don't haunt me anymore
-I was just a child
-Trying to make it through the dark
-
-Don't haunt me anymore
-Don't haunt me anymore
-Let my heart unclench
-Let it learn how to start
-
-Heal me now
-Heal me now
-Let the frightened little one
+<div class="lyr">[Verse 1]
+You shut the door too hard
+Said monsters live in here
+Your shadow on the wall
+Was bigger than my fear
+
+The hallway held my breath
+The staircase knew my name
+I learned to sleep with one eye open
+And wake up still the same
+
+[Pre-Chorus]
+I was small
+You were loud
+Every promise came out jagged
+Every room held your cloud
+
+[Chorus]
+Don't haunt me anymore
+Don't haunt me anymore
+I was just a child
+Trying to make it through the dark
+
+Don't haunt me anymore
+Don't haunt me anymore
+Let my heart unclench
+Let it learn how to start
+
+[Verse 2]
+Your words fell like cold rain
+Inside my ribs at night
+I folded up my feelings
+To stay out of your fight
+
+I wore your anger like a name
+Too heavy for my skin
+Now every slammed-up memory
+Still tries to let you in
+
+[Pre-Chorus]
+I was small
+You were loud
+Every promise came out jagged
+Every room held your cloud
+
+[Chorus]
+Don't haunt me anymore
+Don't haunt me anymore
+I was just a child
+Trying to make it through the dark
+
+Don't haunt me anymore
+Don't haunt me anymore
+Let my heart unclench
+Let it learn how to start
+
+[Bridge]
+I am here now
+I am awake
+I can name the wreckage
+I can feel it break
+
+I will not live there
+In that locked-up scene
+I can hold the hurting
+And still come back clean
+
+[Final Chorus]
+Don't haunt me anymore
+Don't haunt me anymore
+I was just a child
+Trying to make it through the dark
+
+Don't haunt me anymore
+Don't haunt me anymore
+Let my heart unclench
+Let it learn how to start
+
+Heal me now
+Heal me now
+Let the frightened little one
 Finally come home</div>
 </section>
 <!-- ============ 02 ============ -->
 <section class="track">
 <div class="track__hd">
-<span class="track__no">02</span>
+<span class="track__no">05</span>
 <h2 class="track__t">人间借我</h2>
 <span class="track__meta">Chinese Pop Ballad · 4:17</span>
 </div>
 <p class="style">
-<b>中国国风流行抒情曲。</b>稀疏的三角钢琴与古筝琶音铺底，笛子主奏、二胡对位旋律，
-      指弹原声吉他与温暖的立式贝斯托住低频；女声气息清晰，不炫技。
-      写法借自汉语谦辞里的「借」——清风明月是借的，人生代代也是借的；
-      用具体旧物件（长凳、炉火、夕阳）去写抽象的孤独。
+<b>中国国风流行抒情曲。</b>稀疏的三角钢琴与古筝琶音铺底，笛子主奏、二胡对位旋律，
+      指弹原声吉他与温暖的立式贝斯托住低频；女声气息清晰，不炫技。
+      写法借自汉语谦辞里的「借」——清风明月是借的，人生代代也是借的；
+      用具体旧物件（长凳、炉火、夕阳）去写抽象的孤独。
     </p>
 <div class="player">
 <span class="player__lab">Play</span>
 <audio controls="" preload="none" src="https://senyaolu-lab.github.io/audio/jiewa.mp3"></audio>
 </div>
-<div class="lyr">[Intro]
-(soft piano, guzheng harmonics, one breath)
-mm—— mm——
-
-[Verse 1]
-我借了三十年的月光
-才看清人间什么模样
-站台上的人都不说话
-风把名字吹散在肩上
-
-我借了半张旧长凳
-听陌生人讲他的城
-谁不是借一副身体
-住进这趟说不清的旅程
-
-[Pre-Chorus]
-借我一句谎
-好把昨天圆上
-借我一点暖
-让这冬天不那么长
-
-[Chorus]
-借我一场冬 借我一个夏
-借我一盏灯 走过长夜啊
-我把手伸进人海的风里头
-捞一把心里的火
-
-借我一首歌 借我一杯茶
-借我一个名字 能被谁记得啊
-这人间什么都没欠我
-是我欠了它 一句谢谢啊
-
-[Verse 2]
-我借了最后一点夕阳
-把它擦亮成你的模样
-说好要一起走的人啊
-后来都替我走完了远方
-
-我借了别人的炉火
-烘一件冻僵的自我
-以为借得够多了
-就能把缺口填满一点
-
-[Pre-Chorus]
-借我一点疯
-好把遗憾开成花
-借我一声喊
-让这沉默有个回答
-
-[Chorus]
-借我一场冬 借我一个夏
-借我一盏灯 走过长夜啊
-我把手伸进人海的风里头
-捞一把心里的火
-
-借我一首歌 借我一杯茶
-借我一个名字 能被谁记得啊
-这人间什么都没欠我
-是我欠了它 一句谢谢啊
-
-[Bridge]
-原来我不是来讨的
-我是来还的
-原来我也能点一盏
-在别人路过的地方
-
-(lift, drums build, strings rise, then drop everything for one line)
-
-不是所有的光都要来自太阳
-有些是我自己 亲手点亮的
-
-[Final Chorus]
-(up a whole step, full band, layered harmonies)
-
-借我一场冬 借我一个夏
-借我一盏灯 走过长夜啊
-我把手伸进人海的风里头
-捞一把 亲手点亮的火
-
-借我一首歌 借我一杯茶
-借我一个名字 能被谁记得啊
-这人间从来没欠过我
-现在我点一盏 等你路过 就换
-
-[Outro]
-mm—— 借我一场冬
-mm—— 借我一个夏
+<div class="lyr">[Intro]
+(soft piano, guzheng harmonics, one breath)
+mm—— mm——
+
+[Verse 1]
+我借了三十年的月光
+才看清人间什么模样
+站台上的人都不说话
+风把名字吹散在肩上
+
+我借了半张旧长凳
+听陌生人讲他的城
+谁不是借一副身体
+住进这趟说不清的旅程
+
+[Pre-Chorus]
+借我一句谎
+好把昨天圆上
+借我一点暖
+让这冬天不那么长
+
+[Chorus]
+借我一场冬 借我一个夏
+借我一盏灯 走过长夜啊
+我把手伸进人海的风里头
+捞一把心里的火
+
+借我一首歌 借我一杯茶
+借我一个名字 能被谁记得啊
+这人间什么都没欠我
+是我欠了它 一句谢谢啊
+
+[Verse 2]
+我借了最后一点夕阳
+把它擦亮成你的模样
+说好要一起走的人啊
+后来都替我走完了远方
+
+我借了别人的炉火
+烘一件冻僵的自我
+以为借得够多了
+就能把缺口填满一点
+
+[Pre-Chorus]
+借我一点疯
+好把遗憾开成花
+借我一声喊
+让这沉默有个回答
+
+[Chorus]
+借我一场冬 借我一个夏
+借我一盏灯 走过长夜啊
+我把手伸进人海的风里头
+捞一把心里的火
+
+借我一首歌 借我一杯茶
+借我一个名字 能被谁记得啊
+这人间什么都没欠我
+是我欠了它 一句谢谢啊
+
+[Bridge]
+原来我不是来讨的
+我是来还的
+原来我也能点一盏
+在别人路过的地方
+
+(lift, drums build, strings rise, then drop everything for one line)
+
+不是所有的光都要来自太阳
+有些是我自己 亲手点亮的
+
+[Final Chorus]
+(up a whole step, full band, layered harmonies)
+
+借我一场冬 借我一个夏
+借我一盏灯 走过长夜啊
+我把手伸进人海的风里头
+捞一把 亲手点亮的火
+
+借我一首歌 借我一杯茶
+借我一个名字 能被谁记得啊
+这人间从来没欠过我
+现在我点一盏 等你路过 就换
+
+[Outro]
+mm—— 借我一场冬
+mm—— 借我一个夏
 (fade on piano and humming)</div>
 </section>
 <!-- ============ 03 ============ -->
 <section class="track">
 <div class="track__hd">
-<span class="track__no">03</span>
+<span class="track__no">06</span>
 <h2 class="track__t">纯音乐三首</h2>
 <span class="track__meta">Instrumental · 毕设配乐</span>
 </div>
-<p class="style">
-      三首纯音乐均服务于本人的<b>毕业设计</b>，分别对应追逐、孤寂与挣扎三种情绪。
+<p class="style">
+      三首纯音乐均服务于本人的<b>毕业设计</b>，分别对应追逐、孤寂与挣扎三种情绪。
     </p>
 <div class="inst">
 <div class="inst__row">
@@ -356,5 +583,5 @@ mm—— 借我一个夏
 <a href="index.html">返回作品集</a>
 </div>
 </footer>
-</body>
+<script>document.querySelectorAll('audio').forEach(a=>a.addEventListener('play',()=>document.querySelectorAll('audio').forEach(b=>{if(b!==a)b.pause()})));</script></body>
 </html>
