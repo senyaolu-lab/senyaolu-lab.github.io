@@ -114,3 +114,5 @@
  .pl-count{font-size:9px;white-space:normal;text-align:right}
 }
 @media print{.pl-library-intro{margin-bottom:5mm}.pl-gallery.pl-gallery--expanded{columns:3}.pl-card{margin-bottom:5mm}.pl-card__tags{font-size:6pt}}
+
+.pl-brief{margin-top:10px;padding-top:10px;border-top:1px solid var(--c-line);color:var(--c-ink-2);font-size:11px;line-height:1.8}.pl-brief summary{cursor:pointer;color:var(--c-ink-2);font-size:10px}.pl-brief p{margin:8px 0}.pl-brief a{color:#d3efac;text-decoration:underline;text-underline-offset:3px}.pl-brief small{display:block;color:var(--c-mute);font-size:9px;margin-top:6px}.pl-brief summary:focus-visible{outline:2px solid #c5f879;outline-offset:4px}

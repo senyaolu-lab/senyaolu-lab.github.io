@@ -53,6 +53,10 @@
     ratioButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.ratioFilter === 'all')));
     filterImages(); categoryButtons[0].focus();
   });
+  if (new URLSearchParams(location.search).get('collection') === 'tests') {
+    const testsButton=categoryButtons.find(button=>button.dataset.categoryFilter==='命题练习');
+    if(testsButton) testsButton.click();
+  }
   filterImages();
 
   const dialog = document.getElementById('pl-viewer');
