@@ -7,6 +7,8 @@
   const search = document.getElementById('pl-search');
   const gallery = document.getElementById('pl-gallery');
   const cards = [...gallery.querySelectorAll('[data-library-item]')];
+  const groups = [...gallery.querySelectorAll('[data-work-group]')];
+  const sections = [...gallery.querySelectorAll('[data-category-section]')];
   const categoryButtons = [...library.querySelectorAll('[data-category-filter]')];
   const ratioButtons = [...library.querySelectorAll('[data-ratio-filter]')];
   const count = document.getElementById('pl-count');
@@ -28,7 +30,16 @@
       card.hidden = !matches;
       if (matches) { visible++; themes.add(card.dataset.topic); }
     });
-    count.textContent = `${themes.size} 个主题 · ${visible} / ${cards.length} 幅`;
+    let visibleGroups=0;
+    groups.forEach(group=>{
+      const groupCards=[...group.querySelectorAll('[data-library-item]')];
+      const number=groupCards.filter(card=>!card.hidden).length;
+      group.hidden=number===0; group.dataset.visible=String(number);
+      group.querySelector('[data-group-count]').textContent=number===groupCards.length ? number+' 张' : number+' / '+groupCards.length+' 张';
+      if(number) visibleGroups++;
+    });
+    sections.forEach(section=>{section.hidden=![...section.querySelectorAll('[data-work-group]')].some(group=>!group.hidden);});
+    count.textContent = visibleGroups+' 组 · '+visible+' / '+cards.length+' 张';
     empty.hidden = visible !== 0;
   }
   categoryButtons.forEach(button => button.addEventListener('click', () => {
@@ -74,7 +85,8 @@
     title.textContent = image.alt = caption;
     original.href = anchor.href;
     original.textContent = anchor.href.endsWith('.png') ? '打开原图 ↗' : '打开高清大图 ↗';
-    position.textContent = `${current + 1} / ${items.length}`;
+    const group=anchor.closest('[data-work-group]');
+    position.textContent = (group ? group.dataset.groupTitle+' · ' : '')+`${current + 1} / ${items.length}`;
     status.textContent = '正在加载大图…'; status.hidden = false;
     image.src = anchor.href;
   }
@@ -84,7 +96,7 @@
     if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault(); opener = anchor;
     const selected = anchor.closest('.pl-image').querySelector('.pl-image__open');
-    const scope = selected.closest('#pl-gallery') || selected.closest('.pl-legacy');
+    const scope = selected.closest('[data-work-group]') || selected.closest('.pl-group--legacy') || selected.closest('#pl-gallery') || selected.closest('.pl-legacy');
     items = [...scope.querySelectorAll('.pl-image__open')].filter(item => !item.closest('[hidden]'));
     if(!items.length) return;
     display(Math.max(0, items.indexOf(selected)));
