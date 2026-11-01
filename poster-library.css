@@ -1,9 +1,9 @@
-/* Direct image gallery. Styles are scoped to this page and its new images. */
+/* Direct image gallery. Styles are scoped to this page and its images. */
 .poster-library-page .pl-page-head.head{padding-inline:var(--pad-x)!important;box-sizing:border-box}
 .poster-library-page .pl-page-head.head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding-top:122px!important;padding-bottom:38px!important}
 .poster-library-page .pl-page-head .head__title{margin:0;font-size:clamp(27px,3.3vw,44px)!important;line-height:1.2!important}
 .poster-library-page .pl-page-head .head__sub{margin:0;font-size:11px!important;letter-spacing:.05em;white-space:nowrap}
-.poster-library-page #kv-tests{padding-top:0}
+.poster-library-page #kv-tests{padding-top:0;scroll-margin-top:100px}
 .poster-library-page #kv-tests>.cat__hd{margin-bottom:24px}
 .poster-library-page #kv-tests>.cat__hd .cat__t{font-size:clamp(21px,2.2vw,28px);font-weight:500}
 .poster-library-page [hidden]{display:none!important}
@@ -85,3 +85,32 @@
  .pl-pair .pl-image[data-ratio="poster"]{width:100%}
  .poster-library-page .pl-page-head.head{padding-top:0!important}
 }
+
+/* Expanded collection: every card is one complete, uncropped image. */
+.pl-library-intro{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin:0 0 22px;color:var(--c-ink-2);font-size:12px;line-height:1.6}
+.pl-library-intro p{margin:0}.pl-library-intro p:last-child{color:var(--c-mute);font-size:10px}.pl-library-intro span{padding-inline:9px;color:var(--c-mute)}
+.pl-categories{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px}
+.pl-categories button{display:flex;align-items:baseline;gap:10px;min-height:42px;border:1px solid var(--c-line);padding:10px 17px;background:transparent;color:var(--c-ink-2);font:13px var(--font-sans);cursor:pointer}
+.pl-categories button span{font:10px var(--font-lat);opacity:.65}
+.pl-categories button[aria-pressed="true"]{background:#d3efac;color:#17210d;border-color:#d3efac}
+.pl-categories button:hover{border-color:#a1b889}.pl-categories button:focus-visible,.pl-ratios button:focus-visible{outline:2px solid #c5f879;outline-offset:4px}
+.pl-gallery.pl-gallery--expanded{display:block;columns:3;column-gap:24px}
+.pl-card{display:block;box-sizing:border-box;width:100%;break-inside:avoid;page-break-inside:avoid;margin:0 0 30px;scroll-margin-top:95px}
+.pl-card .pl-image__open{background:#141811;transition:opacity .18s}
+.pl-card .pl-image__open:hover{opacity:.88}
+.pl-card .pl-image img{max-width:100%;width:100%;height:auto;object-fit:contain;border:1px solid #26301e;box-sizing:border-box}
+.pl-card .pl-image figcaption{padding-top:13px;align-items:baseline;gap:12px}
+.pl-card figcaption strong{display:block;color:var(--c-ink);font-size:13px;font-weight:500;line-height:1.5}
+.pl-card figcaption div>span{display:block;padding-top:4px;color:var(--c-ink-2);font-size:10px;line-height:1.7}
+.pl-card__tags{font-size:9px;color:var(--c-mute);line-height:1.6;margin:6px 0 0;letter-spacing:.025em}
+.pl-card__tags span{padding:0 5px}
+@media(min-width:1600px){.pl-gallery.pl-gallery--expanded{columns:4}}
+@media(max-width:1040px){.pl-gallery.pl-gallery--expanded{columns:2;column-gap:20px}}
+@media(max-width:600px){
+ .pl-gallery.pl-gallery--expanded{columns:1;column-gap:0}
+ .pl-library-intro{gap:8px;font-size:11px}.pl-library-intro p:last-child{display:none}
+ .pl-categories{gap:6px;margin-bottom:18px}.pl-categories button{font-size:11px;padding:9px 12px;gap:7px;min-height:40px}
+ .pl-categories button span{font-size:9px}.pl-card{margin-bottom:30px}
+ .pl-count{font-size:9px;white-space:normal;text-align:right}
+}
+@media print{.pl-library-intro{margin-bottom:5mm}.pl-gallery.pl-gallery--expanded{columns:3}.pl-card{margin-bottom:5mm}.pl-card__tags{font-size:6pt}}
