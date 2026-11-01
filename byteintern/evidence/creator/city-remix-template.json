@@ -1,0 +1,85 @@
+{
+  "project": "CITY REMIX",
+  "version": "1.0",
+  "scope": "Original browser prototype, not an Effect House package.",
+  "canvas": {
+    "ratio": "3:4",
+    "staticExport": {
+      "width": 900,
+      "height": 1200,
+      "format": "SVG"
+    }
+  },
+  "inputs": {
+    "zh": {
+      "maxUnicodeCodePoints": 20,
+      "maxLines": 2,
+      "default": "把日常\n重新混音"
+    },
+    "en": {
+      "maxUnicodeCodePoints": 64,
+      "default": "FIND THE EXTRA IN YOUR ORDINARY."
+    },
+    "image": {
+      "optional": true,
+      "mime": [
+        "image/png",
+        "image/jpeg",
+        "image/webp"
+      ],
+      "maxBytes": 12582912,
+      "networkUpload": false
+    }
+  },
+  "modes": [
+    {
+      "id": "collage",
+      "name": "纸面拼贴",
+      "durationMs": 3600,
+      "mechanics": [
+        "photo float",
+        "stamp scale"
+      ],
+      "fallback": "original vector city"
+    },
+    {
+      "id": "comic",
+      "name": "漫画切片",
+      "durationMs": 3600,
+      "mechanics": [
+        "three image panels",
+        "180ms stagger",
+        "2.4s badge loop"
+      ],
+      "fallback": "original vector city"
+    },
+    {
+      "id": "type",
+      "name": "字效声场",
+      "durationMs": 3000,
+      "mechanics": [
+        "six text rows",
+        "180ms phase offset"
+      ],
+      "inputNote": "The wave repeats the first 20 characters. Full subtitle stays visible."
+    }
+  ],
+  "actions": [
+    "edit_copy",
+    "select_mode",
+    "play",
+    "pause",
+    "reset",
+    "export_static_svg",
+    "export_configuration",
+    "export_local_events"
+  ],
+  "reducedMotion": "Static scene, editing and export remain available.",
+  "notIncluded": [
+    "Effect House import package",
+    "face tracking",
+    "audio analysis",
+    "video rendering",
+    "platform submission"
+  ]
+}

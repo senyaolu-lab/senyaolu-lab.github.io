@@ -1,0 +1,256 @@
+{
+  "schema": "synthetic-ad-data-v1",
+  "disclosure": "All brands, records, time windows and monetary values are fictional. No user interviews, live ads or business lift are claimed.",
+  "definitions": {
+    "ctr": "clicks / impressions",
+    "cvr": "conversions / clicks",
+    "cpa": "spend / conversions",
+    "roas": "revenue / spend; not profit margin"
+  },
+  "scenarios": [
+    {
+      "id": "cold",
+      "name": "新品冷启动",
+      "tag": "探索受众与素材",
+      "period": "模拟第 1–7 天",
+      "question": "新品缺少稳定样本，先把预算投向哪里？",
+      "context": "虚构轻户外品牌「山序」推出随行杯单品与套装。三类创意同步小额测试；目前不假设统计显著。",
+      "ads": [
+        {
+          "id": "C01",
+          "name": "通勤套装短片",
+          "type": "高客单套装",
+          "impressions": 180000,
+          "clicks": 3240,
+          "conversions": 81,
+          "spend": 6480,
+          "revenue": 27945,
+          "previous": {
+            "impressions": 160000,
+            "clicks": 2720,
+            "conversions": 68,
+            "spend": 5440,
+            "revenue": 23460
+          }
+        },
+        {
+          "id": "C02",
+          "name": "轻量卖点卡片",
+          "type": "产品卖点",
+          "impressions": 120000,
+          "clicks": 2400,
+          "conversions": 84,
+          "spend": 4200,
+          "revenue": 16128,
+          "previous": {
+            "impressions": 100000,
+            "clicks": 1800,
+            "conversions": 54,
+            "spend": 3600,
+            "revenue": 10368
+          }
+        },
+        {
+          "id": "C03",
+          "name": "开箱口播短片",
+          "type": "体验口播",
+          "impressions": 90000,
+          "clicks": 900,
+          "conversions": 18,
+          "spend": 2520,
+          "revenue": 3456,
+          "previous": {
+            "impressions": 85000,
+            "clicks": 935,
+            "conversions": 19,
+            "spend": 2380,
+            "revenue": 3648
+          }
+        }
+      ]
+    },
+    {
+      "id": "fatigue",
+      "name": "素材疲劳",
+      "tag": "点击率下滑",
+      "period": "模拟第 15–21 天",
+      "question": "消耗稳定，为什么点击与转化同时变少？",
+      "context": "同一素材持续投放。数据只支持“创意疲劳是候选原因”，受众频次与竞价变化仍需进一步检查。",
+      "ads": [
+        {
+          "id": "F01",
+          "name": "老版通勤短片",
+          "type": "持续投放",
+          "impressions": 200000,
+          "clicks": 2200,
+          "conversions": 55,
+          "spend": 6600,
+          "revenue": 10560,
+          "previous": {
+            "impressions": 200000,
+            "clicks": 4000,
+            "conversions": 100,
+            "spend": 6600,
+            "revenue": 19200
+          }
+        },
+        {
+          "id": "F02",
+          "name": "新版轻量卡片",
+          "type": "新素材测试",
+          "impressions": 130000,
+          "clicks": 2600,
+          "conversions": 91,
+          "spend": 4550,
+          "revenue": 17472,
+          "previous": {
+            "impressions": 120000,
+            "clicks": 2400,
+            "conversions": 84,
+            "spend": 4200,
+            "revenue": 16128
+          }
+        },
+        {
+          "id": "F03",
+          "name": "口播迭代版",
+          "type": "内容更新",
+          "impressions": 95000,
+          "clicks": 1425,
+          "conversions": 43,
+          "spend": 2850,
+          "revenue": 8256,
+          "previous": {
+            "impressions": 90000,
+            "clicks": 1260,
+            "conversions": 38,
+            "spend": 2700,
+            "revenue": 7296
+          }
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "name": "承接页异常",
+      "tag": "点击后流失",
+      "period": "模拟第 8–14 天",
+      "question": "CTR 没有明显下降，转化为什么掉了？",
+      "context": "点击侧表现稳定，点击后转化下降。页面加载、价格、库存与埋点是并列待验证假设，不能直接判定页面是唯一根因。",
+      "ads": [
+        {
+          "id": "L01",
+          "name": "通勤场景短片",
+          "type": "场景演示",
+          "impressions": 180000,
+          "clicks": 3600,
+          "conversions": 36,
+          "spend": 6300,
+          "revenue": 6912,
+          "previous": {
+            "impressions": 180000,
+            "clicks": 3600,
+            "conversions": 108,
+            "spend": 6300,
+            "revenue": 20736
+          }
+        },
+        {
+          "id": "L02",
+          "name": "卖点详情入口",
+          "type": "详情页导流",
+          "impressions": 120000,
+          "clicks": 2400,
+          "conversions": 24,
+          "spend": 4200,
+          "revenue": 4608,
+          "previous": {
+            "impressions": 120000,
+            "clicks": 2400,
+            "conversions": 84,
+            "spend": 4200,
+            "revenue": 16128
+          }
+        },
+        {
+          "id": "L03",
+          "name": "店铺首页入口",
+          "type": "不同承接路径",
+          "impressions": 90000,
+          "clicks": 1350,
+          "conversions": 41,
+          "spend": 2700,
+          "revenue": 7872,
+          "previous": {
+            "impressions": 90000,
+            "clicks": 1350,
+            "conversions": 40,
+            "spend": 2700,
+            "revenue": 7680
+          }
+        }
+      ]
+    },
+    {
+      "id": "scale",
+      "name": "稳定期扩量",
+      "tag": "预算重新分配",
+      "period": "模拟第 22–28 天",
+      "question": "有效率的素材，扩量前应该做哪些检查？",
+      "context": "历史效率较稳定，先在总预算内小幅调整，避免把历史 ROAS 线性外推成真实收益承诺。",
+      "ads": [
+        {
+          "id": "S01",
+          "name": "通勤故事 2.0",
+          "type": "成熟素材",
+          "impressions": 240000,
+          "clicks": 4800,
+          "conversions": 144,
+          "spend": 8400,
+          "revenue": 27648,
+          "previous": {
+            "impressions": 200000,
+            "clicks": 4000,
+            "conversions": 120,
+            "spend": 7200,
+            "revenue": 23040
+          }
+        },
+        {
+          "id": "S02",
+          "name": "轻量对比实验",
+          "type": "高效素材",
+          "impressions": 160000,
+          "clicks": 4000,
+          "conversions": 160,
+          "spend": 5600,
+          "revenue": 30720,
+          "previous": {
+            "impressions": 140000,
+            "clicks": 3500,
+            "conversions": 140,
+            "spend": 4900,
+            "revenue": 26880
+          }
+        },
+        {
+          "id": "S03",
+          "name": "新受众探索",
+          "type": "探索素材",
+          "impressions": 100000,
+          "clicks": 1500,
+          "conversions": 30,
+          "spend": 3000,
+          "revenue": 5760,
+          "previous": {
+            "impressions": 90000,
+            "clicks": 1350,
+            "conversions": 27,
+            "spend": 2700,
+            "revenue": 5184
+          }
+        }
+      ]
+    }
+  ]
+}

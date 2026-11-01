@@ -1,0 +1,60 @@
+{
+  "project": "PAPER CITY",
+  "type": "Self-initiated concept, not a live challenge or official TikTok event.",
+  "briefs": {
+    "commute": {
+      "name": "通勤中的小宇宙",
+      "prompt": "把日常通勤中一个容易忽略的细节折成纸城。",
+      "keywords": "车窗 / 路口 / 天桥",
+      "hook": "这条每天走的路，藏着另一座城。"
+    },
+    "afterhours": {
+      "name": "夜色重新开场",
+      "prompt": "选取一处夜间城市生活，将灯光与人物关系转换为纸艺层次。",
+      "keywords": "灯牌 / 夜摊 / 窗灯",
+      "hook": "白天没说完的故事，夜里继续。"
+    },
+    "edges": {
+      "name": "城市的边角料",
+      "prompt": "发现墙角、楼梯或建筑接缝，以纸面折叠突出它的独特结构。",
+      "keywords": "转角 / 楼梯 / 缝隙",
+      "hook": "城市最小的角落，也值得一张大作品。"
+    }
+  },
+  "creatorPaths": {
+    "starter": {
+      "name": "第一次创作",
+      "pace": "单图 + 两步拆解",
+      "goal": "完成一个明确观察点，使用一种可控纸艺语言。"
+    },
+    "growing": {
+      "name": "持续创作者",
+      "pace": "三图故事 + 过程",
+      "goal": "保持同一城市视觉设定，串联发现、转化和结果。"
+    },
+    "advanced": {
+      "name": "进阶创作者",
+      "pace": "短片 + 可复用模板",
+      "goal": "建立输入约束与跨镜头一致性，交付他人可接手的模板。"
+    }
+  },
+  "contentSpecification": {
+    "ratio": "9:16",
+    "minWidth": 1080,
+    "minHeight": 1920,
+    "ratioTolerance": 0.02,
+    "mime": [
+      "image/jpeg",
+      "image/png",
+      "image/webp",
+      "video/mp4"
+    ],
+    "maxSizeMB": 50,
+    "videoDurationSeconds": [
+      6,
+      30
+    ],
+    "note": "Concept challenge requirements, not universal platform upload limits."
+  },
+  "quality": "All self-checks passed means ready for human review. It never means approved or published."
+}

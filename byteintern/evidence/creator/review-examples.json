@@ -1,0 +1,350 @@
+{
+  "scope": "SYNTHETIC TEST FIXTURES — not real submissions, users, audit decisions or campaign results.",
+  "schemaVersion": "1.0",
+  "baseline": {
+    "version": "1.0",
+    "synthetic": true,
+    "brief": "commute",
+    "level": "starter",
+    "title": "每天路过的天桥，今天折成了一座纸城",
+    "observation": "天桥栏杆在日落时形成连续阴影，我将重复节奏转换为纸张的折叠结构。",
+    "caption": "合成测试数据：使用自己拍摄的素材作为观察依据，AI 辅助探索纸艺材质，人工修正折叠结构和文字排版。此记录不是实际投稿或审核结论。",
+    "usedAI": true,
+    "aiDisclosure": true,
+    "rights": true,
+    "privacyReviewed": true,
+    "safeAreaReviewed": true,
+    "textLegible": true,
+    "noArtifacts": true,
+    "media": {
+      "present": true,
+      "type": "image/png",
+      "size": 2000000,
+      "width": 1080,
+      "height": 1920,
+      "duration": null
+    }
+  },
+  "examples": [
+    {
+      "exampleId": "SYN-01",
+      "ruleId": "R01",
+      "evidence": "没有提供素材授权自我声明。",
+      "action": "补充素材与字体来源、许可范围，进入人工核对后再流转。",
+      "input": {
+        "version": "1.0",
+        "synthetic": true,
+        "brief": "commute",
+        "level": "starter",
+        "title": "每天路过的天桥，今天折成了一座纸城",
+        "observation": "天桥栏杆在日落时形成连续阴影，我将重复节奏转换为纸张的折叠结构。",
+        "caption": "合成测试数据：使用自己拍摄的素材作为观察依据，AI 辅助探索纸艺材质，人工修正折叠结构和文字排版。此记录不是实际投稿或审核结论。",
+        "usedAI": true,
+        "aiDisclosure": true,
+        "rights": false,
+        "privacyReviewed": true,
+        "safeAreaReviewed": true,
+        "textLegible": true,
+        "noArtifacts": true,
+        "media": {
+          "present": true,
+          "type": "image/png",
+          "size": 2000000,
+          "width": 1080,
+          "height": 1920,
+          "duration": null
+        }
+      },
+      "expectedFailedRule": "R01",
+      "expectedStatus": "hold"
+    },
+    {
+      "exampleId": "SYN-02",
+      "ruleId": "R02",
+      "evidence": "勾选使用 AI，但未声明标注 AI 参与。",
+      "action": "补充生成与人工修改说明；核对是否误导为实拍。",
+      "input": {
+        "version": "1.0",
+        "synthetic": true,
+        "brief": "commute",
+        "level": "starter",
+        "title": "每天路过的天桥，今天折成了一座纸城",
+        "observation": "天桥栏杆在日落时形成连续阴影，我将重复节奏转换为纸张的折叠结构。",
+        "caption": "合成测试数据：使用自己拍摄的素材作为观察依据，AI 辅助探索纸艺材质，人工修正折叠结构和文字排版。此记录不是实际投稿或审核结论。",
+        "usedAI": true,
+        "aiDisclosure": false,
+        "rights": true,
+        "privacyReviewed": true,
+        "safeAreaReviewed": true,
+        "textLegible": true,
+        "noArtifacts": true,
+        "media": {
+          "present": true,
+          "type": "image/png",
+          "size": 2000000,
+          "width": 1080,
+          "height": 1920,
+          "duration": null
+        }
+      },
+      "expectedFailedRule": "R02",
+      "expectedStatus": "hold"
+    },
+    {
+      "exampleId": "SYN-03",
+      "ruleId": "R03",
+      "evidence": "本地文件类型为 PDF。",
+      "action": "改交规范内的图片或视频，并重新读取文件元数据。",
+      "input": {
+        "version": "1.0",
+        "synthetic": true,
+        "brief": "commute",
+        "level": "starter",
+        "title": "每天路过的天桥，今天折成了一座纸城",
+        "observation": "天桥栏杆在日落时形成连续阴影，我将重复节奏转换为纸张的折叠结构。",
+        "caption": "合成测试数据：使用自己拍摄的素材作为观察依据，AI 辅助探索纸艺材质，人工修正折叠结构和文字排版。此记录不是实际投稿或审核结论。",
+        "usedAI": true,
+        "aiDisclosure": true,
+        "rights": true,
+        "privacyReviewed": true,
+        "safeAreaReviewed": true,
+        "textLegible": true,
+        "noArtifacts": true,
+        "media": {
+          "present": true,
+          "type": "application/pdf",
+          "size": 2000000,
+          "width": 1080,
+          "height": 1920,
+          "duration": null
+        }
+      },
+      "expectedFailedRule": "R03",
+      "expectedStatus": "hold"
+    },
+    {
+      "exampleId": "SYN-04",
+      "ruleId": "R04",
+      "evidence": "宽高为1080×1080，不符合此次概念挑战9:16规范。",
+      "action": "重新编排竖版，禁止仅拉伸画面。",
+      "input": {
+        "version": "1.0",
+        "synthetic": true,
+        "brief": "commute",
+        "level": "starter",
+        "title": "每天路过的天桥，今天折成了一座纸城",
+        "observation": "天桥栏杆在日落时形成连续阴影，我将重复节奏转换为纸张的折叠结构。",
+        "caption": "合成测试数据：使用自己拍摄的素材作为观察依据，AI 辅助探索纸艺材质，人工修正折叠结构和文字排版。此记录不是实际投稿或审核结论。",
+        "usedAI": true,
+        "aiDisclosure": true,
+        "rights": true,
+        "privacyReviewed": true,
+        "safeAreaReviewed": true,
+        "textLegible": true,
+        "noArtifacts": true,
+        "media": {
+          "present": true,
+          "type": "image/png",
+          "size": 2000000,
+          "width": 1080,
+          "height": 1080,
+          "duration": null
+        }
+      },
+      "expectedFailedRule": "R04",
+      "expectedStatus": "revise"
+    },
+    {
+      "exampleId": "SYN-05",
+      "ruleId": "R05",
+      "evidence": "文件大小为51MB，超出此次50MB上限。",
+      "action": "压缩文件或精简视频，再次检查画质。",
+      "input": {
+        "version": "1.0",
+        "synthetic": true,
+        "brief": "commute",
+        "level": "starter",
+        "title": "每天路过的天桥，今天折成了一座纸城",
+        "observation": "天桥栏杆在日落时形成连续阴影，我将重复节奏转换为纸张的折叠结构。",
+        "caption": "合成测试数据：使用自己拍摄的素材作为观察依据，AI 辅助探索纸艺材质，人工修正折叠结构和文字排版。此记录不是实际投稿或审核结论。",
+        "usedAI": true,
+        "aiDisclosure": true,
+        "rights": true,
+        "privacyReviewed": true,
+        "safeAreaReviewed": true,
+        "textLegible": true,
+        "noArtifacts": true,
+        "media": {
+          "present": true,
+          "type": "image/png",
+          "size": 53477376,
+          "width": 1080,
+          "height": 1920,
+          "duration": null
+        }
+      },
+      "expectedFailedRule": "R05",
+      "expectedStatus": "revise"
+    },
+    {
+      "exampleId": "SYN-06",
+      "ruleId": "R06",
+      "evidence": "标题只有2个字符。",
+      "action": "补充能表达观察点的标题，保持6–40字符。",
+      "input": {
+        "version": "1.0",
+        "synthetic": true,
+        "brief": "commute",
+        "level": "starter",
+        "title": "纸城",
+        "observation": "天桥栏杆在日落时形成连续阴影，我将重复节奏转换为纸张的折叠结构。",
+        "caption": "合成测试数据：使用自己拍摄的素材作为观察依据，AI 辅助探索纸艺材质，人工修正折叠结构和文字排版。此记录不是实际投稿或审核结论。",
+        "usedAI": true,
+        "aiDisclosure": true,
+        "rights": true,
+        "privacyReviewed": true,
+        "safeAreaReviewed": true,
+        "textLegible": true,
+        "noArtifacts": true,
+        "media": {
+          "present": true,
+          "type": "image/png",
+          "size": 2000000,
+          "width": 1080,
+          "height": 1920,
+          "duration": null
+        }
+      },
+      "expectedFailedRule": "R06",
+      "expectedStatus": "revise"
+    },
+    {
+      "exampleId": "SYN-07",
+      "ruleId": "R07",
+      "evidence": "过程说明过短，无法追溯。",
+      "action": "补充观察、视觉转译、AI参与及人工修改。",
+      "input": {
+        "version": "1.0",
+        "synthetic": true,
+        "brief": "commute",
+        "level": "starter",
+        "title": "每天路过的天桥，今天折成了一座纸城",
+        "observation": "天桥栏杆在日落时形成连续阴影，我将重复节奏转换为纸张的折叠结构。",
+        "caption": "AI做的",
+        "usedAI": true,
+        "aiDisclosure": true,
+        "rights": true,
+        "privacyReviewed": true,
+        "safeAreaReviewed": true,
+        "textLegible": true,
+        "noArtifacts": true,
+        "media": {
+          "present": true,
+          "type": "image/png",
+          "size": 2000000,
+          "width": 1080,
+          "height": 1920,
+          "duration": null
+        }
+      },
+      "expectedFailedRule": "R07",
+      "expectedStatus": "revise"
+    },
+    {
+      "exampleId": "SYN-08",
+      "ruleId": "R08",
+      "evidence": "具体观察描述不足12字。",
+      "action": "描述一个能定位主题的细节；内容对应性由人工判断。",
+      "input": {
+        "version": "1.0",
+        "synthetic": true,
+        "brief": "commute",
+        "level": "starter",
+        "title": "每天路过的天桥，今天折成了一座纸城",
+        "observation": "一条路",
+        "caption": "合成测试数据：使用自己拍摄的素材作为观察依据，AI 辅助探索纸艺材质，人工修正折叠结构和文字排版。此记录不是实际投稿或审核结论。",
+        "usedAI": true,
+        "aiDisclosure": true,
+        "rights": true,
+        "privacyReviewed": true,
+        "safeAreaReviewed": true,
+        "textLegible": true,
+        "noArtifacts": true,
+        "media": {
+          "present": true,
+          "type": "image/png",
+          "size": 2000000,
+          "width": 1080,
+          "height": 1920,
+          "duration": null
+        }
+      },
+      "expectedFailedRule": "R08",
+      "expectedStatus": "revise"
+    },
+    {
+      "exampleId": "SYN-09",
+      "ruleId": "R09",
+      "evidence": "未完成隐私与内容安全自查声明。",
+      "action": "核对无授权个人信息和内容风险，不能只勾选了事。",
+      "input": {
+        "version": "1.0",
+        "synthetic": true,
+        "brief": "commute",
+        "level": "starter",
+        "title": "每天路过的天桥，今天折成了一座纸城",
+        "observation": "天桥栏杆在日落时形成连续阴影，我将重复节奏转换为纸张的折叠结构。",
+        "caption": "合成测试数据：使用自己拍摄的素材作为观察依据，AI 辅助探索纸艺材质，人工修正折叠结构和文字排版。此记录不是实际投稿或审核结论。",
+        "usedAI": true,
+        "aiDisclosure": true,
+        "rights": true,
+        "privacyReviewed": false,
+        "safeAreaReviewed": true,
+        "textLegible": true,
+        "noArtifacts": true,
+        "media": {
+          "present": true,
+          "type": "image/png",
+          "size": 2000000,
+          "width": 1080,
+          "height": 1920,
+          "duration": null
+        }
+      },
+      "expectedFailedRule": "R09",
+      "expectedStatus": "hold"
+    },
+    {
+      "exampleId": "SYN-10",
+      "ruleId": "R10",
+      "evidence": "未确认文字在手机尺寸可辨。",
+      "action": "调整标题尺寸、对比和安全区，人工在手机尺寸复核。",
+      "input": {
+        "version": "1.0",
+        "synthetic": true,
+        "brief": "commute",
+        "level": "starter",
+        "title": "每天路过的天桥，今天折成了一座纸城",
+        "observation": "天桥栏杆在日落时形成连续阴影，我将重复节奏转换为纸张的折叠结构。",
+        "caption": "合成测试数据：使用自己拍摄的素材作为观察依据，AI 辅助探索纸艺材质，人工修正折叠结构和文字排版。此记录不是实际投稿或审核结论。",
+        "usedAI": true,
+        "aiDisclosure": true,
+        "rights": true,
+        "privacyReviewed": true,
+        "safeAreaReviewed": true,
+        "textLegible": false,
+        "noArtifacts": true,
+        "media": {
+          "present": true,
+          "type": "image/png",
+          "size": 2000000,
+          "width": 1080,
+          "height": 1920,
+          "duration": null
+        }
+      },
+      "expectedFailedRule": "R10",
+      "expectedStatus": "revise"
+    }
+  ]
+}

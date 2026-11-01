@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-01",
+  "environment": "ChatGPT in-app Chromium browser; local HTTP static server",
+  "scope": "Manual browser smoke checks, not exhaustive accessibility or cross-browser certification",
+  "desktop": [
+    "Homepage rendered and screenshot captured; product filter shows GrowthPilot and FlowDesk only",
+    "GrowthPilot scenario and priority changed; invalid CPA 0 triggers explicit error; corrected CPA 80 restores valid input",
+    "FlowDesk create task → simulated timeout → retry → result references → human approval → completed; export becomes enabled",
+    "CITY REMIX switched to type effect, changed Chinese text, played and paused with visible status feedback",
+    "PAPER CITY changed brief and creator path; example draft loaded; self-check blocks incomplete file and declarations",
+    "Aesthetic Lab duplicate selector ID repaired; clay composition=3 and medium=4 restore after switching to blank gouache and back; both preview URLs use WebP",
+    "Aesthetic Lab JSON downloaded and parsed; 3 variant records preserved, unscored dimensions null, clay scores and note correct",
+    "Lantern acceptance form accepted a categorical observation and explanatory note",
+    "SYNC metadata loaded at 1920x1080 / 24 seconds; storyboard control sought to 15 seconds and started playback",
+    "Light film metadata loaded at 1920x1080 / 30 seconds with readyState 4 and no media error",
+    "No console errors captured during the smoke sequence"
+  ],
+  "responsive": {
+    "viewport": {"width":390,"height":844},
+    "pages": ["index.html","cases/product/growthpilot.html","cases/product/flowdesk.html","cases/creator/city-remix.html","cases/creator/paper-city.html","cases/motion/sync-motion.html","cases/motion/light-story.html","cases/art/lantern.html","cases/art/aesthetic-lab.html"],
+    "result": "No horizontal document overflow. Homepage mobile header adjusted after visual review. Lazy images are not counted as failed loads; CITY REMIX has empty optional image slots until a local photo is selected."
+  }
+}

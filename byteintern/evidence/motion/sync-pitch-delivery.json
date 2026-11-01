@@ -1,0 +1,60 @@
+{
+  "file": "cases/motion/sync-pitch.pptx",
+  "bytes": 1770972,
+  "slide_count": 6,
+  "slide_size": "16:9",
+  "slide_evidence": [
+    {
+      "slide": "ppt/slides/slide1.xml",
+      "editable_shapes": 7,
+      "native_tables": 0,
+      "text_runs": 7,
+      "images": 1
+    },
+    {
+      "slide": "ppt/slides/slide2.xml",
+      "editable_shapes": 17,
+      "native_tables": 0,
+      "text_runs": 17,
+      "images": 0
+    },
+    {
+      "slide": "ppt/slides/slide3.xml",
+      "editable_shapes": 23,
+      "native_tables": 0,
+      "text_runs": 18,
+      "images": 0
+    },
+    {
+      "slide": "ppt/slides/slide4.xml",
+      "editable_shapes": 25,
+      "native_tables": 0,
+      "text_runs": 18,
+      "images": 0
+    },
+    {
+      "slide": "ppt/slides/slide5.xml",
+      "editable_shapes": 13,
+      "native_tables": 0,
+      "text_runs": 13,
+      "images": 1
+    },
+    {
+      "slide": "ppt/slides/slide6.xml",
+      "editable_shapes": 6,
+      "native_tables": 1,
+      "text_runs": 18,
+      "images": 0
+    }
+  ],
+  "checks": [
+    "package integrity: pass, no findings",
+    "layout and font checks: pass, no findings",
+    "first-party export re-import: pass",
+    "all six final slides rendered and individually inspected at full size"
+  ],
+  "limits": [
+    "PowerPoint desktop execution was not tested.",
+    "All scenarios are fictional; the final page is a research plan, not achieved results."
+  ]
+}

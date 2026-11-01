@@ -1,0 +1,119 @@
+{
+  "generatedAt": "2026-11-01T04:33:16.746Z",
+  "command": "node evidence/creator/creator-rules.test.cjs",
+  "runtime": "v24.21.0",
+  "source": "cases/creator/creator-core.js",
+  "sourceSHA256": "c90f100e68c5b77c5e20b83fe385aed927f3100d95e47e5f84ed28bcc471e9c3",
+  "scope": "Actual automated assertions on the same pure rule module used by the browser pages; fixtures are synthetic.",
+  "total": 25,
+  "passed": 25,
+  "failed": 0,
+  "limitations": [
+    "Does not claim browser visual QA",
+    "Does not validate actual rights, content safety or aesthetic quality",
+    "Does not measure campaign performance",
+    "Does not verify platform integration"
+  ],
+  "results": [
+    {
+      "name": "SYN-01 maps to R01",
+      "status": "pass"
+    },
+    {
+      "name": "SYN-02 maps to R02",
+      "status": "pass"
+    },
+    {
+      "name": "SYN-03 maps to R03",
+      "status": "pass"
+    },
+    {
+      "name": "SYN-04 maps to R04",
+      "status": "pass"
+    },
+    {
+      "name": "SYN-05 maps to R05",
+      "status": "pass"
+    },
+    {
+      "name": "SYN-06 maps to R06",
+      "status": "pass"
+    },
+    {
+      "name": "SYN-07 maps to R07",
+      "status": "pass"
+    },
+    {
+      "name": "SYN-08 maps to R08",
+      "status": "pass"
+    },
+    {
+      "name": "SYN-09 maps to R09",
+      "status": "pass"
+    },
+    {
+      "name": "SYN-10 maps to R10",
+      "status": "pass"
+    },
+    {
+      "name": "Valid synthetic draft requires human review, never approval",
+      "status": "pass"
+    },
+    {
+      "name": "Missing file cannot pass even when metadata is retained",
+      "status": "pass"
+    },
+    {
+      "name": "Disclosure is not required when AI was not used",
+      "status": "pass"
+    },
+    {
+      "name": "Video duration includes both 6 and 30 second boundaries",
+      "status": "pass"
+    },
+    {
+      "name": "Video duration rejects below 6 or above 30 seconds",
+      "status": "pass"
+    },
+    {
+      "name": "Square, zero and landscape dimensions fail portrait requirements",
+      "status": "pass"
+    },
+    {
+      "name": "Minimum exact portrait dimensions pass",
+      "status": "pass"
+    },
+    {
+      "name": "Title limits reject 41 Unicode code points",
+      "status": "pass"
+    },
+    {
+      "name": "Each of three paths generates seven distinct daily tasks",
+      "status": "pass"
+    },
+    {
+      "name": "Brief selection changes actual plan instructions",
+      "status": "pass"
+    },
+    {
+      "name": "CSV formula payload is neutralized",
+      "status": "pass"
+    },
+    {
+      "name": "XML export escapes text markup",
+      "status": "pass"
+    },
+    {
+      "name": "Copy normalization limits lines and preserves emoji code points",
+      "status": "pass"
+    },
+    {
+      "name": "12MB image boundary is allowed, over limit rejected",
+      "status": "pass"
+    },
+    {
+      "name": "Unsupported SVG upload is rejected",
+      "status": "pass"
+    }
+  ]
+}
