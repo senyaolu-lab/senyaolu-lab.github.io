@@ -1,0 +1,23 @@
+[
+  {
+    "key": "volt-macro",
+    "refs": [
+      "volt-cutout.png"
+    ],
+    "prompt": "Image1 is the locked product geometry and materials reference. Create a wide16:9 cinematic extreme macro still of the SAME headphones, no words anywhere. The right earcup fills the frame from bottom-left sweeping to upper-right; camera glides conceptually along the narrow acid-lime seam between satin graphite outer shell and black woven cushion, brushed gunmetal yoke enters at upper-right and attaches at exactly the same real joint as reference. Precision believable machined parts, woven cloth microtexture, very controlled cool ice-blue raking reflection from upper-left, rich black studio background, high-end luxury product film still. Strong depth and diagonal composition, crisp central seam, subtle shallow depth of field. Absolutely no added controls, rings, particles, panels, captions or decorative diagrams. Only one earcup detail, not a redesigned headphone. This is a clean 16:9 film plate."
+  },
+  {
+    "key": "volt-poster",
+    "refs": [
+      "volt-subway.png"
+    ],
+    "prompt": "Image1 is the identity and lighting reference for the woman, exact VOLT headphone and film color palette. Create a final vertical2:3 advertising poster in the same VOLT campaign. Recompose same adult woman's head/upper-body side profile into right two-thirds of lower frame, same black jacket with lime zipper and exact graphite/lime headphones. Cool metro train light streaks behind, graphite atmosphere, vivid realistic face and headset, calm confidence, excellent cinematic photographic craft. Top-left enormous condensed acid-lime \"VOLT\" wordmark; beneath it large bold Chinese in three short lines exact \"把噪声，\" / \"留在\" / \"身后。\" with strong margins, clean legibility and beautiful rhythm. Typography dominates upper-left, woman's earcup creates second focus at middle right. Tiny footer \"VOLT ONE / FIND YOUR OWN FREQUENCY\" and \"自主概念设计\". Designed advertising art, no UI, no mockup, no poster on wall, no duplicate woman, no extra claims, no changed headphone geometry. This is full-bleed final artwork."
+  },
+  {
+    "key": "threads-wide",
+    "refs": [
+      "threads-master.png"
+    ],
+    "prompt": "Image1 is the exact visual identity and motif reference for the original contemporary Chinese craft campaign. Produce a finished LANDSCAPE16:9 exhibition campaign KV, art-directed recomposition not a crop. The immense indigo handwoven cloth now flows across right two-thirds diagonally, suspended sculpturally in warm shadow, revealing hand-loomed fibers, tiny slubs and subtle off-white woven pattern. A single vermilion thread traverses from lower-right artisan's realistic hands at the loom toward upper center. Hands remain age-textured, anatomically natural, no face. Left third quiet warm umber background with huge sophisticated cream Song-style Chinese title exact \"一针一线\" set on two lines \"一针\" / \"一线\"; beneath exact \"让手艺，继续发生。\". Top small \"THREADS / STILL IN THE MAKING\"; footer \"当代手作影像计划 · 自主概念设计\". Tactile material communicates the concept, dramatic chiaroscuro, refined museum-quality typography and breathing space, no dates, no sponsor logos, no crowded info. Preserve reference indigo/cream/vermilion palette, restrained modern design, one single complete KV."
+  }
+]

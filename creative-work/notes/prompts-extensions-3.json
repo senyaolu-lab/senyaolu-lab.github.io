@@ -1,0 +1,22 @@
+[
+  {
+    "key": "spring-shoes",
+    "ref": "spring-master.png",
+    "prompt": "Use Image1 as the exact campaign art direction reference. Create a companion SQUARE1:1 e-commerce category poster for \"好物发芽了\". Feature ONLY the same pair of cream sneakers, hero large in lower-right, arranged naturally on an ivory limestone step with a tiny chrome sprig and two green leaves growing between foreground stone gaps. Cream background, lavender translucent architectural arch behind, precise soft daylight, premium fabric/knit/rubber details, delicate small flowers but never busy. Same deep purple elegant Chinese Song-style typography with the green leaf accent, upper-left exact title \"轻一点，\" / \"去春天。\" and smaller \"好物发芽了 / 轻盈出行\". Tiny footer \"SPRING / NEW ARRIVALS\" and \"自主概念设计\". Strong scale and generous space, coherent with reference but clearly its own category composition. No prices, no false technical claims, no brands, no mockup, no other products or extra text. One finished square ad."
+  },
+  {
+    "key": "spring-home",
+    "ref": "spring-master.png",
+    "prompt": "Use Image1 as the exact campaign art direction reference. Create a companion SQUARE1:1 e-commerce category poster for \"好物发芽了\". Feature ONLY the same butter-yellow mushroom lamp and coral insulated mug, in a calm still life on two ivory limestone steps at lower-right. A slender chrome branch with mint green leaves curves behind the lamp, one soft lavender translucent circle off-center. Warm creamy seamless background and precise daylight, beautiful ceramic reflections, matte mug surface, believable scale, refined restraint, not overcrowded. Upper-left deep purple Chinese Song-style headline exact \"把好心情，\" / \"带回家。\" with a tiny fresh green leaf tucked into typography; smaller \"好物发芽了 / 居家好物\". Tiny footer \"SPRING / NEW ARRIVALS\" and \"自主概念设计\". Coherent visual family with reference, premium e-commerce campaign craft. No discount, no invented product capability, no price, no external brand, no additional text or frame."
+  },
+  {
+    "key": "threads-dye",
+    "ref": "threads-master.png",
+    "prompt": "Image1 is the typography, palette and material-focused identity reference for the \"一针一线\" contemporary handcraft campaign. Create its second final VERTICAL2:3 poster: deep blue lengths of freshly indigo-dyed cloth hanging from simple horizontal wooden rails in a dramatically lit old workshop, warm amber daylight slicing across damp textile folds, a pair of anatomically natural adult artisan hands in lower-right raising the corner of one fabric, face unseen. A fine vermilion string crosses vertically as the recurring visual motif. Dense slub weave and traces of dye saturation, photorealistic tactile documentary-inspired visual; absolutely not an illustration or tourism poster. Large elegant cream Song-style Chinese title on the quiet shadowed upper-left exact \"一染\" / \"一晾\". Smaller exact \"让手艺，继续发生。\" Top small \"THREADS / STILL IN THE MAKING\"; footer \"一针一线 · 当代手作影像计划\". Keep reference masterful asymmetric hierarchy and deep umber/indigo/vermilion palette, refined museum campaign clarity. One full-bleed completed poster, no logos, no fake dates, no mockup."
+  },
+  {
+    "key": "threads-stitch",
+    "ref": "threads-master.png",
+    "prompt": "Image1 is the typography, palette and tactile identity reference for the \"一针一线\" contemporary handcraft campaign. Create its third final VERTICAL2:3 poster: a very close intimate view of two adult artisan hands embroidering a small elegant vermilion line into dense indigo fabric held in a dark wooden hoop. Correct natural fingers and one thin needle at believable scale; one hand steadies hoop and other gently guides needle, clear physical contact. The indigo fabric billows diagonally to lower-right, occupying most of the poster; linen weave, tiny intentional stitches, thread tension, old warm wood and real aged skin become the emotional subject. Cream thread and ONE vivid vermilion stitched line, warm dramatic sidelight against umber shadow, luxurious restrained photography. Upper-left negative space has enormous refined cream Song-style type exact \"一挑\" / \"一绣\", below exact \"让手艺，继续发生。\". Top small \"THREADS / STILL IN THE MAKING\"; footer \"一针一线 · 当代手作影像计划\". Authentic handcrafted detail, contemporary museum campaign art direction, no full face, no ornamental folk patterns, no cute icons, no mockup, no extra words."
+  }
+]

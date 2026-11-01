@@ -1,0 +1,65 @@
+{
+  "project": "岚 / 云海测绘师",
+  "createdAt": "2026-11-01T06:58:07.268Z",
+  "method": "Built-in image_gen tool",
+  "scope": "二维概念美术；AI辅助创作。未制作3D网格、绑定或动画资产。",
+  "assets": [
+    {
+      "file": "lan-hero.png",
+      "role": "角色英雄图与母版",
+      "prompt": "Use case: stylized-concept.\nCreate ONE finished premium character art poster, landscape 16:9, highest available image quality. This is an original animated-feature character design, not live-action photography and not based on any existing IP.\nSubject: LAN, an adult East Asian woman about 28, a sky cartographer. Full-body character on the RIGHT half of the image with both boots completely visible. Short sculpted black hair with exactly one pale silver forelock above the brow, gray-blue expedition goggles resting on her forehead, thoughtful confident expression, mature facial proportions and subtle asymmetry. Her compact functional outfit: warm ivory technical coverall, short burnt-orange weatherproof jacket, graphite articulated kneepads, deep navy expedition boots. A precise rectangular FOLDING surveying instrument is mounted visibly at the center of her chest on a compact harness. Her right hand holds a small elegant handheld wind-mapping device made of brushed brass and pale jade-green enamel, a closed circular gimbal with a single fine vane; clear hand-to-handle contact. Left hand relaxed. No weapon.\nArt direction: cinematic stylized 3D character artwork with restrained shape exaggeration and beautifully designed massing; tactile woven cloth seams, practical fastenings, softly worn leather, bead-blasted metal and tiny credible edge wear. Clean, memorable silhouette; realistic material response without photoreal human skin. A calm pale blue-gray studio atmosphere, a low cloud bank and extremely faint topographic traces behind the figure. The face, silhouette, clothes and instruments are the visual subject, no clutter. Directional broad softbox light from upper-left, subtle warm rim, soft grounded shadow under boots.\nGraphic composition: left 45 percent reserved for exceptional editorial typography. One enormous perfectly legible Chinese character “岚” in deep graphite, confident modern geometric Chinese sans-serif lettering, carefully balanced and not obscured. Beneath it, exact small typography “LAN” and “SKY CARTOGRAPHER”, with generous tracking and sophisticated spacing. No other words, numbers, logos, fake interface or watermark. Give the character a subtle windward lean with jacket hem moving, still readable as a full character presentation. Quiet luxury game-development artbook cover with large deliberate empty spaces; no panel collage, no decorative badges.\nConstraints: one woman, two arms, two legs, five plausible fingers per visible hand, coherent instrument mechanics, complete feet, no helmet, no backpack, no extra silver hair streaks. Original character, age adult, practical non-sexual clothing. Do not add random text.",
+      "references": [],
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "lan-turnaround.png",
+      "role": "前/侧/背/三分之四视图设定板",
+      "prompt": "Use case: stylized-concept. Input image 1 is the identity and costume MASTER REFERENCE for one original character, LAN. Create a new wide 2:1 character artbook presentation with FOUR full-body views of EXACTLY this same adult East Asian woman on a clean warm light-gray studio background: front, strict left profile, back, and front three-quarter, arranged left to right at equal height on one baseline, all heads and boots fully visible. This is a finished two-dimensional character design image in the same cinematic stylized 3D art style as the reference, not a real 3D model.\nLock the reference face, mature age, short black hair and single silver forelock, gray-blue goggles on the forehead, dark neck scarf, burnt-orange short technical jacket worn open, ivory technical coverall, dark harness, brass rectangular folding chest surveying instrument, graphite kneepads and navy laced boots. Preserve the exact jacket cut, ivory trouser shape, belt height, gloves absent and chest instrument design. A brass circular handheld wind-mapping gimbal with pale jade detail is held naturally down in her anatomical RIGHT hand in all four views; it must rotate correctly with the body, not switch hands. Do not invent a backpack. Keep rear harness and jacket construction simple and mechanically plausible; the chest instrument belongs on the front only.\nRelaxed neutral standing pose, feet apart consistently, no exaggerated action pose. Four different camera angles, NOT four duplicates looking at the viewer. Back view shows the back of her head, goggles strap, shoulder yoke, jacket and harness. Profile is a genuine side silhouette. Physically convincing woven fabric, seams, edge wear and matte/brushed metal. Soft identical studio lighting and restrained shadows. No poster typography from the reference, no clouds or scenery. Only small clean exact captions underneath: “FRONT” “PROFILE” “BACK” “THREE-QUARTER”. No other text, measurement gibberish, arrows, random diagrams, watermark or logos. Give the four figures generous breathing room and a refined production-art presentation.",
+      "references": [
+        "lan-hero.png"
+      ],
+      "dimensions": [
+        1774,
+        887
+      ]
+    },
+    {
+      "file": "lan-world.png",
+      "role": "云海观测台世界场景",
+      "prompt": "Use case: stylized-concept. Input image 1 is the MASTER identity/costume/material reference for LAN, the original sky cartographer. Create a new finished cinematic environment key art, wide 16:9. A vast beautiful high-altitude sea of clouds surrounds a dark basalt observation terrace. An adult woman matching the reference stands small in scale, about 14 percent of the image height, near the LEFT third on the terrace, looking toward distant FLOATING BASALT ISLANDS with weathered grassy summits. Far below, luminous clouds flow between enormous hanging rock masses. On the right of the terrace is a modest working survey outpost built of weathered dark timber, slender brass supports and taut ivory canvas wind sails, with one simple telescope and a folded chart table; handmade precise expedition equipment, not a castle or sci-fi megastructure.\nPreserve the woman's exact master outfit and silhouette: short black hair, one silver forelock, forehead gray-blue goggles, orange short jacket, ivory coverall, graphite kneepads, navy boots, rectangular brass folding surveying instrument centered on her chest, small brass and jade-green circular wind-mapping gimbal in her right hand. No backpack, no helmet, no extra characters. Outfit must remain orange and ivory, not become a cape. Her scale gives the world grandeur; she remains distinct as an orange ivory silhouette with a grounded contact shadow.\nArt direction: beautiful cinematic stylized 3D animation concept art, sculpted forms, believable cloth tension and basalt strata, tactile fine material craft; never live-action photography. Strong composition with sweeping cloud arcs leading from foreground basalt to the distant islands. Dawn gold skims the cliff edges while the shadowed rock is cool blue; an immense pale luminous sky, atmospheric depth, restrained warm/cool palette tied to the character hero. Clear simple silhouette groups, compelling environmental storytelling, sophisticated design. Camera low enough to feel the cliff height, a wide lens without fisheye distortion, still image with a strong sense of wind in the canvas and jacket. No letters, logos, frame, panels, map UI or watermark.",
+      "references": [
+        "lan-hero.png"
+      ],
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "lan-story.png",
+      "role": "展开地图的故事关键帧",
+      "prompt": "Use case: stylized-concept. Create ONE new cinematic story keyframe, wide 16:9, following the two reference images. Input image 1 is the master identity/costume/material reference for LAN. Input image 2 is the established world, observation terrace, lighting and architecture reference. This is the next closer shot of the SAME character in the SAME place moments later, not a new design.\nMedium-close three-quarter shot from upper thigh to above her head: the adult East Asian sky cartographer LAN stands on the basalt survey terrace, OPENING A LARGE CREAM PAPER MAP INTO THE WIND. She is on the left-center, the map sweeps diagonally across the lower foreground in a convincing shallow curved surface, with each of her two hands visibly gripping a separate corner, anatomically correct fingers and plausible contact. The paper has elegant fine hand-drawn contour lines, simple island silhouettes and one route line, no readable text or random symbols. She lifts her eyes from the map toward a new route in the sky, focused and quietly exhilarated, no exaggerated cartoon grin. Wind moves a few black locks and the orange jacket hem, not the whole body.\nExact identity invariants from reference 1: adult woman, short black hair with the same single pale silver forelock, gray-blue goggles resting on her forehead, dark neck scarf, burnt-orange technical jacket open over ivory coverall, same dark chest harness and rectangular brass folding surveying instrument. The handheld brass and pale jade-green circular wind-mapping gimbal is temporarily clipped visibly to her RIGHT waist with a small carabiner, so both hands can hold the map; same prop design, not another device. No backpack, no weapons, no helmet, no extra equipment covering her face.\nScene continuity from reference 2: same dawn gold from image-left, cool cloud bounce, weathered black basalt, brass telescope and tensioned ivory canvas just behind her on the left. In the right background, softly focused but recognizable floating basalt islands, including the island with a natural arch, drift above the glowing sea of clouds. Strong dramatic diagonal staging and depth, intimate foreground gesture against immense distance. Beautiful cinematic stylized 3D animation concept art, refined facial planes, realistic cloth weave and folds, brushed brass, softly worn leather, layered painterly clouds. Animated-feature aesthetic, not live-action portrait photography. Sophisticated composition, no frame, no labels, no typography, no watermark.",
+      "references": [
+        "lan-hero.png",
+        "lan-world.png"
+      ],
+      "dimensions": [
+        1672,
+        941
+      ]
+    }
+  ],
+  "review": {
+    "inspected": true,
+    "focus": [
+      "面貌与银色额发",
+      "橙白服装和胸前仪器",
+      "风向测绘器与手部接触",
+      "浮岛、帆布观测台及晨光连续性"
+    ],
+    "note": "已逐图目视检查；四视图为概念设定表达，不能替代三维正交建模图。"
+  }
+}
