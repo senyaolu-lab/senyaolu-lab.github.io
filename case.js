@@ -4,7 +4,7 @@
 (() => {
 
 
-  const projects = [["hisense-c3.html", "Hisense · C3 系列"], ["hisense.html", "Hisense · 海信社媒"], ["hisense-store.html", "Hisense · 种草店大屏"], ["deadlock/#city", "deadlock游戏宣传包"], ["personal.html", "个人短片"], ["imagegen.html", "图片类"], ["skip-launch/", "跳格 SKIP"], ["sound-between/", "声隙 SOUND BETWEEN"], ["shanhai.html", "山海志"], ["silent-altitude.html", "静默海拔 SILENT ALTITUDE"], ["prism.html", "AI 点亮创意棱镜"], ["worry.html", "烦恼收容所"], ["ui-design.html", "为智能时代设计界面"], ["subtext.html", "话里有话"], ["chisuanbian.html", "吃随便"], ["ad.html", "心力价签"], ["bkb.html", "BLACK KING BAR"], ["motion.html", "山海志 · 动态演绎"], ["music.html", "声音，也是一种想象"]];
+  const projects = [["hisense-c3.html", "Hisense · C3 系列"], ["hisense.html", "Hisense社媒制作"], ["hisense-store.html", "Hisense · 种草店大屏"], ["deadlock/#city", "deadlock游戏宣传包"], ["personal.html", "个人短片"], ["imagegen.html", "图片类"], ["skip-launch/", "跳格 SKIP"], ["sound-between/", "声隙 SOUND BETWEEN"], ["shanhai.html", "山海志"], ["silent-altitude.html", "静默海拔 SILENT ALTITUDE"], ["prism.html", "AI 点亮创意棱镜"], ["worry.html", "烦恼收容所"], ["ui-design.html", "为智能时代设计界面"], ["subtext.html", "话里有话"], ["chisuanbian.html", "吃随便"], ["ad.html", "心力价签"], ["bkb.html", "BLACK KING BAR"], ["motion.html", "山海志 · 动态演绎"], ["music.html", "声音，也是一种想象"]];
 
 
   const index = projects.findIndex(p => p[0] === location.pathname.split('/').pop());
